@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Patient Dashboard</title>
+  <link rel="stylesheet" href="assests/css/style.css">
+  <!-- Boxicons CDN Link -->
+  <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="path/to/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <div class="container" id="blur">
+    <div class="sidebar">
+      <div class="logo-details">
+        <i class="bx bx-donate-heart"></i>
+        <span class="logo_name">Connect</span>
+      </div>
+      <ul class="nav-links">
+        <li>
+          <a href="#" class="active">
+            <i class='bx bx-grid-alt'></i>
+            <span class="links_name">Dashboard</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class='bx bx-home-alt'></i>
+            <span class="links_name">Home</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class='bx bx-line-chart'></i>
+            <span class="links_name">Diagnosis</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class='bx bxs-capsule'></i>
+            <span class="links_name">Treatment</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class='bx bx-time'></i>
+            <span class="links_name">Schedule</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class='bx bx-edit-alt'></i>
+            <span class="links_name">Nurse Notes</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class='bx bx-calendar'></i>
+            <span class="links_name">Appointment</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class='bx bxs-phone-call'></i>
+            <span class="links_name">Helpline Number</span>
+          </a>
+        </li>
+        <li>
+          <a href="#" id="trigger" class="trigger">
+            <i class='bx bxs-bot '></i>
+            <span class="links_name">Symptoms ChatBot</span>
+          </a>
+        </li>
+        <li class="log_out">
+          <a href="#">
+            <i class='bx bx-log-out'></i>
+            <span class="links_name">Log out</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <section class="home-section">
+      <nav>
+        <div class="sidebar-button">
+          <i class='bx bx-menu sidebarBtn'></i>
+          <span class="dashboard">Dashboard</span>
+        </div>
+        <div class="search-box">
+          <input type="text" placeholder="Search...">
+          <i class='bx bx-search'></i>
+        </div>
+        <div class="profile-details">
+          <img src="assests/images/profile.jpg" alt="">
+          <span class="admin_name">Harnish Savsani</span>
+          <i class='bx bx-chevron-down'></i>
+        </div>
+      </nav>
+
+      <div class="home-content">
+        <div class="overview-boxes">
+          <div class="box">
+            <div class="right-side">
+              <div class="box-topic">Total Doctors</div>
+              <div class="number">105</div>
+              <div class="indicator">
+                <i class='bx bx-up-arrow-alt'></i>
+                <span class="text">Up from yesterday</span>
+              </div>
+            </div>
+            <i class="fas fa-user-md cart"></i>
+          </div>
+          <div class="box">
+            <div class="right-side">
+              <div class="box-topic">Total Patients</div>
+              <div class="number">876</div>
+              <div class="indicator">
+                <i class='bx bx-up-arrow-alt'></i>
+                <span class="text">Up from yesterday</span>
+              </div>
+            </div>
+            <i class='fas fa-person cart two'></i>
+          </div>
+          <div class="box">
+            <div class="right-side">
+              <div class="box-topic">Total Staff</div>
+              <div class="number">246</div>
+              <div class="indicator">
+                <i class='bx bx-up-arrow-alt'></i>
+                <span class="text">Up from yesterday</span>
+              </div>
+            </div>
+            <i class="fas fa-user-tie cart three"></i>
+          </div>
+          <div class="box">
+            <div class="right-side">
+              <div class="box-topic">Total Beds</div>
+              <div class="number">1000</div>
+              <div class="indicator">
+                <i class='bx bx-down-arrow-alt down'></i>
+                <span class="text">Down From Today</span>
+              </div>
+            </div>
+            <i class='fas fa-bed cart four'></i>
+          </div>
+        </div>
+
+        <div class="sales-boxes">
+          <div class="recent-sales box">
+            <div class="sales-details">
+
+              <ul class="details">
+                <li class="topic">Doctors</li>
+                <li><a href="#">Alex Doe</a></li>
+                <li><a href="#">David Mart</a></li>
+                <li><a href="#">Roe Parter</a></li>
+                <li><a href="#">Diana Penty</a></li>
+                <li><a href="#">Diana Penty</a></li>
+                <li><a href="#">Martin Paw</a></li>
+                <li><a href="#">Doe Alex</a></li>
+                <li><a href="#">Aiana Lexa</a></li>
+                <li><a href="#">Rexel Mags</a></li>
+              </ul>
+              <ul class="details">
+                <li class="topic">Department</li>
+                <li><a href="#">Orthopaedic</a></li>
+                <li><a href="#">Neurology</a></li>
+                <li><a href="#">Gynaecology</a></li>
+                <li><a href="#">Orthopaedic</a></li>
+                <li><a href="#">Neurology</a></li>
+                <li><a href="#">Gynaecology</a></li>
+                <li><a href="#">Orthopaedic</a></li>
+                <li><a href="#">Neurology</a></li>
+                <li><a href="#">Gynaecology</a></li>
+              </ul>
+              <ul class="details">
+                <li class="topic">Elements Exceeding</li>
+                <li><a href="#">WBC, MCHC, MPV</a></li>
+                <li><a href="#">WBC, MCHC, MPV</a></li>
+                <li><a href="#">WBC, MCHC, MPV</a></li>
+                <li><a href="#">WBC, MCHC, MPV</a></li>
+                <li><a href="#">WBC, MCHC, MPV</a></li>
+                <li><a href="#">WBC, MCHC, MPV</a></li>
+                <li><a href="#">WBC, MCHC, MPV</a></li>
+                <li><a href="#">WBC, MCHC, MPV</a></li>
+                <li><a href="#">WBC, MCHC, MPV</a></li>
+              </ul>
+              <ul class="details">
+                <li class="topic">Elements Under</li>
+                <li><a href="#">RDW, abs. Nuetrophiles</a></li>
+                <li><a href="#">RDW, abs. Nuetrophiles</a></li>
+                <li><a href="#">RDW, abs. Nuetrophiles</a></li>
+                <li><a href="#">RDW, abs. Nuetrophiles</a></li>
+                <li><a href="#">RDW, abs. Nuetrophiles</a></li>
+                <li><a href="#">RDW, abs. Nuetrophiles</a></li>
+                <li><a href="#">RDW, abs. Nuetrophiles</a></li>
+                <li><a href="#">RDW, abs. Nuetrophiles</a></li>
+                <li><a href="#">RDW, abs. Nuetrophiles</a></li>
+              </ul>
+              <ul class="details">
+                <li class="topic">Reports</li>
+                <li><a href="#"><u>View</u></a></li>
+                <li><a href="#"><u>View</u></a></li>
+                <li><a href="#"><u>View</u></a></li>
+                <li><a href="#"><u>View</u></a></li>
+                <li><a href="#"><u>View</u></a></li>
+                <li><a href="#"><u>View</u></a></li>
+                <li><a href="#"><u>View</u></a></li>
+                <li><a href="#"><u>View</u></a></li>
+                <li><a href="#"><u>View</u></a></li>
+              </ul>
+            </div>
+            <div class="button">
+              <a href="#">See All</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <div id="popup">
+    <div data-role="popup" id="popupBot" data-overlay-theme="b" data-theme="a" data-tolerance="15,15"
+      class="ui-content">
+      <iframe src='https://dodxtx.shinyapps.io/EMSC/' width="1000px" height="500px" sandbox=""></iframe>
+    </div>
+  </div>
+  <script>
+    let sidebar = document.querySelector(".sidebar");
+    let sidebarBtn = document.querySelector(".sidebarBtn");
+    sidebarBtn.onclick = function () {
+      sidebar.classList.toggle("active");
+      if (sidebar.classList.contains("active")) {
+        sidebarBtn.classList.replace("bx-menu", "bx-menu-alt-right");
+      } else
+        sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+    }
+  </script>
+  <script type="text/javascript">
+    function toggle() {
+      var blur = document.getElementById('blur');
+      blur.classList.toggle('active')
+    }
+
+  </script>
+  <script src="assests/js/script.js"></script>
+  <script src="https://kit.fontawesome.com/1ed7106697.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
+<!-- -->
