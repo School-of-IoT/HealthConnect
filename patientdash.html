@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="path/to/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script defer src="assests/js/script.js"></script>
 </head>
 
 <body>
@@ -69,7 +70,8 @@
           </a>
         </li>
         <li>
-          <a href="#" id="trigger" class="trigger">
+          <!-- id="trigger" onclick="toggle()  -->
+          <a href="'https://dodxtx.shinyapps.io/EMSC/'" >
             <i class='bx bxs-bot '></i>
             <span class="links_name">Symptoms ChatBot</span>
           </a>
@@ -93,7 +95,7 @@
           <i class='bx bx-search'></i>
         </div>
         <div class="profile-details">
-          <img src="assests/images/profile.jpg" alt="">
+          <img src="assests/img/profile.jpg" alt="">
           <span class="admin_name">Harnish Savsani</span>
           <i class='bx bx-chevron-down'></i>
         </div>
@@ -103,149 +105,153 @@
         <div class="overview-boxes">
           <div class="box">
             <div class="right-side">
-              <div class="box-topic">Total Doctors</div>
-              <div class="number">105</div>
+              <div class="box-topic">chills</div>
+              <div class="number">123</div>
               <div class="indicator">
-                <i class='bx bx-up-arrow-alt'></i>
-                <span class="text">Up from yesterday</span>
+                <span class="text"> Values possible : True/False</span>
               </div>
             </div>
-            <i class="fas fa-user-md cart"></i>
+            <i class="fas fa-cloud cart"></i>
           </div>
           <div class="box">
             <div class="right-side">
-              <div class="box-topic">Total Patients</div>
-              <div class="number">876</div>
+              <div class="box-topic">Diastolic BP</div>
+              <div class="number">123</div>
               <div class="indicator">
-                <i class='bx bx-up-arrow-alt'></i>
-                <span class="text">Up from yesterday</span>
+                <span class="text">Range [&lt;80 mm Hg]</span>
               </div>
             </div>
-            <i class='fas fa-person cart two'></i>
+            <i class="fas fa-heart cart two"></i>
           </div>
           <div class="box">
             <div class="right-side">
-              <div class="box-topic">Total Staff</div>
-              <div class="number">246</div>
+              <div class="box-topic">Systole BP</div>
+              <div class="number">123</div>
               <div class="indicator">
-                <i class='bx bx-up-arrow-alt'></i>
-                <span class="text">Up from yesterday</span>
+                <span class="text">Range [&lt;120 mm Hg]</span>
               </div>
             </div>
-            <i class="fas fa-user-tie cart three"></i>
+            <i class="fas fa-heart cart three"></i>
           </div>
           <div class="box">
             <div class="right-side">
-              <div class="box-topic">Total Beds</div>
-              <div class="number">1000</div>
+              <div class="box-topic">HeartRate</div>
+              <div class="number">123</div>
               <div class="indicator">
-                <i class='bx bx-down-arrow-alt down'></i>
-                <span class="text">Down From Today</span>
+                <span class="text">Range [ 60 to 100 beats]</span>
               </div>
             </div>
-            <i class='fas fa-bed cart four'></i>
+            <i class="fas fa-heartbeat cart four"></i>
+          </div>
+          <div class="box">
+            <div class="right-side">
+              <div class="box-topic">Respiration Rate</div>
+              <div class="number">123</div>
+              <div class="indicator">
+                <span class="text">Range [12 to 16 breaths]</span>
+              </div>
+            </div>
+            <i class="fas fa-lungs cart two"></i>
+          </div>
+          <div class="box">
+            <div class="right-side">
+              <div class="box-topic">SpO2</div>
+              <div class="number">123</div>
+              <div class="indicator">
+                <span class="text">Range [95% or higher]</span>
+              </div>
+            </div>
+            <i class="fas fa-wind cart three"></i>
+          </div>
+          <div class="box">
+            <div class="right-side">
+              <div class="box-topic">Blood Group</div>
+              <div class="number">O+</div>
+              <div class="indicator">
+                <span class="text"></span>
+              </div>
+            </div>
+            <i class="fas fa-droplet cart four"></i>
+          </div>
+          <div class="box">
+            <div class="right-side">
+              <div class="box-topic">Temperature</div>
+              <div class="number">123</div>
+              <div class="indicator">
+                <span class="text">Range [97°F to 99°F]</span>
+              </div>
+            </div>
+            <i class="fa-solid fa-temperature-half cart "></i>
+          </div>
+          <div class="box">
+            <div class="right-side">
+              <div class="box-topic">Ambulation </div>
+              <div class="number">Yes</div>
+              <div class="indicator">
+                <span class="text">Values possible : True/False</span>
+              </div>
+            </div>
+            <i class="fa-solid fa-face-thermometer"></i>
+            <i class="fas fa-syringe cart three"></i>
+          </div>
+          <div class="box">
+            <div class="right-side">
+              <div class="box-topic">Fever History </div>
+              <div class="number">123</div>
+              <div class="indicator">
+                <span class="text">Values possible : Yes/No/Other</span>
+              </div>
+            </div>
+            <i class="fas fa-temperature-half cart four"></i>
+          </div>
+          <div class="box">
+            <div class="right-side">
+              <div class="box-topic">BMI</div>
+              <div class="number">123</div>
+              <div class="indicator">
+                <span class="text">Range [18.5 to 24.9]</span>
+              </div>
+            </div>
+            <i class="fas fa-balance-scale cart "></i>
+          </div>
+          <div class="box">
+            <div class="right-side">
+              <div class="box-topic">FiO2 </div>
+              <div class="number">123</div>
+              <div class="indicator">
+                <span class="text">Range [50 to 100]</span>
+              </div>
+            </div>
+            <i class="fas fa-lungs cart two"></i>
           </div>
         </div>
-
-        <div class="sales-boxes">
-          <div class="recent-sales box">
-            <div class="sales-details">
-
-              <ul class="details">
-                <li class="topic">Doctors</li>
-                <li><a href="#">Alex Doe</a></li>
-                <li><a href="#">David Mart</a></li>
-                <li><a href="#">Roe Parter</a></li>
-                <li><a href="#">Diana Penty</a></li>
-                <li><a href="#">Diana Penty</a></li>
-                <li><a href="#">Martin Paw</a></li>
-                <li><a href="#">Doe Alex</a></li>
-                <li><a href="#">Aiana Lexa</a></li>
-                <li><a href="#">Rexel Mags</a></li>
-              </ul>
-              <ul class="details">
-                <li class="topic">Department</li>
-                <li><a href="#">Orthopaedic</a></li>
-                <li><a href="#">Neurology</a></li>
-                <li><a href="#">Gynaecology</a></li>
-                <li><a href="#">Orthopaedic</a></li>
-                <li><a href="#">Neurology</a></li>
-                <li><a href="#">Gynaecology</a></li>
-                <li><a href="#">Orthopaedic</a></li>
-                <li><a href="#">Neurology</a></li>
-                <li><a href="#">Gynaecology</a></li>
-              </ul>
-              <ul class="details">
-                <li class="topic">Elements Exceeding</li>
-                <li><a href="#">WBC, MCHC, MPV</a></li>
-                <li><a href="#">WBC, MCHC, MPV</a></li>
-                <li><a href="#">WBC, MCHC, MPV</a></li>
-                <li><a href="#">WBC, MCHC, MPV</a></li>
-                <li><a href="#">WBC, MCHC, MPV</a></li>
-                <li><a href="#">WBC, MCHC, MPV</a></li>
-                <li><a href="#">WBC, MCHC, MPV</a></li>
-                <li><a href="#">WBC, MCHC, MPV</a></li>
-                <li><a href="#">WBC, MCHC, MPV</a></li>
-              </ul>
-              <ul class="details">
-                <li class="topic">Elements Under</li>
-                <li><a href="#">RDW, abs. Nuetrophiles</a></li>
-                <li><a href="#">RDW, abs. Nuetrophiles</a></li>
-                <li><a href="#">RDW, abs. Nuetrophiles</a></li>
-                <li><a href="#">RDW, abs. Nuetrophiles</a></li>
-                <li><a href="#">RDW, abs. Nuetrophiles</a></li>
-                <li><a href="#">RDW, abs. Nuetrophiles</a></li>
-                <li><a href="#">RDW, abs. Nuetrophiles</a></li>
-                <li><a href="#">RDW, abs. Nuetrophiles</a></li>
-                <li><a href="#">RDW, abs. Nuetrophiles</a></li>
-              </ul>
-              <ul class="details">
-                <li class="topic">Reports</li>
-                <li><a href="#"><u>View</u></a></li>
-                <li><a href="#"><u>View</u></a></li>
-                <li><a href="#"><u>View</u></a></li>
-                <li><a href="#"><u>View</u></a></li>
-                <li><a href="#"><u>View</u></a></li>
-                <li><a href="#"><u>View</u></a></li>
-                <li><a href="#"><u>View</u></a></li>
-                <li><a href="#"><u>View</u></a></li>
-                <li><a href="#"><u>View</u></a></li>
-              </ul>
-            </div>
-            <div class="button">
-              <a href="#">See All</a>
-            </div>
-          </div>
-        </div>
-      </div>
     </section>
-  </div>
+
+<!-- </div>
   <div id="popup">
     <div data-role="popup" id="popupBot" data-overlay-theme="b" data-theme="a" data-tolerance="15,15"
       class="ui-content">
       <iframe src='https://dodxtx.shinyapps.io/EMSC/' width="1000px" height="500px" sandbox=""></iframe>
-    </div>
-  </div>
-  <script>
-    let sidebar = document.querySelector(".sidebar");
-    let sidebarBtn = document.querySelector(".sidebarBtn");
-    sidebarBtn.onclick = function () {
-      sidebar.classList.toggle("active");
-      if (sidebar.classList.contains("active")) {
-        sidebarBtn.classList.replace("bx-menu", "bx-menu-alt-right");
-      } else
-        sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
-    }
-  </script>
-  <script type="text/javascript">
+    </div> -->
+    <script>
+      let sidebar = document.querySelector(".sidebar");
+      let sidebarBtn = document.querySelector(".sidebarBtn");
+      sidebarBtn.onclick = function () {
+        sidebar.classList.toggle("active");
+        if (sidebar.classList.contains("active")) {
+          sidebarBtn.classList.replace("bx-menu", "bx-menu-alt-right");
+        } else
+          sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+      }
+    </script>
+    <!-- <script type="text/javascript">
     function toggle() {
       var blur = document.getElementById('blur');
       blur.classList.toggle('active')
     }
 
-  </script>
-  <script src="assests/js/script.js"></script>
-  <script src="https://kit.fontawesome.com/1ed7106697.js" crossorigin="anonymous"></script>
+  </script> -->
+    <script src="https://kit.fontawesome.com/1ed7106697.js" crossorigin="anonymous"></script>
 </body>
 
 </html>

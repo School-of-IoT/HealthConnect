@@ -19,7 +19,7 @@
 .container#blur.active{
   filter: blur(20px);
 }
-#popup{
+/* #popup{
   position: fixed;
   top: 50%;
   left: 50%;
@@ -28,7 +28,7 @@
   height: 70%;
   padding: 50px;
   transition: 0.5s;
-}
+} */
 .sidebar .logo-details{
   height: 80px;
   display: flex;
@@ -249,6 +249,9 @@ nav .profile-details i{
   color: #66b0ff;
   border-radius: 12px;
   margin: -15px 0 0 6px;
+}
+.box{
+  margin-top: 15px;
 }
 .home-content .box .cart.two{
    color: #2BD47D;
