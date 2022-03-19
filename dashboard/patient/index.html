@@ -71,7 +71,7 @@
         </li>
         <li>
           <!-- id="trigger" onclick="toggle()  -->
-          <a href="'https://dodxtx.shinyapps.io/EMSC/'" >
+          <a target="_blank" href="https://dodxtx.shinyapps.io/EMSC/" >
             <i class='bx bxs-bot '></i>
             <span class="links_name">Symptoms ChatBot</span>
           </a>
@@ -96,7 +96,7 @@
         </div>
         <div class="profile-details">
           <img src="assets/img/profile.jpg" alt="">
-          <span class="admin_name">Harnish Savsani</span>
+          <span class="admin_name username"></span>
           <i class='bx bx-chevron-down'></i>
         </div>
       </nav>
@@ -106,7 +106,7 @@
           <div class="box">
             <div class="right-side">
               <div class="box-topic">chills</div>
-              <div class="number">123</div>
+              <div class="number chills"></div>
               <div class="indicator">
                 <span class="text"> Values possible : True/False</span>
               </div>
@@ -116,7 +116,7 @@
           <div class="box">
             <div class="right-side">
               <div class="box-topic">Diastolic BP</div>
-              <div class="number">123</div>
+              <div class="number dbp"></div>
               <div class="indicator">
                 <span class="text">Range [&lt;80 mm Hg]</span>
               </div>
@@ -126,7 +126,7 @@
           <div class="box">
             <div class="right-side">
               <div class="box-topic">Systole BP</div>
-              <div class="number">123</div>
+              <div class="number sbp"></div>
               <div class="indicator">
                 <span class="text">Range [&lt;120 mm Hg]</span>
               </div>
@@ -136,7 +136,7 @@
           <div class="box">
             <div class="right-side">
               <div class="box-topic">HeartRate</div>
-              <div class="number">123</div>
+              <div class="number heartrate"></div>
               <div class="indicator">
                 <span class="text">Range [ 60 to 100 beats]</span>
               </div>
@@ -146,7 +146,7 @@
           <div class="box">
             <div class="right-side">
               <div class="box-topic">Respiration Rate</div>
-              <div class="number">123</div>
+              <div class="number respiration"></div>
               <div class="indicator">
                 <span class="text">Range [12 to 16 breaths]</span>
               </div>
@@ -156,7 +156,7 @@
           <div class="box">
             <div class="right-side">
               <div class="box-topic">SpO2</div>
-              <div class="number">123</div>
+              <div class="number spo2"></div>
               <div class="indicator">
                 <span class="text">Range [95% or higher]</span>
               </div>
@@ -166,7 +166,7 @@
           <div class="box">
             <div class="right-side">
               <div class="box-topic">Blood Group</div>
-              <div class="number">O+</div>
+              <div class="number bloodg">O+</div>
               <div class="indicator">
                 <span class="text"></span>
               </div>
@@ -176,7 +176,7 @@
           <div class="box">
             <div class="right-side">
               <div class="box-topic">Temperature</div>
-              <div class="number">123</div>
+              <div class="number temp"></div>
               <div class="indicator">
                 <span class="text">Range [97°F to 99°F]</span>
               </div>
@@ -186,7 +186,7 @@
           <div class="box">
             <div class="right-side">
               <div class="box-topic">Ambulation </div>
-              <div class="number">Yes</div>
+              <div class="number ambulation">Yes</div>
               <div class="indicator">
                 <span class="text">Values possible : True/False</span>
               </div>
@@ -197,7 +197,7 @@
           <div class="box">
             <div class="right-side">
               <div class="box-topic">Fever History </div>
-              <div class="number">123</div>
+              <div class="number fever"></div>
               <div class="indicator">
                 <span class="text">Values possible : Yes/No/Other</span>
               </div>
@@ -207,7 +207,7 @@
           <div class="box">
             <div class="right-side">
               <div class="box-topic">BMI</div>
-              <div class="number">123</div>
+              <div class="number bmi"></div>
               <div class="indicator">
                 <span class="text">Range [18.5 to 24.9]</span>
               </div>
@@ -217,7 +217,7 @@
           <div class="box">
             <div class="right-side">
               <div class="box-topic">FiO2 </div>
-              <div class="number">123</div>
+              <div class="number fio2"></div>
               <div class="indicator">
                 <span class="text">Range [50 to 100]</span>
               </div>
@@ -252,6 +252,10 @@
 
   </script> -->
     <script src="https://kit.fontawesome.com/1ed7106697.js" crossorigin="anonymous"></script>
+    <!--===============================================================================================-->
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="login.js"></script>
 </body>
 
 </html>
