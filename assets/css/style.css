@@ -61,7 +61,7 @@
     text-decoration: none;
     transition: all 0.4s ease;
 }
-/*
+
 .sidebar .nav-links li a{
   height: 100%;
   width: 100%;
@@ -70,7 +70,7 @@
   text-decoration: none;
   transition: all 0.4s ease;
 }
-*/
+
 .sidebar .nav-links li.active {
     background-color: #6b86b8;
 }
