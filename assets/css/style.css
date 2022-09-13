@@ -53,6 +53,7 @@
   position: relative;
   list-style: none;
   height: 50px;
+    padding-top: 10px;
 }
 .sidebar .nav-links li a{
   height: 100%;
@@ -62,11 +63,11 @@
   text-decoration: none;
   transition: all 0.4s ease;
 }
-.sidebar .nav-links li a.active{
+.sidebar .nav-links li.active{
   background: #081D45;
 }
-.sidebar .nav-links li a:hover{
-  background: #081D45;
+.sidebar .nav-links li:hover{
+  background: #1f3e77;
 }
 .sidebar .nav-links li i{
   min-width: 60px;
@@ -74,6 +75,13 @@
   font-size: 18px;
   color: #fff;
 }
+
+
+li.active {
+    background-color: #1f3e77;
+    /* padding-top: 10px; */
+}
+
 .sidebar .nav-links li .links_name{
   color: #fff;
   font-size: 15px;
@@ -85,6 +93,11 @@
   bottom: 0;
   width: 100%;
 }
+
+.sidebar .nav-links li.active {
+    background-color: #1f3e77;
+}
+
 .home-section{
   position: relative;
   background: #f5f5f5;
