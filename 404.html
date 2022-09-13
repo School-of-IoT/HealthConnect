@@ -9,6 +9,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
   <link rel="manifest" href="assets/favicon/site.webmanifest">
+  
 
 
   <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet">                     
@@ -28,25 +29,9 @@
 [ FONT ]*/
 
 @font-face {
-  font-family: Poppins-Regular;
-  src: url('../fonts/poppins/Poppins-Regular.ttf'); 
-}
-
-@font-face {
-  font-family: Poppins-Medium;
-  src: url('../fonts/poppins/Poppins-Medium.ttf'); 
-}
-
-@font-face {
   font-family: Poppins-Bold;
-  src: url('../fonts/poppins/Poppins-Bold.ttf'); 
+  src: url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap'); 
 }
-
-@font-face {
-  font-family: Poppins-SemiBold;
-  src: url('../fonts/poppins/Poppins-SemiBold.ttf'); 
-}
-
 
 
 
@@ -447,11 +432,6 @@ iframe {
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
-body{
-  height: 100vh;
-  background: -webkit-repeating-linear-gradient(-45deg, #71b7e6, #69a6ce, #b98acc, #ee8176, #b98acc, #69a6ce, #9b59b6);
-  background-size: 400%;
-}
 #error-page{
   position: absolute;
   top: 10%;
@@ -461,8 +441,6 @@ body{
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #fff;
-  box-shadow: 0px 5px 10px rgba(0,0,0,0.1);
 }
 #error-page .content{
   max-width: 600px;
@@ -507,7 +485,7 @@ body{
   font-size: 1.5em;
   margin-bottom: 20px;
   text-transform: uppercase;
-  color: #000;
+  color: #fff;
   font-size: 2em;
   max-width: 600px;
   position: relative;
@@ -537,6 +515,7 @@ body{
   border: 2px solid #69a6ce;
   color: #69a6ce;
   font-weight: 500;
+  font-family: Poppins-Bold;
   padding: 10px 25px;
   border-radius: 25px;
   text-transform: uppercase;
@@ -558,9 +537,7 @@ body{
             <h4 data-text="Opps! Page not found">
                Opps! Page not found
             </h4>
-            <p>
-               Sorry, the page you're looking for doesn't exist. If you think something is broken, report a problem.
-            </p>
+         
             <div class="btns">
                <a href="https://hippyaki.github.io/HealthConnect/">return home</a>
             </div>
