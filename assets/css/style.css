@@ -74,6 +74,9 @@
 .sidebar .nav-links li.active {
     background-color: #6b86b8;
 }
+.sidebar .nav-links li.active:hover {
+    background-color: #6b86b8;
+}
 .sidebar .nav-links li:hover{
   background: #1f3e77;
 }
