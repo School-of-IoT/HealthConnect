@@ -415,7 +415,7 @@ iframe {
 
 @media (max-width: 576px) {
   .wrap-login100 {
-    padding: 77px 15px 33px 15px;
+    margin: 73px 15px 33px 15px;
   }
 }
 
@@ -491,10 +491,12 @@ iframe {
 }
 
 .loader{
-    width: 78px;
+    width: 59px;
+    margin-top: -57px;
+    margin-left: 142px;
     /* height: 0px; */
     /* padding: initial; */
-    /* position: unset; */
+    position: absolute;
     transform: translate(-50%, -50%);
 }
 .load_circle{
