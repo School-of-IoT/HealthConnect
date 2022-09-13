@@ -4,7 +4,7 @@
     
     $(".log_out").click(function(){
       sessionStorage.removeItem('uid)';
-      location.href = "../login/"
+      location.href = "../../login/"
     });
 
 
