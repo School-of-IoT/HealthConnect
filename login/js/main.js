@@ -24,17 +24,7 @@ function setCookie(uid,value,exp_days) {
         })    
     })
   
-    /*===================  [ 'Enter' to Login ]  =================*/
-    
-    window.addEventListener("keydown", function (event) {
-  
-      if (event.key == 13) {
-        document.getElementByClass("validate-form").submit();
-      } else if (event.which !== undefined) {
-        // Handle the event with KeyboardEvent.which
-      }
-    });
-  
+   
     /*=============== [ Validate ]  ===============*/
     var input = $('.validate-input .input100');
 
