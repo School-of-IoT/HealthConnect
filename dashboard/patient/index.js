@@ -3,7 +3,7 @@
 
     
     $(".log_out").click(function(){
-      sessionStorage.removeItem('uid)';
+      sessionStorage.removeItem('uid');
       location.href = "../../login/"
     });
 
