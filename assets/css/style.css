@@ -71,8 +71,8 @@
   transition: all 0.4s ease;
 }
 */
-.sidebar .nav-links li.active{
-  background: #081D45;
+.sidebar .nav-links li.active {
+    background-color: #6b86b8;
 }
 .sidebar .nav-links li:hover{
   background: #1f3e77;
@@ -100,10 +100,6 @@ li.active {
   position: absolute;
   bottom: 0;
   width: 100%;
-}
-
-.sidebar .nav-links li.active {
-    background-color: #1f3e77;
 }
 
 .home-section{
