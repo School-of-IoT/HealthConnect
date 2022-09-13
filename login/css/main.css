@@ -498,6 +498,7 @@ iframe {
     /* padding: initial; */
     position: absolute;
     transform: translate(-50%, -50%);
+    visibility: hidden;
 }
 .load_circle{
     width: 8px;
