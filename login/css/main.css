@@ -490,5 +490,49 @@ iframe {
   }
 }
 
+.loader{
+    width: 78px;
+    /* height: 0px; */
+    /* padding: initial; */
+    /* position: unset; */
+    transform: translate(-50%, -50%);
+}
+.load_circle{
+    width: 8px;
+    height: 8px;
+    position: absolute;
+    border-radius: 50%;
+    background-color: #69a0f2;
+    left:15%;
+    transform-origin: 50%;
+    animation: load_circle .5s alternate infinite ease;
+}
+
+@keyframes load_circle{
+    0%{
+        top:20px;
+        transform: scaleX(1);
+    }
+    40%{
+        
+        border-radius: 50%;
+        transform: scaleX(1);
+    }
+    100%{
+        top:0%;
+    }
+}
+.load_circle:nth-child(2){
+    left:45%;
+    animation-delay: .2s;
+}
+.load_circle:nth-child(3){
+    left:auto;
+    right:15%;
+    animation-delay: .3s;
+}
+
+
+
 
 
