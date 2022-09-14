@@ -1,9 +1,9 @@
 
 
 function setCookie(uid,value,exp_days) {
-    var d = new Date();
+    let d = new Date();
     d.setTime(d.getTime() + (exp_days*24*60*60*1000));
-    var expires = "expires=" + d.toGMTString();
+    let expires = "expires=" + d.toGMTString();
     document.cookies = uid + "=" + value + ";" + expires + ";path=/";
 }
 
@@ -26,22 +26,22 @@ function setCookie(uid,value,exp_days) {
   
    
     /*=============== [ Validate ]  ===============*/
-    var input = $('.validate-input .input100');
+    let input = $('.validate-input .input100');
 
     $('.validate-form').on('submit',function(event){
         
         $(".loader").css("visibility", "visible");
         
-        var check = true;
+        let check = true;
 
-        for(var i=0; i<input.length; i++) {
+        for(let i=0; i<input.length; i++) {
             if(validate(input[i]) == false){
                 showValidate(input[i]);
                 check=false;
             }
         }
 
-        var formData = {
+        let formData = {
             user: $("#User").val(),
             pass: $("#pass").val(),
           };
@@ -59,7 +59,7 @@ function setCookie(uid,value,exp_days) {
             //setCookie("uid", data.patient[0]._id, 1);
             location.href = "../dashboard/patient/"
           }).fail(function (data) {
-            for(var i=0; i<input.length; i++) {
+            for(let i=0; i<input.length; i++) {
                 showValidate(input[i]);
                 check=false;
 
@@ -90,21 +90,21 @@ function setCookie(uid,value,exp_days) {
     }
 
     function showValidate(input) {
-        var thisAlert = $(input).parent();
+        let thisAlert = $(input).parent();
 
         $(thisAlert).addClass('alert-validate');
         $(".loader").css("visibility", "hidden");
     }
 
     function hideValidate(input) {
-        var thisAlert = $(input).parent();
+        let thisAlert = $(input).parent();
 
         $(thisAlert).removeClass('alert-validate');
     }
     
     /*==================================================================
     [ Show pass ]*/
-    var showPass = 0;
+    let showPass = 0;
     $('.btn-show-pass').on('click', function(){
         if(showPass == 0) {
             $(this).next('input').attr('type','text');
