@@ -90,9 +90,8 @@ function setCookie(uid,value,exp_days) {
     }
 
     function showValidate(input) {
-        let thisAlert = $(input).parent();
-
-        $(thisAlert).addClass('alert-validate');
+        
+        $(".alert").addClass('alert-validate-s');
         $(".loader").css("visibility", "hidden");
     }
 

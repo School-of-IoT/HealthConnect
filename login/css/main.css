@@ -428,7 +428,8 @@ iframe {
   position: relative;
 }
 
-.alert-validate::before {
+
+.alert-validate-s::before {
   content: attr(data-validate);
   position: absolute;
   max-width: 70%;
@@ -459,6 +460,8 @@ iframe {
   -moz-transition: opacity 0.4s;
   transition: opacity 0.4s;
 }
+
+
 
 .alert-validate::after {
   content: "\f06a";
