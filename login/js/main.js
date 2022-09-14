@@ -93,6 +93,7 @@ function setCookie(uid,value,exp_days) {
         var thisAlert = $(input).parent();
 
         $(thisAlert).addClass('alert-validate');
+        $(".loader").css("visibility", "hidden");
     }
 
     function hideValidate(input) {
