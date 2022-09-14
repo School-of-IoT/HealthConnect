@@ -101,7 +101,7 @@ function setCookie(uid,value,exp_days) {
         let thisAlert = $(input).parent();
 
         $(thisAlert).removeClass('alert-validate');
-        $(".alert-v").addClass('alert-validate-s');
+        $(".alert-v").removeClass('alert-validate-s');
     }
     
     /*==================================================================

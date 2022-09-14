@@ -519,8 +519,8 @@ iframe {
   line-height: 1.4;
   text-align: left;
 
-  visibility: hidden;
-  opacity: 0;
+  visibility: visible;
+  opacity: 5;
 
   -webkit-transition: opacity 0.4s;
   -o-transition: opacity 0.4s;
@@ -528,7 +528,11 @@ iframe {
   transition: opacity 0.4s;
 }
 
+.alert-v{
 
+  margin-bottom: 23px;
+	
+}
 
 /* .alert-validate-s::after {
   content: "\f06a";
@@ -548,10 +552,6 @@ iframe {
   right: 5px;
 } */
 
-.alert-validate-s:hover:before {
-  visibility: visible;
-  opacity: 1;
-}
 
 @media (max-width: 992px) {
   .alert-validate::before {
