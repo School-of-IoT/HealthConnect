@@ -500,6 +500,13 @@ iframe {
     transform: translate(-50%, -50%);
     visibility: hidden;
 }
+
+@media only screen and (max-width: 600px) {
+  .loader {
+    margin-left: 120px;
+  }
+}
+
 .load_circle{
     width: 8px;
     height: 8px;
