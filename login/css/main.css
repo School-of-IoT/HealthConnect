@@ -615,13 +615,12 @@ iframe {
 .load_circle:nth-child(2){
     /* left:45%; */
     animation-delay: .1s;
-    margin-left: 22px;
+    margin-left: 25px;
 }
 .load_circle:nth-child(3){
-    left:
-    auto;
+    left: auto;
     right: 17px;
-    animation-delay: .4s;
+    animation-delay: .3s;
     /* margin-right: 19px; */
 }
 
