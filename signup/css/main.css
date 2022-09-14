@@ -203,7 +203,7 @@ iframe {
   flex-direction: column;
   align-items: stretch;
   overflow: hidden;
-  padding: 77px 35px 33px 35px;
+  padding: 42px 35px 33px 35px;
   box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
   -moz-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
   -webkit-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
