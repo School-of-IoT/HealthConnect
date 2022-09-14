@@ -44,42 +44,59 @@
 				
 				<form class="login100-form validate-form">
 					<span class="login100-form-title p-b-26">
-						Welcome Patient!
+						Create your Account Now!
 					</span>
 
 					<div class="wrap-input100 validate-input">
-						<input class="input100" type="text" name="User" id="User">
+						<input class="input100" type="text" name="name" id="name">
+						<span class="focus-input100" data-placeholder="First and Last Name"></span>
+					</div>
+					<div class="wrap-input100 validate-input">
+						<input class="input100" type="date" name="birthdate" id="birthdate">
+						<span class="focus-input100" data-placeholder="Date Of Birth"></span>
+					</div>
+					<div class="wrap-input100 validate-input">
+						<input class="input100" type="number" name="phone" id="phone">
+						<span class="focus-input100" data-placeholder="Phone"></span>
+					</div>
+					<div class="wrap-input100 validate-input">
+						<input class="input100" type="email" name="email" id="email">
+						<span class="focus-input100" data-placeholder="Email"></span>
+					</div>
+					<div class="wrap-input100 validate-input">
+						<input class="input100" type="text" name="location" id="location">
+						<span class="focus-input100" data-placeholder="Location"></span>
+					</div>
+					<div class="wrap-input100 validate-input">
+						<input class="input100" type="text" name="username" id="username">
 						<span class="focus-input100" data-placeholder="Username"></span>
+					</div>
+					<div class="wrap-input100 validate-input">
+						<span class="btn-show-pass">
+							<i class="zmdi zmdi-eye"></i>
+						</span>
+						<input class="input100" type="password" name="pass1" id="pass1">
+						<span class="focus-input100" data-placeholder="Enter your Password"></span>
 					</div>
 
 					<div class="wrap-input100 validate-input">
 						<span class="btn-show-pass">
 							<i class="zmdi zmdi-eye"></i>
 						</span>
-						<input class="input100" type="password" name="pass" id="pass">
-						<span class="focus-input100" data-placeholder="Password"></span>
+						<input class="input100" type="password" name="pass2" id="pass2">
+						<span class="focus-input100" data-placeholder="Repeat your Password"></span>
 					</div>
 
 					<div class="container-login100-form-btn">
-						<span class="alert-v" data-validate="Incorrect username or Password"></span>
+						<span class="alert-v" data-validate="Password does not Match !! Try again."></span>
 						<div class="wrap-login100-form-btn">
 							<div class="login100-form-bgbtn"></div>
 							<button class="login100-form-btn">
-								Login
+								Sign Up
 							</button>
 						</div>
 					</div>
 
-					<div class="text-center p-t-15 d-f-v">
-						
-						<span class="txt1">
-							Don’t have an account?
-						</span>
-
-						<a class="txt2" href="../signup/">
-							Sign Up
-						</a>
-					</div>
 				</form>
 			</div>
 		</div>
