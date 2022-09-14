@@ -90,14 +90,18 @@ function setCookie(uid,value,exp_days) {
     }
 
     function showValidate(input) {
-        
-        $(".alert").addClass('alert-validate-s');
+        let thisAlert = $(input).parent();
+
+        $(thisAlert).addClass('alert-validate');
+        $(".alert-v").addClass('alert-validate-s');
         $(".loader").css("visibility", "hidden");
     }
 
     function hideValidate(input) {
-        
-        $(".alert").removeClass('alert-validate-s');
+        let thisAlert = $(input).parent();
+
+        $(thisAlert).removeClass('alert-validate');
+        $(".alert-v").addClass('alert-validate-s');
     }
     
     /*==================================================================
