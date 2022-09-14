@@ -564,7 +564,7 @@ iframe {
 
 .loader{
     /* width: -59px; */
-    margin-top: -57px;
+    margin-top: -47px;
     /* margin-left: 142px; */
     /* height: 0px; */
     /* padding: initial; */
@@ -592,7 +592,7 @@ iframe {
     position: absolute;
     border-radius: 50%;
     background-color: #69a0f2;
-    left:15%;
+    left: -25px;
     transform-origin: 50%;
     animation: load_circle .5s alternate infinite ease;
     /* margin-left: 10px; */
@@ -619,8 +619,8 @@ iframe {
 }
 .load_circle:nth-child(3){
     left: auto;
-    right: 17px;
-    animation-delay: .3s;
+    right: -33px;
+    animation-delay: .2s;
     /* margin-right: 19px; */
 }
 
