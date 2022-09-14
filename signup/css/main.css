@@ -32,9 +32,19 @@
 [ RESTYLE TAG ]*/
 
 * {
-	margin: 0px; 
-	padding: 0px; 
+	margin: 0px;
+	padding: 0px;
 	box-sizing: border-box;
+	justify-content: space-around;
+	align-items: center;
+	align-content: center;
+	flex-wrap: nowrap;
+	flex-direction: row;
+}
+
+.line {
+    display: flex;
+    flex-direction: row;
 }
 
 body, html {
@@ -164,7 +174,7 @@ iframe {
 }
 
 .container-login100 {
-  width: 100%;  
+  width: 100%;
   min-height: 100vh;
   display: -webkit-box;
   display: -webkit-flex;
@@ -175,23 +185,25 @@ iframe {
   justify-content: center;
   align-items: center;
   padding: 15px;
-  background: #0a2558;  
+  background: #0a2558;
 }
 
 .wrap-login100 {
-  width: 390px;
+  width: 749px;
   background: #fff;
   border-radius: 10px;
   display: flex;
+  align-content: initial;
   flex-direction: column;
-  align-items: center;
+  align-items: stretch;
   overflow: hidden;
-  padding: 77px 55px 33px 55px;
+  padding: 77px 35px 33px 35px;
   box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
   -moz-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
   -webkit-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
   -o-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
   -ms-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
+  align-content: space-around;
 }
 
 
@@ -218,7 +230,7 @@ iframe {
 [ Input ]*/
 
 .wrap-input100 {
-  width: 100%;
+  width: 45%;
   position: relative;
   border-bottom: 2px solid #adadad;
   margin-bottom: 37px;
@@ -250,18 +262,16 @@ iframe {
 
 .focus-input100::before {
   content: "";
-  display: block;
-  position: absolute;
+  /* display: block; */
+  /* position: absolute; */
   bottom: -2px;
   left: 0;
   width: 0;
   height: 2px;
-
   -webkit-transition: all 0.4s;
   -o-transition: all 0.4s;
   -moz-transition: all 0.4s;
   transition: all 0.4s;
-
   background: #6a7dfe;
   background: -webkit-linear-gradient(left, #21d4fd, #b721ff);
   background: -o-linear-gradient(left, #21d4fd, #b721ff);
@@ -273,16 +283,14 @@ iframe {
   font-family: Poppins-Regular;
   font-size: 15px;
   color: #999999;
-  line-height: 1.2;
-
+  line-height: 0;
   content: attr(data-placeholder);
   display: block;
   width: 100%;
-  position: absolute;
+  /* position: absolute; */
   top: 16px;
   left: 0px;
   padding-left: 5px;
-
   -webkit-transition: all 0.4s;
   -o-transition: all 0.4s;
   -moz-transition: all 0.4s;
