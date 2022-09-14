@@ -505,6 +505,11 @@ iframe {
   .loader {
     margin-left: 120px;
   }
+	.wrap-login100 {
+	    width: 390px;
+	    padding: 67px 30px 33px 36px;
+
+	}
 }
 
 .load_circle{
