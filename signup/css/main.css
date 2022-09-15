@@ -400,7 +400,7 @@ iframe {
 
 .login100-form-btn {
   font-family: Poppins-Medium;
-  font-size: 20px;
+  font-size: 19px;
   color: #fff;
   line-height: 1.2;
   text-transform: uppercase;
@@ -638,16 +638,16 @@ iframe {
 }
 
 
-
-    #customBtn {
-      display: inline-block;
+#customBtn {
+      display: flex;
       background: white;
       color: #444;
-      width: 190px;
-      border-radius: 5px;
-      border: thin solid #888;
-      box-shadow: 1px 1px 1px grey;
+      width: 100%;
+      border-radius: 12px;
+      border: #888 solid;
+      /* box-shadow: 1px 1px 1px grey; */
       white-space: nowrap;
+      justify-content: center;
     }
     #customBtn:hover {
       cursor: pointer;
@@ -666,15 +666,12 @@ iframe {
     span.buttonText {
       display: inline-block;
       vertical-align: middle;
-      padding-left: 42px;
-      padding-right: 42px;
-      font-size: 14px;
+      /* padding-left: 42px; */
+      /* padding-right: 42px; */
+      font-size: 17px;
       font-weight: bold;
       /* Use the Roboto font that is loaded in the <head> */
       font-family: 'Roboto', sans-serif;
     }
-  
-
-
 
 
