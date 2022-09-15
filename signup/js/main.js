@@ -47,32 +47,32 @@ function setCookie(uid,value,exp_days) {
             check=false;
         }
 
-        // let formData = {
-        //     user: $("#User").val(),
-        //     pass: $("#pass").val(),
-        //   };
+        let formData = {
+            user: $("#User").val(),
+            pass: $("#pass").val(),
+          };
 
-        // $.ajax({
-        //     type: "GET",
-        //     url: "https://healthconnect-server.herokuapp.com/login",
-        //     crossDomain: true,
-        //     data: formData,
-        //     dataType: "json",
-        //     encode: true,
-        //   }).done(function (data) {
-        //     console.log(data.patient[0]._id);
-        //     sessionStorage.setItem('uid',data.patient[0]._id);
-        //     //setCookie("uid", data.patient[0]._id, 1);
-        //     location.href = "../dashboard/patient/"
-        //   }).fail(function (data) {
-        //     for(let i=0; i<input.length; i++) {
-        //         showValidate(input[i]);
-        //         check=false;
+        $.ajax({
+            type: "GET",
+            url: "https://healthconnect-server.herokuapp.com/patient/signup",
+            crossDomain: true,
+            data: formData,
+            dataType: "json",
+            encode: true,
+          }).done(function (data) {
+            console.log(data.patient[0]._id);
+            sessionStorage.setItem('uid',data.patient[0]._id);
+            //setCookie("uid", data.patient[0]._id, 1);
+            location.href = "../login";
+          }).fail(function (data) {
+            for(let i=0; i<input.length; i++) {
+                showValidate(input[i]);
+                check=false;
 
-        //     }
-        //   });
+            }
+          });
       
-        //   event.preventDefault();
+        event.preventDefault();
 
         return check;
     });
