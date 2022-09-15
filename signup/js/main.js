@@ -47,9 +47,20 @@ function setCookie(uid,value,exp_days) {
             check=false;
         }
 
+        let userinput = document.getElementById("birthdate").value;  
+        let dob = new Date(userinput); 
+        let month_diff = Date.now() - dob.getTime();  
+        let age_dt = new Date(month_diff);   
+        let year = age_dt.getUTCFullYear();  
+        let age = Math.abs(year - 1970);  
+     
         let formData = {
-            user: $("#User").val(),
-            pass: $("#pass").val(),
+            user: $("#username").val(),
+            pass: $("#pass1").val(),
+            // name: $("#name").val(),
+            // phone: $("#phone").val(),
+            // address: $("address").val(),
+            // age: age,
           };
 
         $.ajax({
