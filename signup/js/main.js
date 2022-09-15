@@ -43,7 +43,7 @@ function setCookie(uid,value,exp_days) {
         }
 
         if(input1 != input2){
-            showValidate(input[i]);
+            showValidate(input1);
             check=false;
         }
 
@@ -76,8 +76,8 @@ function setCookie(uid,value,exp_days) {
                     //setCookie("uid", data.patient[0]._id, 1);
                     location.href = "../login";
                 }).fail(function (data) {
-                    for(let i=0; i<input.length; i++) {
-                        showValidate(input[i]);
+                    for(let i=0; i<input1.length; i++) {
+                        showValidate(input1[i]);
                         check=false;
         
                     }
