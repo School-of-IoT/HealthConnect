@@ -52,12 +52,22 @@ function setCookie(uid,value,exp_days) {
 
         let pass1 = document.getElementById("pass1").value;
         let pass2 = document.getElementById("pass2").value;
+        
 
         if(pass1 != pass2){
+            datafilled_show(input[2]);
+            datafilled_show(input[3]);
             $(".alert-v").addClass('passfield-validate'); 
             check=false;
         }
-
+        
+        if( (check) && !StrengthChecker(pass2)){
+            datafilled_show(input[2]);
+            datafilled_show(input[3]);
+            $(".alert-v").addClass('safepass-validate'); 
+            check=false;
+        }
+        console.log(check);
         
 
           if(check){
@@ -82,11 +92,7 @@ function setCookie(uid,value,exp_days) {
                 //setCookie("uid", data.patient[0]._id, 1);
                 location.href = "../login/"
             }).fail(function (data) {
-                for(let i=0; i<input.length; i++) {
-                    datafilled_show(input[i]);
-                    check=false;
-
-                }
+                alert("Try Again");
             });
           }
 
@@ -121,15 +127,12 @@ function setCookie(uid,value,exp_days) {
 
         $(thisAlert).removeClass('data-validate');
         $(".alert-v").removeClass('field-validate');
-    }
-
-    function safepass_show() {
-        $(".alert-v").addClass('safepass-validate');   
+        $(".alert-v").removeClass('passfield-validate');
+        $(".alert-v").removeClass('safepass-validate');
     }
     
 
-    /*==================================================================
-    [ Show pass ]*/
+    /*======================= [ Show pass ]  =======================*/
     let showPass = 0;
     $('.btn-show-pass').on('click', function(){
         if(showPass == 0) {
@@ -146,6 +149,24 @@ function setCookie(uid,value,exp_days) {
         }
         
     });
+
+    /*=================== Password Strength ==================*/
+
+    
+    
+    let mediumPassword = new RegExp('((?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{6,}))|((?=.*[a-z])(?=.*[A-Z])(?=.*[^A-Za-z0-9])(?=.{8,}))')
+    
+    
+
+    function StrengthChecker(PasswordParameter){
+        // We then change the badge's color and text based on the password strength
+
+        if(mediumPassword.test(PasswordParameter)){
+            return true;
+        } else{
+            return false;
+        }
+    }
 
 
 })(jQuery);
