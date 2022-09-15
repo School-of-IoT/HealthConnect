@@ -26,8 +26,8 @@ function setCookie(uid,value,exp_days) {
   
    
     /*=============== [ Validate ]  ===============*/
-    let input1 = $('#pass1');
-    let input2 = $('#pass2');
+    let input1 = $('#pass1').val();
+    let input2 = $('#pass2').val();
 
     $('.validate-form').on('submit',function(event){
         
@@ -43,7 +43,7 @@ function setCookie(uid,value,exp_days) {
         }
 
         if(input1 != input2){
-            showValidate(input1[i]);
+            showValidate(input[i]);
             check=false;
         }
 
@@ -53,7 +53,7 @@ function setCookie(uid,value,exp_days) {
         let age_dt = new Date(month_diff);   
         let year = age_dt.getUTCFullYear();  
         let age = Math.abs(year - 1970);  
-     
+        
         let formData = {
             user: $("#username").val(),
             pass: $("#pass1").val(),
@@ -62,26 +62,28 @@ function setCookie(uid,value,exp_days) {
             // address: $("address").val(),
             // age: age,
           };
-
-        $.ajax({
-            type: "GET",
-            url: "https://healthconnect-server.herokuapp.com/patient/signup",
-            crossDomain: true,
-            data: formData,
-            dataType: "json",
-            encode: true,
-          }).done(function (data) {
-            console.log(data.patient[0]._id);
-            sessionStorage.setItem('uid',data.patient[0]._id);
-            //setCookie("uid", data.patient[0]._id, 1);
-            location.href = "../login";
-          }).fail(function (data) {
-            for(let i=0; i<input.length; i++) {
-                showValidate(input[i]);
-                check=false;
-
-            }
-          });
+        if(check){
+                $.ajax({
+                    type: "GET",
+                    url: "https://healthconnect-server.herokuapp.com/patient/signup",
+                    crossDomain: true,
+                    data: formData,
+                    dataType: "json",
+                    encode: true,
+                }).done(function (data) {
+                    console.log(data.patient[0]._id);
+                    sessionStorage.setItem('uid',data.patient[0]._id);
+                    //setCookie("uid", data.patient[0]._id, 1);
+                    location.href = "../login";
+                }).fail(function (data) {
+                    for(let i=0; i<input.length; i++) {
+                        showValidate(input[i]);
+                        check=false;
+        
+                    }
+                });
+        }
+        
       
         event.preventDefault();
 
