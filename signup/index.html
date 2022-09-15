@@ -5,26 +5,26 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
-<link rel="apple-touch-icon" sizes="180x180" href="../../assets/favicon/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="../../assets/favicon/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="../../assets/favicon/favicon-16x16.png">
-<link rel="manifest" href="../../assets/favicon/site.webmanifest">
+<link rel="apple-touch-icon" sizes="180x180" href="../assets/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon/favicon-16x16.png">
+<link rel="manifest" href="../assets/favicon/site.webmanifest">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+	<!-- <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css"> -->
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+	<!-- <link rel="stylesheet" type="text/css" href="vendor/animate/animate.css"> -->
 <!--===============================================================================================-->	
-	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+	<!-- <link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css"> -->
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+	<!-- <link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css"> -->
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+	<!-- <link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css"> -->
 <!--===============================================================================================-->	
-	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+	<!-- <link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css"> -->
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="css/util.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
@@ -32,32 +32,7 @@
 
 <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
   <script src="https://apis.google.com/js/api:client.js"></script>
-  <script>
-  var googleUser = {};
-  var startApp = function() {
-    gapi.load('auth2', function(){
-      // Retrieve the singleton for the GoogleAuth library and set up the client.
-      auth2 = gapi.auth2.init({
-        client_id: 'YOUR_CLIENT_ID.apps.googleusercontent.com',
-        cookiepolicy: 'single_host_origin',
-        // Request scopes in addition to 'profile' and 'email'
-        //scope: 'additional_scope'
-      });
-      attachSignin(document.getElementById('customBtn'));
-    });
-  };
-
-  function attachSignin(element) {
-    console.log(element.id);
-    auth2.attachClickHandler(element, {},
-        function(googleUser) {
-          document.getElementById('name').innerText = "Signed in: " +
-              googleUser.getBasicProfile().getName();
-        }, function(error) {
-          alert(JSON.stringify(error, undefined, 2));
-        });
-  }
-  </script>
+  <script src="js/googleauth.js"></script>
 </head>
 <body>
 	
@@ -76,11 +51,11 @@
 						Create your Account Now!
 					</span>
 				<div class="line">
-									<div class="wrap-input100 validate-input">
+									<div class="wrap-input100">
 										<input class="input100" type="text" name="name" id="name">
 										<span class="focus-input100" data-placeholder="First and Last Name"></span>
 									</div>
-									<div class="wrap-input100 validate-input">
+									<div class="wrap-input100">
 										<input class="input100" type="text" name="username" id="username">
 										<span class="focus-input100" data-placeholder="Username"></span>
 									</div>
@@ -103,22 +78,22 @@
 					</div>
 				</div>
 				<div class="line">
-								<div class="wrap-input100 validate-input">
+								<div class="wrap-input100">
 									<input class="input100" type="number" name="phone" id="phone">
 									<span class="focus-input100" data-placeholder="Phone"></span>
 								</div>
-								<div class="wrap-input100 validate-input">
+								<div class="wrap-input100">
 									<input class="input100" type="email" name="email" id="email">
 									<span class="focus-input100" data-placeholder="Email"></span>
 								</div>
 				</div>
 
 				<div class="line">
-					<div class="wrap-input100 validate-input">
+					<div class="wrap-input100">
 						<input class="input100" type="text" name="address" id="address">
 						<span class="focus-input100" data-placeholder="Address"></span>
 					</div>
-					<div class="wrap-input100 validate-input">
+					<div class="wrap-input100">
 						<input class="input100" type="date" name="birthdate" id="birthdate">
 						<span class="focus-input100" data-placeholder="Date Of Birth"></span>
 					</div>
@@ -152,25 +127,23 @@
 		</div>
 	</div>
 	
-
-	<div id="dropDownSelect1"></div>
-	
 <!--===============================================================================================-->
 	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<!-- ===============================================================================================-->
+	<!-- <script src="vendor/animsition/js/animsition.min.js"></script> -->
 <!--===============================================================================================-->
-	<script src="vendor/animsition/js/animsition.min.js"></script>
+	<!-- <script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script> -->
 <!--===============================================================================================-->
-	<script src="vendor/bootstrap/js/popper.js"></script>
-	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+	<!-- <script src="vendor/select2/select2.min.js"></script> -->
 <!--===============================================================================================-->
-	<script src="vendor/select2/select2.min.js"></script>
+	<!-- <script src="vendor/daterangepicker/moment.min.js"></script>
+	<script src="vendor/daterangepicker/daterangepicker.js"></script> -->
 <!--===============================================================================================-->
-	<script src="vendor/daterangepicker/moment.min.js"></script>
-	<script src="vendor/daterangepicker/daterangepicker.js"></script>
-<!--===============================================================================================-->
-	<script src="vendor/countdowntime/countdowntime.js"></script>
-<!--===============================================================================================-->
+	<!-- <script src="vendor/countdowntime/countdowntime.js"></script> -->
+<!--=============================================================================================== -->
+
 	<script src="js/main.js"></script>
 
 </body>

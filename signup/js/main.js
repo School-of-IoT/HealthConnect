@@ -26,7 +26,8 @@ function setCookie(uid,value,exp_days) {
   
    
     /*=============== [ Validate ]  ===============*/
-    let input = $('.validate-input .input100');
+    let input1 = $('#pass1');
+    let input2 = $('#pass2');
 
     $('.validate-form').on('submit',function(event){
         
@@ -34,39 +35,44 @@ function setCookie(uid,value,exp_days) {
         
         let check = true;
 
-        for(let i=0; i<input.length; i++) {
-            if(validate(input[i]) == false){
-                showValidate(input[i]);
+        for(let i=0; i<input1.length; i++) {
+            if(validate(input1[i]) == false){
+                showValidate(input1[i]);
                 check=false;
             }
         }
 
-        let formData = {
-            user: $("#User").val(),
-            pass: $("#pass").val(),
-          };
+        if(input1 != input2){
+            showValidate(input1[i]);
+            check=false;
+        }
 
-        $.ajax({
-            type: "GET",
-            url: "https://healthconnect-server.herokuapp.com/login",
-            crossDomain: true,
-            data: formData,
-            dataType: "json",
-            encode: true,
-          }).done(function (data) {
-            console.log(data.patient[0]._id);
-            sessionStorage.setItem('uid',data.patient[0]._id);
-            //setCookie("uid", data.patient[0]._id, 1);
-            location.href = "../dashboard/patient/"
-          }).fail(function (data) {
-            for(let i=0; i<input.length; i++) {
-                showValidate(input[i]);
-                check=false;
+        // let formData = {
+        //     user: $("#User").val(),
+        //     pass: $("#pass").val(),
+        //   };
 
-            }
-          });
+        // $.ajax({
+        //     type: "GET",
+        //     url: "https://healthconnect-server.herokuapp.com/login",
+        //     crossDomain: true,
+        //     data: formData,
+        //     dataType: "json",
+        //     encode: true,
+        //   }).done(function (data) {
+        //     console.log(data.patient[0]._id);
+        //     sessionStorage.setItem('uid',data.patient[0]._id);
+        //     //setCookie("uid", data.patient[0]._id, 1);
+        //     location.href = "../dashboard/patient/"
+        //   }).fail(function (data) {
+        //     for(let i=0; i<input.length; i++) {
+        //         showValidate(input[i]);
+        //         check=false;
+
+        //     }
+        //   });
       
-          event.preventDefault();
+        //   event.preventDefault();
 
         return check;
     });
