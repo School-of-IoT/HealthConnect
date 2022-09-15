@@ -444,7 +444,7 @@ iframe {
 }
 
 
-/* .alert-validate::before {
+/* .data-validate::before {
   content: attr(data-validate);
   position: absolute;
   max-width: 70%;
@@ -478,7 +478,7 @@ iframe {
 
 
 
-.alert-validate::after {
+.data-validate::after {
   content: "\f06a";
   font-family: FontAwesome;
   font-size: 16px;
@@ -506,13 +506,13 @@ iframe {
   margin-bottom: 10px;
 }
 
-.alert-validate:hover:before {
+.data-validate:hover:before {
   visibility: visible;
   opacity: 1;
 }
 
-.alert-validate-s::before {
-  content: attr(data-validate);
+.field-validate::before {
+  content: attr(field-validate);
   
   max-width: 70%;
   background-color: #fff;
@@ -543,13 +543,77 @@ iframe {
   transition: opacity 0.4s;
 }
 
-.alert-v{
+.passfield-validate::before {
+  content: attr(passfield-validate);
+  
+  max-width: 70%;
+  background-color: #fff;
+  border: 1px solid #c80000;
+  border-radius: 2px;
+  padding: 4px 10px 4px 10px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+  right: 0px;
+  pointer-events: none;
+
+  font-family: Poppins-Regular;
+  color: #c80000;
+  font-size: 13px;
+  line-height: 1.4;
+  text-align: left;
+
+  visibility: visible;
+  opacity: 5;
+
+  -webkit-transition: opacity 0.4s;
+  -o-transition: opacity 0.4s;
+  -moz-transition: opacity 0.4s;
+  transition: opacity 0.4s;
+}
+
+.safepass-validate::before {
+  content: attr(safepass-validate);
+  
+  max-width: 70%;
+  background-color: #fff;
+  border: 1px solid #c80000;
+  border-radius: 2px;
+  padding: 4px 10px 4px 10px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+  right: 0px;
+  pointer-events: none;
+
+  font-family: Poppins-Regular;
+  color: #c80000;
+  font-size: 13px;
+  line-height: 1.4;
+  text-align: left;
+
+  visibility: visible;
+  opacity: 5;
+
+  -webkit-transition: opacity 0.4s;
+  -o-transition: opacity 0.4s;
+  -moz-transition: opacity 0.4s;
+  transition: opacity 0.4s;
+}
+
+.alert-v
 
   margin-bottom: 23px;
 	
 }
 
-/* .alert-validate-s::after {
+/* .data-validate-s::after {
   content: "\f06a";
   font-family: FontAwesome;
   font-size: 16px;
@@ -569,7 +633,7 @@ iframe {
 
 
 @media (max-width: 992px) {
-  .alert-validate::before {
+  .data-validate::before {
     visibility: visible;
     opacity: 1;
   }
