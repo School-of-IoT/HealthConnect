@@ -26,8 +26,8 @@ function setCookie(uid,value,exp_days) {
   
    
     /*=============== [ Validate ]  ===============*/
-    let input1 = $('#pass1').val();
-    let input2 = $('#pass2').val();
+    var input1 = document.getElementById("pass1").value;
+    var input2 = document.getElementById("pass2").value;
 
     $('.validate-form').on('submit',function(event){
         
