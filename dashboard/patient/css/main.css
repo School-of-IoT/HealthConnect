@@ -205,15 +205,6 @@ nav .profile-details i{
   font-size: 25px;
   color: #333;
 }
-.home-section .box-content{
-  position: relative;
-  padding-top: 104px;
-}
-
-.home-section .emsc-content{
-    position: relative;
-    padding-top: 104px;
-  }
 
 .box-content .overview-boxes{
   display: flex;
