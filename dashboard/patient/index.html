@@ -10,7 +10,6 @@
   <link rel="icon" type="image/png" sizes="16x16" href="../../assets/favicon/favicon-16x16.png">
   <link rel="manifest" href="../../assets/favicon/site.webmanifest">
 
-  <link rel="stylesheet" href="../../assets/css/style.css">
   <link rel="stylesheet" href="css/main.css">
   <!-- Boxicons CDN Link -->
   <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
@@ -41,33 +40,31 @@
             <i class='bx bx-home-alt'></i>
             <span class="links_name">Home</span>
         </li> -->
-        <li>
+        <li class = "diagnosis content">
             <i class='bx bx-line-chart'></i>
             <span class="links_name">Diagnosis</span>
         </li>
-        <li>
+        <li class = "treatment content">
             <i class='bx bxs-capsule'></i>
             <span class="links_name">Treatment</span>
         </li>
-        <li>
+        <li class = "schedule content">
             <i class='bx bx-time'></i>
             <span class="links_name">Schedule</span>
         </li>
-        <li>
+        <li class = "nursenotes content">
             <i class='bx bx-edit-alt'></i>
             <span class="links_name">Nurse Notes</span>
         </li>
-        <li>
+        <li class = "appointment content">
             <i class='bx bx-calendar'></i>
             <span class="links_name">Appointment</span>
         </li>
-        <li>
+        <li class = "helpline content">
             <i class='bx bxs-phone-call'></i>
             <span class="links_name">Helpline Number</span>
         </li>
-        <li>
-          <!-- id="trigger" onclick="toggle()  -->
-          <a target="_blank" href="https://dodxtx.shinyapps.io/EMSC/" >
+        <li class="symptom-bot content">
             <i class='bx bxs-bot '></i>
             <span class="links_name">Symptoms ChatBot</span>
           </a>
@@ -95,7 +92,9 @@
         </div>
       </nav>
 
-      <div class="box-content">
+
+
+      <div class="box-content dashboard active">
         <div class="overview-boxes">
           <div class="box">
             <div class="right-side">
@@ -219,6 +218,14 @@
             <i class="fas fa-lungs cart two"></i>
           </div>
         </div>
+      </div>
+
+      <div class="symptom-bot dashboard active">
+
+        <iframe style="height: 100%; width: 100%; border: none;" src="https://dodxtx.shinyapps.io/EMSC/"></iframe> 
+
+      </div>
+
     </section>
 
 <!-- </div>
