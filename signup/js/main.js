@@ -83,7 +83,7 @@ function setCookie(uid,value,exp_days) {
                 age: age,
               };
             $.ajax({
-                type: "POST",
+                type: "GET",
                 url: "https://healthconnect-server.herokuapp.com/patient/signup",
                 crossDomain: true,
                 data: formData,
