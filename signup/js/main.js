@@ -100,7 +100,7 @@ function setCookie(uid,value,exp_days) {
                 console.log(age);
             });
           }
-
+          $(".loader").css("visibility", "hidden");
           event.preventDefault();
         
         return check;

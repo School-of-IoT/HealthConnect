@@ -643,18 +643,18 @@ iframe {
 .loader{
     /* width: -59px; */
     /* margin-top: 699px; */
-    /* top: -61px; */
+    top: 16px;
     /* margin-left: 142px; */
     /* height: 0px; */
     /* padding: initial; */
-    /* position: absolute; */
+    position: absolute;
     transform: translate(-50%, -50%);
     visibility: hidden;
 }
 
 @media only screen and (max-width: 600px) {
   .loader {
-    margin-top: -730px;
+    margin-top: 21px;
   }
 	.wrap-login100 {
 	    width: 390px;
