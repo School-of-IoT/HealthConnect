@@ -1268,6 +1268,7 @@ nav .profile-details i{
 
 .dashboard.active {
     visibility: visible;
+    position: absolute;
 }
 
 .dashboard {
