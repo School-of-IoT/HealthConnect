@@ -1269,17 +1269,13 @@ nav .profile-details i{
 .dashboard.active {
     visibility: visible;
     position: absolute;
+    width: 100%;
+    top: 10.5%;
+    height: calc(100% - 90px);
 }
 
 .dashboard {
     visibility: hidden;
-}
-
-
-.symptom-bot.dashboard.active {
-    width: 100%;
-    top: 76px;
-    height: calc(100% - 87px);
 }
 
 iframe {
