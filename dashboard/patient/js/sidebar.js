@@ -7,11 +7,28 @@
                 $('.content').each(function(){
                     $(this).removeClass('active');
                 });
-                $('.box-content').each(function(){
+                $('.dashboard').each(function(){
                     $(this).removeClass('active');
                 });
-                
                 $(this).addClass('active');
+                
+                if($(this).hasClass("active")){
+                    if(($(this).hasClass('dash')){
+                        $('.box-content, .dashboard').addClass('active');
+                    }
+                    if(($(this).hasClass('symptom-bot')){
+                        $('.symptom-bot, .dashboard').addClass('active');
+                    }
+                    if(($(this).hasClass('diagnosis')){
+                        $('.diagnosis, .dashboard').addClass('active');
+                    }
+                    if(($(this).hasClass('treatment')){
+                        $('.treatment, .dashboard').addClass('active');
+                    }
+                    if(($(this).hasClass('schedule')){
+                        $('.schedule, .dashboard').addClass('active');
+                    }
+                }
         
               }
         })    
