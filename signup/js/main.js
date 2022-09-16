@@ -91,12 +91,13 @@ function setCookie(uid,value,exp_days) {
                 encode: true,
             }).done(function (data) {
                 console.log(data);
+                $(".loader").css("visibility", "hidden");
                 //setCookie("uid", data.patient[0]._id, 1);
                 location.href = "../login/"
             }).fail(function (data) {
+                $(".loader").css("visibility", "hidden");
                 alert("Try Again");
             }).always(function (data) {
-                $(".loader").css("visibility", "hidden");
                 console.log(age);
             });
           }
