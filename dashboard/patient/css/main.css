@@ -1274,16 +1274,12 @@ nav .profile-details i{
     visibility: hidden;
 }
 
-.home-section {}
 
 .symptom-bot.dashboard.active {
     width: 100%;
-    /* height: 100%; */
     top: 76px;
     height: calc(100% - 87px);
 }
-
-.symptom-bot.dashboard.active {/* height: 100%; */}
 
 iframe {
     height: calc(100% - 96px);

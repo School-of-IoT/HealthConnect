@@ -7,12 +7,16 @@
                 $('.content').each(function(){
                     $(this).removeClass('active');
                 });
-        
+                $('.box-content').each(function(){
+                    $(this).removeClass('active');
+                });
+                
                 $(this).addClass('active');
         
               }
         })    
     })
+    
 
 
 
