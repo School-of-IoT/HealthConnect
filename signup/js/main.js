@@ -26,11 +26,15 @@ function setCookie(uid,value,exp_days) {
     /*=============== [ Validate ]  ===============*/
     let input = $('.validate-input .input100');
 
+    $(".wrap-login100-form-btn").click(function(){
+        $(".loader").css("visibility", "visible");
+      });
+
     $('.validate-form').on('submit',function(event){
-        
+
         $(".alert-v").removeClass('passfield-validate');
         $(".alert-v").removeClass('safepass-validate');
-        $(".loader").css("visibility", "visible");
+        
         
         let check = true;
         
@@ -67,7 +71,6 @@ function setCookie(uid,value,exp_days) {
             $(".alert-v").addClass('safepass-validate'); 
             check=false;
         }
-        console.log(check);
         
 
           if(check){
@@ -93,11 +96,13 @@ function setCookie(uid,value,exp_days) {
                 location.href = "../login/"
             }).fail(function (data) {
                 alert("Try Again");
+            }).always(function (data) {
+                $(".loader").css("visibility", "hidden");
             });
           }
 
           event.preventDefault();
-        $(".loader").css("visibility", "hidden");
+        
         return check;
     });
 
