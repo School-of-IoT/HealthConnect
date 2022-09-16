@@ -31,7 +31,7 @@ function setCookie(uid,value,exp_days) {
       });
 
     $('.validate-form').on('submit',function(event){
-
+        $(".loader").css("visibility", "visible");
         $(".alert-v").removeClass('passfield-validate');
         $(".alert-v").removeClass('safepass-validate');
         
