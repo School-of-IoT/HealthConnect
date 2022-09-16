@@ -77,10 +77,10 @@ function setCookie(uid,value,exp_days) {
             let formData = {
                 user: $("#username").val(),
                 pass: $("#pass1").val(),
-                // name: $("#name").val(),
-                // phone: $("#phone").val(),
-                // address: $("address").val(),
-                // age: age,
+                name: $("#name").val(),
+                phone: $("#phone").val(),
+                address: $("address").val(),
+                age: age,
               };
             $.ajax({
                 type: "GET",
@@ -90,14 +90,14 @@ function setCookie(uid,value,exp_days) {
                 dataType: "json",
                 encode: true,
             }).done(function (data) {
-                console.log(data.patient[0]._id);
-                sessionStorage.setItem('uid',data.patient[0]._id);
+                console.log(data);
                 //setCookie("uid", data.patient[0]._id, 1);
                 location.href = "../login/"
             }).fail(function (data) {
                 alert("Try Again");
             }).always(function (data) {
                 $(".loader").css("visibility", "hidden");
+                console.log(age);
             });
           }
 
