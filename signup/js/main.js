@@ -74,37 +74,38 @@ function setCookie(uid,value,exp_days) {
         
 
           if(check){
-            let formData = 
+            // let formData = 
             
-            {
-                "newpatient": {
-                  "Name": $("#name").val(),
-                  "Address": $("address").val(),
-                  "Age": age,
-                  "Ambulation":false,
-                  "BMI": 0,
-                  "Chills":false,
-                  "Contacts": $("#phone").val(),
-                  "DBP": 0,
-                  "DecreasedMood":false,
-                  "FiO2": 0,
-                  "GeneralizedFatigue":false,
-                  "HeartRate": 0,
-                  "HistoryFever": "Never",
-                  "RR": 0,
-                  "RecentHospitalStay":"00/00/0000",
-                  "SBP": 0,
-                  "SpO2": 0,
-                  "Temp": 0,
-                  "WeightGain":0,
-                  "WeightLoss":0,
-                  "BGroup": $("#BGr").val(),
-                  "Sex": $("#sex").val(),
-                  "pass": $("#pass1").val(),
-                  "user": $("#username").val(),
-                }
-              };
-              
+            // {
+            //     "newpatient": {
+            //       "Name": $("#name").val(),
+            //       "Address": $("address").val(),
+            //       "Age": age,
+            //       "Ambulation":false,
+            //       "BMI": 0,
+            //       "Chills":false,
+            //       "Contacts": $("#phone").val(),
+            //       "DBP": 0,
+            //       "DecreasedMood":false,
+            //       "FiO2": 0,
+            //       "GeneralizedFatigue":false,
+            //       "HeartRate": 0,
+            //       "HistoryFever": "Never",
+            //       "RR": 0,
+            //       "RecentHospitalStay":"00/00/0000",
+            //       "SBP": 0,
+            //       "SpO2": 0,
+            //       "Temp": 0,
+            //       "WeightGain":0,
+            //       "WeightLoss":0,
+            //       "BGroup": $("#BGr").val(),
+            //       "Sex": $("#sex").val(),
+            //       "pass": $("#pass1").val(),
+            //       "user": $("#username").val(),
+            //     }
+            //   };
+             
+            //-----------------------------
 
             // {
             //     user: $("#username").val(),
@@ -118,8 +119,40 @@ function setCookie(uid,value,exp_days) {
                 type: "POST",
                 url: "https://healthconnect-server.herokuapp.com/patient/signup",
                 crossDomain: true,
-                data: formData,
+                data: {
+                    "newpatient": {
+                      "Name": $("#name").val(),
+                      "Address": $("address").val(),
+                      "Age": age,
+                      "Ambulation":false,
+                      "BMI": 0,
+                      "Chills":false,
+                      "Contacts": $("#phone").val(),
+                      "DBP": 0,
+                      "DecreasedMood":false,
+                      "FiO2": 0,
+                      "GeneralizedFatigue":false,
+                      "HeartRate": 0,
+                      "HistoryFever": "Never",
+                      "RR": 0,
+                      "RecentHospitalStay":"00/00/0000",
+                      "SBP": 0,
+                      "SpO2": 0,
+                      "Temp": 0,
+                      "WeightGain":0,
+                      "WeightLoss":0,
+                      "BGroup": $("#BGr").val(),
+                      "Sex": $("#sex").val(),
+                      "pass": $("#pass1").val(),
+                      "user": $("#username").val(),
+                    }
+                  },
                 dataType: "json",
+                beforeSend: function(x) {
+                    if (x && x.overrideMimeType) {
+                      x.overrideMimeType("application/j-son;charset=UTF-8");
+                    }
+                  },
                 encode: true,
             }).done(function (data) {
                 console.log(data);
