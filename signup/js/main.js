@@ -103,7 +103,7 @@ function setCookie(uid,value,exp_days) {
                   "pass": $("#pass1").val(),
                   "user": $("#username").val()
                 }
-              }
+              };
               
 
             // {
