@@ -74,16 +74,48 @@ function setCookie(uid,value,exp_days) {
         
 
           if(check){
-            let formData = {
-                user: $("#username").val(),
-                pass: $("#pass1").val(),
-                name: $("#name").val(),
-                phone: $("#phone").val(),
-                address: $("address").val(),
-                age: age,
-              };
+            let formData = 
+            
+            {
+                "newpatient": {
+                  "Name": $("#name").val(),
+                  "Address": $("address").val(),
+                  "Age": age,
+                  "Ambulation":false,
+                  "BMI": 0,
+                  "Chills":false,
+                  "Contacts": "+91 "+$("#phone").val(),
+                  "DBP": 0,
+                  "DecreasedMood":false,
+                  "FiO2": 0,
+                  "GeneralizedFatigue":false,
+                  "HeartRate": 0,
+                  "HistoryFever": "Never",
+                  "RR": 0,
+                  "RecentHospitalStay":"00/00/0000",
+                  "SBP": 0,
+                  "SpO2": 0,
+                  "Temp": 0,
+                  "WeightGain":0,
+                  "WeightLoss":0,
+                  "BGroup": $("#BGr").val(),
+                  "Sex": $("#sex").val(),
+                  "pass": $("#pass1").val(),
+                  "user": $("#username").val()
+                }
+              }
+              
+
+            // {
+            //     user: $("#username").val(),
+            //     pass: $("#pass1").val(),
+            //     name: $("#name").val(),
+            //     phone: $("#phone").val(),
+            //     address: $("address").val(),
+            //     age: age,
+            //   };
             $.ajax({
-                type: "GET",
+                type: "POST",
                 url: "https://healthconnect-server.herokuapp.com/patient/signup",
                 crossDomain: true,
                 data: formData,
