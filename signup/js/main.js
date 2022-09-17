@@ -84,7 +84,7 @@ function setCookie(uid,value,exp_days) {
                   "Ambulation":false,
                   "BMI": 0,
                   "Chills":false,
-                  "Contacts": "+91 "+$("#phone").val(),
+                  "Contacts": $("#phone").val(),
                   "DBP": 0,
                   "DecreasedMood":false,
                   "FiO2": 0,
@@ -101,7 +101,7 @@ function setCookie(uid,value,exp_days) {
                   "BGroup": $("#BGr").val(),
                   "Sex": $("#sex").val(),
                   "pass": $("#pass1").val(),
-                  "user": $("#username").val()
+                  "user": $("#username").val(),
                 }
               };
               
@@ -125,7 +125,7 @@ function setCookie(uid,value,exp_days) {
                 console.log(data);
                 $(".loader").css("visibility", "hidden");
                 //setCookie("uid", data.patient[0]._id, 1);
-                location.href = "../login/"
+                //location.href = "../login/"
             }).fail(function (data) {
                 $(".loader").css("visibility", "hidden");
                 alert("Try Again");
