@@ -61,7 +61,7 @@ a:focus {
 
 a:hover {
 	text-decoration: none;
-  color: #6a7dfe;
+  color: #0d1e95;
   color: -webkit-linear-gradient(left, #21d4fd, #b721ff);
   color: -o-linear-gradient(left, #21d4fd, #b721ff);
   color: -moz-linear-gradient(left, #21d4fd, #b721ff);
@@ -142,17 +142,21 @@ iframe {
 [ Utility ]*/
 .txt1 {
   font-family: Poppins-Regular;
-  font-size: 13px;
+  font-size: 15px;
   color: #666666;
   line-height: 1.5;
 }
 
 .txt2 {
-  font-family: Poppins-Regular;
-    font-size: 13px;
-    color: #00aaff;
-    line-height: 1.5;
-    font-weight: 600;
+  font-family: 'Poppins-Bold';
+  font-size: 17px;
+  color: #00aaff;
+  line-height: 1.5;
+  font-weight: 1000;
+}
+
+.txt2::hover{
+	color: #006395;
 }
 
 /*//////////////////////////////////////////////////////////////////
@@ -386,11 +390,10 @@ iframe {
 
 .login100-form-btn {
   font-family: Poppins-Medium;
-  font-size: 15px;
+  font-size: 18px;
   color: #fff;
-  line-height: 1.2;
+  /* line-height: 1.2; */
   text-transform: uppercase;
-
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
