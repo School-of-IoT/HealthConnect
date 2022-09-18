@@ -185,8 +185,9 @@ nav .search-box .bx-search{
   border: 2px solid #EFEEF1;
   border-radius: 6px;
   height: 50px;
-  min-width: 190px;
-  padding: 0 15px 0 2px;
+  /* min-width: 190px; */
+  padding: 0 2px 0 2px;
+  justify-content: center;
 }
 nav .profile-details img{
   height: 40px;
@@ -356,7 +357,7 @@ nav .profile-details i{
     left: 60px;
   }
   .sidebar.active ~ .home-section{
-    /* width: calc(100% - 220px); */
+    width: calc(100% - 220px);
     overflow: hidden;
     left: 220px;
   }
@@ -802,7 +803,7 @@ nav .profile-details i{
       margin-bottom: 15px;
     }
     .sidebar.active ~ .home-section nav .profile-details{
-      display: none;
+      /* display: none; */
     }
   }
   
@@ -1165,7 +1166,7 @@ nav .profile-details i{
     width: 60px;
   }
   .sidebar.active{
-    width: 220px;
+    /* width: 220px; */
   }
   .home-section{
     width: calc(100% - 60px);
@@ -1174,15 +1175,15 @@ nav .profile-details i{
   .sidebar.active ~ .home-section{
     /* width: calc(100% - 220px); */
     overflow: hidden;
-    left: 220px;
+    /* left: 220px; */
   }
   .home-section nav{
     width: calc(100% - 60px);
     left: 60px;
   }
   .sidebar.active ~ .home-section nav{
-    width: calc(100% - 220px);
-    left: 220px;
+    /* width: calc(100% - 220px); */
+    /* left: 220px; */
   }
 }
 @media (max-width: 1150px) {
@@ -1224,7 +1225,7 @@ nav .profile-details i{
     margin-bottom: 15px;
   }
   .sidebar.active ~ .home-section nav .profile-details{
-    display: none;
+    /* display: none; */
   }
 }
 
@@ -1256,7 +1257,7 @@ nav .profile-details i{
     margin-bottom: 15px;
   }
   .sidebar.active ~ .home-section nav .profile-details{
-    display: none;
+    /* display: none; */
   }
 }
 
