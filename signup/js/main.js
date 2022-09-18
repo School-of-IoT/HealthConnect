@@ -132,7 +132,7 @@ function setCookie(uid,value,exp_days) {
                 console.log(data);
                 $(".loader").css("visibility", "hidden");
                 //setCookie("uid", data.patient[0]._id, 1);
-                //location.href = "../login/"
+                location.href = "../login/"
             }).fail(function (data) {
                 $(".loader").css("visibility", "hidden");
                 alert("Try Again");
