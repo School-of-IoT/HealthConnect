@@ -217,10 +217,10 @@ nav .profile-details i{
 .overview-boxes .box{
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   width: calc(100% / 4 - 15px);
   background: #fff;
-  padding: 15px 14px;
+  padding: 15px 28px;
   margin: 14px 0px;
   border-radius: 12px;
   box-shadow: 0 5px 10px rgba(0,0,0,0.1);
@@ -1028,15 +1028,15 @@ nav .profile-details i{
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  padding: 0 20px;
+  padding: 0 37px;
   margin-bottom: 26px;
 }
 .overview-boxes .box{
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   width: calc(100% / 4 - 15px);
   background: #fff;
-  padding: 15px 14px;
+  padding: 15px 49px;
   border-radius: 12px;
   box-shadow: 0 5px 10px rgba(0,0,0,0.1);
   align-items: center;
