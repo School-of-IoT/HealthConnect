@@ -15,6 +15,7 @@
 }
 .sidebar.active{
   width: 60px;
+  top: 0px;
 }
 .container#blur.active{
   filter: blur(20px);
@@ -114,8 +115,12 @@ li.active {
   transition: all 0.5s ease;
 }
 .sidebar.active ~ .home-section{
+  /* width: calc(100% - 60px); */
+  /* left: 60px; */
   width: calc(100% - 60px);
-  left: 60px;
+  overflow: hidden;
+  left: 61px;
+  top: 80px;
 }
 .home-section nav{
   display: flex;
@@ -135,6 +140,7 @@ li.active {
 .sidebar.active ~ .home-section nav{
   left: 60px;
   width: calc(100% - 60px);
+  top: 0px;
 }
 .home-section nav .sidebar-button{
   display: flex;
@@ -217,13 +223,14 @@ nav .profile-details i{
 .overview-boxes .box{
   display: flex;
   align-items: center;
-  justify-content: space-between;
   width: calc(100% / 4 - 15px);
   background: #fff;
   padding: 15px 28px;
   margin: 14px 0px;
   border-radius: 12px;
   box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+  justify-content: space-around;
+  flex-direction: row;
 }
 .overview-boxes .box-topic{
   font-size: 20px;
@@ -329,7 +336,7 @@ nav .profile-details i{
 .sales-boxes .box .button{
   width: 100%;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
 }
 .sales-boxes .box .button a{
   color: #fff;
@@ -348,22 +355,30 @@ nav .profile-details i{
 @media (max-width: 1240px) {
   .sidebar{
     width: 60px;
+    top: 0px;
   }
   .sidebar.active{
     width: 220px;
   }
   .home-section{
-    width: calc(100% - 60px);
-    left: 60px;
+    /* width: calc(100% - 60px); */
+    /* left: 60px; */
+    width: calc(100% - 220px);
+    overflow: hidden;
+    left: 220px;
+    top: 59px;
   }
   .sidebar.active ~ .home-section{
     width: calc(100% - 220px);
     overflow: hidden;
     left: 220px;
+    top: 59px;
+    padding: 27px;
   }
   .home-section nav{
     width: calc(100% - 60px);
     left: 60px;
+    top: 0px;
   }
   .sidebar.active ~ .home-section nav{
     width: calc(100% - 220px);
@@ -935,7 +950,6 @@ li.active {
   height: 80px;
   background: #fff;
   display: flex;
-  align-items: center;
   position: fixed;
   width: calc(100% - 240px);
   left: 240px;
@@ -943,6 +957,7 @@ li.active {
   padding: 0 2px;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
   transition: all 0.5s ease;
+  align-items: center;
 }
 .sidebar.active ~ .home-section nav{
   left: 60px;
@@ -1036,7 +1051,7 @@ nav .profile-details i{
   justify-content: space-between;
   width: calc(100% / 4 - 15px);
   background: #fff;
-  padding: 15px 49px;
+  padding: 15px 27px;
   border-radius: 12px;
   box-shadow: 0 5px 10px rgba(0,0,0,0.1);
   align-items: center;
@@ -1164,6 +1179,7 @@ nav .profile-details i{
 @media (max-width: 1240px) {
   .sidebar{
     width: 60px;
+    top: 0px;
   }
   .sidebar.active{
     /* width: 220px; */
@@ -1180,6 +1196,7 @@ nav .profile-details i{
   .home-section nav{
     width: calc(100% - 60px);
     left: 60px;
+    top: 0px;
   }
   .sidebar.active ~ .home-section nav{
     /* width: calc(100% - 220px); */
