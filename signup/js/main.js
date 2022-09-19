@@ -198,10 +198,21 @@ function setCookie(uid,value,exp_days) {
     /*=================== Password Strength ==================*/
 
     
+    // StrongPassword - 
+        // At least one digit [0-9]
+        // At least one lowercase character [a-z]
+        // At least one uppercase character [A-Z]
+        // At least one special character [*.!@#$%^&(){}[]:;<>,.?/~_+-=|\]
+        // At least 8 characters in length
+    //let strongPassword = new RegExp('((?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{6,}))|((?=.*[a-z])(?=.*[A-Z])(?=.*[^A-Za-z0-9])(?=.{8,}))')
     
-    let mediumPassword = new RegExp('((?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{6,}))|((?=.*[a-z])(?=.*[A-Z])(?=.*[^A-Za-z0-9])(?=.{8,}))')
     
-    
+    // MediumPasword - 
+        // At least one digit [0-9]
+        // At least one lowercase character [a-z]
+        // At least one uppercase character [A-Z]
+        // At least 8 characters in length, but no more than 32.
+    let mediumPassword = new RegExp('(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,32}')
 
     function StrengthChecker(PasswordParameter){
         // We then change the badge's color and text based on the password strength
