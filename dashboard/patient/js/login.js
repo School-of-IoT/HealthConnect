@@ -26,7 +26,7 @@
         $('.fio2').text(data.patient.FiO2);
       }).fail(function (data) {
         console.log("failed");
-        window.location.href="../login/"
+        window.location.href="../../login/"
       });
 
 
