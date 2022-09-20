@@ -28,6 +28,9 @@
                     if(($(this).hasClass('schedule'))){
                         $('.schedule.dashboard').addClass('active');
                     }
+                    if(($(this).hasClass('device'))){
+                        $('.device.dashboard').addClass('active');
+                    }
                 }
         
               }
