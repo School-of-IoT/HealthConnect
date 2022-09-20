@@ -56,7 +56,7 @@ var cnt = 0;
 var interval = setInterval(function() {
   
   var y1 = Math.round(Math.random()*10) + 1
-  newArray1 = newArray1.concat(y)
+  newArray1 = newArray1.concat(y1)
   newArray1.splice(0, 1)
   
   var data_update1 = {
@@ -64,7 +64,7 @@ var interval = setInterval(function() {
   };
 
   var y2 = Math.round(Math.random()*10) + 1
-  newArray2 = newArray2.concat(y)
+  newArray2 = newArray2.concat(y2)
   newArray2.splice(0, 1)
   
   var data_update2 = {
@@ -72,7 +72,7 @@ var interval = setInterval(function() {
   };
 
   var y3 = Math.round(Math.random()*10) + 1
-  newArray3 = newArray3.concat(y)
+  newArray3 = newArray3.concat(y3)
   newArray3.splice(0, 1)
   
   var data_update3 = {
@@ -80,7 +80,7 @@ var interval = setInterval(function() {
   };
 
   var y4 = Math.round(Math.random()*10) + 1
-  newArray4 = newArray4.concat(y)
+  newArray4 = newArray4.concat(y4)
   newArray4.splice(0, 1)
   
   var data_update4 = {
