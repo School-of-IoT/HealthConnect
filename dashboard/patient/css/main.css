@@ -236,19 +236,22 @@ nav .profile-details i{
   border-radius: 12px;
   box-shadow: 0 5px 10px rgba(0,0,0,0.1);
 }
+
 .diagnosis-boxes .box{
   display: flex;
   align-items: center;
   /*justify-content: space-between;
    width: calc(100% / 4 - 15px); */
-  background: #d65858;
+  background: #ffffff;
   /* padding: 15px 28px; */
-  margin: 14px 79px;
+  margin: 14px 145px;
   border-radius: 74px;
   box-shadow: 0 5px 10px rgba(0,0,0,0.1);
   /* align-content: center;
   flex-wrap: nowrap; */
+  justify-content: center;
 }
+
 
 .overview-boxes .box-topic{
   font-size: 20px;
