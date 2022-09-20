@@ -1,7 +1,7 @@
 /* Googlefont Poppins CDN Link */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 *{
-  margin: 0;
+  margin: 0px;
   padding: 0px;
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
@@ -244,7 +244,7 @@ nav .profile-details i{
    width: calc(100% / 4 - 15px); */
   background: #ffffff;
   /* padding: 15px 28px; */
-  margin: 14px 145px;
+  margin: 14px 53px;
   border-radius: 74px;
   box-shadow: 0 5px 10px rgba(0,0,0,0.1);
   /* align-content: center;
@@ -1316,7 +1316,7 @@ iframe {
 
 
 .sys-heart {
-    padding: 43px;
+    padding: -40px -68px;
 }
 
 div#sys-heart-graph {
