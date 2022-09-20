@@ -1,61 +1,33 @@
-function rand() {
-  return Math.random();
+var arrayLength = 60
+var newArray = []
+
+for(var i = 0; i < arrayLength; i++) {
+  var y = Math.round(Math.random()*10) + 1
+  newArray[i] = y
 }
 
-var time = new Date();
-
-var trace1 = {
-  x: [],
-  y: [],
+Plotly.plot('sys-heart-graph', [{
+  y: newArray,
   mode: 'lines',
   line: {
     color: '#80CAF6',
     shape: 'spline'
   }
-}
-
-var trace2 = {
-  x: [],
-  y: [],
-  xaxis: 'x2',
-  yaxis: 'y2',
-  mode: 'lines',
-  line: {color: '#DF56F1'}
-};
-
-var layout = {
-  xaxis: {
-    type: 'date', 
-    domain: [0, 1],
-    showticklabels: false
-  },
-  yaxis: {domain: [0.6,1]},
-  xaxis2: {
-    type: 'date', 
-    anchor: 'y2', 
-    domain: [0, 1]
-  },
-  yaxis2: {
-    anchor: 'x2', 
-    domain: [0, 0.4]},  
-}
-
-var data = [trace1,trace2]; 
-
-Plotly.plot('graph', data, layout);  
+}]);
 
 var cnt = 0;
 
 var interval = setInterval(function() {
   
-  var time = new Date();
+  var y = Math.round(Math.random()*10) + 1
+  newArray = newArray.concat(y)
+  newArray.splice(0, 1)
   
-  var update = {
-    x: [[time], [time]],
-    y: [[rand()], [rand()]]
-  }
+  var data_update = {
+    y: [newArray]
+  };
   
-  Plotly.extendTraces('graph', update, [0,1])
+  Plotly.update('sys-heart-graph', data_update)
   
   if(cnt === 100) clearInterval(interval);
-}, 1000);
+}, 1000); 
