@@ -29,5 +29,5 @@ var interval = setInterval(function() {
   
   Plotly.update('sys-heart-graph', data_update)
   
-  if(cnt === 100) clearInterval(interval);
-}, 1000); 
+  if(cnt === 20) clearInterval(interval);
+}, 500); 
