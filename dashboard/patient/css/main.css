@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 *{
   margin: 0;
-  padding: 0;
+  padding: 0px;
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
@@ -217,10 +217,12 @@ nav .profile-details i{
 
 .diagnosis .diagnosis-boxes{
   display: flex;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
+  justify-content: center;
+  flex-wrap: nowrap;
   /* padding: 0 20px; */
   margin-bottom: 49px;
+  flex-direction: column;
+  align-items: stretch;
 }
 
 .overview-boxes .box{
@@ -238,12 +240,14 @@ nav .profile-details i{
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: calc(100% / 4 - 15px);
-  background: #fff;
+  /* width: calc(100% / 4 - 15px); */
+  background: #d65858;
   /* padding: 15px 28px; */
-  margin: 14px 0px;
-  border-radius: 12px;
+  margin: 14px 79px;
+  border-radius: 74px;
   box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+  align-content: center;
+  flex-wrap: nowrap;
 }
 
 .overview-boxes .box-topic{
@@ -1305,4 +1309,13 @@ iframe {
 
 .box-content.dashboard.active {
     padding-top: 26px;
+}
+
+
+.sys-heart {
+    padding: 43px;
+}
+
+div#sys-heart-graph {
+    padding: -4px;
 }
