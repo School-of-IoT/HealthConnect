@@ -214,6 +214,15 @@ nav .profile-details i{
   padding: 0 20px;
   margin-bottom: 49px;
 }
+
+.diagnosis .diagnosis-boxes{
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  /* padding: 0 20px; */
+  margin-bottom: 49px;
+}
+
 .overview-boxes .box{
   display: flex;
   align-items: center;
@@ -225,6 +234,18 @@ nav .profile-details i{
   border-radius: 12px;
   box-shadow: 0 5px 10px rgba(0,0,0,0.1);
 }
+.diagnosis-boxes .box{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: calc(100% / 4 - 15px);
+  background: #fff;
+  /* padding: 15px 28px; */
+  margin: 14px 0px;
+  border-radius: 12px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+}
+
 .overview-boxes .box-topic{
   font-size: 20px;
   font-weight: 500;
