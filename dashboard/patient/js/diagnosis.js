@@ -162,11 +162,15 @@ var interval = setInterval(function() {
   if(data){
     var y1 = ECG_VAL1[j]*10 + 1
     var y2 = ECG_VAL2[j]*10 + 1
+    var y3 = Math.round(Math.random()*10) + 1
+    var y4 = Math.round(Math.random()*10) + 1
     j=j+1
   }
   else{
     var y1 = 0
     var y2 = 0
+    var y3 = 0
+    var y4 = 0
     k=k+1
   }
 
