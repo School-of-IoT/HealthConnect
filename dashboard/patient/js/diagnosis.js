@@ -141,7 +141,8 @@ Plotly.plot('resp-graph', [{
 }]);
 
 
-var ECG_VAL =[0, 0, 0.5, -0.25, 2.5, -2, 0.5, 1, 0.25, 0.5, 0]
+var ECG_VAL1 =[0, 0, 0.5, -0.25, 2.5, -2, 0.5, 1, -0.25, 0.5, 0]
+var ECG_VAL2 =[0, 0, 0.25, -0.15, 2, -1.5, 0.25, 1, -0.1, 0.25, 0]
 
 var cnt = 0;
 
@@ -159,8 +160,8 @@ var interval = setInterval(function() {
   
   
   if(data){
-    var y1 = ECG_VAL[j]*10 + 1
-    var y2 = ECG_VAL[j]*10 + 1
+    var y1 = ECG_VAL1[j]*10 + 1
+    var y2 = ECG_VAL2[j]*10 + 1
     j=j+1
   }
   else{
