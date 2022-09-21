@@ -201,11 +201,11 @@ var interval = setInterval(function() {
   Plotly.update('resp-graph', data_update4)
   
   if(j >= ECG_VAL.length){
-    data===false; 
+    data=false; 
     j=0
   }
   if(k >= 48){
-    data===true; 
+    data=true; 
     k=0
   }
 
