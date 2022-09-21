@@ -84,5 +84,5 @@ var interval = setInterval(function() {
   Plotly.update('spo2-graph', data_update3)
   Plotly.update('resp-graph', data_update4)
   
-  if(cnt === 20) clearInterval(interval);
-}, 500); 
+  if(cnt === 500) clearInterval(interval);
+}, 5); 
