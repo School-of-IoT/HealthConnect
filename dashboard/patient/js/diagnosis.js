@@ -91,17 +91,17 @@
 
 
 
-var arrayLength = 36
+var arrayLength = 60
 var newArray1 = []
 var newArray2 = []
 var newArray3 = []
 var newArray4 = []
 
 for(var i = 0; i < arrayLength; i++) {
-  newArray1[i] = Math.round(0)
-  newArray2[i] = Math.round(0)
-  newArray3[i] = Math.round(0)
-  newArray4[i] = Math.round(0)
+  newArray1[i] = 0
+  newArray2[i] = 0
+  newArray3[i] = 0
+  newArray4[i] = 0
 }
 
 Plotly.plot('sys-heart-graph', [{
@@ -141,23 +141,15 @@ Plotly.plot('resp-graph', [{
 }]);
 
 
-var ECG_VAL1 =[0, 0, 0.5, -0.25, 2.5, -2, 0.5, 1, -0.25, 0.5, 0]
-var ECG_VAL2 =[0, 0, 0.25, -0.15, 2, -1.5, 0.25, 1, -0.1, 0.25, 0]
+var ECG_VAL1 =[0.5, -0.25, 2.5, -2, 0.5, 1, -0.25, 0.5, 0]
+var ECG_VAL2 =[0.25, -0.15, 2, -1.5, 0.25, 1, -0.1, 0.25, 0]
 
 var cnt = 0;
-
 var data = false
-
 var j=0
 var k=0
 
 var interval = setInterval(function() {
-  
-  for(var i = 0; i < arrayLength; i++) {
-    newArray3[i] = Math.round(Math.random()*10) + 1
-    newArray4[i] = Math.round(Math.random()*10) + 1
-  }
-  
   
   if(data){
     var y1 = ECG_VAL1[j]*10 + 1
@@ -174,8 +166,7 @@ var interval = setInterval(function() {
     k=k+1
   }
 
-  var y3 = Math.round(Math.random()*10) + 1
-  var y4 = Math.round(Math.random()*10) + 1
+  
   
   newArray1 = newArray1.concat(y1)
   newArray1.splice(0, 1)
@@ -205,11 +196,11 @@ var interval = setInterval(function() {
   Plotly.update('spo2-graph', data_update3)
   Plotly.update('resp-graph', data_update4)
   
-  if(j >= ECG_VAL.length){
+  if(j >= ECG_VAL1.length){
     data=false; 
     j=0
   }
-  if(k >= 24){
+  if(k >= 50){
     data=true; 
     k=0
   }
