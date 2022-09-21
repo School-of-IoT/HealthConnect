@@ -1297,7 +1297,7 @@ nav .profile-details i{
 
 
 .dashboard.active {
-  visibility: visible;
+  display: block;
   /* position: absolute; */
   width: 100%;
   top: 10.5%;
@@ -1305,7 +1305,7 @@ nav .profile-details i{
 }
 
 .dashboard {
-  visibility: hidden;
+  display: none;
   position: absolute;
 }
 
