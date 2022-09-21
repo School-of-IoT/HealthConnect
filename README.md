@@ -1,5 +1,19 @@
 # HealthConnect
 
+## Your OWN Digital Hospital with Physical Units
+
+
+### Features:
+
+- Digital Multi Para Monitor
+- Ability to access Ptient Data remotely
+- Schedule appointments based on Doctor's calendar
+- AI Symptom Checking ChatBot for quick queries
+- Order medicines according to Doctor's consultancy
+- Use digital notes provided by nurse/doctor as instructions related to health.
+- Quick updated helpline numbers to access nearest Hospital/Ambulance
+
+
 From this Project, we are trying to analyze the problems faced by people while performing their tests and finding a diagnostics solution for it after the results of the lab tests are given.  
 
 All these tests need not be taken in the hospitals, an IoT device, whose prototype that we have built can track and upload the data to the cloud. This data can be analyzed on a  Machine learning Algorithm and cross-reference to find the accurate anomalies in the patient's body. 
