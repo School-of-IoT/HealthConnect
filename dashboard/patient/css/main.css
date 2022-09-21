@@ -1344,3 +1344,6 @@ div#sys-heart-info, div#dia-heart-info, div#spo2-info, div#resp-info {
     padding-top: 2%;
 }
 
+text.dash-info-data {
+  font-size: 150px;
+}
