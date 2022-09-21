@@ -200,11 +200,11 @@ var interval = setInterval(function() {
   Plotly.update('spo2-graph', data_update3)
   Plotly.update('resp-graph', data_update4)
   
-  if(j == ECG_VAL.length){
+  if(j >= ECG_VAL.length){
     data===false; 
     j=0
   }
-  if(k == 48){
+  if(k >= 48){
     data===true; 
     k=0
   }
