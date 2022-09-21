@@ -238,18 +238,19 @@ nav .profile-details i{
 }
 
 .diagnosis-boxes .box{
+  padding-left: 20px;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   /*justify-content: space-between;
    width: calc(100% / 4 - 15px); */
   background: #ffffff;
   /* padding: 15px 28px; */
   margin: 14px 53px;
-  border-radius: 74px;
+  border-radius: 12px;
   box-shadow: 0 5px 10px rgba(0,0,0,0.1);
   /* align-content: center;
   flex-wrap: nowrap; */
-  justify-content: center;
+  justify-content: space-between;
 }
 
 
@@ -1322,3 +1323,21 @@ iframe {
 div#sys-heart-graph {
     padding: -4px;
 }
+
+.sys-heart, .dia-heart, .spo2-graph, .resp-graph {
+    border-radius: 63px;
+    image-rendering: -webkit-optimize-contrast;
+    display: flex;
+    image-rendering: -webkit-optimize-contrast;
+    justify-content: flex-end;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: flex-start;
+    align-items: flex-start;
+}
+
+div#sys-heart-info, div#dia-heart-info, div#spo2-info, div#resp-info {
+    Font-size: 40px;
+    margin-right: 10%;
+}
+
