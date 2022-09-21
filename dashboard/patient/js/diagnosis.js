@@ -204,7 +204,7 @@ var interval = setInterval(function() {
     data=false; 
     j=0
   }
-  if(k >= 48){
+  if(k >= 24){
     data=true; 
     k=0
   }
