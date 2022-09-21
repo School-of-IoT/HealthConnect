@@ -1342,6 +1342,10 @@ div#sys-heart-info, div#dia-heart-info, div#spo2-info, div#resp-info {
     Font-size: 40px;
     padding-right: 2%;
     padding-top: 2%;
+    display: flex;
+    align-content: flex-start;
+    flex-wrap: wrap;
+    justify-content: flex-start;
 }
 
 text.dash-info-data {
