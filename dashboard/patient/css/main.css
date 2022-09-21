@@ -1296,15 +1296,16 @@ nav .profile-details i{
 
 
 .dashboard.active {
-    visibility: visible;
-    position: absolute;
-    width: 100%;
-    top: 10.5%;
-    height: calc(100% - 90px);
+  visibility: visible;
+  /* position: absolute; */
+  width: 100%;
+  top: 10.5%;
+  height: calc(100% - 90px);
 }
 
 .dashboard {
-    visibility: hidden;
+  visibility: hidden;
+  position: absolute;
 }
 
 iframe {
