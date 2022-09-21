@@ -91,17 +91,17 @@
 
 
 
-var arrayLength = 60
+var arrayLength = 36
 var newArray1 = []
 var newArray2 = []
 var newArray3 = []
 var newArray4 = []
 
 for(var i = 0; i < arrayLength; i++) {
-  newArray1[i] = Math.round(0) + 1
-  newArray2[i] = Math.round(0) + 1
-  newArray3[i] = Math.round(0) + 1
-  newArray4[i] = Math.round(0) + 1
+  newArray1[i] = Math.round(0)
+  newArray2[i] = Math.round(0)
+  newArray3[i] = Math.round(0)
+  newArray4[i] = Math.round(0)
 }
 
 Plotly.plot('sys-heart-graph', [{
