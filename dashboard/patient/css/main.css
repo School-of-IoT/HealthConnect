@@ -1364,7 +1364,7 @@ i.bx.bx-chevron-down.profile-arrow.active {
 .section-dropdown{
   display: none;
 }
-.section-dropdown .active{
+.section-dropdown.active{
     /* border: 2px solid #EFEEF1; */
     position: absolute;
     right: 20px;
