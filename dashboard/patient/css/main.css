@@ -1396,6 +1396,7 @@ a.sd-list{
     margin: 8px 8px;
     display: flex;
     align-items: center;
+    cursor: pointer;
 }
 
 a.sd-list:hover{
@@ -1410,4 +1411,15 @@ i.bx.bx-chevron-up.active{
 i.bx.bx-chevron-up{
   transform: rotate(0deg);
   transition: all 0.5s ease;
+}
+
+.section-dropdown.active:before {
+  top: -16px;
+  right: 9px;
+  left: auto;
+  position: absolute;
+  display: inline-block;
+  content: "";
+  border: 8px solid transparent;
+  border-bottom-color: #0A2558;
 }
