@@ -1407,3 +1407,7 @@ i.bx.bx-chevron-down.active{
   transition: all 0.5s ease;
 }
 
+i.bx.bx-chevron-down{
+  transform: rotate(0deg);
+  transition: all 0.5s ease;
+}
