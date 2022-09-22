@@ -1368,7 +1368,7 @@ i.bx.bx-chevron-down.profile-arrow.active {
     /* border: 2px solid #EFEEF1; */
     position: absolute;
     right: 20px;
-    top: 70px;
+    top: 65px;
     display: flex;
     flex-direction: column;
     align-items: stretch;

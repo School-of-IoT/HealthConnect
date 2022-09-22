@@ -3,9 +3,10 @@
 
     $('.home-section nav .profile-details').hover(
         function(){ 
-            $('.section-dropdown').addClass('active');
-            $('.i.bx.bx-chevron-down').addClass('active');
+            $('.section-dropdown').toggleClass('active');
+            $('.i.bx.bx-chevron-down').toggleClass('active');
         }
     )
+
 
 })(jQuery);
