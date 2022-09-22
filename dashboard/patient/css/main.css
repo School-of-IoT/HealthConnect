@@ -1356,7 +1356,7 @@ text.dash-info-data {
 }
 
 
-i.bx.bx-chevron-down.profile-arrow.active {
+i.bx.bx-chevron-up.profile-arrow.active {
     transform: rotate(180deg);
     transition: all 0.5s ease;
 }
@@ -1402,12 +1402,12 @@ a.sd-list:hover{
   background: #6b86b8;
 }
 
-i.bx.bx-chevron-down.active{
+i.bx.bx-chevron-up.active{
   transform: rotate(180deg);
   transition: all 0.5s ease;
 }
 
-i.bx.bx-chevron-down{
+i.bx.bx-chevron-up{
   transform: rotate(0deg);
   transition: all 0.5s ease;
 }
