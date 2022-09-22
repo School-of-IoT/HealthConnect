@@ -3,7 +3,7 @@
 
     $('.home-section nav .profile-details').hover(
         function(){ 
-            $('.section-dropdown').toggleClass('active');
+            $('.secion-dropdown').toggleClass('active');
             $('.i.bx.bx-chevron-down').toggleClass('active');
         }
     )
