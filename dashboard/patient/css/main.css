@@ -610,6 +610,7 @@ nav .profile-details i{
     min-width: 190px;
     padding: 0 15px 0 2px;
   }
+
   nav .profile-details img{
     height: 40px;
     width: 40px;
@@ -1353,3 +1354,51 @@ div#sys-heart-info, div#dia-heart-info, div#spo2-info, div#resp-info {
 text.dash-info-data {
   font-size: 150px;
 }
+
+
+i.bx.bx-chevron-down.profile-arrow.active {
+    transform: rotate(180deg);
+    transition: all 0.5s ease;
+}
+
+.section-dropdown{
+  display: none;
+}
+.section-dropdown .active{
+    /* border: 2px solid #EFEEF1; */
+    position: absolute;
+    right: 20px;
+    top: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    align-content: flex-start;
+    /* padding: 11px 25px; */
+    flex-wrap: wrap;
+    background:#0A2558;
+    box-shadow: 4px 3px 7px 0px #2b2b2b;
+    border-radius: 5px;
+    display: block;
+}
+
+
+a.sd-list{
+    position: relative;
+    color: #fff;
+    transition: all 200ms linear;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 17px;
+    border-radius: 2px;
+    padding: 10px 8px;
+    padding-left: 20px;
+    padding-right: 15px;
+    margin: 8px 8px;
+    display: flex;
+    align-items: center;
+}
+
+a.sd-list:hover{
+  background: #6b86b8;
+}
+
