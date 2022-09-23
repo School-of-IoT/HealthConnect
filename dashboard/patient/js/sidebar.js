@@ -38,6 +38,9 @@ function view() {
                     if(($(this).hasClass('diagnosis'))){
                         $('.diagnosis.dashboard').addClass('active');
                     }
+                    if(($(this).hasClass('med-device'))){
+                        $('.med-device.dashboard').addClass('active');
+                    }
                     if(($(this).hasClass('treatment'))){
                         $('.treatment.dashboard').addClass('active');
                     }
