@@ -1462,4 +1462,9 @@ i.bx.bx-chevron-up{
 
 .med-device.dashboard.active {
   top: 84px;
+  display: block;
 }
+.med-device.dashboard {
+  display: none;
+}
+
