@@ -13,6 +13,7 @@
   <link rel="manifest" href="../../assets/favicon/site.webmanifest">
 
   <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/device-list.css">
   <!-- Boxicons CDN Link -->
   <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
   <link rel="stylesheet" href="path/to/bootstrap/css/bootstrap.min.css">
@@ -264,8 +265,60 @@
 
       <div class="med-device dashboard">
         <div class="device-boxes">
-          <div class="dev-nav box">adasdada</div>
-          <div class="dev-list box">asdsdasds</div>
+          <div class="dev-nav box">
+            <div class="device-boxes">
+              <div class="dev-nav box">
+                    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names..">
+                    
+              </div>
+              <div class="dev-list box">
+            
+                <ul id="myUL">
+                  <div class="limiter">
+                    <div class="container-table100">
+                      <div class="wrap-table100">
+                        <div class="table100">
+                        <table>
+                          <thead>
+                              <tr class="table100-head">
+                              <th class="column1">Last Update</th>
+                              <th class="column2">Health Device</th>
+                              <th class="column3">Device ID</th>
+                              <th class="column4">Value Attributes</th>
+                              <th class="column5">Status</th>
+                              <th class="column6">Add/Reset</th>
+                          </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td class="column1">2017-09-29 01:22</td>
+                              <td class="column2">HeartRate</td>
+                              <td class="column3">22092601</td>
+                              <td class="column4">DBP, SBP</td>
+                              <td class="column5">Online</td>
+                              <td class="column6"><button style="align-items:center; align-content: center;">Reset</button></td>
+                            </tr>
+                    
+                          </tbody>
+                        </table>
+                        </div>
+                      </div>
+                      </div>
+                    </div>
+                    
+                   
+                    <script>
+                        window.dataLayer = window.dataLayer || [];
+                        function gtag(){dataLayer.push(arguments);}
+                        gtag('js', new Date());
+                    
+                        gtag('config', 'UA-23581568-13');
+                      </script>
+                    <script defer src="https://static.cloudflareinsights.com/beacon.min.js/v652eace1692a40cfa3763df669d7439c1639079717194" integrity="sha512-Gi7xpJR8tSkrpF7aordPZQlW2DLtzUlZcumS8dMQjwDHEnw9I7ZLyiOj/6tZStRBGtGgN6ceN6cMH8z7etPGlw==" data-cf-beacon='{"rayId":"750b10daeb6ec0f8","token":"cd0b4b3a733644fc843ef0b185f98241","version":"2022.8.1","si":100}' crossorigin="anonymous"></script>
+                  
+                </ul>
+                
+            </div>
           <div class="dev-list-sort">qwadadas</div>
         </div>
       </div>
