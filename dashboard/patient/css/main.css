@@ -255,19 +255,21 @@ nav .profile-details i{
 }
 
 .device-boxes .box{
-  padding-left: 20px;
+  /* padding-left: 20px; */
   display: flex;
-  align-items: flex-start;
   /*justify-content: space-between;
    width: calc(100% / 4 - 15px); */
   background: #ffffff;
   /* padding: 15px 28px; */
   margin: 14px 53px;
-  border-radius: 12px;
+  border-radius: 21px;
   box-shadow: 0 5px 10px rgba(0,0,0,0.1);
   /* align-content: center;
   flex-wrap: nowrap; */
-  justify-content: flex-start;  
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: stretch;
+  justify-content: space-around;
 }
 
 
@@ -1467,7 +1469,3 @@ i.bx.bx-chevron-up{
 .med-device.dashboard {
   display: none;
 }
-
-
-
-
