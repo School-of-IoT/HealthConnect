@@ -2,10 +2,16 @@
     "use strict";
 
     var uid = sessionStorage.getItem('uid');
+    var auth = sessionStorage.getItem('auth');
+    let formData = {
+            uid: uid,
+            auth: auth,
+          };
     
     $.ajax({
         type: "GET",
-        url: "https://healthconnect-server.herokuapp.com/patient/" + uid,
+        url: "https://healthconnect-server.herokuapp.com/data",
+        data : formData,
         crossDomain: true,
         dataType: "json",
         encode: true,
