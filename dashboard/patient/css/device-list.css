@@ -193,19 +193,19 @@
 .dev-nav.box {
     padding: 13px 15px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: nowrap;
     align-items: stretch;
 }
 
 .dev-search-box{
-    padding: 1px 16px;
+    padding: 1px 276px;
     font-size: 20px;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    flex-wrap: nowrap;
-    align-items: flex-start;
-    align-content: flex-start;
+    justify-content: space-evenly;
+    align-items: stretch;
 }
 
 ul#myUL {
@@ -215,4 +215,49 @@ ul#myUL {
     justify-content: space-around;
     align-content: flex-end;
     align-items: flex-start;
+}
+
+.search-sort {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: space-around;
+}
+
+input.s-inpt {
+    font-size: 18px;
+    padding: 5px 18px;
+    width: 100%;
+}
+
+.s-btn {
+    width: 100%;
+    margin: 0px 43px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: stretch;
+}
+
+s-btn-func {
+    width: 100%;
+}
+
+button.s-btn-func {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 18px;
+    margin: 0px 6px;
+    padding: 5px 20px;
+    align-items: center;
+    align-content: center;
+}
+
+.dev-search {
+    width: 100%;
+    margin: 0px 43px;
+    display: flex;
+    padding: 3p;
 }
