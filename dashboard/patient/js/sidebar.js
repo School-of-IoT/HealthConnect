@@ -38,7 +38,7 @@ function view() {
                     if(($(this).hasClass('diagnosis'))){
                         $('.diagnosis.dashboard').addClass('active');
                     }
-                    if(($(this).hasClass('med-device'))){
+                    if(($(this).hasClass('device'))){
                         $('.med-device.dashboard').addClass('active');
                     }
                     if(($(this).hasClass('treatment'))){
@@ -48,7 +48,7 @@ function view() {
                         $('.schedule.dashboard').addClass('active');
                     }
                     if(($(this).hasClass('device'))){
-                        $('.device.dashboard').addClass('active');
+                        $('.med-device.dashboard').addClass('active');
                     }
                 }
         
