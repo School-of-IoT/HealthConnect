@@ -16,20 +16,20 @@
         dataType: "json",
         encode: true,
       }).done(function (data) {
-        console.log(data.patient._id);
-        $('.username').text(data.patient.Name);
-        $('.chills').text(data.patient.Chills);
-        $('.dbp').text(data.patient.DBP);
-        $('.sbp').text(data.patient.SBP);
-        $('.heartrate').text(data.patient.HeartRate);
-        $('.respiration').text(data.patient.RR);
-        $('.spo2').text(data.patient.SpO2);
-        $('.bloodg').text(data.patient.BGroup);
-        $('.temp').text(data.patient.Temp);
-        $('.ambulation').text(data.patient.Ambulation);
-        $('.fever').text(data.patient.HistoryFever);
-        $('.bmi').text(data.patient.BMI);
-        $('.fio2').text(data.patient.FiO2);
+        console.log(data.patient[0]._id);
+        $('.username').text(data.patient[0].Name);
+        $('.chills').text(data.patient[0].Chills);
+        $('.dbp').text(data.patient[0].DBP);
+        $('.sbp').text(data.patient[0].SBP);
+        $('.heartrate').text(data.patient[0].HeartRate);
+        $('.respiration').text(data.patient[0].RR);
+        $('.spo2').text(data.patient[0].SpO2);
+        $('.bloodg').text(data.patient[0].BGroup);
+        $('.temp').text(data.patient[0].Temp);
+        $('.ambulation').text(data.patient[0].Ambulation);
+        $('.fever').text(data.patient[0].HistoryFever);
+        $('.bmi').text(data.patient[0].BMI);
+        $('.fio2').text(data.patient[0].FiO2);
       }).fail(function (data) {
         console.log("failed");
         window.location.href="../../login/"
