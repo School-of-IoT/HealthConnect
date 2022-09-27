@@ -1484,3 +1484,7 @@ span.app-version {
     left: 11px;
     z-index: 9;
 }
+
+.calendar-box{
+  height: 100%;
+}
