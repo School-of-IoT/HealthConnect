@@ -1486,20 +1486,14 @@ span.app-version {
 }
 
 .calendar-box{
-  height: 95%;
-  animation-name: h-ch;
-  animation-duration: 1ms;
+  height: 95% !important;
+ 
 }
 
 .toastui-calendar-time{
-  height: 95%;
+  height: 95% !important;
 }
 
 .toastui-calendar-timegrid{
-  height: 280%;
-}
-
-@keyframes h-ch {
-  from {height: 95%;}
-  to {height: 100%;}
+  height: 280% !important;
 }
