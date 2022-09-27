@@ -45,7 +45,7 @@ function view() {
                         $('.treatment.dashboard').addClass('active');
                     }
                     if(($(this).hasClass('schedule'))){
-                        $('.schedule.dashboard').addClass('active');
+                        $('.scheduler.dashboard').addClass('active');
                     }
                     if(($(this).hasClass('device'))){
                         $('.med-device.dashboard').addClass('active');
