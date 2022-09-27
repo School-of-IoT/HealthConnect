@@ -5,6 +5,10 @@ function setCookie(uid,value,exp_days) {
     document.cookies = uid + "=" + value + ";" + expires + ";path=/";
 }
 
+function rndNum(min, max) { 
+    return Math.random() * (max - min) + min;
+} 
+
 (function ($) {
     "use strict";
 
@@ -82,20 +86,20 @@ function setCookie(uid,value,exp_days) {
                   "Address": $("address").val(),
                   "Age": age,
                   "Ambulation":false,
-                  "BMI": 0,
+                  "BMI": rndNum(18.5,24.9),
                   "Chills":false,
                   "Contacts": $("#phone").val(),
-                  "DBP": 0,
+                  "DBP": rndNum(60,80),
                   "DecreasedMood":false,
-                  "FiO2": 0,
+                  "FiO2": rndNum(50,100),
                   "GeneralizedFatigue":false,
-                  "HeartRate": 0,
+                  "HeartRate": rndNum(60,100),
                   "HistoryFever": "Never",
-                  "RR": 0,
+                  "RR": rndNum(12,16),
                   "RecentHospitalStay":"00/00/0000",
-                  "SBP": 0,
-                  "SpO2": 0,
-                  "Temp": 0,
+                  "SBP": rndNum(90,120),
+                  "SpO2": rndNum(90,100),
+                  "Temp": rndNum(95,99),
                   "WeightGain":0,
                   "WeightLoss":0,
                   "BGroup": $("#BGr").val(),
