@@ -1488,3 +1488,11 @@ span.app-version {
 .calendar-box{
   height: 100%;
 }
+
+.toastui-calendar-time{
+  height:100%;
+}
+
+.toastui-calendar-timegrid{
+  height: 280%;
+}
