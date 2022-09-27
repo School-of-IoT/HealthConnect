@@ -43,7 +43,7 @@ table th {
 }
 table thead tr {
   height: 60px;
-  background: #36304a;
+  background: #0a2558;
   /* align-items: center; */
 }
 table tbody tr {
@@ -70,7 +70,7 @@ table th.r {
   text-align: center;
 }
 .table100-head th {
-  font-family: OpenSans-Regular;
+  font-family: inherit;
   font-size: 18px;
   color: #fff;
   line-height: 1.2;
@@ -96,7 +96,7 @@ tbody tr {
 }
 tbody tr:hover {
   color: #555;
-  background-color: #f5f5f5;
+  background-color: #eaeff8;
   cursor: pointer;
 }
 .column1 {

@@ -48,6 +48,7 @@
 }
 .sidebar .nav-links{
   margin-top: 10px;
+  position: initial;
 }
 .sidebar .nav-links li{
     position: relative;
@@ -100,7 +101,7 @@ li.active {
   white-space: nowrap;
 }
 .sidebar .nav-links .log_out{
-  position: absolute;
+  /* position: absolute; */
   bottom: 0;
   width: 100%;
 }
@@ -1470,3 +1471,12 @@ i.bx.bx-chevron-up{
   display: none;
 }
 
+
+
+span.app-version {
+    position: fixed;
+    color: white;
+    bottom: 0;
+    left: 11px;
+    z-index: 9;
+}
