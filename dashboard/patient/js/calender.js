@@ -18,7 +18,7 @@ const options = {
   },
   calendars: [
     {
-      id: document.getElementById("name").value,
+      id: 'cal1',
       name: 'Personal',
       backgroundColor: '#03bd9e',
     },
