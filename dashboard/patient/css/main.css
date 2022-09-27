@@ -1487,6 +1487,8 @@ span.app-version {
 
 .calendar-box{
   height: 95%;
+  animation-name: h-ch;
+  animation-duration: 1ms;
 }
 
 .toastui-calendar-time{
@@ -1495,4 +1497,9 @@ span.app-version {
 
 .toastui-calendar-timegrid{
   height: 280%;
+}
+
+@keyframes h-ch {
+  from {height: 95%;}
+  to {height: 100%;}
 }
