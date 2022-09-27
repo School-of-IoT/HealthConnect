@@ -274,6 +274,24 @@ nav .profile-details i{
 }
 
 
+.calender .box{
+  /* padding-left: 20px; */
+  display: flex;
+  /*justify-content: space-between;
+   width: calc(100% / 4 - 15px); */
+  background: #ffffff;
+  /* padding: 15px 28px; */
+  margin: 14px 53px;
+  border-radius: 21px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+  /* align-content: center;
+  flex-wrap: nowrap; */
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: stretch;
+  justify-content: space-around;
+}
+
 
 .overview-boxes .box-topic{
   font-size: 20px;
