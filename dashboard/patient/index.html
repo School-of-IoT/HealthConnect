@@ -14,6 +14,7 @@
 
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/device-list.css">
+  <link rel="stylesheet" href="https://uicdn.toast.com/calendar/latest/toastui-calendar.min.css" />
   <!-- Boxicons CDN Link -->
   <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
   <link rel="stylesheet" href="path/to/bootstrap/css/bootstrap.min.css">
@@ -298,7 +299,7 @@
                             <td class="">HeartRate</td>
                             <td class="">22092601</td>
                             <td class="">DBP, SBP</td>
-                            <td class="">🟢 Online</td>
+                            <td class="" style=" text-shadow: 0px 0px 12px green; ">🟢 Online</td>
                             <td ><button class="dev-table-btn">Reset</button></td>
                           </tr>
                           <tr>
@@ -306,7 +307,7 @@
                             <td class="">Respiration</td>
                             <td class="">22092602</td>
                             <td class="">Resp</td>
-                            <td class="">🔴 Offline</td>
+                            <td class="" style=" text-shadow: 0px 0px 12px red; ">🔴 Offline</td>
                             <td ><button class="dev-table-btn">Reset</button></td>
                           </tr>
                   
@@ -320,9 +321,14 @@
             </ul>
             
           </div>
-          <div class="dev-list-sort">qwadadas</div>
+          <!-- <div class="dev-list-sort">qwadadas</div> -->
         </div>
       </div>
+
+      <div class="scheduler dashboard">
+        <div id="calendar" style="height: 90%; top: 20px;"></div>
+      </div>
+
 
     </section>
 
@@ -340,6 +346,8 @@
       <script src="js/sidebar.js"></script>
       <script src="js/diagnosis.js"></script>
       <script src="js/device.js"></script>
+      <script src="https://uicdn.toast.com/calendar/latest/toastui-calendar.ie11.min.js"></script>
+      <script src="js/calender.js"></script>
     <!--===============================================================================================-->
 	
 </body>
