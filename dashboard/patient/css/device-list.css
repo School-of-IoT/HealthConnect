@@ -56,6 +56,7 @@ table tbody tr:last-child {
 table td,
 table th {
   text-align: center;
+  padding: 16px 0px;
 }
 table td.l,
 table th.l {
@@ -70,6 +71,7 @@ table th.r {
   text-align: center;
 }
 .table100-head th {
+  padding: 0px 45px;
   font-family: inherit;
   font-size: 18px;
   color: #fff;
@@ -97,7 +99,6 @@ tbody tr {
 tbody tr:hover {
   color: #555;
   background-color: #eaeff8;
-  cursor: pointer;
 }
 .column1 {
   /* width: 20%; */
@@ -278,4 +279,10 @@ button.dev-table-btn {
   padding: 5px 9px;
   background: #0A2558;
   color: #fff;
+  cursor: pointer;
+}
+
+.dev-list.box {
+    margin: 0px 25px;
+    padding: 0px 1;
 }

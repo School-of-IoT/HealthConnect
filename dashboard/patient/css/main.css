@@ -1498,3 +1498,8 @@ span.app-version {
   height: 280% !important;
 }
 
+
+
+.treatment.dashboard.active {
+    top: 91px;
+}
