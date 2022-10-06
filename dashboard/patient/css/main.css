@@ -1493,14 +1493,19 @@ i.bx.bx-chevron-up{
 
 .helpline .number-boxes {
 
-  background-color: #f5f5f5;
-  display: flex;
-  justify-content: center;
-  flex-wrap: nowrap;
-  /* padding: 0 20px; */
-  margin-bottom: 49px;
-  flex-direction: column;
-  align-items: stretch; 
+background-color: #f5f5f5;
+
+display: flex;
+
+justify-content: space-evenly;
+
+flex-wrap: wrap;
+
+padding: 0px 20px;
+
+margin-bottom: 59px;
+
+flex-direction: row;
 }
 
 .helpline.dashboard.active {
@@ -1542,6 +1547,10 @@ span.app-version {
 
 
 .num.box {
-  margin: 0px 20px;
-  padding: 0px 1;
+  margin: 28px 13px;
+  padding: 19px 36px;
+}
+
+.left.num-list {
+    padding: 0px;
 }
