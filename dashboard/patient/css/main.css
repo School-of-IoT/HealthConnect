@@ -273,6 +273,23 @@ nav .profile-details i{
   justify-content: space-around;
 }
 
+.number-boxes .box{
+  /* padding-left: 20px; */
+  display: flex;
+  /*justify-content: space-between;
+   width: calc(100% / 4 - 15px); */
+  background: #ffffff;
+  /* padding: 15px 28px; */
+  margin: 14px 53px;
+  border-radius: 21px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+  /* align-content: center;
+  flex-wrap: nowrap; */
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: stretch;
+  justify-content: space-around;
+}
 
 
 .overview-boxes .box-topic{
@@ -1463,8 +1480,7 @@ i.bx.bx-chevron-up{
   /* padding: 0 20px; */
   margin-bottom: 49px;
   flex-direction: column;
-  align-items: stretch;
-  
+  align-items: stretch; 
 }
 
 .med-device.dashboard.active {
@@ -1472,6 +1488,26 @@ i.bx.bx-chevron-up{
   display: block;
 }
 .med-device.dashboard {
+  display: none;
+}
+
+.helpline .number-boxes {
+
+  background-color: #f5f5f5;
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;
+  /* padding: 0 20px; */
+  margin-bottom: 49px;
+  flex-direction: column;
+  align-items: stretch; 
+}
+
+.helpline.dashboard.active {
+  top: 84px;
+  display: block;
+}
+.helpline.dashboard {
   display: none;
 }
 
@@ -1502,4 +1538,10 @@ span.app-version {
 
 .treatment.dashboard.active {
     top: 89px;
+}
+
+
+.num.box {
+  margin: 0px 20px;
+  padding: 0px 1;
 }
