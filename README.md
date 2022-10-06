@@ -46,6 +46,10 @@ The focus is on having a portable ICU, with which the medical help can be reache
 
 ![image](https://user-images.githubusercontent.com/52236719/194376508-f2d730ae-7b18-4c54-93a3-8d432c72f97f.png)
 
+## Symptom Check (AI Bot)
+
+![image](https://user-images.githubusercontent.com/52236719/194384754-2a260865-f3ed-4f0b-a618-39c8d3dcf802.png)
+
 
 # HealthConnect Portal Interface (Admin):
 
