@@ -7,10 +7,6 @@ const options = {
   timezone: {
     zones: [
       {
-        timezoneName: 'Asia/Seoul',
-        displayLabel: 'Seoul',
-      },
-      {
         timezoneName: 'Asia/Kolkata',
         displayLabel: 'Noida',
       },
