@@ -47,8 +47,8 @@ function view() {
                     if(($(this).hasClass('schedule'))){
                         $('.scheduler.dashboard').addClass('active');
                     }
-                    if(($(this).hasClass('device'))){
-                        $('.med-device.dashboard').addClass('active');
+                    if(($(this).hasClass('helpline'))){
+                        $('.helpline.dashboard').addClass('active');
                     }
                 }
         
