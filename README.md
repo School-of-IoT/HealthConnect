@@ -33,6 +33,20 @@ The focus is on having a portable ICU, with which the medical help can be reache
 
 ![image](https://user-images.githubusercontent.com/52236719/191496301-f8f1fa14-f1c5-490d-9862-a37be0ac6b5c.png)
 
+
+## Medical Device Control Panel
+
+![image](https://user-images.githubusercontent.com/52236719/194371557-7c359bc2-6b4d-42a3-a6ac-51c45aa0b8c5.png)
+
+## Diagnose Description and Medical Report with Prescription (all-in-one)
+
+![image](https://user-images.githubusercontent.com/52236719/194371835-ec1cefce-5dfd-42d2-831d-b9bfbd9926cf.png)
+
+## Calendar Appointments
+
+![image](https://user-images.githubusercontent.com/52236719/194376508-f2d730ae-7b18-4c54-93a3-8d432c72f97f.png)
+
+
 # HealthConnect Portal Interface (Admin):
 
 ## Dashboard View
