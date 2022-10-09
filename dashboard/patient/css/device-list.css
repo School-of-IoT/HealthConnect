@@ -281,6 +281,14 @@ button.dev-table-btn {
 }
 
 .dev-list.box {
-    margin: 0px 25px;
+     margin: 0px 25px;
     padding: 0px 1;
+    display: flex;
+    background: #ffffff;
+    border-radius: 21px;
+    box-shadow: 0 5px 10px rgb(0 0 0 / 10%);
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: stretch;
+    justify-content: space-around;
 }
