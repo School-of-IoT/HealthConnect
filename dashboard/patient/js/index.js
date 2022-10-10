@@ -57,4 +57,8 @@
       var map_link = "https://maps.google.com/maps?q=hospitals%20in%20"+sessionStorage.getItem('geo_loc')+"&t=&z=10&ie=UTF8&iwloc=&output=embed";
       $('#hospital-map').attr('src', map_link);
 
+      let min_meet_time = new Date().toJSON().slice(0, 16);
+      
+      $('#meeting-time').attr('min', min_meet_time);
+
 })(jQuery);

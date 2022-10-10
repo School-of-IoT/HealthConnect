@@ -446,15 +446,20 @@
                 </li>
                 <li>
                   <style>
-                    select:required:invalid {
-                      color: rgb(142, 142, 142);
-                    }
-                    option[value=""][disabled] {
-                      display: none;
-                    }
-                    option {
-                      color: #000;
-                    }
+                    
+                      select:required:invalid {
+                        color: rgb(142, 142, 142);
+                      }
+                      input:required:invalid {
+                        color: rgb(142, 142, 142);
+                      }
+                      option[value=""][disabled] {
+                        display: none;
+                      }
+                      option {
+                        color: #000;
+                      }
+                    
                   </style>
                   <label for="lang"></label>
                     <select required="" type="text" name="category" class="field-style field-split align-left" placeholder="Medical Category" id="lang" style="font-size: 13px;">
@@ -470,7 +475,9 @@
                       <option value="Anesthesia">Anesthesia</option>
                     </select>
                               
-                    <input type="text" name="time" class="field-style field-split align-right" placeholder="Time">
+                    <label for="meeting-time"></label>
+
+                    <input class="field-style field-split align-right" type="datetime-local" id="meeting-time" name="time" value="" min="" max="" required="">
               </li>
   
                 <li>
