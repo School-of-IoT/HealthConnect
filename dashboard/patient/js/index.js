@@ -41,5 +41,18 @@
       sessionStorage.removeItem('uid');
       location.href = "../../login/"
     });
+    
+    $.ajax({
+        type: "GET",
+        url: "https://api.ipgeolocation.io/ipgeo?apiKey="+process.env.geo_api,
+        dataType: "json",
+        encode: true,
+      }).done(function (data) {
+        console.log(data.city);
+        sessionStorage.setItem('geo_loc',data.city);
+        
+      }).fail(function (data) {
+        console.log("failed");
+      });
 
 })(jQuery);
