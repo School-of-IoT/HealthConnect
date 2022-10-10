@@ -54,5 +54,7 @@
       }).fail(function (data) {
         console.log("failed");
       });
+      var map_link = "https://maps.google.com/maps?q=hospitals%20in%20"+sessionStorage.getItem('geo_loc')+"&t=&z=13&ie=UTF8&iwloc=&output=embed";
+      $('#hospital-map').attr('src', map_link);
 
 })(jQuery);
