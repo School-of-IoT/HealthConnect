@@ -1509,7 +1509,7 @@ flex-direction: row;
 }
 
 .helpline.dashboard.active {
-  top: 84px;
+  top: 64px;
   display: block;
 }
 .helpline.dashboard {
