@@ -44,7 +44,7 @@
     
     $.ajax({
         type: "GET",
-        url: "https://api.ipgeolocation.io/ipgeo?apiKey="+process.env.geo_api,
+        url: "https://api.ipgeolocation.io/ipgeo?apiKey=6bde9878f4a446de82bf535dddf501b4",
         dataType: "json",
         encode: true,
       }).done(function (data) {
