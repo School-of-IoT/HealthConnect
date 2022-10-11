@@ -25,20 +25,29 @@ const options = {
 const calendar = new Calendar(container, options);
 
 
+var currentDateObj = new Date();
+var numberOfMlSeconds = currentDateObj.getTime();
+var addMlSeconds1 = 60 * 60 * 1000;
+var addMlSeconds2 = 60 * 60 * 4000;
+var addMlSeconds3 = 60 * 60 * 6000;
+var newDateObj1 = new Date(numberOfMlSeconds + addMlSeconds1);
+var newDateObj2 = new Date(numberOfMlSeconds + addMlSeconds2);
+var newDateObj3 = new Date(numberOfMlSeconds + addMlSeconds3);
+
 calendar.createEvents([
     {
       id: 'event1',
       calendarId: 'cal2',
       title: 'Weekly Checkup',
-      start: '2022-10-05T09:00:00',
-      end: '2022-10-05T11:00:00',
+      start: currentDateObj.toJSON().slice(0, 19),
+      end: newDateObj1.toJSON().slice(0, 19),
     },
     {
       id: 'event2',
       calendarId: 'cal1',
       title: 'Dr. Ambedkar - Orthopaedic',
-      start: '2022-10-07T14:00:00',
-      end: '2022-10-07T15:00:00',
+      start: newDateObj2.toJSON().slice(0, 19),
+      end: newDateObj3.toJSON().slice(0, 19),
     },
     {
       id: 'event3',
