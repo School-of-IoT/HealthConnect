@@ -26,29 +26,33 @@ The focus is on having a portable ICU, with which the medical help can be reache
 
 ## Dashboard View
 
-![image](https://user-images.githubusercontent.com/52236719/191496745-2459fef0-dd51-4534-b51e-04ac74cb875f.png)
-
+![image](https://user-images.githubusercontent.com/52236719/194998000-6d70b422-4115-4ea1-a1c4-90f933b8bd98.png)
 
 ## Digital Multi Para Monitor
 
-![image](https://user-images.githubusercontent.com/52236719/191496301-f8f1fa14-f1c5-490d-9862-a37be0ac6b5c.png)
-
+![image](https://user-images.githubusercontent.com/52236719/194998194-bbda1b51-7e75-4249-8162-9b890c158909.png)
 
 ## Medical Device Control Panel
 
-![image](https://user-images.githubusercontent.com/52236719/194371557-7c359bc2-6b4d-42a3-a6ac-51c45aa0b8c5.png)
+![image](https://user-images.githubusercontent.com/52236719/194998311-62afe521-d4c9-4925-ac68-f3307b99eefc.png)
 
-## Diagnose Description and Medical Report with Prescription (all-in-one)
+## Diagnose Report with Prescription
 
-![image](https://user-images.githubusercontent.com/52236719/194371835-ec1cefce-5dfd-42d2-831d-b9bfbd9926cf.png)
+![image](https://user-images.githubusercontent.com/52236719/194998453-55eaacd9-f49d-4118-9e25-a9e1cdb3c29a.png)
 
 ## Calendar Appointments
 
-![image](https://user-images.githubusercontent.com/52236719/194376508-f2d730ae-7b18-4c54-93a3-8d432c72f97f.png)
+![image](https://user-images.githubusercontent.com/52236719/195002553-671556c7-8356-4171-a17f-c664e1bdc890.png)
+
+
+## HealthCare Visit
+
+![image](https://user-images.githubusercontent.com/52236719/195002734-a241ce00-8950-4499-b062-f71f43fa6143.png)
+
 
 ## Symptom Check (AI Bot)
 
-![image](https://user-images.githubusercontent.com/52236719/194384754-2a260865-f3ed-4f0b-a618-39c8d3dcf802.png)
+![image](https://user-images.githubusercontent.com/52236719/195002811-1cc831d2-71eb-4b9a-9d66-dc68e19050b8.png)
 
 
 # HealthConnect Portal Interface (Admin):
