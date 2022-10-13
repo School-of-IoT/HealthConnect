@@ -116,4 +116,4 @@ var interval = setInterval(function() {
   
   
   if(cnt === 500) clearInterval(interval);
-}, 5000);  // change to '5' for demo
+}, 5);  // change to '5' for demo and '5000' during development of css
