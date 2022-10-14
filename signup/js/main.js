@@ -34,9 +34,9 @@ function rndNum(min, max) {
         $(".loader").css("visibility", "visible");
          $(".login100-form-btn").attr('disabled', true);
             console.log("click");
-      });
+//       });
 
-    $('.validate-form').on('submit',function(event){
+//     $('.validate-form').on('submit',function(event){
         $(".loader").css("visibility", "visible");
         $(".alert-v").removeClass('passfield-validate');
         $(".alert-v").removeClass('safepass-validate');
