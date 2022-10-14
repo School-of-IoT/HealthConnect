@@ -235,7 +235,11 @@ function rndNum(min, max) {
 
 })(jQuery);
 
-if($('.alert-v').hasClass("field-validate")){
-        $(".login100-form-btn").attr('disabled', false);
-        $(".loader").css("visibility", "hidden");
-    }
+(function ($) {
+    "use strict";
+
+    if($('.alert-v').hasClass("field-validate")){
+            $(".login100-form-btn").attr('disabled', false);
+            $(".loader").css("visibility", "hidden");
+        }
+})(jQuery);
