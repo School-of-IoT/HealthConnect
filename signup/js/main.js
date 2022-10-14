@@ -30,9 +30,10 @@ function rndNum(min, max) {
     /*=============== [ Validate ]  ===============*/
     let input = $('.validate-input .input100');
 
-    $(".wrap-login100-form-btn").click(function(){
+     $(".login100-form-btn").click(function(){
         $(".loader").css("visibility", "visible");
-         $(".wrap-login100-form-btn").disabled = true;
+         $(".login100-form-btn").attr('disabled', true);
+            console.log("click");
       });
 
     $('.validate-form').on('submit',function(event){
@@ -139,17 +140,18 @@ function rndNum(min, max) {
                 location.href = "../login/"
             }).fail(function (data) {
                 $(".loader").css("visibility", "hidden");
-                $(".wrap-login100-form-btn").disabled=false;
+                $(".login100-form-btn").attr('disabled', false);
                 alert("Try Again");
             }).always(function (data) {
-                 $(".wrap-login100-form-btn").disabled=false;
+                 $(".login100-form-btn").attr('disabled', false);
                 
                 //console.log(age);
             });
           }
           $(".loader").css("visibility", "hidden");
-          event.preventDefault();
         
+          event.preventDefault();
+            $(".login100-form-btn").attr('disabled', false);
         return check;
     });
 
