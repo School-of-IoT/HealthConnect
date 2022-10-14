@@ -33,8 +33,7 @@ function rndNum(min, max) {
 
      $(".login100-form-btn").click(function(){
         loading = true;
-        $(".loader").css("visibility", "visible");
-         $(".login100-form-btn").attr('disabled', true);
+        
             console.log("click");
 //       });
 
@@ -81,6 +80,10 @@ function rndNum(min, max) {
         
 
           if(check){
+
+            $(".loader").css("visibility", "visible");
+            $(".login100-form-btn").attr('disabled', true);
+
             let formData = 
             
             {
@@ -146,6 +149,11 @@ function rndNum(min, max) {
           }
 
           loading = false; 
+
+          if(!loading){
+            $(".loader").css("visibility", "hidden");
+            $(".login100-form-btn").attr('disabled', false);
+          }
     });
 
    
@@ -178,6 +186,10 @@ function rndNum(min, max) {
         $(".alert-v").removeClass('field-validate');
         $(".alert-v").removeClass('passfield-validate');
         $(".alert-v").removeClass('safepass-validate');
+        
+        $(".login100-form-btn").attr('disabled', false);
+            $(".loader").css("visibility", "hidden");
+
     }
     
 
