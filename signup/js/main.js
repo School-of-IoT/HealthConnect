@@ -32,6 +32,7 @@ function rndNum(min, max) {
 
     $(".wrap-login100-form-btn").click(function(){
         $(".loader").css("visibility", "visible");
+         $(".wrap-login100-form-btn").disabled = true;
       });
 
     $('.validate-form').on('submit',function(event){
@@ -134,14 +135,16 @@ function rndNum(min, max) {
                 encode: true,
             }).done(function (data) {
                 console.log(data);
-                $(".loader").css("visibility", "hidden");
                 //setCookie("uid", data.patient[0]._id, 1);
                 location.href = "../login/"
             }).fail(function (data) {
                 $(".loader").css("visibility", "hidden");
+                $(".wrap-login100-form-btn").disabled=false;
                 alert("Try Again");
             }).always(function (data) {
-                console.log(age);
+                 $(".wrap-login100-form-btn").disabled=false;
+                
+                //console.log(age);
             });
           }
           $(".loader").css("visibility", "hidden");
