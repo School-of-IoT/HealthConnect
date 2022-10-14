@@ -25,14 +25,12 @@ function rndNum(min, max) {
             }
         })    
     })
-  
-    var loading = false;
+
    
     /*=============== [ Validate ]  ===============*/
     let input = $('.validate-input .input100');
 
      $(".login100-form-btn").click(function(){
-        loading = true;
         
             console.log("click");
 //       });
@@ -148,12 +146,6 @@ function rndNum(min, max) {
             });
           }
 
-          loading = false; 
-
-          if(!loading){
-            $(".loader").css("visibility", "hidden");
-            $(".login100-form-btn").attr('disabled', false);
-          }
     });
 
    
@@ -240,18 +232,4 @@ function rndNum(min, max) {
         }
     }
 
-    if($('.alert-v').hasClass("field-validate")){
-        $(".login100-form-btn").attr('disabled', false);
-        $(".loader").css("visibility", "hidden");
-    }
-
-})(jQuery);
-
-(function ($) {
-    "use strict";
-
-    if($('.alert-v').hasClass("field-validate")){
-            $(".login100-form-btn").attr('disabled', false);
-            $(".loader").css("visibility", "hidden");
-        }
 })(jQuery);
