@@ -26,18 +26,19 @@ function rndNum(min, max) {
         })    
     })
   
+    var loading = false;
    
     /*=============== [ Validate ]  ===============*/
     let input = $('.validate-input .input100');
 
      $(".login100-form-btn").click(function(){
+        loading = true;
         $(".loader").css("visibility", "visible");
          $(".login100-form-btn").attr('disabled', true);
             console.log("click");
 //       });
 
 //     $('.validate-form').on('submit',function(event){
-        $(".loader").css("visibility", "visible");
         $(".alert-v").removeClass('passfield-validate');
         $(".alert-v").removeClass('safepass-validate');
         
@@ -135,25 +136,22 @@ function rndNum(min, max) {
                   },
                 encode: true,
             }).done(function (data) {
-                console.log(data);
-                //setCookie("uid", data.patient[0]._id, 1);
+                //console.log(data);
                 location.href = "../login/"
             }).fail(function (data) {
                 $(".loader").css("visibility", "hidden");
                 $(".login100-form-btn").attr('disabled', false);
-                alert("Try Again");
-            }).always(function (data) {
-                 $(".login100-form-btn").attr('disabled', false);
-                
-                //console.log(age);
+                //alert("Try Again");
             });
           }
-          $(".loader").css("visibility", "hidden");
-        
-          event.preventDefault();
-            $(".login100-form-btn").attr('disabled', false);
-        return check;
+
+          loading = false; 
     });
+
+    if(!loading){
+        $(".login100-form-btn").attr('disabled', false);
+        $(".loader").css("visibility", "hidden");
+    }
 
 
     $('.validate-form .input100').each(function(){
