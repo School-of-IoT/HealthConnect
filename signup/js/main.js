@@ -85,7 +85,7 @@ function rndNum(min, max) {
                 {
                     "newpatient": {
                       "Name": $("#name").val(),
-                      "Address": $("address").val(),
+                      "Address": $("#address").val(),
                       "Age": age,
                       "Ambulation":false,
                       "BMI": rndNum(18.5,24.9),
