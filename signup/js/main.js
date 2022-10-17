@@ -91,6 +91,8 @@ function rndNum(min, max) {
                       "BMI": rndNum(18.5,24.9),
                       "Chills":false,
                       "Contacts": $("#phone").val(),
+                      "DOB": dob,
+                      "Email": $("#email").val(),
                       "DBP": rndNum(60,80),
                       "DecreasedMood":false,
                       "FiO2": rndNum(50,100),
