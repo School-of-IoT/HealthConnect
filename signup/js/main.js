@@ -80,9 +80,9 @@ function rndNum(min, max) {
 
                 alert("inside checktrue");
 
-                document.getElementById("myForm").submit();
+                $('.validate-form').submit();
               
-               $('.validate-form').submit(function(event){
+               $('.validate-form').on('submit',function(event){
                    
                 let formData = 
 
