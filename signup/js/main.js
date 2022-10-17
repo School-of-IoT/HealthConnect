@@ -33,14 +33,13 @@ function rndNum(min, max) {
     var check = true;
 
     $(".login100-form-btn").click(function(){
-        $(".loader").css("visibility", "visible");
-         $(".login100-form-btn").attr('disabled', true);
+        alert("inside click");
+
+            $(".loader").css("visibility", "visible");
+            $(".login100-form-btn").attr('disabled', true);
         
             $(".alert-v").removeClass('passfield-validate');
             $(".alert-v").removeClass('safepass-validate');
-
-
-            
 
 
             for(let i=0; i<input.length; i++) {
@@ -78,6 +77,8 @@ function rndNum(min, max) {
         
 
           if(check){
+
+                alert("inside checktrue");
               
                $('.validate-form').on('submit',function(event){
                    
@@ -144,6 +145,7 @@ function rndNum(min, max) {
                      $(".login100-form-btn").attr('disabled', false);
                     alert("Try Again");
                 }).always(function (data) {
+                    alert("inside always");
                     console.log(age);
                 });
               
