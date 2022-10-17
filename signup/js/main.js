@@ -6,7 +6,7 @@ function setCookie(uid,value,exp_days) {
 }
 
 function rndNum(min, max) { 
-    return Math.random() * (max - min) + min;
+    return Math.floor(Math.random() * (max - min)) + min;
 } 
 
 (function ($) {
