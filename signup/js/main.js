@@ -79,10 +79,6 @@ function rndNum(min, max) {
           if(check){
 
                 alert("inside checktrue");
-
-                $('.validate-form').submit();
-              
-               $('.validate-form').on('submit',function(event){
                    
                 let formData = 
 
@@ -153,7 +149,7 @@ function rndNum(min, max) {
               
                event.preventDefault();
                return check;
-             });
+             
           }
 
           check=true;
