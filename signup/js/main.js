@@ -25,38 +25,36 @@ function rndNum(min, max) {
             }
         })    
     })
-
+  
    
     /*=============== [ Validate ]  ===============*/
     let input = $('.validate-input .input100');
 
-     $(".login100-form-btn").click(function(){
+    $(".login100-form-btn").click(function(){
+        $(".loader").css("visibility", "visible");
+         $(".login100-form-btn").attr('disabled', true);
         
-            console.log("click");
-//       });
+            $(".alert-v").removeClass('passfield-validate');
+            $(".alert-v").removeClass('safepass-validate');
 
-//     $('.validate-form').on('submit',function(event){
-        $(".alert-v").removeClass('passfield-validate');
-        $(".alert-v").removeClass('safepass-validate');
-        
-        
-        let check = true;
-        
 
-        for(let i=0; i<input.length; i++) {
-            if(filledField(input[i]) == false){
-                datafilled_show(input[i]);
-                check=false;
+            let check = true;
+
+
+            for(let i=0; i<input.length; i++) {
+                if(filledField(input[i]) == false){
+                    datafilled_show(input[i]);
+                    check=false;
+                }
             }
-        }
 
-        let birthin = document.getElementById("birthdate").value;  
-        let dob = new Date(birthin); 
-        let month_diff = Date.now() - dob.getTime();  
-        let age_dt = new Date(month_diff);   
-        let year = age_dt.getUTCFullYear();  
-        let age = Math.abs(year - 1970);  
-        
+            let birthin = document.getElementById("birthdate").value;  
+            let dob = new Date(birthin); 
+            let month_diff = Date.now() - dob.getTime();  
+            let age_dt = new Date(month_diff);   
+            let year = age_dt.getUTCFullYear();  
+            let age = Math.abs(year - 1970);  
+
 
         let pass1 = document.getElementById("pass1").value;
         let pass2 = document.getElementById("pass2").value;
@@ -78,77 +76,84 @@ function rndNum(min, max) {
         
 
           if(check){
+              
+               $('.validate-form').on('submit',function(event){
+                   
+                let formData = 
 
-            $(".loader").css("visibility", "visible");
-            $(".login100-form-btn").attr('disabled', true);
-
-            let formData = 
-            
-            {
-                "newpatient": {
-                  "Name": $("#name").val(),
-                  "Address": $("address").val(),
-                  "Age": age,
-                  "Ambulation":false,
-                  "BMI": rndNum(18.5,24.9),
-                  "Chills":false,
-                  "Contacts": $("#phone").val(),
-                  "DBP": rndNum(60,80),
-                  "DecreasedMood":false,
-                  "FiO2": rndNum(50,100),
-                  "GeneralizedFatigue":false,
-                  "HeartRate": rndNum(60,100),
-                  "HistoryFever": "Never",
-                  "RR": rndNum(12,16),
-                  "RecentHospitalStay":"00/00/0000",
-                  "SBP": rndNum(90,120),
-                  "SpO2": rndNum(90,100),
-                  "Temp": rndNum(95,99),
-                  "WeightGain":0,
-                  "WeightLoss":0,
-                  "BGroup": $("#BGr").val(),
-                  "Sex": $("#sex").val(),
-                  "pass": $("#pass1").val(),
-                  "user": $("#username").val(),
-                }
-              };
-             
-            //-----------------------------
-
-            // {
-            //     user: $("#username").val(),
-            //     pass: $("#pass1").val(),
-            //     name: $("#name").val(),
-            //     phone: $("#phone").val(),
-            //     address: $("address").val(),
-            //     age: age,
-            //   };
-            $.ajax({
-                type: "POST",
-                url: "https://healthconnect-server.herokuapp.com/patient/signup",
-                crossDomain: true,
-                contentType: 'application/json; charset=utf-8',
-                data: JSON.stringify(formData),
-                dataType: "json",
-                beforeSend: function(x) {
-                    if (x && x.overrideMimeType) {
-                      x.overrideMimeType("application/j-son;charset=UTF-8");
+                {
+                    "newpatient": {
+                      "Name": $("#name").val(),
+                      "Address": $("address").val(),
+                      "Age": age,
+                      "Ambulation":false,
+                      "BMI": rndNum(18.5,24.9),
+                      "Chills":false,
+                      "Contacts": $("#phone").val(),
+                      "DBP": rndNum(60,80),
+                      "DecreasedMood":false,
+                      "FiO2": rndNum(50,100),
+                      "GeneralizedFatigue":false,
+                      "HeartRate": rndNum(60,100),
+                      "HistoryFever": "Never",
+                      "RR": rndNum(12,16),
+                      "RecentHospitalStay":"00/00/0000",
+                      "SBP": rndNum(90,120),
+                      "SpO2": rndNum(90,100),
+                      "Temp": rndNum(95,99),
+                      "WeightGain":0,
+                      "WeightLoss":0,
+                      "BGroup": $("#BGr").val(),
+                      "Sex": $("#sex").val(),
+                      "pass": $("#pass1").val(),
+                      "user": $("#username").val(),
                     }
-                  },
-                encode: true,
-            }).done(function (data) {
-                //console.log(data);
-                location.href = "../login/"
-            }).fail(function (data) {
-                $(".loader").css("visibility", "hidden");
-                $(".login100-form-btn").attr('disabled', false);
-                //alert("Try Again");
-            });
+                  };
+
+                //-----------------------------
+
+                // {
+                //     user: $("#username").val(),
+                //     pass: $("#pass1").val(),
+                //     name: $("#name").val(),
+                //     phone: $("#phone").val(),
+                //     address: $("address").val(),
+                //     age: age,
+                //   };
+                $.ajax({
+                    type: "POST",
+                    url: "https://healthconnect-server.herokuapp.com/patient/signup",
+                    crossDomain: true,
+                    contentType: 'application/json; charset=utf-8',
+                    data: JSON.stringify(formData),
+                    dataType: "json",
+                    beforeSend: function(x) {
+                        if (x && x.overrideMimeType) {
+                          x.overrideMimeType("application/j-son;charset=UTF-8");
+                        }
+                      },
+                    encode: true,
+                }).done(function (data) {
+                    console.log(data);
+                    //setCookie("uid", data.patient[0]._id, 1);
+                    location.href = "../login/"
+                }).fail(function (data) {
+                    $(".loader").css("visibility", "hidden");
+                     $(".login100-form-btn").attr('disabled', false);
+                    alert("Try Again");
+                }).always(function (data) {
+                    console.log(age);
+                });
+              
+               event.preventDefault();
+               return check;
+             });
           }
-
+          $(".loader").css("visibility", "hidden");
+         $(".login100-form-btn").attr('disabled', false);
+         
+        });
     });
-
-   
 
 
     $('.validate-form .input100').each(function(){
@@ -178,10 +183,6 @@ function rndNum(min, max) {
         $(".alert-v").removeClass('field-validate');
         $(".alert-v").removeClass('passfield-validate');
         $(".alert-v").removeClass('safepass-validate');
-        
-        $(".login100-form-btn").attr('disabled', false);
-            $(".loader").css("visibility", "hidden");
-
     }
     
 
@@ -220,6 +221,8 @@ function rndNum(min, max) {
         // At least one lowercase character [a-z]
         // At least one uppercase character [A-Z]
         // At least 8 characters in length, but no more than 32.
+    
+    
     let mediumPassword = new RegExp('(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,32}')
 
     function StrengthChecker(PasswordParameter){
@@ -231,5 +234,6 @@ function rndNum(min, max) {
             return false;
         }
     }
+
 
 })(jQuery);
