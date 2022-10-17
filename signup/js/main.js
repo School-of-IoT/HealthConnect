@@ -29,6 +29,8 @@ function rndNum(min, max) {
    
     /*=============== [ Validate ]  ===============*/
     let input = $('.validate-input .input100');
+    
+    var check = true;
 
     $(".login100-form-btn").click(function(){
         $(".loader").css("visibility", "visible");
@@ -38,7 +40,7 @@ function rndNum(min, max) {
             $(".alert-v").removeClass('safepass-validate');
 
 
-            let check = true;
+            
 
 
             for(let i=0; i<input.length; i++) {
@@ -149,6 +151,8 @@ function rndNum(min, max) {
                return check;
              });
           }
+
+          check=true;
           $(".loader").css("visibility", "hidden");
          $(".login100-form-btn").attr('disabled', false);
          
