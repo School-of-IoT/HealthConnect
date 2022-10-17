@@ -152,7 +152,6 @@ function rndNum(min, max) {
           $(".loader").css("visibility", "hidden");
          $(".login100-form-btn").attr('disabled', false);
          
-        });
     });
 
 
