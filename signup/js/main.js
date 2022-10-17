@@ -33,7 +33,7 @@ function rndNum(min, max) {
     var check = true;
 
     $(".login100-form-btn").click(function(){
-        alert("inside click");
+        //alert("inside click");
 
             $(".loader").css("visibility", "visible");
             $(".login100-form-btn").attr('disabled', true);
@@ -78,7 +78,7 @@ function rndNum(min, max) {
 
           if(check){
 
-                alert("inside checktrue");
+                //alert("inside checktrue");
                    
                 let formData = 
 
@@ -141,9 +141,9 @@ function rndNum(min, max) {
                 }).fail(function (data) {
                     $(".loader").css("visibility", "hidden");
                      $(".login100-form-btn").attr('disabled', false);
-                    alert("Try Again");
+                    //alert("Try Again");
                 }).always(function (data) {
-                    alert("inside always");
+                    //alert("inside always");
                     console.log(age);
                 });
               
