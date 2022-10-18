@@ -143,6 +143,7 @@ function rndNum(min, max) {
                 }).fail(function (data) {
                     $(".loader").css("visibility", "hidden");
                      $(".login100-form-btn").attr('disabled', false);
+                     $(".alert-v").addClass('userexist'); 
                     //alert("Try Again");
                 }).always(function (data) {
                     //alert("inside always");
@@ -188,6 +189,7 @@ function rndNum(min, max) {
         $(".alert-v").removeClass('field-validate');
         $(".alert-v").removeClass('passfield-validate');
         $(".alert-v").removeClass('safepass-validate');
+        $(".alert-v").removeClass('userexist');
     }
     
 
