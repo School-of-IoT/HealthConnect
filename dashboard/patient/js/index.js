@@ -2,11 +2,11 @@
     "use strict";
 
     
-    var uid = sessionStorage.getItem('uid');
-    var auth = sessionStorage.getItem('auth');
+    var user = sessionStorage.getItem('user');
+    var token = sessionStorage.getItem('token');
     let formData = {
-            uid: uid,
-            auth: auth,
+            user: user,
+            token: token,
           };
     
     $.ajax({
@@ -17,7 +17,7 @@
         dataType: "json",
         encode: true,
       }).done(function (data) {
-        console.log(data.patient._id);
+        //console.log(data.patient[0]._id);
         $('.username').text(data.patient[0].Name);
         $('.chills').text(data.patient[0].Chills);
         $('.dbp').text(data.patient[0].DBP);
@@ -32,7 +32,7 @@
         $('.bmi').text(data.patient[0].BMI);
         $('.fio2').text(data.patient[0].FiO2);
       }).fail(function (data) {
-        console.log("failed");
+        //console.log("failed");
         window.location.href="../../login/"
       });
     
