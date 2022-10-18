@@ -142,9 +142,9 @@ function rndNum(min, max) {
                     if (data.status == 500){
                         $(".alert-v").addClass('userexist'); 
                     }
-                    else{
-                        location.href = "../login/"
-                    }
+                    // else{
+                    //     location.href = "../login/"
+                    // }
                     
                 }).fail(function (data) {
                     $(".loader").css("visibility", "hidden");
