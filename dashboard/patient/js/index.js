@@ -41,19 +41,34 @@
       sessionStorage.removeItem('uid');
       location.href = "../../login/"
     });
-    
+
+
     $.ajax({
+      type: "GET",
+      url: "https://healthconnect-server.herokuapp.com/geo_locate/"+user,
+      dataType: "json",
+      encode: true,
+    }).done(function (data) {
+      
+      $.ajax({
         type: "GET",
-        url: "https://api.ipgeolocation.io/ipgeo?apiKey=6bde9878f4a446de82bf535dddf501b4",
+        url: "https://api.ipgeolocation.io/ipgeo?apiKey=" + data.geo_api,
         dataType: "json",
         encode: true,
       }).done(function (data) {
-        console.log(data.city);
+        //console.log(data.city);
         sessionStorage.setItem('geo_loc',data.city);
         
       }).fail(function (data) {
-        console.log("failed");
+        console.log("api failed");
       });
+      
+    }).fail(function (data) {
+      console.log("geo server failed");
+    });
+
+    
+    
       var map_link = "https://maps.google.com/maps?q=hospitals%20in%20"+sessionStorage.getItem('geo_loc')+"&t=&z=10&ie=UTF8&iwloc=&output=embed";
       $('#hospital-map').attr('src', map_link);
 
