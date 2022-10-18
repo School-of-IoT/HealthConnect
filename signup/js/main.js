@@ -137,13 +137,18 @@ function rndNum(min, max) {
                       },
                     encode: true,
                 }).done(function (data) {
-                    console.log(data);
-                    //setCookie("uid", data.patient[0]._id, 1);
-                    location.href = "../login/"
+                    console.log(data.status);
+
+                    if (data.status == 500){
+                        $(".alert-v").addClass('userexist'); 
+                    }
+                    else{
+                        location.href = "../login/"
+                    }
+                    
                 }).fail(function (data) {
                     $(".loader").css("visibility", "hidden");
                      $(".login100-form-btn").attr('disabled', false);
-                     $(".alert-v").addClass('userexist'); 
                     //alert("Try Again");
                 }).always(function (data) {
                     //alert("inside always");
