@@ -4,7 +4,8 @@ function setCookie(uid,value,exp_days) {
     let d = new Date();
     d.setTime(d.getTime() + (exp_days*24*60*60*1000));
     let expires = "expires=" + d.toGMTString();
-    document.cookies = uid + "=" + value + ";" + expires + ";path=/";
+    let user = $("#User").val();
+    document.cookies = user + "=" + value + ";" + expires + ";path=/";
 }
 
 (function ($) {
@@ -54,9 +55,9 @@ function setCookie(uid,value,exp_days) {
             dataType: "json",
             encode: true,
           }).done(function (data) {
-            console.log(data.patient[0]._id);
-            sessionStorage.setItem('uid',data.patient[0]._id);
-            sessionStorage.setItem('auth',data.patient[0].pass);
+            //console.log(data.patient[0]._id);
+            sessionStorage.setItem('user',$("#User").val());
+            sessionStorage.setItem('token',data.token);
             //setCookie("uid", data.patient[0]._id, 1);
             location.href = "../dashboard/patient/"
           }).fail(function (data) {
