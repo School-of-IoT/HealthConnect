@@ -131,22 +131,20 @@ function rndNum(min, max) {
                       },
                     encode: true,
                 }).done(function (data) {
-                    console.log(data.status);
-
-                    if (data.status == 500){
-                        $(".alert-v").addClass('userexist'); 
-                    }
-                    else{
-                        location.href = "../login/"
-                    }
+                    
+                    location.href = "../login/"
                     
                 }).fail(function (data) {
                     $(".loader").css("visibility", "hidden");
                      $(".login100-form-btn").attr('disabled', false);
                     //alert("Try Again");
+                    if (data.error == "Username exists"){
+                        $(".alert-v").addClass('userexist'); 
+                    }
+                   
                 }).always(function (data) {
                     //alert("inside always");
-                    console.log(age);
+                    console.log(data.status);
                 });
               
                event.preventDefault();
