@@ -1,9 +1,3 @@
-function setCookie(uid,value,exp_days) {
-    let d = new Date();
-    d.setTime(d.getTime() + (exp_days*24*60*60*1000));
-    let expires = "expires=" + d.toGMTString();
-    document.cookies = uid + "=" + value + ";" + expires + ";path=/";
-}
 
 function rndNum(min, max) { 
     return Math.floor(Math.random() * (max - min)) + min;
@@ -142,9 +136,9 @@ function rndNum(min, max) {
                     if (data.status == 500){
                         $(".alert-v").addClass('userexist'); 
                     }
-                    // else{
-                    //     location.href = "../login/"
-                    // }
+                    else{
+                        location.href = "../login/"
+                    }
                     
                 }).fail(function (data) {
                     $(".loader").css("visibility", "hidden");
