@@ -138,14 +138,14 @@ function rndNum(min, max) {
                     $(".loader").css("visibility", "hidden");
                      $(".login100-form-btn").attr('disabled', false);
                     //alert("Try Again");
-                    console.log(data)
+                    console.log(data);
+                    if (data.responseJSON.error == "Username exists"){
+                        $(".alert-v").addClass('userexist'); 
+                    }
                    
                 }).always(function (data) {
                     //alert("inside always");
-                    console.log(data.error);
-if (data.error == "Username exists"){
-                        $(".alert-v").addClass('userexist'); 
-                    }
+                    console.log(data.status);
                 });
               
                event.preventDefault();
