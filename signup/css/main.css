@@ -40,6 +40,7 @@
 	align-content: center;
 	flex-wrap: nowrap;
 	flex-direction: row;
+	height: 50p;
 }
 
 .line {
@@ -75,8 +76,9 @@ a {
 	margin: 0px;
 	transition: all 0.4s;
 	-webkit-transition: all 0.4s;
-  -o-transition: all 0.4s;
-  -moz-transition: all 0.4s;
+	-o-transition: all 0.4s;
+	-moz-transition: all 0.4s;
+	/* position: absolute; */
 }
 
 a:focus {
@@ -197,9 +199,9 @@ iframe {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
   padding: 15px;
   background: #0a2558;
+  flex-direction: column;
 }
 
 .wrap-login100 {
@@ -210,14 +212,15 @@ iframe {
   flex-direction: column;
   align-items: center;
   overflow: hidden;
-  margin-top: 47px;
-  padding: 29px 35px 25px 35px;
+  margin-top: 11px;
+  padding: 22px 35px 22px 35px;
   box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
   -moz-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
   -webkit-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
   -o-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
   -ms-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
   align-content: space-around;
+  justify-content: flex-start;
 }
 
 
