@@ -30,7 +30,8 @@
   transition: 0.5s;
 } */
 .sidebar .logo-details{
-  height: 80px;
+  height: 35px;
+  margin-top: 10%;
   display: flex;
   align-items: center;
 }
@@ -45,6 +46,7 @@
   color: #fff;
   font-size: 24px;
   font-weight: 500;
+  margin-left: 10px;
 }
 .sidebar .nav-links{
   margin-top: 10px;
