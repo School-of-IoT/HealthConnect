@@ -57,8 +57,8 @@ function startConnect() {
 // Called when the client connects
 function onConnect() {
     // Fetch the MQTT topic from the form
-   // topic = "data/patient/"+sessionStorage.getItem('user')+"/med"
-topic = "#";
+    topic = "data/patient/"+sessionStorage.getItem('user')+"/med"
+    //topic = "#";
     // Print output for the user in the messages div
     let act = "Subscribing to: " + topic;
     console.log(act);
@@ -78,6 +78,18 @@ function onConnectionLost(responseObject) {
 // Called when a message arrives
 function onMessageArrived(message) {
     console.log(message.payloadString);
+
+    var values = message.payloadString.split(',');
+    console.log(values);
+
+        $('.dbp').text(values[0]);
+        $('.sbp').text(values[1]);
+        $('.heartrate').text(values[2]);
+        $('.respiration').text(values[3]);
+        $('.spo2').text(values[4]);
+        $('.temp').text(values[5]);
+        $('.fio2').text(values[6]);
+
 }
 
 // Called when the disconnection button is pressed
