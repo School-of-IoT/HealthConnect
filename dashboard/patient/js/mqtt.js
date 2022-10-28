@@ -2,14 +2,20 @@ var mqttserver ="";
 var mqttuser ="";
 var mqttpass ="";
 
+    user = sessionStorage.getItem('user');
+    token = sessionStorage.getItem('token');
+    let formData = {
+            user: user,
+            token: token,
+          };
+
 (function ($) {
     "use strict";
-
-    let url = "https://healthconnect-server.herokuapp.com/patient/device/" + sessionStorage.getItem('user');
     
     $.ajax({
         type: "GET",
-        url: url,
+        url: "https://healthconnect-server.herokuapp.com/patient/device",
+        data : formData,
         crossDomain: true,
         dataType: "json",
         encode: true,
