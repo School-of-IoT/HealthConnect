@@ -1,3 +1,5 @@
+var patID="";
+
 (function ($) {
     "use strict";
 
@@ -17,7 +19,7 @@
         dataType: "json",
         encode: true,
       }).done(function (data) {
-        //console.log(data.patient[0]._id);
+        patID=data.patient[0]._id;
         $('.username').text(data.patient[0].Name);
         $('.chills').text(data.patient[0].Chills);
         $('.dbp').text(data.patient[0].DBP);
@@ -75,5 +77,43 @@
       let min_meet_time = new Date().toJSON().slice(0, 16);
       
       $('#meeting-time').attr('min', min_meet_time);
+
+      function updatePatient{
+
+        let url = "https://healthconnect-server.herokuapp.com/patient/update/" + patID;
+
+        let formData = 
+        {
+          patientData:{
+              SBP:	$('.sbp.number').text(),
+              DBP:  $('.dbp.number').text(),
+              HeartRate: $('.heartrate.number').text(),
+              RR: $('.respiration.number').text(),
+              SpO2: $('.spo2.number').text(),
+              Temp: $('.temp.number').text(),
+              FiO2: $('.fio2.number').text()
+
+          }
+        };
+
+        $.ajax({
+          type: "PUT",
+          url: url,
+          data : formData,
+          crossDomain: true,
+          dataType: "json",
+          encode: true,
+        }).done(function (data) {
+          console.log("Updated";
+          
+        }).fail(function (data) {
+          console.log("update failed");
+          
+        });
+        
+      }
+
+
+      setInterval(updatePatient, 60000*3); //every 5 mins
 
 })(jQuery);

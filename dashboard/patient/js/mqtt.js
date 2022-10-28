@@ -26,7 +26,7 @@ var mqttpass ="";
         mqttpass = data.mqttPass;
         startConnect();
       }).fail(function (data) {
-        //console.log("mqtt failed");
+        window.location.href="../../login/"
       });
 })(jQuery);
 
