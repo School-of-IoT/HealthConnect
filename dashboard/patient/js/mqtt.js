@@ -20,13 +20,13 @@ var mqttpass ="";
         dataType: "json",
         encode: true,
       }).done(function (data) {
-        //console.log(data.patient[0]._id);
+        ////console.log(data.patient[0]._id);
         mqttserver = data.mqttserver;
         mqttuser = data.mqttUser;
         mqttpass = data.mqttPass;
         startConnect();
       }).fail(function (data) {
-        console.log("mqtt failed");
+        //console.log("mqtt failed");
       });
 })(jQuery);
 
@@ -41,7 +41,7 @@ function startConnect() {
     
     let act = "Connecting to: " + host + ' on port: ' + port + ', with Client ID - ' + clientID;
     // Print output for the user in the messages div
-    console.log(act);
+    //console.log(act);
  
     // Initialize new Paho client connection
     client = new Paho.MQTT.Client(host, Number(port), clientID);
@@ -57,7 +57,7 @@ function startConnect() {
         password: mqttpass,
         useSSL: true
     });
-   console.log("Connected");
+   //console.log("Connected");
 }
 
 // Called when the client connects
@@ -67,7 +67,7 @@ function onConnect() {
     //topic = "#";
     // Print output for the user in the messages div
     let act = "Subscribing to: " + topic;
-    console.log(act);
+    //console.log(act);
 
     // Subscribe to the requested topic
     client.subscribe(topic);
@@ -75,18 +75,18 @@ function onConnect() {
 
 // Called when the client loses its connection
 function onConnectionLost(responseObject) {
-    console.log("onConnectionLost: Connection Lost");
+    //console.log("onConnectionLost: Connection Lost");
     if (responseObject.errorCode !== 0) {
-        console.log("onConnectionLost: " + responseObject.errorMessage);
+        //console.log("onConnectionLost: " + responseObject.errorMessage);
     }
 }
 
 // Called when a message arrives
 function onMessageArrived(message) {
-    console.log(message.payloadString);
+    //console.log(message.payloadString);
 
     var values = message.payloadString.split(',');
-    console.log(values);
+    //console.log(values);
 
         $('.dbp').text(values[0]);
         $('.sbp').text(values[1]);
@@ -101,5 +101,5 @@ function onMessageArrived(message) {
 // Called when the disconnection button is pressed
 function startDisconnect() {
     client.disconnect();
-    console.log("Disconnected");
+    //console.log("Disconnected");
 }
