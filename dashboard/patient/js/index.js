@@ -78,7 +78,7 @@ var patID="";
       
       $('#meeting-time').attr('min', min_meet_time);
 
-      function updatePatient{
+      function updatePatient(){
 
         let url = "https://healthconnect-server.herokuapp.com/patient/update/" + patID;
 
@@ -110,7 +110,7 @@ var patID="";
           console.log("update failed");
           
         });
-        
+
       }
 
 
