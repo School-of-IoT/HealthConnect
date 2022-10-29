@@ -95,6 +95,8 @@ var patID="";
           }
         };
 
+        
+
         $.ajax({
           type: "PUT",
           url: url,
@@ -102,6 +104,10 @@ var patID="";
           crossDomain: true,
           dataType: "json",
           encode: true,
+          headers: {
+            "Content-Type": "application/json"
+          },
+          processData: false,
         }).done(function (data) {
           console.log("Updated");
           
