@@ -84,21 +84,21 @@ var patID="";
 
         let formData = 
         {
-          patientData:{
-              SBP:	$('.sbp.number').text(),
-              DBP:  $('.dbp.number').text(),
-              HeartRate: $('.heartrate.number').text(),
-              RR: $('.respiration.number').text(),
-              SpO2: $('.spo2.number').text(),
-              Temp: $('.temp.number').text(),
-              FiO2: $('.fio2.number').text(),
-          },
+          "patientData":{
+              "SBP":	$('.sbp.number').text(),
+              "DBP":  $('.dbp.number').text(),
+              "HeartRate": $('.heartrate.number').text(),
+              "RR": $('.respiration.number').text(),
+              "SpO2": $('.spo2.number').text(),
+              "Temp": $('.temp.number').text(),
+              "FiO2": $('.fio2.number').text()
+          }
         };
 
         $.ajax({
           type: "PUT",
           url: url,
-          data : formData,
+          data : JSON.stringify(formData),
           crossDomain: true,
           dataType: "json",
           encode: true,
