@@ -104,7 +104,7 @@ var patID="";
           dataType: "json",
           encode: true,
         }).done(function (data) {
-          console.log("Updated";
+          console.log("Updated");
           
         }).fail(function (data) {
           console.log("update failed");
