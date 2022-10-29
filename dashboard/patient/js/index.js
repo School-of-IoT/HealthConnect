@@ -91,9 +91,8 @@ var patID="";
               RR: $('.respiration.number').text(),
               SpO2: $('.spo2.number').text(),
               Temp: $('.temp.number').text(),
-              FiO2: $('.fio2.number').text()
-
-          }
+              FiO2: $('.fio2.number').text(),
+          },
         };
 
         $.ajax({
@@ -114,6 +113,6 @@ var patID="";
       }
 
 
-      setInterval(updatePatient, 60000*3); //every 5 mins
+      setInterval(updatePatient, 60000*3); //every 3 mins
 
 })(jQuery);
