@@ -24,14 +24,28 @@ var mqttpass ="";
         mqttserver = data.mqttserver;
         mqttuser = data.mqttUser;
         mqttpass = data.mqttPass;
-        startConnect();
       }).fail(function (data) {
         window.location.href="../../login/"
       });
 })(jQuery);
 
 
-function startConnect() {
+function startConnect(branch) {
+    switch(branch){
+        case 0:
+            branch = "SBP";
+        case 1:
+            branch = "DBP";
+        case 2:
+            branch = "Resp";
+        case 3:
+            branch = "HR";
+        case 9:
+            branch = "all";
+        default:
+            branch = "all";
+    }
+
     // Generate a random client ID
     clientID = "clientID-" + parseInt(Math.random() * 1000);
 
@@ -52,7 +66,7 @@ function startConnect() {
 
     // Connect the client, if successful, call onConnect function
     client.connect({ 
-        onSuccess: onConnect,
+        onSuccess: onConnect(branch),
         userName: mqttuser,
         password: mqttpass,
         useSSL: true
@@ -61,9 +75,9 @@ function startConnect() {
 }
 
 // Called when the client connects
-function onConnect() {
+function onConnect(branch) {
     // Fetch the MQTT topic from the form
-    topic = "data/patient/"+sessionStorage.getItem('user')+"/med"
+    topic = "data/patient/"+sessionStorage.getItem('user')+"/med/"+branch;
     //topic = "#";
     // Print output for the user in the messages div
     let act = "Subscribing to: " + topic;

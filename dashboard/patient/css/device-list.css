@@ -293,11 +293,11 @@ button.dev-table-btn {
     justify-content: space-around;
 }
 
-.device-online{
-  text-shadow: 0px 0px 12px green; 
+.device-online::before{
+  text-shadow: 0px 0px 1px green; 
   content: "Online";
 }
-.device-offline{
-  text-shadow: 0px 0px 12px green; 
+.device-offline::before{
+  text-shadow: 0px 0px 1px red; 
   content: "Offline";
 }
