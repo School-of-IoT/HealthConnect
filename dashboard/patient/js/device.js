@@ -2,7 +2,7 @@ var dev_col=1;
 
 
 
-function myFunction() {
+function node_search() {
   var input, filter, table, tr, td, i, txtValue;
   input = document.getElementsByClassName("s-inpt")[0].value;
   filter = input.toUpperCase();
@@ -19,4 +19,8 @@ function myFunction() {
       }
     }       
   }
+}
+
+function add_node(){
+  
 }

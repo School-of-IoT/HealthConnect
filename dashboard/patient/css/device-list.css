@@ -292,3 +292,12 @@ button.dev-table-btn {
     align-content: stretch;
     justify-content: space-around;
 }
+
+.device-online{
+  text-shadow: 0px 0px 12px green; 
+  content: "Online";
+}
+.device-offline{
+  text-shadow: 0px 0px 12px green; 
+  content: "Offline";
+}
