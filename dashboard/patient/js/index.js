@@ -119,6 +119,6 @@ var patID="";
       }
 
 
-      setInterval(updatePatient, 60000*1); //every 3 mins
+      //setInterval(updatePatient, 60000*10); //every 10 mins
 
 })(jQuery);
