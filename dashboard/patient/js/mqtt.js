@@ -64,8 +64,8 @@ function startConnect(dev_id) {
     let dvof = 'device-offline '+ID;
     let dvon = 'device-online '+ID;
    if($(loc).hasClass(dvof)){
-    $('loc').removeClass('device-offline');
-    $('loc').addClass('device-online');
+    $(loc).removeClass('device-offline');
+    $(loc).addClass('device-online');
    }
 
 }
