@@ -43,13 +43,13 @@ function startConnect(branch, dev_id) {
     let act = "Connecting to: " + host + ' on port: ' + port + ', with Node ID - ' + ID;
     // Print output for the user in the messages div
     console.log(act);
- 
+    clientID = "clientID-"dev_id;
     // Initialize new Paho client connection
-    client = new Paho.MQTT.Client(host, Number(port), ID);
+    client = new Paho.MQTT.Client(host, Number(port), clientID);
 
     // Set callback handlers
-    client.onConnectionLost = onConnectionLost(ID);
-    client.onMessageArrived = onMessageArrived(branch);
+    client.onConnectionLost(ID) = onConnectionLost;
+    client.onMessageArrived(branch) = onMessageArrived;
 
     // Connect the client, if successful, call onConnect function
     client.connect({ 
