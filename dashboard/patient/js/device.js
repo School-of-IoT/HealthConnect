@@ -29,13 +29,15 @@ function add_node(ID, val, node,branch){
   let x=document.getElementById('dev-table').insertRow(1);
   x.id="node-"+ID;
   c=0;
-  x.insertCell(c).innerHTML='<button class="dev-table-btn" onClick="startConnect('+branch+');">Connect</button>';
-  x.insertCell(c).setAttribute('class', 'device-offline');
+  x.insertCell(c).innerHTML='<button class="dev-table-btn" onClick="startConnect('+branch+','+x.id+');">Connect</button>';
+  status = 'device-offline '+x.id;
+  x.insertCell(c).setAttribute('class', status);
   x.insertCell(c).innerHTML=val;
   x.insertCell(c).innerHTML=ID;
   x.insertCell(c).innerHTML=node;
   x.insertCell(c).innerHTML=date_time;
   
 }
+
 
 //add_node(22110103, "sbp,db,resp,hr,spO2,fiO2,temp", "Central", 9);

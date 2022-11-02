@@ -294,10 +294,10 @@ button.dev-table-btn {
 }
 
 .device-online::before{
-  text-shadow: 0px 0px 1px green; 
-  content: "Online";
+  text-shadow: 0px 0px 10px green; 
+  content: "🟢";
 }
 .device-offline::before{
-  text-shadow: 0px 0px 1px red; 
-  content: "Offline";
+  text-shadow: 0px 0px 10px red; 
+  content: "🔴";
 }
