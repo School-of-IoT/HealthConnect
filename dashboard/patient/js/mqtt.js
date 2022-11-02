@@ -30,7 +30,7 @@ var mqttpass ="";
 })(jQuery);
 
 
-function startConnect(branch, ID) {
+function startConnect(branch, dev_id) {
     
 
     // Generate a random client ID
@@ -38,6 +38,7 @@ function startConnect(branch, ID) {
     // Fetch the hostname/IP address and port number from the form
     host = mqttserver;
     port = 8884;
+    let ID = "node-"+dev_id;
     
     let act = "Connecting to: " + host + ' on port: ' + port + ', with Node ID - ' + ID;
     // Print output for the user in the messages div
