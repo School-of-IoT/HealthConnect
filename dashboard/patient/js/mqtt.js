@@ -30,7 +30,7 @@ var mqttpass ="";
 })(jQuery);
 
 
-function startConnect(branch, dev_id) {
+function startConnect(dev_id) {
     
 
     // Generate a random client ID
@@ -75,7 +75,7 @@ function onConnect(ID) {
     // Fetch the MQTT topic from the form
 
 
-    topic = "data/patient/"+sessionStorage.getItem('user')+"/med/"+ID+"/all"+branch;
+    topic = "data/patient/"+sessionStorage.getItem('user')+"/med/"+ID+"/all";
     //topic = "#";
     // Print output for the user in the messages div
     let act = "Subscribing to: " + topic;
@@ -105,7 +105,7 @@ function onConnectionLost(responseObject) {
 }
 
 // Called when a message arrives
-function onMessageArrived(message,branch) {
+function onMessageArrived(message) {
     //console.log(message.payloadString);
     var values = message.payloadString.split(',');
             //console.log(values);
