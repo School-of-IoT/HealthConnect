@@ -43,7 +43,7 @@ function startConnect(branch, dev_id) {
     let act = "Connecting to: " + host + ' on port: ' + port + ', with Node ID - ' + ID;
     // Print output for the user in the messages div
     console.log(act);
-    clientID = "clientID-"dev_id;
+    clientID = "clientID-"+dev_id;
     // Initialize new Paho client connection
     client = new Paho.MQTT.Client(host, Number(port), clientID);
 
