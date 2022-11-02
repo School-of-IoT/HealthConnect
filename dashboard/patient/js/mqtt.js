@@ -48,8 +48,8 @@ function startConnect(branch, dev_id) {
     client = new Paho.MQTT.Client(host, Number(port), clientID);
 
     // Set callback handlers
-    client.onConnectionLost(ID) = onConnectionLost;
-    client.onMessageArrived(branch) = onMessageArrived;
+    client.onConnectionLost = onConnectionLost;
+    client.onMessageArrived = onMessageArrived;
 
     // Connect the client, if successful, call onConnect function
     client.connect({ 
@@ -86,7 +86,7 @@ function onConnect(branch, ID) {
         case 9:
             branch = "all";
         default:
-            branch = "all";
+            branch = "null";
     }
 
     topic = "data/patient/"+sessionStorage.getItem('user')+"/med/"+ID+"/"+branch;
@@ -101,17 +101,17 @@ function onConnect(branch, ID) {
 }
 
 // Called when the client loses its connection
-function onConnectionLost(responseObject,ID) {
-    let act = "Connection Lost with "+ID;
+function onConnectionLost(responseObject) {
+    let act = "Connection Lost";
     console.log(act);
 
-    let loc = 'td.' + ID;
-    let dvof = 'device-offline '+ID;
-    let dvon = 'device-online '+ID;
-   if($(loc).hasClass(dvon)){
-    $('loc').removeClass('device-online');
-    $('loc').addClass('device-offline');
-   }
+//     let loc = 'td.' + ID;
+//     let dvof = 'device-offline '+ID;
+//     let dvon = 'device-online '+ID;
+//    if($(loc).hasClass(dvon)){
+//     $('loc').removeClass('device-online');
+//     $('loc').addClass('device-offline');
+//    }
 
     if (responseObject.errorCode !== 0) {
         //console.log("onConnectionLost: " + responseObject.errorMessage);
@@ -121,29 +121,7 @@ function onConnectionLost(responseObject,ID) {
 // Called when a message arrives
 function onMessageArrived(message,branch) {
     //console.log(message.payloadString);
-
-    switch(branch){
-        case 0:
-            branch = "SBP";
-        case 1:
-            branch = "DBP";
-        case 2:
-            branch = "Resp";
-        case 3:
-            branch = "HR";
-        case 9:
-            var values = message.payloadString.split(',');
-            console.log(values);
-
-                $('.dbp').text(values[0]);
-                $('.sbp').text(values[1]);
-                $('.heartrate').text(values[2]);
-                $('.respiration').text(values[3]);
-                $('.spo2').text(values[4]);
-                $('.temp').text(values[5]);
-                $('.fio2').text(values[6]);
-        default:
-            var values = message.payloadString.split(',');
+    var values = message.payloadString.split(',');
             //console.log(values);
 
                 $('.dbp').text(values[0]);
@@ -154,10 +132,6 @@ function onMessageArrived(message,branch) {
                 $('.temp').text(values[5]);
                 $('.fio2').text(values[6]);
     }
-
-    
-
-}
 
 // Called when the disconnection button is pressed
 function startDisconnect() {
