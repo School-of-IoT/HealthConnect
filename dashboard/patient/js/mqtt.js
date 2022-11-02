@@ -29,7 +29,7 @@ var mqttpass ="";
       });
 })(jQuery);
 
-
+var ID = "";
 function startConnect(dev_id) {
     
 
@@ -38,7 +38,7 @@ function startConnect(dev_id) {
     // Fetch the hostname/IP address and port number from the form
     host = mqttserver;
     port = 8884;
-    let ID = "node-"+dev_id;
+    ID = "node-"+dev_id;
     
     let act = "Connecting to: " + host + ' on port: ' + port + ', with Node ID - ' + ID;
     // Print output for the user in the messages div
@@ -53,12 +53,12 @@ function startConnect(dev_id) {
 
     // Connect the client, if successful, call onConnect function
     client.connect({ 
-        onSuccess: onConnect(ID),
+        onSuccess: onConnect,
         userName: mqttuser,
         password: mqttpass,
         useSSL: true
     });
-   //console.log("Connected");
+   console.log("Connected");
 
     let loc = 'td.' + ID;
     let dvof = 'device-offline '+ID;
@@ -71,7 +71,7 @@ function startConnect(dev_id) {
 }
 
 // Called when the client connects
-function onConnect(ID) {
+function onConnect() {
     // Fetch the MQTT topic from the form
 
 
