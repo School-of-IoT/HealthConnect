@@ -1,10 +1,12 @@
-(Under Construction during Production)
 # HealthConnect 
 
-## Your OWN Digital Hospital with Physical Units
+### Contribute:
 
+To contribute something to HealthConnect, please refer to our [contributing document](CONTRIBUTING.md)
 
 ### Features:
+
+Open Source Medical IoT Application. Use any device - ESP32/ESP8266 Dev Board, Raspberry Pi, Smart Phone - connect the sensors and add your device on your account. Then view your medical sensor data sent to the cloud in REAL TIME.
 
 - Ability to access Patient Data remotely (Dashboard)
 - Digital Multi Para Monitor
@@ -22,6 +24,17 @@ All these tests need not be taken in the hospitals, an IoT device, whose prototy
 These could include infection, disorders, diseases, or any health condition which is unlikely in usual cases.
 
 The focus is on having a portable ICU, with which the medical help can be reached to the people remotely.
+
+
+### Get Started:
+
+1. Visit the [SignUp Page](https://healthconnect.pages.dev/signup/) and Create your Account.
+2. Now visit [Login Page](https://healthconnect.pages.dev/login/) and login.
+3. View existing sample/dummy data on the portal.
+4. Explore the features on sidebar, and view sample vitals on the Dashboard and Diagnostics.
+5. To view your own data or realtime data sample - you'll have to add you device to the cloud.
+6. Click on Medical Devices on the sidebar, and follow the instructions to Add your Device.
+7. View RealTime health vitals of your your body on the Dashboard and Diagnostics.
 
 # HealthConnect Portal Interface (Patient):
 
