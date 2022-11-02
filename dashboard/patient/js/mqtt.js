@@ -53,7 +53,7 @@ function startConnect(branch, dev_id) {
 
     // Connect the client, if successful, call onConnect function
     client.connect({ 
-        onSuccess: onConnect(branch,ID),
+        onSuccess: onConnect(ID),
         userName: mqttuser,
         password: mqttpass,
         useSSL: true
@@ -71,25 +71,11 @@ function startConnect(branch, dev_id) {
 }
 
 // Called when the client connects
-function onConnect(branch, ID) {
+function onConnect(ID) {
     // Fetch the MQTT topic from the form
 
-    switch(branch){
-        case 0:
-            branch = "SBP";
-        case 1:
-            branch = "DBP";
-        case 2:
-            branch = "Resp";
-        case 3:
-            branch = "HR";
-        case 9:
-            branch = "all";
-        default:
-            branch = "null";
-    }
 
-    topic = "data/patient/"+sessionStorage.getItem('user')+"/med/"+ID+"/"+branch;
+    topic = "data/patient/"+sessionStorage.getItem('user')+"/med/"+ID+"/all"+branch;
     //topic = "#";
     // Print output for the user in the messages div
     let act = "Subscribing to: " + topic;
