@@ -31,9 +31,11 @@
 } */
 .sidebar .logo-details{
   height: 35px;
-  margin-top: 10%;
+  margin-top: 30px;
   display: flex;
   align-items: center;
+  margin-left: 0px;
+  position: sticky;
 }
 .sidebar .logo-details i{
   font-size: 28px;
@@ -47,6 +49,7 @@
   font-size: 24px;
   font-weight: 500;
   margin-left: 10px;
+  position: relative;
 }
 .sidebar .nav-links{
   margin-top: 10px;
