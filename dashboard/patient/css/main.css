@@ -1633,3 +1633,42 @@ span.app-version {
 .map {
     height: 252px;
 }
+
+
+.node-dev.pop-up {
+  position: absolute;
+  z-index: 9;
+  top: 50%;
+  right: 35%;
+}
+
+.key-setting .close {
+  background-color: red;
+  display: flex;
+  flex-direction: row-reverse;
+  padding: 10px;
+  border-radius: 10px 10px 0px 0px;
+}
+
+.key-setting .close-icon {margin-right: 5px;}
+
+.key-setting .box-content {
+  background-color: white;
+}
+
+.key-setting.box {
+  padding: 0px 1;
+  display: flex;
+  background: #ffffff;
+  border-radius: 21px;
+  box-shadow: 0 5px 10px rgb(0 0 0 / 10%);
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: stretch;
+  justify-content: space-around;
+}
+
+.key-setting .submit-key {
+  border-radius: 0px 0px 10px 10px;
+  padding: 10px;
+}
