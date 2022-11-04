@@ -33,6 +33,7 @@
         $('.fever').text(data.patient[0].HistoryFever);
         $('.bmi').text(data.patient[0].BMI);
         $('.fio2').text(data.patient[0].FiO2);
+        sessionStorage.setItem(data.patient[0].devtoken);
       }).fail(function (data) {
         //console.log("failed");
         window.location.href="../../login/"

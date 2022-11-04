@@ -118,6 +118,8 @@ var patID="";
 
       }
 
+      
+
 
       //setInterval(updatePatient, 60000*10); //every 10 mins
 
