@@ -122,6 +122,9 @@ var patID="";
 
 })(jQuery);
 
+$('.key-setting').hide();
+  $('.pop-up').hide();
+
 function view_key_modal(){
   $('.key-setting').show();
   $('.pop-up').show();        
