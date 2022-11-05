@@ -1669,7 +1669,7 @@ span.app-version {
 
 .key-setting .box-content {
   background-color: white;
-  margin: 20px 30px;
+  margin: 20px 20px;
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
@@ -1692,7 +1692,12 @@ span.app-version {
 
 .key-setting .submit-key {
   border-radius: 0px 0px 10px 10px;
-  padding: 10px;
+  padding: 10px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  align-content: flex-start;
+  justify-content: space-evenly;
 }
 
 
@@ -1703,6 +1708,12 @@ span.app-version {
 }
 
 .key-setting span.refresh {
+    font-size: 20px;
+    margin: 0px 10px;
+}
+
+.key-setting span.copy {
+    cursor: pointer;
     font-size: 20px;
     margin: 0px 10px;
 }

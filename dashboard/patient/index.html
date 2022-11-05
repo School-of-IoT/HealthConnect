@@ -30,18 +30,23 @@
 <body>
 
   <div class="node-dev pop-up" style="display: none!important;">
-    <div class="key-setting box">
+    <div class="key-setting box" style="">
       <div class="close">
         <span class="dev-head">HealthConnect Devices</span>
         <span class="close-icon" onclick="close_key()">✖</span>  
       </div>
       <div class="box-content">
         <h2>Secret Key</h2>
-        <div class="value"><code class="key-value"></code>
-          <span class="refresh">🔁</span>
+        <div class="value">
+          <code class="key-value"></code>
+          <span class="copy">📋</span>
         </div>
 
-        <span> Please reset your secret key regularly</span>
+       
+        <div class="submit-key">
+            <button class="new_key">Generate New Key</button>
+           <span> Please reset your secret key regularly</span>
+        </div>
       </div>
 
       <div class="dev-create box">
