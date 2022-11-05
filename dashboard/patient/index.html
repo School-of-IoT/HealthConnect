@@ -32,33 +32,36 @@
   <div class="node-dev pop-up">
     <div class="key-setting box">
       <div class="close">
-  <span class="close-icon">✖</span>
-</div>
+        <span class="dev-head">HealthConnect Devices</span>
+        <span class="close-icon" onclick="close_key()">✖</span>  
+      </div>
       <div class="box-content">
         <h2>Secret Key</h2>
-        <div class="value"><code class="key-value"> </code>
+        <div class="value"><code class="key-value"></code>
           <span class="refresh">🔁</span>
         </div>
-<span> Please reset your secret key regularly</span>
+
+        <span> Please reset your secret key regularly</span>
       </div>
 
-    <div class="dev-create box">
-      <div class="close">
-  <span class="close-icon">✖</span>
-</div>
-      <div class="box-content">
-        <div>Secret Key</div>
-        <div class="indicator"><code class="key-value"> </code>
-          <span class="refresh">🔁</span>
+      <div class="dev-create box">
+        <div class="close">
+          <span class="close-icon">✖</span>
+        </div>
+        <div class="box-content">
+          <div>Secret Key</div>
+          <div class="indicator"><code class="key-value"></code>
+            <span class="refresh">🔁</span>
+          </div>
+        </div>
+        <div class="submit-key">
+          <div class="box-topic">Systole BP</div>
         </div>
       </div>
-<div class="submit-key">
-        <div class="box-topic">Systole BP</div>
-        
-        
-      </div>
-    </div></div>
-   </div>
+    </div>
+   
+
+</div>
    
   <div class="container" id="blur">
     <div class="sidebar">
@@ -330,7 +333,8 @@
             </div>
             <div class="s-btn">
               <button class="s-btn-func" onclick="node_search()">Search</button>
-              <button class="s-btn-func" onclick="add_node()">Add Device</button><button class="s-btn-func" onclick="node_search_filter()">Filter</button>
+              <button class="s-btn-func" onclick="add_node()">Add Device</button>
+              <button class="s-btn-func" onclick="view_key_modal()">Secret Key</button>
             </div> 
           </div>
           <div class="dev-list box">

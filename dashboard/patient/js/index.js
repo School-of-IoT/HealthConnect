@@ -118,9 +118,13 @@ var patID="";
 
       }
 
-      
-
-
       //setInterval(updatePatient, 60000*10); //every 10 mins
 
 })(jQuery);
+
+function view_key_modal(){
+  $('.key-setting').css("display", "block");       
+}
+function close_key(){
+  $('.key-setting').css("display", "none");
+}
