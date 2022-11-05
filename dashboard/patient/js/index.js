@@ -123,8 +123,10 @@ var patID="";
 })(jQuery);
 
 function view_key_modal(){
-  $('.key-setting').css("display", "block");       
+  $('.key-setting').show();
+  $('.pop-up').show();        
 }
 function close_key(){
-  $('.key-setting').css("display", "none");
+  $('.key-setting').hide();
+  $('.pop-up').hide();   
 }
