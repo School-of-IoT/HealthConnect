@@ -1660,7 +1660,12 @@ span.app-version {
   justify-content: space-between;
 }
 
-.key-setting .close-icon {color: white;margin-right: 5px;font-size: 20px;}
+.key-setting .close-icon {
+  cursor: pointer;
+  color: white;
+  margin-right: 5px;
+  font-size: 20px;
+}
 
 .key-setting .box-content {
   background-color: white;
@@ -1673,6 +1678,7 @@ span.app-version {
 
 .key-setting.box {
   /* top: 138%; */
+  display: none;
   padding: 0px 1;
   display: flex;
   background: #ffffff;
