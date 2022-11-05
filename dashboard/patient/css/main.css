@@ -1737,3 +1737,12 @@ span.dev-head {
   font-size: 20px;
 }
 
+button.new_key {
+  margin-bottom: 5px;
+  align-items: center;
+  align-content: center;
+  padding: 5px 5px;
+  background: #0A2558;
+  color: #fff;
+  cursor: pointer;
+}
