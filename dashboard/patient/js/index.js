@@ -123,6 +123,7 @@ var patID="";
 })(jQuery);
 
 $('.key-setting').hide();
+$('.dev-create').hide();
   $('.pop-up').hide();
 
 function view_key_modal(){
@@ -130,8 +131,16 @@ function view_key_modal(){
   $('.pop-up').show();  
   $('#blur').css('filter', 'blur(5px)');   
 }
+
+function view_node_modal(){
+  $('.dev-create').show();
+  $('.pop-up').show();  
+  $('#blur').css('filter', 'blur(5px)');   
+}
+
 function close_key(){
   $('.key-setting').hide();
+  $('.dev-create').hide();
   $('.pop-up').hide();   
   $('#blur').css('filter', 'blur(0px)');   
 }

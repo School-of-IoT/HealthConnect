@@ -47,23 +47,51 @@
             <button class="new_key">Generate New Key</button>
            <span> Please reset your secret key regularly</span>
         </div>
+        
       </div>
 
-      <div class="dev-create box">
+      <div class="dev-create box" style="">
         <div class="close">
-          <span class="close-icon">✖</span>
-        </div>
+          
+        <span class="dev-head">HealthConnect Devices</span><span class="close-icon" onclick="close_key()">✖</span></div>
         <div class="box-content">
-          <div>Secret Key</div>
-          <div class="indicator"><code class="key-value"></code>
-            <span class="refresh">🔁</span>
-          </div>
+          <div>Device Type</div>
+                  <label for="lang"></label>
+                    <select required="" type="text" name="dev-category" class="field-style field-split align-left" placeholder="Dev Category" id="lang" style="font-size: 13px;">
+                      <option value="" disabled="" selected="">Category</option>
+                      <option value="Central">Central</option>
+                      <option value="Temperature">Temperature</option>
+                      <option value="HeartBeat">HeartBeat</option><option value="Pulse">Pulse</option>
+                      <option value="Respiration">Respiration</option>
+                    </select>
+        <div>Medical Components</div>
+                <label class="container">One
+          <input type="checkbox" checked="checked">
+          <span class="checkmark"></span>
+        <label class="container">One
+          <input type="checkbox" checked="checked">
+          <span class="checkmark"></span>
+        </label></label>
+        <label class="container">Two
+          <input type="checkbox">
+          <span class="checkmark"></span>
+        <label class="container">Three
+          <input type="checkbox">
+          <span class="checkmark"></span>
+        </label></label>
+        <label class="container">Three
+          <input type="checkbox">
+          <span class="checkmark"></span>
+        <label class="container">Three
+          <input type="checkbox">
+          <span class="checkmark"></span>
+        </label></label>
+
         </div>
         <div class="submit-key">
-          <div class="box-topic">Systole BP</div>
+          <button class="submit-create">Create</button>
         </div>
       </div>
-    </div>
    
 
 </div>
