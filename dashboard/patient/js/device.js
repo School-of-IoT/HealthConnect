@@ -93,7 +93,7 @@ function create_node(){
               "node":	"node-"+dev_id,
               "type":  dev_t,
               "attribute": comps,
-              "lastUp": date.getDate()+"/"+date.getMonth()+"/"+date.FullYear()          
+              "lastUp": date.getDate()+"/"+date.getMonth()+"/"+date.getFullYear()          
             }
           }
         };
