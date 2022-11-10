@@ -30,32 +30,58 @@
 <body>
 
   <div class="node-dev pop-up" style="display: none!important;">
-    <div class="key-setting box" style="">
+    <!-- <div class="key-setting box" style="">
+      
       <div class="close">
         <span class="dev-head">HealthConnect Devices</span>
         <span class="close-icon" onclick="close_key()">✖</span>  
       </div>
+
       <div class="box-content">
         <h2>Secret Key</h2>
         <div class="value">
-          <code class="key-value">(Refresh Page once)</code>
+          <code class="key-value">( Generate New Key )</code>
           <span class="copy" onclick="copyToClipboard('.key-value')">📋</span>
         </div>
-
        
         <div class="submit-key">
-            <button class="new_key">Generate New Key</button>
-           <span> Please reset your secret key regularly</span>
+          <button class="new_key" onclick="gen_newkey()">Generate New Key</button>
+          <span> Please reset your secret key regularly</span>
         </div>
         
       </div>
 
-   </div>
+   </div> -->
+
+   <div class="key-setting box" style="">
+    <div class="close">
+      <span class="dev-head">HealthConnect Devices</span>
+      <span class="close-icon" onclick="close_key()">✖</span>  
+    </div>
+    <div class="box-content">
+      <h2>Secret Key</h2>
+      <div class="value">
+        <code class="key-value">( Refresh Page )</code>
+        <span class="copy" onclick="copyToClipboard('.key-value')">📋</span>
+      </div>
+
+     
+      <div class="submit-key">
+          <input placeholder="Password" class="key-pass" type="password">
+          <button class="new_key">Generate New Key</button>
+          <span> Please reset your secret key regularly</span>
+      </div>
+      
+    </div>
+
+ </div>
 
    <div class="dev-create box" style="">
+    
     <div class="close">
-      
-    <span class="dev-head">HealthConnect Devices</span><span class="close-icon" onclick="close_key()">✖</span></div>
+      <span class="dev-head">HealthConnect Devices</span><span class="close-icon" onclick="close_key()">✖</span>
+    </div>
+
     <div class="box-content">
       <div>Device Type</div>
               <label for="lang"></label>

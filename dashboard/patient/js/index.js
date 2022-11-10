@@ -152,3 +152,28 @@ function copyToClipboard(element) {
   document.execCommand("copy");
   $temp.remove();
  }
+
+ function gen_newkey(){
+  
+  let url = "https://healthconnect-server.herokuapp.com/devtkn/create?user="+sessionStorage.getItem('user')+"&pass="+$('input.key-pass').val();
+  
+  $.ajax({
+    type: "GET",
+    url: url,
+    crossDomain: true,
+    dataType: "json",
+    encode: true,
+    headers: {
+      "Content-Type": "application/json"
+    },
+    processData: false,
+  }).done(function (data) {
+    $('.key-setting .key-value').text(data.device_token);
+    $('input.key-pass').val('');
+    //console.log("Updated");
+  }).fail(function (data) {
+    console.log("update failed");
+    
+  });
+
+ }
