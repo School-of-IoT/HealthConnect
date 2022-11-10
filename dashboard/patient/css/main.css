@@ -1710,6 +1710,16 @@ span.app-version {
   justify-content: space-evenly;
 }
 
+.dev-create .submit-key {
+  border-radius: 0px 0px 10px 10px;
+  padding: 10px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  align-content: flex-start;
+  justify-content: space-evenly;
+}
+
 
 .key-setting .key-value {
     background-color: #2c2c2c;
@@ -1773,6 +1783,16 @@ button.new_key {
   cursor: pointer;
 }
 
+button.new_node {
+  margin-bottom: 5px;
+  align-items: center;
+  align-content: center;
+  padding: 5px 5px;
+  background: #0A2558;
+  color: #fff;
+  cursor: pointer;
+}
+
 .dev-create .close {
     background-color: #163775;
     display: flex;
@@ -1792,4 +1812,13 @@ input.key-pass {
     font-size: 13px;
     margin: 10px 0px;
     padding: 6px 15px;
+}
+
+.dev-create .device-drop {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    align-content: center;
+    align-items: center;
 }
