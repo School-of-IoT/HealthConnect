@@ -1728,6 +1728,11 @@ span.app-version {
     margin: 0px 10px;
 }
 
+.key-setting span.copy:active {
+  font-size: 18px;
+}
+
+
 .dev-create.box {
     display: none;
     padding: 0px 1;

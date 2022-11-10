@@ -124,7 +124,7 @@ var patID="";
 
 $('.key-setting').hide();
 $('.dev-create').hide();
-  $('.pop-up').hide();
+$('.pop-up').hide();
 
 function view_key_modal(){
   $('.key-setting').show();
@@ -144,3 +144,11 @@ function close_key(){
   $('.pop-up').hide();   
   $('#blur').css('filter', 'blur(0px)');   
 }
+
+function copyToClipboard(element) {
+  var $temp = $("<input>");
+  $("body").append($temp);
+  $temp.val($(element).html()).select();
+  document.execCommand("copy");
+  $temp.remove();
+ }
