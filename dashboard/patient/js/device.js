@@ -21,7 +21,7 @@ function node_search() {
   }
 }
 
-function add_node(ID, val, node){
+function insert_node(ID, val, node){
   let date = new Date();
 	let current_date = date.getFullYear()+"-"+(date.getMonth()+1)+"-"+ date.getDate();
 	let current_time = date.getHours()+":"+date.getMinutes();
@@ -40,4 +40,69 @@ function add_node(ID, val, node){
 }
 
 
-//add_node(22110103, "sbp,db,resp,hr,spO2,fiO2,temp", "Central", 9);
+//add_node(22110103, "sbp,db,resp,hr,spO2,fiO2,temp", "Central");
+
+
+function create_node(){
+
+  let dev_t= $("#dev-category option:selected").text();
+  let hw_t= $("#hw-category option:selected").text();
+  let arr = [];
+  $.each($("input[name='comp']:checked"), function(){
+      arr.push($(this).val());
+  });
+  let comps = arr.join(", ");
+
+  console.log(dev_t);
+  console.log(hw_t);
+  console.log(comps);
+  let date = new Date();
+  let dev_id=date.getMonth()+""+date.getDate()+""+date.getHours()+""+date.getMilliseconds();
+ 
+
+  let dev_tkn = $('.key-setting .key-value').text();
+
+  if(dev_tkn == ''){
+    alert('Create a Secret key first');
+  }
+  else{
+    
+
+    let url = "https://healthconnect-server.herokuapp.com/node/create?user="+sessionStorage.getItem('user')+"&token="+dev_tkn;
+    
+    let formData = 
+        {
+          "nodeData":{
+            "devices":{
+              "node":	"node-"+dev_id,
+              "type":  dev_t,
+              "attribute": comps,
+              "lastUp": date.getDate()+"/"+date.getMonth()+"/"+date.FullYear()          
+            }
+          }
+        };
+
+
+    $.ajax({
+      type: "POST",
+      url: url,
+      data : JSON.stringify(formData),
+      crossDomain: true,
+      dataType: "json",
+      encode: true,
+      headers: {
+        "Content-Type": "application/json"
+      },
+      processData: false,
+    }).done(function (data) {
+      insert_node(dev_id, comps, dev_t);
+    }).fail(function (data) {
+      console.log("update failed");
+      
+    });
+
+  }
+
+  
+  
+}

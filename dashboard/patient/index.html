@@ -65,7 +65,7 @@
       <div class="device-type">
         <h2>Device Type</h2>
                 <label for="lang"></label>
-                  <select required="" type="text" name="dev-category" class="field-style field-split align-left" placeholder="Dev Category" id="lang" style="font-size: 15px;">
+                  <select required="" type="text" name="dev-category" class="field-style field-split align-left" placeholder="Dev Category" id="dev-category" style="font-size: 15px;">
                     <option value="" disabled="" selected="">Category</option>
                     <option value="Central">Central</option>
                     <option value="Temperature">Temperature</option>
@@ -76,7 +76,7 @@
       <div class="hardware">
           <h2>Hardware</h2>
                 <label for="lang"></label>
-                  <select required="" type="text" name="dev-category" class="field-style field-split align-left" placeholder="Dev Category" id="lang" style="font-size: 15px;">
+                  <select required="" type="text" name="hw-category" class="field-style field-split align-left" placeholder="Hardware Category" id="hw-category" style="font-size: 15px;">
                     <option value="" disabled="" selected="">Category</option>
                     <option value="ESP32">ESP32 Dev Board</option>
                     <option value="ESP8266">ESP8266 NodeMCU</option>
@@ -89,35 +89,19 @@
       <h2>Medical Components</h2>
         <div class="med-comp">
         <div class="med-comp-c">
-          <label class="container">All <input type="checkbox" checked="checked">
-            <span class="checkmark"></span>
-          </label>
-          <label class="container">Temperature <input type="checkbox" checked="checked">
-            <span class="checkmark"></span>
-          </label>
-          <label class="container">Systolic Blood Pressure
-            <input type="checkbox">
-            <span class="checkmark"></span>
-          </label>
+         <label>All <input type="checkbox" value="all" name="comp"></label>
+        <label>Temperature <input type="checkbox" value="temp" name="comp"></label>
+        <label>Systolic Blood Pressure <input type="checkbox" value="sbp" name="comp"></label>
         </div>
         <div class="med-comp-c">
-          <label class="container">Diabolic Blood Pressure
-            <input type="checkbox">
-            <span class="checkmark"></span>
-          </label>
-          <label class="container">SPO2
-            <input type="checkbox">
-            <span class="checkmark"></span>
-          </label>
-          <label class="container">FiO2
-            <input type="checkbox">
-            <span class="checkmark"></span>
-          </label>
-        </div>
+          
+          
+          
+        <label>Diabolic Blood Pressure <input type="checkbox" value="dbp" name="comp"></label><label>Oxygen Saturation <input type="checkbox" value="spo2" name="comp"></label><label>Inspired Oxygen <input type="checkbox" value="fio2" name="comp"></label></div>
       </div>
     </div>
   <div class="submit-key">
-    <button class="new_node">Create New Device</button>
+    <button class="new_node" onclick="create_node()">Create New Device</button>
   
   <span>Click <a href="#">here</a> for Documentation on <b>How to Send Data</b></span></div>
 
