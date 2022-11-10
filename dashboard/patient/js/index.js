@@ -120,22 +120,24 @@ var patID="";
 
       //setInterval(updatePatient, 60000*10); //every 10 mins
 
-
-      if ($("input[value='all']")[0].checked){
-        $("input[value='temp']").attr("disabled", true);
-        $("input[value='sbp']").attr("disabled", true);
-        $("input[value='dbp']").attr("disabled", true);
-        $("input[value='spo2']").attr("disabled", true);
-        $("input[value='fio2']").attr("disabled", true);
+      function disable_rest(){
+        if ($("input[value='all']")[0].checked){
+          $("input[value='temp']").attr("disabled", true);
+          $("input[value='sbp']").attr("disabled", true);
+          $("input[value='dbp']").attr("disabled", true);
+          $("input[value='spo2']").attr("disabled", true);
+          $("input[value='fio2']").attr("disabled", true);
+        }
+        else{
+            $("input[value='temp']").removeAttr("disabled");
+            $("input[value='sbp']").removeAttr("disabled");
+            $("input[value='dbp']").removeAttr("disabled");
+            $("input[value='spo2']").removeAttr("disabled");
+            $("input[value='fio2']").removeAttr("disabled");
+          
+        }
       }
-      else{
-          $("input[value='temp']").removeAttr("disabled");
-          $("input[value='sbp']").removeAttr("disabled");
-          $("input[value='dbp']").removeAttr("disabled");
-          $("input[value='spo2']").removeAttr("disabled");
-          $("input[value='fio2']").removeAttr("disabled");
-        
-      }
+      
 
 })(jQuery);
 
