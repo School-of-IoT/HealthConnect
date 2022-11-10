@@ -100,7 +100,7 @@ function create_node(){
 
 
     $.ajax({
-      type: "PUT",
+      type: "POST",
       url: url,
       data : JSON.stringify(formData),
       crossDomain: true,
