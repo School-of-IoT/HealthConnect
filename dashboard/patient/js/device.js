@@ -84,7 +84,7 @@ function create_node(){
   else{
     
 
-    let url = "https://healthconnect-server.herokuapp.com/node/create?user="+sessionStorage.getItem('user')+"&token="+dev_tkn;
+    let url = "https://healthconnect-server.onrender.com/node/create?user="+sessionStorage.getItem('user')+"&token="+dev_tkn;
     
     let formData = 
         {
