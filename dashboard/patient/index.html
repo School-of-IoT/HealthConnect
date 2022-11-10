@@ -30,28 +30,6 @@
 <body>
 
   <div class="node-dev pop-up" style="display: none!important;">
-    <!-- <div class="key-setting box" style="">
-      
-      <div class="close">
-        <span class="dev-head">HealthConnect Devices</span>
-        <span class="close-icon" onclick="close_key()">✖</span>  
-      </div>
-
-      <div class="box-content">
-        <h2>Secret Key</h2>
-        <div class="value">
-          <code class="key-value">( Generate New Key )</code>
-          <span class="copy" onclick="copyToClipboard('.key-value')">📋</span>
-        </div>
-       
-        <div class="submit-key">
-          <button class="new_key" onclick="gen_newkey()">Generate New Key</button>
-          <span> Please reset your secret key regularly</span>
-        </div>
-        
-      </div>
-
-   </div> -->
 
    <div class="key-setting box" style="">
     <div class="close">
@@ -85,9 +63,9 @@
   <div class="box-content">
     <div class="device-drop">
       <div class="device-type">
-        <div>Device Type</div>
+        <h2>Device Type</h2>
                 <label for="lang"></label>
-                  <select required="" type="text" name="dev-category" class="field-style field-split align-left" placeholder="Dev Category" id="lang" style="font-size: 13px;">
+                  <select required="" type="text" name="dev-category" class="field-style field-split align-left" placeholder="Dev Category" id="lang" style="font-size: 15px;">
                     <option value="" disabled="" selected="">Category</option>
                     <option value="Central">Central</option>
                     <option value="Temperature">Temperature</option>
@@ -96,9 +74,9 @@
                   </select>
       </div>
       <div class="hardware">
-          <div>Hardware</div>
+          <h2>Hardware</h2>
                 <label for="lang"></label>
-                  <select required="" type="text" name="dev-category" class="field-style field-split align-left" placeholder="Dev Category" id="lang" style="font-size: 13px;">
+                  <select required="" type="text" name="dev-category" class="field-style field-split align-left" placeholder="Dev Category" id="lang" style="font-size: 15px;">
                     <option value="" disabled="" selected="">Category</option>
                     <option value="ESP32">ESP32 Dev Board</option>
                     <option value="ESP8266">ESP8266 NodeMCU</option>
@@ -108,31 +86,40 @@
       </div>
       </div>
     <div class="device-checkb">
-      <div>Medical Components</div>
-              <label class="container">All <input type="checkbox" checked="checked">
-        <span class="checkmark"></span>
-      <label class="container">Temperature <input type="checkbox" checked="checked">
-        <span class="checkmark"></span>
-      </label></label>
-      <label class="container">Systolic Blood Pressure
-        <input type="checkbox">
-        <span class="checkmark"></span>
-      <label class="container">Diabolic Blood Pressure
-        <input type="checkbox">
-        <span class="checkmark"></span>
-      </label></label>
-      <label class="container">SPO2
-        <input type="checkbox">
-        <span class="checkmark"></span>
-      <label class="container">FiO2
-        <input type="checkbox">
-        <span class="checkmark"></span>
-      </label></label>
+      <h2>Medical Components</h2>
+        <div class="med-comp">
+        <div class="med-comp-c">
+          <label class="container">All <input type="checkbox" checked="checked">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">Temperature <input type="checkbox" checked="checked">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">Systolic Blood Pressure
+            <input type="checkbox">
+            <span class="checkmark"></span>
+          </label>
+        </div>
+        <div class="med-comp-c">
+          <label class="container">Diabolic Blood Pressure
+            <input type="checkbox">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">SPO2
+            <input type="checkbox">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">FiO2
+            <input type="checkbox">
+            <span class="checkmark"></span>
+          </label>
+        </div>
+      </div>
     </div>
   <div class="submit-key">
-    <button class="new_node">Create</button>
-  <span>(Select Central Device, with 'all' component to use device without sensors)</span>
-  </div>
+    <button class="new_node">Create New Device</button>
+  
+  <span>Click <a href="#">here</a> for Documentation on <b>How to Send Data</b></span></div>
 
 </div>
   
@@ -168,10 +155,6 @@
             <i class="bx bx-calendar"></i>
             <span class="links_name">My Schedule</span>
         </li>
-        <!-- <li class="nursenotes content">
-            <i class="bx bx-edit-alt"></i>
-            <span class="links_name">Nurse Notes</span>
-        </li> -->
         <li class="helpline content">
             <i class="bx bxs-phone-call"></i>
             <span class="links_name">Healthcare Visit</span>
@@ -625,14 +608,7 @@
 
     </section>
 </div>
-<!-- </div>
-    <script type="text/javascript">
-    function toggle() {W
-      var blur = document.getElementById('blur');
-      blur.classList.toggle('active')
-    }
 
-  </script> -->
     <script src="https://kit.fontawesome.com/1ed7106697.js" crossorigin="anonymous"></script>
 	    <script src="js/index.js"></script>
       <script src="js/nav.js"></script>
