@@ -107,6 +107,7 @@ function create_node(){
     }).done(function (data) {
       	
       insert_node(date_time, dev_id, comps, dev_t);
+      close_key();
     }).fail(function (data) {
       console.log("update failed");
       
