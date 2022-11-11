@@ -115,29 +115,28 @@ function create_node(){
       
     });
 
-  }
+  } 
+}
 
-  function delete_node(ID){
-    let url = "https://healthconnect-server.onrender.com/node/delete?user="+sessionStorage.getItem('user')+"&token="+dev_tkn+"&node="+ID;
-    
-    $.ajax({
-      type: "DELETE",
-      url: url,
-      crossDomain: true,
-      dataType: "json",
-      encode: true,
-      headers: {
-        "Content-Type": "application/json"
-      },
-      processData: false,
-    }).done(function (data) {
-      let row = "#"+ID;
-      $(row).remove(); 
-      
-    }).fail(function (data) {
-      console.log("update failed");
-      
-    });
-  }
+function delete_node(ID){
+  let url = "https://healthconnect-server.onrender.com/node/delete?user="+sessionStorage.getItem('user')+"&token="+dev_tkn+"&node="+ID;
   
+  $.ajax({
+    type: "DELETE",
+    url: url,
+    crossDomain: true,
+    dataType: "json",
+    encode: true,
+    headers: {
+      "Content-Type": "application/json"
+    },
+    processData: false,
+  }).done(function (data) {
+    let row = "#"+ID;
+    $(row).remove(); 
+    
+  }).fail(function (data) {
+    console.log("update failed");
+    
+  });
 }
