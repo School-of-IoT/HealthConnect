@@ -48,6 +48,7 @@ function insert_node(up, ID, val, node){
   x.insertCell(c).innerHTML=ID;
   x.insertCell(c).innerHTML=node;
   x.insertCell(c).innerHTML=up;
+  x.insertCell(c).innerHTML='<button onClick="delete_node('+x.id+');">🧺</button>'
   
 }
 
@@ -115,6 +116,27 @@ function create_node(){
 
   }
 
-  
+  function delete_node(ID){
+    let url = "https://healthconnect-server.onrender.com/node/create?user="+sessionStorage.getItem('user')+"&token="+dev_tkn+"&node="+ID;
+    
+    $.ajax({
+      type: "GET",
+      url: url,
+      crossDomain: true,
+      dataType: "json",
+      encode: true,
+      headers: {
+        "Content-Type": "application/json"
+      },
+      processData: false,
+    }).done(function (data) {
+      let row = "#"+ID;
+      $(row).remove(); 
+      
+    }).fail(function (data) {
+      console.log("update failed");
+      
+    });
+  }
   
 }
