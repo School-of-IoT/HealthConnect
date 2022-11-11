@@ -38,7 +38,7 @@ function node_search() {
 }
 
 function insert_node(up, ID, val, node){
-  let x=document.getElementById('dev-table').insertRow(1);
+  let x=document.getElementById('dev-table-body').insertRow(0);
   x.id="node-"+ID;
   c=0;
   x.insertCell(c).innerHTML='<button class="dev-table-btn" onClick="startConnect('+ID+');">Connect</button>';
@@ -70,7 +70,10 @@ function create_node(){
   console.log(comps);
   let date = new Date();
   let dev_id=date.getMonth()+""+date.getDate()+""+date.getHours()+""+date.getMilliseconds();
- 
+
+      let current_date = date.getFullYear()+"-"+(date.getMonth()+1)+"-"+ date.getDate();
+      let current_time = date.getHours()+":"+date.getMinutes();
+      let date_time = current_date+" "+current_time;
 
   let dev_tkn = $('.key-setting .key-value').text();
 
@@ -86,7 +89,7 @@ function create_node(){
               "node":	"node-"+dev_id,
               "type":  dev_t,
               "attribute": comps,
-              "lastUp": date.getDate()+"/"+date.getMonth()+"/"+date.getFullYear()          
+              "lastUp": date_time         
             }
           }
         };
@@ -102,10 +105,7 @@ function create_node(){
       },
       processData: false,
     }).done(function (data) {
-      let dte = new Date();
-      let current_date = dte.getFullYear()+"-"+(dte.getMonth()+1)+"-"+ dte.getDate();
-      let current_time = dte.getHours()+":"+dte.getMinutes();
-      let date_time = current_date+" "+current_time;	
+      	
       insert_node(date_time, dev_id, comps, dev_t);
     }).fail(function (data) {
       console.log("update failed");
