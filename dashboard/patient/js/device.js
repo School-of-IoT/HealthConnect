@@ -37,11 +37,7 @@ function node_search() {
   }
 }
 
-function insert_node(ID, val, node){
-  let date = new Date();
-	let current_date = date.getFullYear()+"-"+(date.getMonth()+1)+"-"+ date.getDate();
-	let current_time = date.getHours()+":"+date.getMinutes();
-	let date_time = current_date+" "+current_time;	
+function insert_node(up, ID, val, node){
   let x=document.getElementById('dev-table').insertRow(1);
   x.id="node-"+ID;
   c=0;
@@ -51,7 +47,7 @@ function insert_node(ID, val, node){
   x.insertCell(c).innerHTML=val;
   x.insertCell(c).innerHTML=ID;
   x.insertCell(c).innerHTML=node;
-  x.insertCell(c).innerHTML=date_time;
+  x.insertCell(c).innerHTML=up;
   
 }
 
@@ -82,10 +78,7 @@ function create_node(){
     alert('Create a Secret key first');
   }
   else{
-    
-
     let url = "https://healthconnect-server.onrender.com/node/create?user="+sessionStorage.getItem('user')+"&token="+dev_tkn;
-    
     let formData = 
         {
           "nodeData":{
@@ -97,8 +90,6 @@ function create_node(){
             }
           }
         };
-
-
     $.ajax({
       type: "POST",
       url: url,
@@ -111,7 +102,11 @@ function create_node(){
       },
       processData: false,
     }).done(function (data) {
-      insert_node(dev_id, comps, dev_t);
+      let dte = new Date();
+      let current_date = dte.getFullYear()+"-"+(dte.getMonth()+1)+"-"+ dte.getDate();
+      let current_time = dte.getHours()+":"+dte.getMinutes();
+      let date_time = current_date+" "+current_time;	
+      insert_node(date_time, dev_id, comps, dev_t);
     }).fail(function (data) {
       console.log("update failed");
       

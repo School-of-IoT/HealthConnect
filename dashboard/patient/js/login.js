@@ -10,7 +10,7 @@
     
     $.ajax({
         type: "GET",
-        url: "https://healthconnect-server.herokuapp.com/data",
+        url: "https://healthconnect-server.onrender.com/data",
         data : formData,
         crossDomain: true,
         dataType: "json",
@@ -35,6 +35,11 @@
         $('.fio2').text(data.patient[0].FiO2);
         //sessionStorage.setItem('devtoken', data.patient[0].devtoken);
         $('.key-setting .key-value').text(data.patient[0].devtoken);
+        let len = data.patient[0].devices.length;
+        for(i=0; i<len; i++){
+          insert_node(data.patient[0].devices[i].lastUp, data.patient[0].devices[i].node.slice(5), data.patient[0].devices[i].attribute, data.patient[0].devices[i].type);
+        }
+
       }).fail(function (data) {
         //console.log("failed");
         window.location.href="../../login/"
