@@ -1,4 +1,4 @@
-var dev_col=1;
+
 
 function disable_rest(){
   if ($("input[value='all']")[0].checked){
@@ -19,7 +19,8 @@ function disable_rest(){
 }
 
 function node_search() {
-  var input, filter, table, tr, td, i, txtValue;
+  let dev_col=2; //coulumn for device ID
+  let input, filter, table, tr, td, i, txtValue;
   input = document.getElementsByClassName("s-inpt")[0].value;
   filter = input.toUpperCase();
   table = document.getElementById("dev-table");
@@ -62,7 +63,14 @@ function create_node(){
   $.each($("input[name='comp']:checked"), function(){
       arr.push($(this).val());
   });
-  let comps = arr.join(", ");
+  let comps = "";
+  if (arr[0] == 'all'){
+    comps = "temp, sbp, dbp, spo2, fio2";
+  }
+  else{
+    comps = arr.join(", ");
+  }
+  
 
   console.log(dev_t);
   console.log(hw_t);

@@ -262,6 +262,13 @@ button.s-btn-func {
   padding: 5px 20px;
   align-items: center;
   align-content: center;
+  align-items: center;
+  align-content: center;
+  padding: 5px 9px;
+  background: #0A2558;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 10px;
 }
 
 .dev-search {
