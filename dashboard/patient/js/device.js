@@ -117,10 +117,10 @@ function create_node(){
   }
 
   function delete_node(ID){
-    let url = "https://healthconnect-server.onrender.com/node/create?user="+sessionStorage.getItem('user')+"&token="+dev_tkn+"&node="+ID;
+    let url = "https://healthconnect-server.onrender.com/node/delete?user="+sessionStorage.getItem('user')+"&token="+dev_tkn+"&node="+ID;
     
     $.ajax({
-      type: "GET",
+      type: "DELETE",
       url: url,
       crossDomain: true,
       dataType: "json",
