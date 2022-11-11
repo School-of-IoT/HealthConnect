@@ -54,9 +54,6 @@ function insert_node(up, ID, val, node){
 }
 
 
-//add_node(22110103, "sbp,db,resp,hr,spO2,fiO2,temp", "Central");
-
-
 function create_node(){
 
   let dev_t= $("#dev-category option:selected").text();
@@ -148,7 +145,7 @@ function delete_node(nd){
     console.log("update failed");
     
   });
-  
+
   }
   
 }

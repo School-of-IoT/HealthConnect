@@ -69,7 +69,7 @@ table th.r {
   text-align: center;
 }
 .table100-head th {
-  padding: 0px 45px;
+  /* padding: 0px 45px; */
   font-family: inherit;
   font-size: 18px;
   color: #fff;
