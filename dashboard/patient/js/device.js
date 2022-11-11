@@ -120,7 +120,15 @@ function create_node(){
 
 function delete_node(nd){
   let ID = "node-"+nd;
-  let url = "https://healthconnect-server.onrender.com/node/delete?user="+sessionStorage.getItem('user')+"&token="+dev_tkn+"&node="+ID;
+
+  let dev_tkn = $('.key-setting .key-value').text();
+
+  if(dev_tkn == ''){
+    alert('Create a Secret key first');
+  }
+  else{
+
+    let url = "https://healthconnect-server.onrender.com/node/delete?user="+sessionStorage.getItem('user')+"&token="+dev_tkn+"&node="+ID;
   
   $.ajax({
     type: "DELETE",
@@ -140,4 +148,7 @@ function delete_node(nd){
     console.log("update failed");
     
   });
+  
+  }
+  
 }
