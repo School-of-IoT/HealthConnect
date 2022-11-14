@@ -15,12 +15,12 @@
         if($(this).children("tr").length == 0)
         {
           $('.no-device').show();
-          $('.dev-list .box').hide();
+          $('.dev-list').hide();
           
         }
         else{
           $('.no-device').hide();
-          $('.dev-list .box').show();
+          $('.dev-list').show();
         }
     });
 
@@ -51,7 +51,7 @@
 
       var map_link = "https://maps.google.com/maps?q=hospitals%20in%20"+sessionStorage.getItem('geo_loc')+"&t=&z=10&ie=UTF8&iwloc=&output=embed";
       $('#hospital-map').attr('src', map_link);
-      
+
     }
     
 
