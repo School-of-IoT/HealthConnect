@@ -6,6 +6,16 @@
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
+
+
+.pre_loader{
+	position: fixed;
+	width: 100%;
+	height: 100vh;
+	background: #21242d url('https://cssauthor.com/wp-content/uploads/2018/06/Bouncy-Preloader.gif') no-repeat center;
+	z-index: 999;
+}
+
 .sidebar{
   position: fixed;
   height: 100%;

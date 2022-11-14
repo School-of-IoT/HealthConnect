@@ -34,6 +34,7 @@
         $('.bmi').text(data.patient[0].BMI);
         $('.fio2').text(data.patient[0].FiO2);
         $('.key-setting .key-value').text(data.patient[0].devtoken);
+        preLoaderHandler();
         let len = data.patient[0].devices.length;
         for(let i=0; i<len; i++){
           insert_node(data.patient[0].devices[i].lastUp, data.patient[0].devices[i].node.slice(5), data.patient[0].devices[i].attribute, data.patient[0].devices[i].type);
