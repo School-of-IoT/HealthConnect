@@ -341,3 +341,11 @@ select#dev-filter {
   cursor: pointer;
   border-radius: 10px;
 }
+
+.no-device {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 60%;
+  justify-content: center;
+}
