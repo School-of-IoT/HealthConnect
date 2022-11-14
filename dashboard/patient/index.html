@@ -382,10 +382,17 @@
         <div class="device-boxes">
           <div class="dev-nav box">
             <div class="dev-search">
-                            <input type="text" onkeyup="node_search()" placeholder="Search for Device ID" class="s-inpt">
+                            <input type="text" onkeyup="node_search()" placeholder="Search for Category" class="s-inpt">
+                            <label for="lang"></label>
+                            <select required="" type="text" name="dev-filter" class="field-style field-split align-left" placeholder="Dev Filter" id="dev-filter" style="font-size: 15px;">
+                              <option value="" disabled="" selected="">Category</option>
+                              <option value="1">Health Device</option>
+                              <option value="2">Device ID</option>
+                              <option value="3">Value Attibutes</option>
+                              <option value="4">Status</option>
+                            </select>
             </div>
             <div class="s-btn">
-              <button class="s-btn-func" onclick="node_search()">Search</button>
               <button class="s-btn-func" onclick="view_node_modal()">Add Device</button>
               <button class="s-btn-func" onclick="view_key_modal()">Secret Key</button>
             </div> 

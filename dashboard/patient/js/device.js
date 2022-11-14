@@ -19,7 +19,8 @@ function disable_rest(){
 }
 
 function node_search() {
-  let dev_col=2; //coulumn for device ID
+  let dev_col= $("#dev-filter option:selected").val();
+  //let dev_col=2; //coulumn for device ID
   let input, filter, table, tr, td, i, txtValue;
   input = document.getElementsByClassName("s-inpt")[0].value;
   filter = input.toUpperCase();
