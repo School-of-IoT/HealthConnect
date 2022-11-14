@@ -234,9 +234,20 @@ ul#myUL {
 }
 
 input.s-inpt {
-  font-size: 18px;
-  padding: 5px 18px;
+  height: 100%;
   width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 15px;
+  margin: 0px 6px;
+  padding: 5px 20px;
+  align-items: center;
+  align-content: center;
+  align-items: center;
+  align-content: center;
+  padding: 5px 9px;
+  cursor: pointer;
+  border-radius: 10px;
 }
 
 .s-btn {
@@ -275,7 +286,9 @@ button.s-btn-func {
   width: 100%;
   margin: 0px 43px;
   display: flex;
-  padding: 3p;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: stretch;
 }
 
 button.dev-table-btn {
@@ -307,4 +320,24 @@ button.dev-table-btn {
 .device-offline::before{
   text-shadow: 0px 0px 10px red; 
   content: "🔴";
+}
+
+
+select#dev-filter {
+  height: 100%;
+  width: 50;
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 18px;
+  margin: 0px 6px;
+  padding: 5px 20px;
+  align-items: center;
+  align-content: center;
+  align-items: center;
+  align-content: center;
+  padding: 5px 9px;
+  /* background: #0A2558; */
+  /* color: #fff; */
+  cursor: pointer;
+  border-radius: 10px;
 }
