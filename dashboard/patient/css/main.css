@@ -1881,3 +1881,7 @@ button.treat-table-btn {
   color: #fff;
   cursor: pointer;
 }
+
+.graph-info span {
+  font-size: 45px;
+}
