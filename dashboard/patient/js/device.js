@@ -158,3 +158,17 @@ function delete_node(nd){
   }
   
 }
+
+$("#dev-table-body").each(function()
+    {
+        if($(this).children("tr").length == 0)
+        {
+          $('.no-device').show();
+          $('.dev-list').hide();
+          
+        }
+        else{
+          $('.no-device').hide();
+          $('.dev-list').show();
+        }
+    });
