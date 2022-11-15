@@ -92,7 +92,20 @@
       //}
 
       //setInterval(updatePatient, 60000*10); //every 10 mins
-
+      $("#dev-table-body").each(function()
+      {
+          if($(this).children("tr").length == 0)
+          {
+            $('.no-device').show();
+            $('.dev-list').hide();
+            
+          }
+          else{
+            $('.no-device').hide();
+            $('.dev-list').show();
+          }
+      });
+  
 
 
       

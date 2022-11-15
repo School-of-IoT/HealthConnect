@@ -39,6 +39,21 @@
         for(let i=0; i<len; i++){
           insert_node(data.patient[0].devices[i].lastUp, data.patient[0].devices[i].node.slice(5), data.patient[0].devices[i].attribute, data.patient[0].devices[i].type);
         }
+        
+        $("#dev-table-body").each(function()
+        {
+            if($(this).children("tr").length == 0)
+            {
+              $('.no-device').show();
+              $('.dev-list').hide();
+              
+            }
+            else{
+              $('.no-device').hide();
+              $('.dev-list').show();
+            }
+        });
+
 
       }).fail(function (data) {
         //console.log("failed");
