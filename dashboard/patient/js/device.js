@@ -116,6 +116,20 @@ function create_node(){
       	
       insert_node(date_time, dev_id, comps, dev_t);
       close_key();
+      $("#dev-table-body").each(function()
+        {
+            if($(this).children("tr").length == 0)
+            {
+              $('.no-device').show();
+              $('.dev-list').hide();
+              
+            }
+            else{
+              $('.no-device').hide();
+              $('.dev-list').show();
+            }
+        });
+        
     }).fail(function (data) {
       console.log("update failed");
       
@@ -149,6 +163,20 @@ function delete_node(nd){
   }).done(function (data) {
     let row = "#"+ID;
     $(row).remove(); 
+
+    $("#dev-table-body").each(function()
+        {
+            if($(this).children("tr").length == 0)
+            {
+              $('.no-device').show();
+              $('.dev-list').hide();
+              
+            }
+            else{
+              $('.no-device').hide();
+              $('.dev-list').show();
+            }
+        });
     
   }).fail(function (data) {
     console.log("update failed");
