@@ -10,7 +10,7 @@
     
     $.ajax({
         type: "GET",
-        url: "https://healthconnect-server.herokuapp.com/data",
+        url: "https://healthconnect-server.onrender.com/data",
         data : formData,
         crossDomain: true,
         dataType: "json",

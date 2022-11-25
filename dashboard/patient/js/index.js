@@ -13,7 +13,7 @@ var patID="";
     
     $.ajax({
         type: "GET",
-        url: "https://healthconnect-server.herokuapp.com/data",
+        url: "https://healthconnect-server.onrender.com/data",
         data : formData,
         crossDomain: true,
         dataType: "json",
@@ -47,7 +47,7 @@ var patID="";
 
     $.ajax({
       type: "GET",
-      url: "https://healthconnect-server.herokuapp.com/geo_locate/"+user,
+      url: "https://healthconnect-server.onrender.com/geo_locate/"+user,
       dataType: "json",
       encode: true,
     }).done(function (data) {
@@ -80,7 +80,7 @@ var patID="";
 
       function updatePatient(){
 
-        let url = "https://healthconnect-server.herokuapp.com/patient/update/" + patID;
+        let url = "https://healthconnect-server.onrender.com/patient/update/" + patID;
 
         let formData = 
         {

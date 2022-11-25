@@ -14,7 +14,7 @@ var mqttpass ="";
     
     $.ajax({
         type: "GET",
-        url: "https://healthconnect-server.herokuapp.com/portal/device",
+        url: "https://healthconnect-server.onrender.com/portal/device",
         data : formData,
         crossDomain: true,
         dataType: "json",
