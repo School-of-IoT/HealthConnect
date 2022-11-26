@@ -75,7 +75,7 @@ function onConnect() {
     // Fetch the MQTT topic from the form
 
 
-    topic = "data/patient/"+sessionStorage.getItem('user')+"/med/"+ID+"/all";
+    topic = "data/patient/"+sessionStorage.getItem('user')+"/med/"+ID;
     //topic = "#";
     // Print output for the user in the messages div
     let act = "Subscribing to: " + topic;
