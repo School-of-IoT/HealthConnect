@@ -109,15 +109,28 @@ function onMessageArrived(message) {
     //console.log(message.payloadString);
     var values = message.payloadString.split(',');
             //console.log(values);
-
-                $('.dbp').text(values[0]);
-                $('.sbp').text(values[1]);
-                $('.heartrate').text(values[2]);
-                $('.respiration').text(values[3]);
-                $('.spo2').text(values[4]);
-                $('.temp').text(values[5]);
-                $('.fio2').text(values[6]);
+    if(value[0]!=0){
+        $('.dbp').text(values[0]); 
     }
+    if(value[1]!=0){
+        $('.sbp').text(values[1]);
+    }
+    if(value[2]!=0){
+        $('.heartrate').text(values[2]);
+    }
+    if(value[3]!=0){
+        $('.respiration').text(values[3]);
+    }
+    if(value[4]!=0){
+        $('.spo2').text(values[4]);
+    }
+    if(value[5]!=0){
+        $('.temp').text(values[5]);
+    }
+    if(value[6]!=0){
+        $('.fio2').text(values[6]);
+    }      
+}
 
 // Called when the disconnection button is pressed
 function startDisconnect() {
