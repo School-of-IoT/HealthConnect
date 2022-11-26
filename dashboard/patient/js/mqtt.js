@@ -88,9 +88,7 @@ function onConnect() {
 
 // Called when the client loses its connection
 function onConnectionLost(responseObject) {
-    let act = "Connection Lost";
-    console.log(act);
-
+    
 //     let loc = 'td.' + ID;
 //     let dvof = 'device-offline '+ID;
 //     let dvon = 'device-online '+ID;
@@ -100,7 +98,7 @@ function onConnectionLost(responseObject) {
 //    }
 
     if (responseObject.errorCode !== 0) {
-        //console.log("onConnectionLost: " + responseObject.errorMessage);
+        console.log("Connection Lost: " + responseObject.errorMessage);
     }
 }
 
@@ -109,25 +107,25 @@ function onMessageArrived(message) {
     //console.log(message.payloadString);
     var values = message.payloadString.split(',');
             //console.log(values);
-    if(value[0]!=0){
+    if(values[0]!=0){
         $('.dbp').text(values[0]); 
     }
-    if(value[1]!=0){
+    if(values[1]!=0){
         $('.sbp').text(values[1]);
     }
-    if(value[2]!=0){
+    if(values[2]!=0){
         $('.heartrate').text(values[2]);
     }
-    if(value[3]!=0){
+    if(values[3]!=0){
         $('.respiration').text(values[3]);
     }
-    if(value[4]!=0){
+    if(values[4]!=0){
         $('.spo2').text(values[4]);
     }
-    if(value[5]!=0){
+    if(values[5]!=0){
         $('.temp').text(values[5]);
     }
-    if(value[6]!=0){
+    if(values[6]!=0){
         $('.fio2').text(values[6]);
     }      
 }
