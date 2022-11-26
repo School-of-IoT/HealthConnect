@@ -37,7 +37,7 @@ function startConnect(dev_id) {
 
     // Fetch the hostname/IP address and port number from the form
     host = mqttserver;
-    port = 8883;
+    port = 8884;
     ID = "node-"+dev_id;
     
     let act = "Connecting to: " + host + ' on port: ' + port + ', with Node ID - ' + ID;
