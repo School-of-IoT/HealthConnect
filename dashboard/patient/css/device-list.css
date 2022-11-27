@@ -35,10 +35,7 @@ table {
 table * {
   position: relative;
 }
-table td,
-table th {
-  /* padding-left: 8px; */
-}
+
 table thead tr {
   height: 60px;
   background: #0a2558;
@@ -54,7 +51,7 @@ table tbody tr:last-child {
 table td,
 table th {
   text-align: center;
-  padding: 16px 0px;
+  padding: 16px 7px;
 }
 table td.l,
 table th.l {
