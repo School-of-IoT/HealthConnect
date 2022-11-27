@@ -1378,15 +1378,15 @@ iframe {
 }
 
 
-.sys-heart {
+.ecg-heart {
     padding: -40px -68px;
 }
 
-div#sys-heart-graph {
+div#ecg-heart-graph {
     padding: -4px;
 }
 
-.sys-heart, .dia-heart, .spo2-graph, .resp-graph {
+.ecg-heart, .spo2-graph, .resp-graph {
     border-radius: 63px;
     image-rendering: -webkit-optimize-contrast;
     display: flex;
@@ -1884,4 +1884,8 @@ button.treat-table-btn {
 
 .graph-info span {
   font-size: 45px;
+}
+
+#ECG-data-info {
+  width: 100%;
 }
