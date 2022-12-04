@@ -15,7 +15,7 @@
     if (user !=""){
       $.ajax({
         type: "GET",
-        url: "https://healthconnect-server.herokuapp.com/geo_locate/"+user,
+        url: "https://healthconnect-server.onrender.com/geo_locate/"+user,
         dataType: "json",
         encode: true,
       }).done(function (data) {
@@ -53,7 +53,7 @@
 
       // function updatePatient(){
 
-      //   let url = "https://healthconnect-server.herokuapp.com/patient/update/" + patID;
+      //   let url = "https://healthconnect-server.onrender.com/patient/update/" + patID;
 
       //   let formData = 
       //   {
@@ -145,7 +145,7 @@ function copyToClipboard(element) {
 
  function gen_newkey(){
   
-  let url = "https://healthconnect-server.herokuapp.com/devtkn/create?user="+sessionStorage.getItem('user')+"&pass="+$('input.key-pass').val();
+  let url = "https://healthconnect-server.onrender.com/devtkn/create?user="+sessionStorage.getItem('user')+"&pass="+$('input.key-pass').val();
   
   $.ajax({
     type: "GET",

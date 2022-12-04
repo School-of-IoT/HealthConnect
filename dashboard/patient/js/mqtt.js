@@ -14,7 +14,7 @@ let formData = {
     
     $.ajax({
         type: "GET",
-        url: "https://healthconnect-server.herokuapp.com/portal/device",
+        url: "https://healthconnect-server.onrender.com/portal/device",
         data : formData,
         crossDomain: true,
         dataType: "json",
@@ -24,7 +24,7 @@ let formData = {
         mqttuser = data.mqttUser;
         mqttpass = data.mqttPass;
       }).fail(function (data) {
-        window.location.href="../../login/"
+       console.log("Device Portal Check Failed")
       });
 })(jQuery);
 
