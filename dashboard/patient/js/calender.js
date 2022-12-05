@@ -59,3 +59,6 @@ calendar.createEvents([
       category: 'allday',
     },
   ]);
+
+
+  preLoaderHandler();
