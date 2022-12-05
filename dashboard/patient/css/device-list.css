@@ -288,12 +288,17 @@ button.s-btn-func {
   align-items: stretch;
 }
 
-button.dev-table-btn {
+button.dev-table-btn-connect {
   align-items: center;
   align-content: center;
   padding: 5px 9px;
   background: #0A2558;
   color: #fff;
+  cursor: pointer;
+}
+
+span.dev-table-btn-del{
+  font-size: larger;
   cursor: pointer;
 }
 

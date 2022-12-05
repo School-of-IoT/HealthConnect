@@ -43,16 +43,14 @@ function insert_node(up, ID, val, node){
   let x=document.getElementById('dev-table-body').insertRow(0);
   x.id="node-"+ID;
   c=0;
-  x.insertCell(c).innerHTML='<button onClick="delete_node('+ID+');">🧺</button>'
-  x.insertCell(c).innerHTML='<button class="dev-table-btn" onClick="startConnect('+ID+');">Connect</button>';
+  x.insertCell(c).innerHTML='<span class="dev-table-btn-del" onClick="delete_node('+ID+');">🧺</span>'
+  x.insertCell(c).innerHTML='<button class="dev-table-btn-connect" onClick="startConnect('+ID+');">Connect</button>';
   status = 'device-offline '+x.id;
   x.insertCell(c).setAttribute('class', status);
   x.insertCell(c).innerHTML=val;
   x.insertCell(c).innerHTML=ID;
   x.insertCell(c).innerHTML=node;
-  x.insertCell(c).innerHTML=up;
-  
-  
+  x.insertCell(c).innerHTML=up;  
 }
 
 
