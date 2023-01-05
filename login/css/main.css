@@ -152,6 +152,7 @@ iframe {
   color: #00aaff;
   line-height: 1.5;
   font-weight: 1000;
+  text-decoration: none;
 }
 
 .txt2::hover{

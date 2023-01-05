@@ -323,8 +323,6 @@ span.dev-table-btn-del{
   text-shadow: 0px 0px 10px red; 
   content: "🔴";
 }
-
-
 select#dev-filter {
   height: 100%;
   width: 50;

@@ -35,8 +35,8 @@ function startConnect(dev_id) {
     ID = "node-"+dev_id;
     
     let act = "Connecting to: " + host + ' on port: ' + port + ', with Node ID - ' + ID;
+    // Print output for the user in the messages div
     console.log(act);
-
     clientID = "clientID-"+dev_id;
     // Initialize new Paho client connection
     client = new Paho.MQTT.Client(host, Number(port), clientID);
@@ -68,7 +68,6 @@ function startConnect(dev_id) {
 function onConnect() {
     // MQTT topic to subscribe 
     topic = "data/patient/"+sessionStorage.getItem('user')+"/med/"+ID;
-
     // Print output for the user in the messages div
     let act = "Subscribing to: " + topic;
     console.log(act);

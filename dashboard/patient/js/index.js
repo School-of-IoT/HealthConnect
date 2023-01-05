@@ -12,7 +12,7 @@
 
     
 
-    if (user !=""){
+if (user !=""){
       $.ajax({
         type: "GET",
         url: "https://healthconnect-server.onrender.com/geo_locate/"+user,
@@ -51,47 +51,7 @@
       
       $('#meeting-time').attr('min', min_meet_time);
 
-      // function updatePatient(){
-
-      //   let url = "https://healthconnect-server.onrender.com/patient/update/" + patID;
-
-      //   let formData = 
-      //   {
-      //     "patientData":{
-      //         "SBP":	$('.sbp.number').text(),
-      //         "DBP":  $('.dbp.number').text(),
-      //         "HeartRate": $('.heartrate.number').text(),
-      //         "RR": $('.respiration.number').text(),
-      //         "SpO2": $('.spo2.number').text(),
-      //         "Temp": $('.temp.number').text(),
-      //         "FiO2": $('.fio2.number').text()
-      //     }
-      //   };
-
-        
-
-      //   $.ajax({
-      //     type: "PUT",
-      //     url: url,
-      //     data : JSON.stringify(formData),
-      //     crossDomain: true,
-      //     dataType: "json",
-      //     encode: true,
-      //     headers: {
-      //       "Content-Type": "application/json"
-      //     },
-      //     processData: false,
-      //   }).done(function (data) {
-      //     console.log("Updated");
-          
-      //   }).fail(function (data) {
-      //     console.log("update failed");
-          
-      //   });
-
-      //}
-
-      //setInterval(updatePatient, 60000*10); //every 10 mins
+     
       $("#dev-table-body").each(function()
       {
           if($(this).children("tr").length == 0)
@@ -106,9 +66,6 @@
           }
       });
   
-
-
-      
 
 })(jQuery);
 
