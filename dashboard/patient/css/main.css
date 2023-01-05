@@ -6,6 +6,16 @@
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
+
+
+.pre_loader{
+	position: fixed;
+	width: 100%;
+	height: 100vh;
+	background: #ffffff url('https://flevix.com/wp-content/uploads/2020/01/Lazy-Loader-1.gif') no-repeat center/30%;
+	z-index: 999;
+}
+
 .sidebar{
   position: fixed;
   height: 100%;
@@ -31,8 +41,10 @@
 } */
 .sidebar .logo-details{
   height: 35px;
-  margin-top: 10%;
+  margin-top: 30px;
   display: flex;
+  margin-left: 0px;
+  position: sticky;
   align-items: center;
 }
 .sidebar .logo-details i{
@@ -44,9 +56,11 @@
 }
 .sidebar .logo-details .logo_name{
   color: #fff;
-  font-size: 24px;
+  font-size: 27px;
   font-weight: 500;
   margin-left: 10px;
+  position: relative;
+  padding-top: 3px;
 }
 .sidebar .nav-links{
   margin-top: 10px;
@@ -1365,15 +1379,15 @@ iframe {
 }
 
 
-.sys-heart {
+.ecg-heart {
     padding: -40px -68px;
 }
 
-div#sys-heart-graph {
+div#ecg-heart-graph {
     padding: -4px;
 }
 
-.sys-heart, .dia-heart, .spo2-graph, .resp-graph {
+.ecg-heart, .spo2-graph, .resp-graph {
     border-radius: 63px;
     image-rendering: -webkit-optimize-contrast;
     display: flex;
@@ -1632,4 +1646,247 @@ span.app-version {
 
 .map {
     height: 252px;
+}
+
+
+.node-dev.pop-up {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 999;
+  /* top: 50%; */
+  /* right: 50%; */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.key-setting .close {
+  background-color: #163775;
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+  border-radius: 6px 6px 0px 0px;
+  justify-content: space-between;
+}
+
+.key-setting .close-icon, .dev-create .close-icon {
+  cursor: pointer;
+  color: white;
+  margin-right: 5px;
+  font-size: 20px;
+}
+
+.key-setting .box-content {
+  background-color: white;
+  margin: 20px 20px;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.dev-create .box-content {
+  background-color: white;
+  margin: 20px 20px;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+
+.key-setting.box {
+  /* top: 138%; */
+  display: none;
+  padding: 0px 1;
+  display: flex;
+  background: #ffffff;
+  border-radius: 6px;
+  box-shadow: 0 5px 10px rgb(0 0 0 / 10%);
+  flex-direction: column;
+  flex-wrap: nowrap;
+  width: 50%;
+  align-items: stretch;
+}
+
+.key-setting .submit-key {
+  border-radius: 0px 0px 10px 10px;
+  padding: 10px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  align-content: flex-start;
+  justify-content: space-evenly;
+}
+
+.dev-create .submit-key {
+  border-radius: 0px 0px 10px 10px;
+  padding: 10px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  align-content: flex-start;
+  justify-content: space-evenly;
+}
+
+
+.key-setting .key-value {
+    background-color: #2c2c2c;
+    color: white;
+    padding: 0px 10px;
+}
+
+.key-setting span.refresh {
+    font-size: 20px;
+    margin: 0px 10px;
+}
+
+.key-setting span.copy {
+    cursor: pointer;
+    font-size: 20px;
+    margin: 0px 10px;
+}
+
+.key-setting span.copy:active {
+  background-color: #2c2c2c;
+}
+
+
+.dev-create.box {
+    display: none;
+    padding: 0px 1;
+    display: flex;
+    background: #ffffff;
+    border-radius: 6px;
+    box-shadow: 0 5px 10px rgb(0 0 0 / 10%);
+    flex-direction: column;
+    flex-wrap: nowrap;
+    /* width: 50%; */
+    align-items: stretch;
+}
+
+.box-content .value {
+    margin-top: 10px;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+}
+span {
+  font-size: 13px;
+}
+
+span.dev-head {
+  color: white;
+  margin-left: 20px;
+  font-size: 20px;
+}
+
+button.new_key {
+  margin-bottom: 5px;
+  align-items: center;
+  align-content: center;
+  padding: 5px 5px;
+  background: #0A2558;
+  color: #fff;
+  cursor: pointer;
+}
+
+button.new_node {
+  margin-bottom: 5px;
+  align-items: center;
+  align-content: center;
+  padding: 5px 5px;
+  background: #0A2558;
+  color: #fff;
+  cursor: pointer;
+}
+
+.dev-create .close {
+    background-color: #163775;
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    border-radius: 6px 6px 0px 0px;
+    justify-content: space-between;
+}
+
+input.key-pass {
+    height: 100%;
+    width: 100%;
+    outline: none;
+    background: #F5F6FA;
+    border: 2px solid #EFEEF1;
+    border-radius: 6px;
+    font-size: 13px;
+    margin: 10px 0px;
+    padding: 6px 15px;
+}
+
+.dev-create .device-drop {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-content: center;
+    align-items: center;
+}
+
+.med-comp {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.med-comp-c {
+    margin: 0px 10px;
+    display: flex;
+    flex-direction: column;
+    align-content: flex-end;
+    flex-wrap: nowrap;
+    align-items: flex-end;
+}
+
+.device-checkb {
+    margin: 10px 0px;
+    width: 100%;
+}
+
+.device-type {
+    margin: 0px 10p;
+}
+
+.treat-list.box {
+  margin: 0px 25px;
+ padding: 0px 1;
+ display: flex;
+ background: #ffffff;
+ border-radius: 21px;
+ box-shadow: 0 5px 10px rgb(0 0 0 / 10%);
+ flex-direction: row;
+ flex-wrap: nowrap;
+ align-content: stretch;
+ justify-content: space-around;
+}
+
+button.treat-table-btn {
+  align-items: center;
+  align-content: center;
+  padding: 5px 9px;
+  background: #0A2558;
+  color: #fff;
+  cursor: pointer;
+}
+
+.graph-info span {
+  font-size: 45px;
+}
+
+#ECG-data-info {
+  width: 100%;
 }

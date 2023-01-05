@@ -8,22 +8,22 @@
 
 @font-face {
   font-family: Poppins-Regular;
-  src: url('https://github.com/google/fonts/blob/main/ofl/poppins/Poppins-Regular.ttf'); 
+  src: url('../../assets/fonts/Poppins/Poppins-Regular.ttf'); 
 }
 
 @font-face {
   font-family: Poppins-Medium;
-  src: url('https://github.com/google/fonts/blob/main/ofl/poppins/Poppins-Medium.ttf'); 
+  src: url('../../assets/fonts/Poppins/Poppins-Medium.ttf'); 
 }
 
 @font-face {
   font-family: Poppins-SemiBold;
-  src: url('https://github.com/google/fonts/blob/main/ofl/poppins/Poppins-SemiBold.ttf'); 
+  src: url('../../assets/fonts/Poppins/Poppins-SemiBold.ttf'); 
 }
 
 @font-face {
   font-family: Poppins-Bold;
-  src: url('https://github.com/google/fonts/blob/main/ofl/poppins/Poppins-Bold.ttf'); 
+  src: url('../../assets/fonts/Poppins/Poppins-Bold.ttf'); 
 }
 
 

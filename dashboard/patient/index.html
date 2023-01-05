@@ -5,9 +5,15 @@
   <meta charset="UTF-8">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.min.js" type="text/javascript"></script>
-  <script src="js/login.js"></script>  
-	
-<title>Dashboard | HealthConnect</title>
+  <script type="text/javascript">
+    function preLoaderHandler(){
+      $('.pre_loader').hide();
+    }
+  </script>
+  <script src="js/login.js"></script> 
+  <script src="js/device.js"></script>
+  
+  <title>Dashboard | HealthConnect</title>
   
   <link rel="apple-touch-icon" sizes="180x180" href="../../assets/favicon/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="../../assets/favicon/favicon-32x32.png">
@@ -28,10 +34,96 @@
 </head>
 
 <body>
+  <div class ="pre_loader">
+
+  </div>
+
+  <div class="node-dev pop-up" style="display: none!important;">
+
+   <div class="key-setting box" style="">
+    <div class="close">
+      <span class="dev-head">HealthConnect Devices</span>
+      <span class="close-icon" onclick="close_key()">✖</span>  
+    </div>
+    <div class="box-content">
+      <h2>Secret Key</h2>
+      <div class="value">
+        <code class="key-value">( Refresh Page )</code>
+        <span class="copy" onclick="copyToClipboard('.key-value')">📋</span>
+      </div>
+
+     
+      <div class="submit-key">
+          <input placeholder="Password" class="key-pass" type="password">
+          <button class="new_key" onclick="gen_newkey()">Generate New Key</button>
+          <span> Please reset your secret key regularly</span>
+      </div>
+      
+    </div>
+
+ </div>
+
+ <div class="dev-create box" style="">
+    
+  <div class="close">
+    <span class="dev-head">HealthConnect Devices</span><span class="close-icon" onclick="close_key()">✖</span>
+  </div>
+
+  <div class="box-content">
+    <div class="device-drop">
+      <div class="device-type">
+        <h2>Device Type</h2>
+                <label for="lang"></label>
+                  <select required="" type="text" name="dev-category" class="field-style field-split align-left" placeholder="Dev Category" id="dev-category" style="font-size: 15px;">
+                    <option value="" disabled="" selected="">Category</option>
+                    <option value="Central">Central</option>
+                    <option value="Temperature">Temperature</option>
+                    <option value="HeartBeat">HeartBeat</option><option value="Pulse">Pulse</option>
+                    <option value="Respiration">Respiration</option>
+                  </select>
+      </div>
+      <div class="hardware">
+          <h2>Hardware</h2>
+                <label for="lang"></label>
+                  <select required="" type="text" name="hw-category" class="field-style field-split align-left" placeholder="Hardware Category" id="hw-category" style="font-size: 15px;">
+                    <option value="" disabled="" selected="">Category</option>
+                    <option value="ESP32">ESP32 Dev Board</option>
+                    <option value="ESP8266">ESP8266 NodeMCU</option>
+                    <option value="android">Android App</option>
+                    <option value="cli">Terminal</option>
+                  </select>
+      </div>
+      </div>
+    <div class="device-checkb">
+      <h2>Medical Components</h2>
+        <div class="med-comp">
+        <div class="med-comp-c">
+          <label>All <input type="checkbox" value="all" name="comp" onclick="disable_rest()"></label>
+          <label>Temperature <input type="checkbox" value="temp" name="comp"></label>
+          <label>Systolic Blood Pressure <input type="checkbox" value="sbp" name="comp"></label>
+        </div>
+        <div class="med-comp-c">
+          <label>Diabolic Blood Pressure <input type="checkbox" value="dbp" name="comp"></label>
+          <label>Oxygen Saturation <input type="checkbox" value="spo2" name="comp"></label>
+          <label>Inspired Oxygen <input type="checkbox" value="fio2" name="comp"></label>
+        </div>
+      </div>
+    </div>
+  <div class="submit-key">
+    <button class="new_node" onclick="create_node()">Create New Device</button>
+  
+  <span>Click <a href="#">here</a> for Documentation on <b>How to Send Data</b></span></div>
+
+</div>
+  
+</div>
+
+</div>
+   
   <div class="container" id="blur">
     <div class="sidebar">
       <div class="logo-details">
-        <img src="../../assets/img/beat.PNG?raw=true" class="logo" alt="logo-blue-bg" border="0" style="width: 20%;height: auto;margin-left: 15px;">
+        <img src="../../assets/img/beat.PNG?raw=true" class="logo" alt="logo-blue-bg" border="0" style="width: 40px;height: 30px;margin-left: 10px;">
         <span class="logo_name">Connect</span>
       </div>
       <ul class="nav-links">
@@ -56,10 +148,6 @@
             <i class="bx bx-calendar"></i>
             <span class="links_name">My Schedule</span>
         </li>
-        <!-- <li class="nursenotes content">
-            <i class="bx bx-edit-alt"></i>
-            <span class="links_name">Nurse Notes</span>
-        </li> -->
         <li class="helpline content">
             <i class="bx bxs-phone-call"></i>
             <span class="links_name">Healthcare Visit</span>
@@ -255,17 +343,15 @@
 	    <div class="diagnosis dashboard">
         <div class="diagnosis-boxes">
           <div class="graphout box">
-              <div class="sys-heart">
-                <div id="sys-heart-graph" class="graph"></div>
+              <div class="ecg-heart">
+                <div id="ecg-graph" class="graph"></div>
               </div>
-              <div id="sys-heart-info" class="graph-info"><span>Systolic ECG</span><text class="dash-info-data sbp"></text></div>
+              <div id="ECG-data-info" class="graph-info">
+                <div id="sys-heart-info" class="graph-info"><span>Systolic BP</span><text class="dash-info-data sbp" style="font-size:85px;"></text></div>
+                <div id="dia-heart-info" class="graph-info"><span>Diabolic BP</span><text class="dash-info-data dbp" style="font-size:85px;"></text></div>
+              </div>
           </div>   
-          <div class="graphout box">
-            <div class="dia-heart">
-              <div id="dia-heart-graph" class="graph"></div>
-            </div>
-            <div id="dia-heart-info" class="graph-info"><span>Diabolic ECG</span><text class="dash-info-data dbp"></text></div>
-          </div>   
+           
           <div class="graphout box">
             <div class="spo2-graph">
               <div id="spo2-graph" class="graph"></div>
@@ -294,11 +380,19 @@
         <div class="device-boxes">
           <div class="dev-nav box">
             <div class="dev-search">
-                            <input type="text" onkeyup="node_search()" placeholder="Search for Health Device" class="s-inpt">
+                            <input type="text" onkeyup="node_search()" placeholder="Search for Category" class="s-inpt">
+                            <label for="lang"></label>
+                            <select required="" type="text" name="dev-filter" class="field-style field-split align-left" placeholder="Dev Filter" id="dev-filter" style="font-size: 15px;">
+                              <option value="" disabled="" selected="">Category</option>
+                              <option value="1">Health Device</option>
+                              <option value="2">Device ID</option>
+                              <option value="3">Value Attibutes</option>
+                              <option value="4">Status</option>
+                            </select>
             </div>
             <div class="s-btn">
-              <button class="s-btn-func" onclick="node_search()">Search</button>
-              <button class="s-btn-func" onclick="add_node()">Add Device</button><button class="s-btn-func" onclick="node_search_filter()">Filter</button>
+              <button class="s-btn-func" onclick="view_node_modal()">Add Device</button>
+              <button class="s-btn-func" onclick="view_key_modal()">Secret Key</button>
             </div> 
           </div>
           <div class="dev-list box">
@@ -311,42 +405,17 @@
                       <table id="dev-table">
                         <thead>
                             <tr class="table100-head">
-                            <th class="">Last Update</th>
-                            <th class="">Health Device</th>
-                            <th class="">Device ID</th>
-                            <th class="">Value Attributes</th>
-                            <th class="">Status</th>
-                            <th class="">Add/Reset</th>
-                        </tr>
+                              <th class="">Last Update</th>
+                              <th class="">Health Device</th>
+                              <th class="">Device ID</th>
+                              <th class="">Value Attributes</th>
+                              <th class="">Status</th>
+                              <th class="">Add/Reset</th>
+                              <th class="">Remove</th>
+                            </tr>
                         </thead>
-                        <tbody>
+                        <tbody id = "dev-table-body">
                         
-                          <tr id="node-22092601">
-                            <td class="">2022-09-29 01:22</td>
-                            <td class="">HeartRate</td>
-                            <td class="">22092602</td>
-                            <td class="">DBP, SBP</td>
-                            <td class="device-online"></td>
-                            <td ><button class="dev-table-btn">Restart</button></td>
-                          </tr>
-                          <tr id="node-22092602">
-                            <td class="">2022-09-29 02:52</td>
-                            <td class="">Respiration</td>
-                            <td class="">22092601</td>
-                            <td class="">Resp</td>
-                            <td class="device-offline"></td>
-                            <td ><button class="dev-table-btn">Connect</button></td>
-                          </tr>
-                          
-                          <!-- <tr id="node-22110103">
-                            <td class="">2022-11-01 15:45</td>
-                            <td class="">All</td>
-                            <td class="">22110103</td>
-                            <td class="">SBP,DBP,Resp,HR,Temp,spO2,fiO2</td>
-                            <td class="device-offline" style=""></td>
-                            <td ><button class="dev-table-btn">Connect</button></td>
-                          </tr> -->
-                  
                         </tbody>
                       </table>
                     </div>
@@ -359,6 +428,9 @@
           </div>
           <!-- <div class="dev-list-sort">qwadadas</div> -->
         </div>
+
+        <div class="no-device">No Device yet? Create a New Device now 🚀</div>
+
       </div>
 
 
@@ -373,14 +445,14 @@
       <!----------------------------------------------------------------------->
 
       <div class="treatment dashboard">
-        <div class="dev-list box">
+        <div class="treat-list box">
         
           <ul id="myUL">
             <div class="limiter">
               <div class="container-table100">
                 <div class="wrap-table100">
                   <div class="table100">
-                    <table id="dev-table">
+                    <table id="treat-table">
                       <thead>
                           <tr class="table100-head">
                           <th class="">Date</th>
@@ -398,7 +470,7 @@
                           <td class="">Orthopedic</td>
                           <td class="">Arthroscopy, right knee, with partial medial meniscectomy and partial lateral meniscectomy</td>
                           <td class="" >Updated</td>
-                          <td ><button class="dev-table-btn">Download</button></td>
+                          <td ><button class="treat-table-btn">Download</button></td>
                         </tr>
                       </tbody>
                     </table>
@@ -511,15 +583,8 @@
 
 
     </section>
+</div>
 
-<!-- </div>
-    <script type="text/javascript">
-    function toggle() {W
-      var blur = document.getElementById('blur');
-      blur.classList.toggle('active')
-    }
-
-  </script> -->
     <script src="https://kit.fontawesome.com/1ed7106697.js" crossorigin="anonymous"></script>
 	    <script src="js/index.js"></script>
       <script src="js/nav.js"></script>

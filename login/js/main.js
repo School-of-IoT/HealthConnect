@@ -49,7 +49,7 @@ function setCookie(uid,value,exp_days) {
 
         $.ajax({
             type: "GET",
-            url: "https://healthconnect-server.herokuapp.com/login",
+            url: "https://healthconnect-server.onrender.com/login",
             crossDomain: true,
             data: formData,
             dataType: "json",
