@@ -75,7 +75,7 @@ function create_node(){
   console.log(hw_t);
   console.log(comps);
   let date = new Date();
-  let dev_id=date.getMonth()+""+date.getDate()+""+date.getHours()+""+date.getMilliseconds();
+  let dev_id=date.getFullYear()-2000+""+date.getMonth()+""+date.getDate()+""+date.getHours()+""+date.getMilliseconds();
 
       let current_date = date.getFullYear()+"-"+(date.getMonth()+1)+"-"+ date.getDate();
       let current_time = date.getHours()+":"+date.getMinutes();
