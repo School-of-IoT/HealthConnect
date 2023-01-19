@@ -71,9 +71,9 @@ function create_node(){
   }
   
 
-  console.log(dev_t);
-  console.log(hw_t);
-  console.log(comps);
+  // console.log(dev_t);
+  // console.log(hw_t);
+  // console.log(comps);
   let date = new Date();
   let dev_id=date.getFullYear()-2000+""+date.getMonth()+""+date.getDate()+""+date.getHours()+""+date.getMilliseconds();
 

@@ -7,7 +7,9 @@
     
     $("#log_out").click(function(){
       sessionStorage.removeItem('uid');
-      location.href = "../../login/"
+      sessionStorage.removeItem('user');
+      sessionStorage.removeItem('token');
+      location.href = "../../login/";
     });
 
     
@@ -42,11 +44,6 @@ if (user !=""){
 
     }
     
-
-    
-    
-      
-
       let min_meet_time = new Date().toJSON().slice(0, 16);
       
       $('#meeting-time').attr('min', min_meet_time);

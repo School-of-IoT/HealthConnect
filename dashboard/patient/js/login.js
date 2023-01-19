@@ -16,7 +16,7 @@
         dataType: "json",
         encode: true,
       }).done(function (data) {
-        //console.log(data.patient[0]._id);
+        console.log(data.patient[0]);
         if (data.message == "Token does not match. Try to Login Again."){
           window.location.href="../../login/"
         }
@@ -39,7 +39,7 @@
         preLoaderHandler();
         
         let len = data.patient[0].devices.length;
-        console.log(len);
+        //console.log(len);
         for(let i=0; i<len; i++){
           insert_node(data.patient[0].devices[i].lastUp, data.patient[0].devices[i].node.slice(5), data.patient[0].devices[i].attribute, data.patient[0].devices[i].type);
         }
