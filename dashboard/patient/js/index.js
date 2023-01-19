@@ -5,7 +5,7 @@
     var user = sessionStorage.getItem('user');
     var token = sessionStorage.getItem('token');
     
-    $(".log_out").click(function(){
+    $("#log_out").click(function(){
       sessionStorage.removeItem('uid');
       location.href = "../../login/"
     });
