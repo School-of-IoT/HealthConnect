@@ -35,17 +35,17 @@
             preLoaderHandler();
             $('.username').text(data.patient[0].Name);
             $('.chills').text(data.patient[0].Chills);
-            $('.dbp').text(data.patient[0].DBP);
-            $('.sbp').text(data.patient[0].SBP);
-            $('.heartrate').text(data.patient[0].HeartRate);
-            $('.respiration').text(data.patient[0].RR);
-            $('.spo2').text(data.patient[0].SpO2);
+            $('.dbp-text').text(data.patient[0].DBP);
+            $('.sbp-text').text(data.patient[0].SBP);
+            $('.hr-text').text(data.patient[0].HeartRate);
+            $('.resp-text').text(data.patient[0].RR);
+            $('.spo2-text').text(data.patient[0].SpO2);
             $('.bloodg').text(data.patient[0].BGroup);
-            $('.temp').text(data.patient[0].Temp);
+            $('.temp-text').text(data.patient[0].Temp);
             $('.ambulation').text(data.patient[0].Ambulation);
             $('.fever').text(data.patient[0].HistoryFever);
             $('.bmi').text(data.patient[0].BMI);
-            $('.fio2').text(data.patient[0].FiO2);
+            $('.fio2-text').text(data.patient[0].FiO2);
             $('.key-setting .key-value').text(data.patient[0].devtoken);
             
             preLoaderHandler();
