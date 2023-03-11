@@ -51,6 +51,38 @@ function insert_node(up, ID, val, node){
   x.insertCell(c).innerHTML=ID;
   x.insertCell(c).innerHTML=node;
   x.insertCell(c).innerHTML=up;  
+
+  /* -----------------------  Diagnosis Activation SECTION  ----------------------- */
+
+  let values = val.split(',');
+            //console.log(values);
+  for(i=0; i<values.length; i++){
+    if(values[i] == 'dbp'){
+        $('.dbp-g').show();
+        $('.diag').hide();
+    }
+    if(values[i] == 'sbp'){
+        $('.sbp-g').show();
+        $('.diag').hide();
+    }
+    if(values[i] == 'resp'){
+        $('.resp-g').show();
+        $('.diag').hide();
+    }
+    if(values[i] == 'spo2'){
+        $('.spo2-g').show();
+        $('.diag').hide();
+    }
+    if(values[i] == 'temp'){
+        $('.temp-g').show();
+        $('.diag').hide();
+    }
+    if(values[i] == 'fio2'){
+        $('.fio2-g').show();
+        $('.diag').hide();
+    }
+  }  
+  /* ----------------------------------------------------------------------------- */   
 }
 
 
@@ -71,9 +103,6 @@ function create_node(){
   }
   
 
-  // console.log(dev_t);
-  // console.log(hw_t);
-  // console.log(comps);
   let date = new Date();
   let dev_id=date.getFullYear()-2000+""+date.getMonth()+""+date.getDate()+""+date.getHours()+""+date.getMilliseconds();
 

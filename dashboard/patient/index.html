@@ -208,7 +208,7 @@
           <div class="box">
             <div class="right-side">
               <div class="box-topic">Diastole BP</div>
-              <div class="number dbp"></div>
+              <div class="number dbp-text"></div>
               <div class="indicator">
                 <span class="text">Safe [60 - 80 mm Hg]</span>
               </div>
@@ -218,7 +218,7 @@
           <div class="box">
             <div class="right-side">
               <div class="box-topic">Systole BP</div>
-              <div class="number sbp"></div>
+              <div class="number sbp-text"></div>
               <div class="indicator">
                 <span class="text">Safe [90 - 120 mm Hg]</span>
               </div>
@@ -228,7 +228,7 @@
           <div class="box">
             <div class="right-side">
               <div class="box-topic">HeartRate</div>
-              <div class="number heartrate"></div>
+              <div class="number hr-text"></div>
               <div class="indicator">
                 <span class="text">Safe [60 to 100 beats]</span>
               </div>
@@ -238,7 +238,7 @@
           <div class="box">
             <div class="right-side">
               <div class="box-topic">Respiration Rate</div>
-              <div class="number respiration"></div>
+              <div class="number resp-text"></div>
               <div class="indicator">
                 <span class="text">Safe [12 to 16 breaths/min]</span>
               </div>
@@ -248,7 +248,7 @@
           <div class="box">
             <div class="right-side">
               <div class="box-topic">SpO2</div>
-              <div class="number spo2"></div>
+              <div class="number spo2-text"></div>
               <div class="indicator">
                 <span class="text">Range [95% or higher]</span>
               </div>
@@ -268,7 +268,7 @@
           <div class="box">
             <div class="right-side">
               <div class="box-topic">Temperature</div>
-              <div class="number temp"></div>
+              <div class="number temp-text"></div>
               <div class="indicator">
                 <span class="text">Range [97°F to 99°F]</span>
               </div>
@@ -309,7 +309,7 @@
           <div class="box">
             <div class="right-side">
               <div class="box-topic">FiO2 </div>
-              <div class="number fio2"></div>
+              <div class="number fio2-text"></div>
               <div class="indicator">
                 <span class="text">Range [50 to 100]</span>
               </div>
@@ -342,29 +342,36 @@
 
 	    
 	    <div class="diagnosis dashboard">
+        <div class="no-device diag">No devices are Active currently ⚠</div>
         <div class="diagnosis-boxes">
-          <div class="graphout box">
+          <div class="graphout box sbp-g dbp-g" style="display:none;">
               <div class="ecg-heart">
                 <div id="ecg-graph" class="graph"></div>
               </div>
               <div id="ECG-data-info" class="graph-info">
-                <div id="sys-heart-info" class="graph-info"><span>Systolic BP</span><text class="dash-info-data sbp" style="font-size:85px;"></text></div>
-                <div id="dia-heart-info" class="graph-info"><span>Diabolic BP</span><text class="dash-info-data dbp" style="font-size:85px;"></text></div>
+                <div id="sys-heart-info" class="graph-info"><span>Systolic BP</span><text class="dash-info-data sbp-text" style="font-size:85px;"></text></div>
+                <div id="dia-heart-info" class="graph-info"><span>Diabolic BP</span><text class="dash-info-data dbp-text" style="font-size:85px;"></text></div>
               </div>
           </div>   
            
-          <div class="graphout box">
+          <div class="graphout box spo2-g" style="display:none;">
             <div class="spo2-graph">
               <div id="spo2-graph" class="graph"></div>
             </div>
-            <div id="spo2-info" class="graph-info"><span>SpO₂ Graph</span><text class="dash-info-data spo2"></text></div>
+            <div id="spo2-info" class="graph-info"><span>SpO₂ Graph</span><text class="dash-info-data spo2-text"></text></div>
           </div>   
-          <div class="graphout box">
+          <div class="graphout box resp-g" style="display:none;">
             <div class="resp-graph">
               <div id="resp-graph" class="graph"></div>
             </div>
-            <div id="resp-info" class="graph-info"><span>Respiration Graph</span><text class="dash-info-data respiration"></text></div>
-          </div>   
+            <div id="resp-info" class="graph-info"><span>Respiration Graph</span><text class="dash-info-data respiration-text"></text></div>
+          </div> 
+          <div class="graphout box temp-g" style="display:none;">
+            <div class="temp-graph">
+              <div id="temp-graph" class="graph"></div>
+            </div>
+            <div id="temp-info" class="graph-info"><span>Respiration Graph</span><text class="dash-info-data temp-text"></text></div>
+          </div>    
         </div>  
 	    </div>
 

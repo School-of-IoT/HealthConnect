@@ -87,28 +87,28 @@ function onConnectionLost(responseObject) {
 // Called when a message arrives
 function onMessageArrived(message) {
     //console.log(message.payloadString);
-    var values = message.payloadString.split(',');
+    let values = message.payloadString.split(',');
             //console.log(values);
     if(values[0]!=0){
-        $('.dbp').text(values[0]); 
+        $('.dbp-text').text(values[0]); 
     }
     if(values[1]!=0){
-        $('.sbp').text(values[1]);
+        $('.sbp-text').text(values[1]);
     }
     if(values[2]!=0){
-        $('.heartrate').text(values[2]);
+        $('.hr-text').text(values[2]);
     }
     if(values[3]!=0){
-        $('.respiration').text(values[3]);
+        $('.resp-text').text(values[3]);
     }
     if(values[4]!=0){
-        $('.spo2').text(values[4]);
+        $('.spo2-text').text(values[4]);
     }
     if(values[5]!=0){
-        $('.temp').text(values[5]);
+        $('.temp-text').text(values[5]);
     }
     if(values[6]!=0){
-        $('.fio2').text(values[6]);
+        $('.fio2-text').text(values[6]);
     }      
 }
 
