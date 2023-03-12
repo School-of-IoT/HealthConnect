@@ -1,3 +1,9 @@
+function sleep(ms) {
+  return new Promise(
+    resolve => setTimeout(resolve, ms)
+  );
+}
+
 var arrayLength = 60
 var newArray1 = []
 var newArray3 = []
@@ -59,7 +65,8 @@ var TEMP =[0.5, 0.4, 0.4, 0.3, 0.5, 0.4, 0.4, 0.3, 0.4, 0.4, 0.3, 0.3, 0.5, 0, 0
 
 var ECG_VAL =[0.5, -0.25, 2.5, -2, 0.5, 1, -0.5, 0.5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.5, -0.25, 2.5, -2, 0.5, 1, -0.5, 0.5, 0.5]
 
-function ECG_Dummy_Run(data, j, k) {
+
+async function ECG_Dummy_Run(data, j, k) {
   
   if(data){
     var y1 = ECG_VAL[j]*10
@@ -114,10 +121,15 @@ function ECG_Dummy_Run(data, j, k) {
     data=true; 
     k=0
   }
+
+  await sleep(5);// change to '5' for demo and '5000' during development of css 
+
+  ECG_Dummy_Run(data, j, k);
+
 }  
 
 function ECG_Dummy(){
   let x = false;
   let y,z = 0;
-  setInterval(ECG_Dummy_Run, 5, x, y, z); // change to '5' for demo and '5000' during development of css  
+  ECG_Dummy_Run(x, y, z);
 }
