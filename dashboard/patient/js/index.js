@@ -28,7 +28,7 @@
           dataType: "json",
           encode: true,
         }).done(function (data) {
-            console.log(data.patient[0]);
+            
             if (data.message == "Token does not match. Try to Login Again."){
               window.location.href="../../login/"
             }
