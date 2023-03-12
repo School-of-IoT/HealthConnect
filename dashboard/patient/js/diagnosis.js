@@ -49,17 +49,19 @@ Plotly.plot('temp-graph', [{
 
 /* -------------- DATA Manipulatino for Graphs ----------------*/
 
-var ECG_VAL =[0.5, -0.25, 2.5, -2, 0.5, 1, -0.5, 0.5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.5, -0.25, 2.5, -2, 0.5, 1, -0.5, 0.5, 0.5]
 var RESP =[0.3, 0.3, 0.8, 1.3, 1.3, 1.3, 1.5, 1.5, 2, 2, 1.5, 1.5, 0.5, 0, 0, 0.3, 0.8, 1, 1.3, 1.3, 1.5, 1.5, 2, 2, 1.5, 1.5, 0.5, 0.5]
 var TEMP =[0.5, 0.4, 0.4, 0.3, 0.5, 0.4, 0.4, 0.3, 0.4, 0.4, 0.3, 0.3, 0.5, 0, 0, 0.3, 0.8, 0.5, 0.4, 0.4, 0.3, 1.5, 2, 0.5, 0.4, 0.4, 0.3, 0.5]
 
 
-var cnt = 0;
-var data = false
-var j=0
-var k=0
+// var data = false
+// var j=0
+// var k=0
 
-var interval = setInterval(function() {
+var ECG_VAL =[0.5, -0.25, 2.5, -2, 0.5, 1, -0.5, 0.5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.5, -0.25, 2.5, -2, 0.5, 1, -0.5, 0.5, 0.5]
+
+setInterval(ECG_Dummy_Run, 5, false, 0, 0); // change to '5' for demo and '5000' during development of css
+
+function ECG_Dummy_Run(data, j, k) {
   
   if(data){
     var y1 = ECG_VAL[j]*10
@@ -114,8 +116,4 @@ var interval = setInterval(function() {
     data=true; 
     k=0
   }
-
-  console.log(interval);
-  
-  if(cnt === 500) clearInterval(interval);
-}, 5);  // change to '5' for demo and '5000' during development of css
+}  

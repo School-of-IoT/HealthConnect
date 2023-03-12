@@ -7,7 +7,7 @@
             user: user,
             token: token,
           };
-    
+
     $.ajax({
         type: "GET",
         url: "https://healthconnect-server.onrender.com/data",
@@ -37,13 +37,18 @@
         $('.key-setting .key-value').text(data.patient[0].devtoken);
         
         preLoaderHandler();
-        
-        let len = data.patient[0].devices.length;
-        //console.log(len);
-        for(let i=0; i<len; i++){
-          insert_node(data.patient[0].devices[i].lastUp, data.patient[0].devices[i].node.slice(5), data.patient[0].devices[i].attribute, data.patient[0].devices[i].type);
+        /* -----------------------  DEVICES SECTION  ----------------------- */
+
+        if ($('.no-device').css("display") == "none"){
+          let len = data.patient[0].devices.length;
+          //console.log(len);
+          for(let i=0; i<len; i++){
+            insert_node(data.patient[0].devices[i].lastUp, data.patient[0].devices[i].node.slice(5), data.patient[0].devices[i].attribute, data.patient[0].devices[i].type);
+          }
         }
+        /* ----------------------------------------------------------------- */
         
+        /* -----------------------  ADDING DEVICES  ----------------------- */
         $("#dev-table-body").each(function()
         {
             if($(this).children("tr").length == 0)
@@ -57,7 +62,7 @@
               $('.dev-list').show();
             }
         });
-
+        /* ----------------------------------------------------------------- */
 
       }).fail(function (data) {
         //console.log("failed");

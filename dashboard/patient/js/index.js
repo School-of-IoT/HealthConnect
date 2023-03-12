@@ -51,10 +51,13 @@
             preLoaderHandler();
             
             /* -----------------------  DEVICES SECTION  ----------------------- */
-            let len = data.patient[0].devices.length;
-            //console.log(len);
-            for(let i=0; i<len; i++){
-              insert_node(data.patient[0].devices[i].lastUp, data.patient[0].devices[i].node.slice(5), data.patient[0].devices[i].attribute, data.patient[0].devices[i].type);
+
+            if ($('.no-device').css("display") == "none"){
+              let len = data.patient[0].devices.length;
+              //console.log(len);
+              for(let i=0; i<len; i++){
+                insert_node(data.patient[0].devices[i].lastUp, data.patient[0].devices[i].node.slice(5), data.patient[0].devices[i].attribute, data.patient[0].devices[i].type);
+              }
             }
             /* ----------------------------------------------------------------- */
               
