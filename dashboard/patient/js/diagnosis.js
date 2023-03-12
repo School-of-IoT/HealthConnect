@@ -121,7 +121,7 @@ async function ECG_Dummy_Run(data, j, k) {
     data=true; 
     k=0
   }
-  console.log(j);
+  //console.log(j);
   await sleep(5);// change to '5' for demo and '5000' during development of css 
 
   ECG_Dummy_Run(data, j, k);
