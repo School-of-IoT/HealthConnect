@@ -59,9 +59,7 @@ var TEMP =[0.5, 0.4, 0.4, 0.3, 0.5, 0.4, 0.4, 0.3, 0.4, 0.4, 0.3, 0.3, 0.5, 0, 0
 
 var ECG_VAL =[0.5, -0.25, 2.5, -2, 0.5, 1, -0.5, 0.5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.5, -0.25, 2.5, -2, 0.5, 1, -0.5, 0.5, 0.5]
 
-setInterval(ECG_Dummy_Run, 5, false, 0, 0); // change to '5' for demo and '5000' during development of css
-
-function ECG_Dummy_Run(data, j, k) {
+function ECG_Dummy_Run() {
   
   if(data){
     var y1 = ECG_VAL[j]*10
@@ -117,3 +115,9 @@ function ECG_Dummy_Run(data, j, k) {
     k=0
   }
 }  
+
+function ECG_Dummy(){
+  let x = false;
+  let y,z = 0;
+  setInterval(ECG_Dummy_Run, 5, x, y, z); // change to '5' for demo and '5000' during development of css  
+}

@@ -53,6 +53,8 @@ function startConnect(dev_id) {
         useSSL: true
     });
    console.log("Connected");
+  
+   ECG_Dummy(); // if ECG is green, then play this
 
     let loc = 'td.' + ID;
     let dvof = 'device-offline '+ID;
@@ -61,6 +63,8 @@ function startConnect(dev_id) {
     $(loc).removeClass('device-offline');
     $(loc).addClass('device-online');
    }
+
+   
 
 }
 
