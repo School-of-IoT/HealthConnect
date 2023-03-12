@@ -129,7 +129,5 @@ async function ECG_Dummy_Run(data, j, k) {
 }  
 
 function ECG_Dummy(){
-  let x = false;
-  let y,z = 0;
-  ECG_Dummy_Run(x, y, z);
+  ECG_Dummy_Run(false, 0, 0);
 }
