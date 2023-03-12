@@ -52,7 +52,7 @@
             
             /* -----------------------  DEVICES SECTION  ----------------------- */
 
-            if ($('.no-device').css("display") == "none"){
+            if ($('.no-device').css("display") != "none"){
               let len = data.patient[0].devices.length;
               //console.log(len);
               for(let i=0; i<len; i++){
