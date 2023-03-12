@@ -297,6 +297,15 @@ button.dev-table-btn-connect {
   cursor: pointer;
 }
 
+button.dev-table-btn-disconnect {
+  align-items: center;
+  align-content: center;
+  padding: 5px 9px;
+  background: #985f26;
+  color: #fff;
+  cursor: pointer;
+}
+
 span.dev-table-btn-del{
   font-size: larger;
   cursor: pointer;

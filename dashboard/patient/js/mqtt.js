@@ -53,9 +53,35 @@ function startConnect(dev_id) {
         useSSL: true
     });
    console.log("Connected");
-  
-   ECG_Dummy(); // if ECG is green, then play this
+   let dev_off = '.device-offline';
+   if(!$(dev_off).hasClass(ID)){
+    let val = document.getElementById(ID).children[3].innerHTML;
+    let values = val.split(',');
+            //console.log(values);
+    for(i=0; i<values.length; i++){
+        if(values[i] == 'dbp'){
+            ECG_Dummy(); // if ECG is green, then play this
+        }
+        if(values[i] == 'sbp'){
+            ECG_Dummy(); // if ECG is green, then play this
+        }
+        if(values[i] == 'resp'){
+            RESP_Dummy();
+        }
+        if(values[i] == 'spo2'){
+            RESP_Dummy();
+        }
+        if(values[i] == 'temp'){
+            TEMP_Dummy();
+        }
+        if(values[i] == 'fio2'){
+            RESP_Dummy();
+        }
+    }
+    
 
+   }
+   
     let loc = 'td.' + ID;
     let dvof = 'device-offline '+ID;
     let dvon = 'device-online '+ID;
@@ -117,7 +143,36 @@ function onMessageArrived(message) {
 }
 
 // Called when the disconnection button is pressed
-function startDisconnect() {
-    client.disconnect();
+function startDisconnect(dev_id) {
+    let dev_on = '.device-online';
+    ID = "node-"+dev_id;
+
+   if(!$(dev_on).hasClass(ID)){
+    let val = document.getElementById(ID).children[3].innerHTML;
+    let values = val.split(',');
+            //console.log(values);
+    for(i=0; i<values.length; i++){
+        if(values[i] == 'dbp'){
+            ecg_data = false;
+        }
+        if(values[i] == 'sbp'){
+            ecg_data = false;
+        }
+        if(values[i] == 'resp'){
+            RESP_Dummy();
+        }
+        if(values[i] == 'spo2'){
+            RESP_Dummy();
+        }
+        if(values[i] == 'temp'){
+            TEMP_Dummy();
+        }
+        if(values[i] == 'fio2'){
+            RESP_Dummy();
+        }
+    }
+    
+
+    //client.disconnect();
     //console.log("Disconnected");
 }

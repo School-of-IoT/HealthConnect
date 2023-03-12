@@ -1,3 +1,5 @@
+var ecg_data = false;
+
 function sleep(ms) {
   return new Promise(
     resolve => setTimeout(resolve, ms)
@@ -67,6 +69,10 @@ var ECG_VAL =[0.5, -0.25, 2.5, -2, 0.5, 1, -0.5, 0.5, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 
 
 async function ECG_Dummy_Run(data, j, k) {
+
+  if (!ecg_data){
+    return;
+  }
   
   if(data){
     var y1 = ECG_VAL[j]*10
@@ -129,5 +135,6 @@ async function ECG_Dummy_Run(data, j, k) {
 }  
 
 function ECG_Dummy(){
+  ecg_data = true;
   ECG_Dummy_Run(false, 0, 0);
 }

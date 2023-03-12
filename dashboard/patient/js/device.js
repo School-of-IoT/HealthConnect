@@ -45,6 +45,7 @@ function insert_node(up, ID, val, node){
   c=0;
   x.insertCell(c).innerHTML='<span class="dev-table-btn-del" onClick="delete_node('+ID+');">🧺</span>'
   x.insertCell(c).innerHTML='<button class="dev-table-btn-connect" onClick="startConnect('+ID+');">Connect</button>';
+  x.insertCell(c).innerHTML='<button class="dev-table-btn-disconnect" onClick="startDisconnect('+ID+'); style="display:none"; ">Disconnect</button>';
   status = 'device-offline '+x.id;
   x.insertCell(c).setAttribute('class', status);
   x.insertCell(c).innerHTML=val;
