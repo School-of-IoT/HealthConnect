@@ -147,31 +147,31 @@ function startDisconnect(dev_id) {
     let dev_on = '.device-online';
     ID = "node-"+dev_id;
 
-   if(!$(dev_on).hasClass(ID)){
-    let val = document.getElementById(ID).children[3].innerHTML;
-    let values = val.split(',');
-            //console.log(values);
-    for(i=0; i<values.length; i++){
-        if(values[i] == 'dbp'){
-            ecg_data = false;
-        }
-        if(values[i] == 'sbp'){
-            ecg_data = false;
-        }
-        if(values[i] == 'resp'){
-            RESP_Dummy();
-        }
-        if(values[i] == 'spo2'){
-            RESP_Dummy();
-        }
-        if(values[i] == 'temp'){
-            TEMP_Dummy();
-        }
-        if(values[i] == 'fio2'){
-            RESP_Dummy();
+    if(!$(dev_on).hasClass(ID)){
+        let val = document.getElementById(ID).children[3].innerHTML;
+        let values = val.split(',');
+                //console.log(values);
+        for(i=0; i<values.length; i++){
+            if(values[i] == 'dbp'){
+                ecg_data = false;
+            }
+            if(values[i] == 'sbp'){
+                ecg_data = false;
+            }
+            if(values[i] == 'resp'){
+                RESP_Dummy();
+            }
+            if(values[i] == 'spo2'){
+                RESP_Dummy();
+            }
+            if(values[i] == 'temp'){
+                TEMP_Dummy();
+            }
+            if(values[i] == 'fio2'){
+                RESP_Dummy();
+            }
         }
     }
-    
 
     //client.disconnect();
     //console.log("Disconnected");
