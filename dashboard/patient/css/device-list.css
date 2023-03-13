@@ -301,7 +301,8 @@ button.dev-table-btn-disconnect {
   align-items: center;
   align-content: center;
   padding: 5px 9px;
-  background: #985f26;
+  background: #cb0000;
+  border-color: #cb0000;
   color: #fff;
   cursor: pointer;
 }
