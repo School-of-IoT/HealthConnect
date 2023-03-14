@@ -35,8 +35,6 @@ function setCookie(uid,value,exp_days) {
         
         let check = true;
 
-        console.log("stage 1");
-
         for(let i=0; i<input.length; i++) {
             if(validate(input[i]) == false){
                 showValidate(input[i]);
@@ -44,14 +42,10 @@ function setCookie(uid,value,exp_days) {
             }
         }
 
-        console.log("stage 2");
-
         let formData = {
             user: $("#User").val(),
             pass: $("#pass").val(),
           };
-
-          console.log(check);
 
         $.ajax({
             type: "GET",
