@@ -70,12 +70,14 @@ function startConnect(dev_id) {
    if($(dev_on).hasClass(ID)){
     let val = document.getElementById(ID).children[3].innerHTML;
     let values = val.split(',');
-            //console.log(values);
+            console.log(values);
     for(i=0; i<values.length; i++){
+        console.log(values[i]);
         if(values[i] == 'dbp'){
             ECG_Dummy(); // if device containing above attr online, then play this
         }
         if(values[i] == 'sbp'){
+            console.log('ECG executed');
             ECG_Dummy();
         }
         if(values[i] == 'resp'){
