@@ -153,10 +153,17 @@ function onMessageArrived(message) {
 // Called when the disconnection button is pressed
 function startDisconnect(dev_id) {
     let dev_on = '.device-online';
-    let UID = "node-"+dev_id;
+    let ID = "node-"+dev_id;
 
-    if(!$(dev_on).hasClass(UID)){
-        let val = document.getElementById(UID).children[3].innerHTML;
+    let loc = 'td.' + ID;
+    let dvon = 'device-offline '+ID;
+   if($(loc).hasClass(dvon)){
+    $(loc).removeClass('device-online');
+    $(loc).addClass('device-offline');
+   }
+
+    if($(dev_on).hasClass(ID)){
+        let val = document.getElementById(ID).children[3].innerHTML;
         let values = val.split(',');
                 //console.log(values);
         for(i=0; i<values.length; i++){
