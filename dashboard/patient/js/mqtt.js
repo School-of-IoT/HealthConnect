@@ -155,7 +155,7 @@ function startDisconnect(dev_id) {
     let dev_on = '.device-online';
     let UID = "node-"+dev_id;
 
-    if(!$(dev_on).hasClass(ID)){
+    if(!$(dev_on).hasClass(UID)){
         let val = document.getElementById(UID).children[3].innerHTML;
         let values = val.split(',');
                 //console.log(values);
