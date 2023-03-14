@@ -39,7 +39,7 @@ function startConnect(dev_id) {
     clientID = "clientID-"+dev_id;
     // Initialize new Paho client connection
     client = new Paho.MQTT.Client(host, Number(port), clientID);
-
+    window.localStorage.setItem(clientID, JSON.stringify(client));
     
     // Called when the client connects
     function onConnect() {
@@ -75,6 +75,17 @@ function startConnect(dev_id) {
     $(loc).addClass('device-online');
    }
 
+   // Change connection button
+   let bt_of= 'button.dev-table-btn-disconnect';
+   let bt_on= 'button.dev-table-btn-connect';
+    if($(bt_on).hasClass(ID)){
+        let on_loc = bt_on+'.'+ID;
+        $(on_loc).hide();
+        let of_loc = bt_of+'.'+ID;
+        $(of_loc).show();
+    }
+
+    
    // Start Diagnosis graph (based on button)
    let dev_on = '.device-online';
    if($(dev_on).hasClass(ID)){
@@ -101,16 +112,6 @@ function startConnect(dev_id) {
         }
     }
    }
-
-   // Change connection button
-   let bt_of= 'button.dev-table-btn-disconnect';
-   let bt_on= 'button.dev-table-btn-connect';
-    if($(bt_on).hasClass(ID)){
-        let on_loc = bt_on+'.'+ID;
-        $(on_loc).hide();
-        let of_loc = bt_of+'.'+ID;
-        $(of_loc).show();
-    }
 
     
 }
@@ -156,6 +157,12 @@ function startDisconnect(dev_id) {
     let dev_on = '.device-online';
     let ID = "node-"+dev_id;
 
+    clientID = 'clientID-' + dev_id;
+
+    let newObject = window.localStorage.getItem(clientID);
+    client = JSON.parse(newObject);
+    console.log(client);
+
     let loc = 'td.' + ID;
     let dvon = 'device-online';
     if($(loc).hasClass(dvon)){
@@ -186,20 +193,20 @@ function startDisconnect(dev_id) {
                 ecg_data = false;
             }
             if(values[i] == 'resp'){
-                RESP_Dummy();
+                //RESP_Dummy();
             }
             if(values[i] == 'spo2'){
-                RESP_Dummy();
+                //RESP_Dummy();
             }
             if(values[i] == 'temp'){
-                TEMP_Dummy();
+                //TEMP_Dummy();
             }
             if(values[i] == 'fio2'){
-                RESP_Dummy();
+                //RESP_Dummy();
             }
         }
     }
     
-    //client.disconnect();
+    client.disconnect();
     //console.log("Disconnected");
 }
