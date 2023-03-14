@@ -66,6 +66,16 @@ function startConnect(dev_id) {
         useSSL: true
     });
    console.log("Connected");
+   
+   // Change connection signal
+    let loc = 'td.' + ID;
+    let dvof = 'device-offline '+ID;
+   if($(loc).hasClass(dvof)){
+    $(loc).removeClass('device-offline');
+    $(loc).addClass('device-online');
+   }
+
+   // Start Diagnosis graph (based on button)
    let dev_on = '.device-online';
    if($(dev_on).hasClass(ID)){
     let val = document.getElementById(ID).children[3].innerHTML;
@@ -93,14 +103,6 @@ function startConnect(dev_id) {
             RESP_Dummy();
         }
     }
-   }
-   
-   // Change connection signal
-    let loc = 'td.' + ID;
-    let dvof = 'device-offline '+ID;
-   if($(loc).hasClass(dvof)){
-    $(loc).removeClass('device-offline');
-    $(loc).addClass('device-online');
    }
 
    // Change connection button
