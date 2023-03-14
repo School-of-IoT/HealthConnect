@@ -28,11 +28,10 @@ let formData = {
       });
 })(jQuery);
 
-var ID = "";
 function startConnect(dev_id) {
     host = mqttserver;
     port = 8884;
-    ID = "node-"+dev_id;
+    let ID = "node-"+dev_id;
     
     let act = "Connecting to: " + host + ' on port: ' + port + ', with Node ID - ' + ID;
     // Print output for the user in the messages div
@@ -40,6 +39,20 @@ function startConnect(dev_id) {
     clientID = "clientID-"+dev_id;
     // Initialize new Paho client connection
     client = new Paho.MQTT.Client(host, Number(port), clientID);
+
+    
+    // Called when the client connects
+    function onConnect() {
+        // MQTT topic to subscribe 
+        topic = "data/patient/"+sessionStorage.getItem('user')+"/med/"+ID;
+        // Print output for the user in the messages div
+        let act = "Subscribing to: " + topic;
+        console.log(act);
+
+        // Subscribe to the requested topic
+        client.subscribe(topic);
+
+    }
 
     // Set callback handlers
     client.onConnectionLost = onConnectionLost;
@@ -53,17 +66,17 @@ function startConnect(dev_id) {
         useSSL: true
     });
    console.log("Connected");
-   let dev_off = '.device-offline';
-   if(!$(dev_off).hasClass(ID)){
+   let dev_on = '.device-online';
+   if($(dev_on).hasClass(ID)){
     let val = document.getElementById(ID).children[3].innerHTML;
     let values = val.split(',');
             //console.log(values);
     for(i=0; i<values.length; i++){
         if(values[i] == 'dbp'){
-            ECG_Dummy(); // if ECG is green, then play this
+            ECG_Dummy(); // if device containing above attr online, then play this
         }
         if(values[i] == 'sbp'){
-            ECG_Dummy(); // if ECG is green, then play this
+            ECG_Dummy();
         }
         if(values[i] == 'resp'){
             RESP_Dummy();
@@ -78,34 +91,29 @@ function startConnect(dev_id) {
             RESP_Dummy();
         }
     }
-    
-
    }
    
+   // Change connection signal
     let loc = 'td.' + ID;
     let dvof = 'device-offline '+ID;
-    let dvon = 'device-online '+ID;
    if($(loc).hasClass(dvof)){
     $(loc).removeClass('device-offline');
     $(loc).addClass('device-online');
    }
 
-   
+   // Change connection button
+   let bt_of= 'button.dev-table-btn-disconnect';
+   let bt_on= 'button.dev-table-btn-connect';
+    if($(bt_on).hasClass(ID)){
+        let on_loc = bt_on+'.'+ID;
+        $(on_loc).hide();
+        let of_loc = bt_of+'.'+ID;
+        $(of_loc).show();
+    }
 
+    
 }
 
-// Called when the client connects
-function onConnect() {
-    // MQTT topic to subscribe 
-    topic = "data/patient/"+sessionStorage.getItem('user')+"/med/"+ID;
-    // Print output for the user in the messages div
-    let act = "Subscribing to: " + topic;
-    console.log(act);
-
-    // Subscribe to the requested topic
-    client.subscribe(topic);
-
-}
 
 // Called when the client loses its connection
 function onConnectionLost(responseObject) {
@@ -145,10 +153,10 @@ function onMessageArrived(message) {
 // Called when the disconnection button is pressed
 function startDisconnect(dev_id) {
     let dev_on = '.device-online';
-    ID = "node-"+dev_id;
+    let UID = "node-"+dev_id;
 
     if(!$(dev_on).hasClass(ID)){
-        let val = document.getElementById(ID).children[3].innerHTML;
+        let val = document.getElementById(UID).children[3].innerHTML;
         let values = val.split(',');
                 //console.log(values);
         for(i=0; i<values.length; i++){

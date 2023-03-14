@@ -44,7 +44,7 @@ function insert_node(up, ID, val, node){
   x.id="node-"+ID;
   c=0;
   x.insertCell(c).innerHTML='<span class="dev-table-btn-del" onClick="delete_node('+ID+');">🧺</span>'
-  x.insertCell(c).innerHTML='<button class="dev-table-btn-connect" onClick="startConnect('+ID+');">Connect</button>' + '<button class="dev-table-btn-disconnect" onClick="startDisconnect('+ID+')"; style="display:none"; ">Disconnect</button>';
+  x.insertCell(c).innerHTML='<button class="dev-table-btn-connect '+x.id+'" onClick="startConnect('+ID+');">Connect</button>' + '<button class="dev-table-btn-disconnect '+x.id+'" onClick="startDisconnect('+ID+')"; style="display:none"; ">Disconnect</button>';
   status = 'device-offline '+x.id;
   x.insertCell(c).setAttribute('class', status);
   x.insertCell(c).innerHTML=val;
@@ -166,7 +166,7 @@ function create_node(){
 }
 
 function delete_node(nd){
-  let ID = "node-"+nd;
+  let UID = "node-"+nd;
 
   let dev_tkn = $('.key-setting .key-value').text();
 
@@ -175,7 +175,7 @@ function delete_node(nd){
   }
   else{
 
-    let url = "https://healthconnect-server.onrender.com/node/delete?user="+sessionStorage.getItem('user')+"&token="+dev_tkn+"&node="+ID;
+    let url = "https://healthconnect-server.onrender.com/node/delete?user="+sessionStorage.getItem('user')+"&token="+dev_tkn+"&node="+UID;
   
   $.ajax({
     type: "DELETE",
@@ -188,7 +188,7 @@ function delete_node(nd){
     },
     processData: false,
   }).done(function (data) {
-    let row = "#"+ID;
+    let row = "#"+UID;
     $(row).remove(); 
 
     $("#dev-table-body").each(function()
