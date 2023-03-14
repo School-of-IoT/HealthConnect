@@ -69,7 +69,7 @@ function startConnect(dev_id) {
    
    // Change connection signal
     let loc = 'td.' + ID;
-    let dvof = 'device-offline '+ID;
+    let dvof = 'device-offline';
    if($(loc).hasClass(dvof)){
     $(loc).removeClass('device-offline');
     $(loc).addClass('device-online');
