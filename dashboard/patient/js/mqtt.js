@@ -157,7 +157,7 @@ function startDisconnect(dev_id) {
     let ID = "node-"+dev_id;
 
     let loc = 'td.' + ID;
-    let dvon = 'device-online '+ID;
+    let dvon = 'device-online';
     if($(loc).hasClass(dvon)){
         $(loc).removeClass('device-online');
         $(loc).addClass('device-offline');
