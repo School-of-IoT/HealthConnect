@@ -163,6 +163,17 @@ function startDisconnect(dev_id) {
         $(loc).addClass('device-offline');
     }
 
+    // Change connection button
+   let bt_of= 'button.dev-table-btn-disconnect';
+   let bt_on= 'button.dev-table-btn-connect';
+    if($(bt_of).hasClass(ID)){
+        let on_loc = bt_on+'.'+ID;
+        
+        let of_loc = bt_of+'.'+ID;
+        $(of_loc).hide();
+        $(on_loc).show();
+    }
+
     if($(dev_on).hasClass(ID)){
         let val = document.getElementById(ID).children[3].innerHTML;
         let values = val.split(',');
