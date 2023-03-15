@@ -53,7 +53,7 @@ function startConnect(dev_id) {
         client.subscribe(topic);
 
     }
-    console.log(client);
+    
     // Set callback handlers
     client.onConnectionLost = onConnectionLost;
     client.onMessageArrived = onMessageArrived;
@@ -163,24 +163,6 @@ function startDisconnect(dev_id) {
     client = JSON.parse(newObject);
     console.log(client);
 
-    let loc = 'td.' + ID;
-    let dvon = 'device-online';
-    if($(loc).hasClass(dvon)){
-        $(loc).removeClass('device-online');
-        $(loc).addClass('device-offline');
-    }
-
-    // Change connection button
-   let bt_of= 'button.dev-table-btn-disconnect';
-   let bt_on= 'button.dev-table-btn-connect';
-    if($(bt_of).hasClass(ID)){
-        let on_loc = bt_on+'.'+ID;
-        
-        let of_loc = bt_of+'.'+ID;
-        $(of_loc).hide();
-        $(on_loc).show();
-    }
-
     if($(dev_on).hasClass(ID)){
         let val = document.getElementById(ID).children[3].innerHTML;
         let values = val.split(',');
@@ -207,6 +189,24 @@ function startDisconnect(dev_id) {
         }
     }
     
-    client.disconnect();
+    let loc = 'td.' + ID;
+    let dvon = 'device-online';
+    if($(loc).hasClass(dvon)){
+        $(loc).removeClass('device-online');
+        $(loc).addClass('device-offline');
+    }
+
+    // Change connection button
+   let bt_of= 'button.dev-table-btn-disconnect';
+   let bt_on= 'button.dev-table-btn-connect';
+    if($(bt_of).hasClass(ID)){
+        let on_loc = bt_on+'.'+ID;
+        
+        let of_loc = bt_of+'.'+ID;
+        $(of_loc).hide();
+        $(on_loc).show();
+    }
+
+    //client.disconnect();
     //console.log("Disconnected");
 }
