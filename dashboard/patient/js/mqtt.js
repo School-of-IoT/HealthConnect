@@ -38,6 +38,7 @@ function server_Connection(){
         $('button.s-btn-func-cnnct').html("Connect");
         console.log("Disconnected");
         server_line = false;
+        $('button.dev-table-btn-disconnect').click(); //unsubscribes from All the devices
     }
     else{
         host = mqttserver;
