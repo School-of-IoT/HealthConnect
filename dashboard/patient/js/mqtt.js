@@ -184,7 +184,7 @@ function stopLIVE(dev_id) {
     if($(dev_on).hasClass(ID)){
         let val = document.getElementById(ID).children[3].innerHTML;
         let values = val.split(',');
-                console.log(values);
+                //console.log(values);
         for(i=0; i<values.length; i++){
             if(values[i] == 'dbp'){
                 ecg_data = false;
