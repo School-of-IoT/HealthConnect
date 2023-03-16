@@ -35,10 +35,7 @@ table {
 table * {
   position: relative;
 }
-table td,
-table th {
-  /* padding-left: 8px; */
-}
+
 table thead tr {
   height: 60px;
   background: #0a2558;
@@ -54,7 +51,7 @@ table tbody tr:last-child {
 table td,
 table th {
   text-align: center;
-  padding: 16px 0px;
+  padding: 16px 7px;
 }
 table td.l,
 table th.l {
@@ -69,7 +66,7 @@ table th.r {
   text-align: center;
 }
 .table100-head th {
-  padding: 0px 45px;
+  /* padding: 0px 45px; */
   font-family: inherit;
   font-size: 18px;
   color: #fff;
@@ -234,9 +231,20 @@ ul#myUL {
 }
 
 input.s-inpt {
-  font-size: 18px;
-  padding: 5px 18px;
+  height: 100%;
   width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 15px;
+  margin: 0px 6px;
+  padding: 5px 20px;
+  align-items: center;
+  align-content: center;
+  align-items: center;
+  align-content: center;
+  padding: 5px 9px;
+  cursor: pointer;
+  border-radius: 10px;
 }
 
 .s-btn {
@@ -262,21 +270,45 @@ button.s-btn-func {
   padding: 5px 20px;
   align-items: center;
   align-content: center;
+  align-items: center;
+  align-content: center;
+  padding: 5px 9px;
+  background: #0A2558;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 10px;
 }
 
 .dev-search {
   width: 100%;
   margin: 0px 43px;
   display: flex;
-  padding: 3p;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: stretch;
 }
 
-button.dev-table-btn {
+button.dev-table-btn-connect {
   align-items: center;
   align-content: center;
   padding: 5px 9px;
   background: #0A2558;
   color: #fff;
+  cursor: pointer;
+}
+
+button.dev-table-btn-disconnect {
+  align-items: center;
+  align-content: center;
+  padding: 5px 9px;
+  background: #cb0000;
+  border-color: #cb0000;
+  color: #fff;
+  cursor: pointer;
+}
+
+span.dev-table-btn-del{
+  font-size: larger;
   cursor: pointer;
 }
 
@@ -300,4 +332,30 @@ button.dev-table-btn {
 .device-offline::before{
   text-shadow: 0px 0px 10px red; 
   content: "🔴";
+}
+select#dev-filter {
+  height: 100%;
+  width: 50;
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 18px;
+  margin: 0px 6px;
+  padding: 5px 20px;
+  align-items: center;
+  align-content: center;
+  align-items: center;
+  align-content: center;
+  padding: 5px 9px;
+  /* background: #0A2558; */
+  /* color: #fff; */
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.no-device {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 60%;
+  justify-content: center;
 }

@@ -8,22 +8,22 @@
 
 @font-face {
   font-family: Poppins-Regular;
-  src: url('https://github.com/google/fonts/blob/main/ofl/poppins/Poppins-Regular.ttf'); 
+  src: url('../../assets/fonts/Poppins/Poppins-Regular.ttf'); 
 }
 
 @font-face {
   font-family: Poppins-Medium;
-  src: url('https://github.com/google/fonts/blob/main/ofl/poppins/Poppins-Medium.ttf'); 
+  src: url('../../assets/fonts/Poppins/Poppins-Medium.ttf'); 
 }
 
 @font-face {
   font-family: Poppins-SemiBold;
-  src: url('https://github.com/google/fonts/blob/main/ofl/poppins/Poppins-SemiBold.ttf'); 
+  src: url('../../assets/fonts/Poppins/Poppins-SemiBold.ttf'); 
 }
 
 @font-face {
   font-family: Poppins-Bold;
-  src: url('https://github.com/google/fonts/blob/main/ofl/poppins/Poppins-Bold.ttf'); 
+  src: url('../../assets/fonts/Poppins/Poppins-Bold.ttf'); 
 }
 
 
@@ -152,6 +152,7 @@ iframe {
   color: #00aaff;
   line-height: 1.5;
   font-weight: 1000;
+  text-decoration: none;
 }
 
 .txt2::hover{
@@ -226,7 +227,7 @@ iframe {
   width: 100%;
   position: relative;
   border-bottom: 2px solid #adadad;
-  margin-bottom: 37px;
+  margin-top: 37px;
 }
 
 .input100 {

@@ -1,30 +1,29 @@
+var ecg_data = false;
+
+function sleep(ms) {
+  return new Promise(
+    resolve => setTimeout(resolve, ms)
+  );
+}
+
 var arrayLength = 60
 var newArray1 = []
-var newArray2 = []
 var newArray3 = []
 var newArray4 = []
+var newArray5 = []
 
 for(var i = 0; i < arrayLength; i++) {
   newArray1[i] = 0
-  newArray2[i] = 0
   newArray3[i] = 0
   newArray4[i] = 0
+  newArray5[i] = 0
 }
 
-Plotly.plot('sys-heart-graph', [{
+Plotly.plot('ecg-graph', [{
   y: newArray1,
   mode: 'lines',
   line: {
     color: '#80CAF6',
-    shape: 'spline'
-  }
-}]);
-
-Plotly.plot('dia-heart-graph', [{
-  y: newArray2,
-  mode: 'lines',
-  line: {
-    color: '#f680c1',
     shape: 'spline'
   }
 }]);
@@ -47,49 +46,62 @@ Plotly.plot('resp-graph', [{
   }
 }]);
 
+Plotly.plot('temp-graph', [{
+  y: newArray5,
+  mode: 'lines',
+  line: {
+    color: '#a4e864',
+    shape: 'spline'
+  }
+}]);
 
-var ECG_VAL1 =[0.5, -0.25, 2.5, -2, 0.5, 1, -0.5, 0.5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.5, -0.25, 2.5, -2, 0.5, 1, -0.5, 0.5, 0]
-var ECG_VAL2 =[0.25, -0.15, 2, -1.5, 0.25, 1, -0.3, 0.25, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.25, -0.15, 2, -1.5, 0.25, 1, -0.3, 0.25, 0]
-var RESP =[0, 0.3, 0.8, 1.3, 1.8, 2, 1.5, 0.5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.3, 0.8, 1, 1.5, 2, 1.5, 0.5, 0]
+/* -------------- DATA Manipulatino for Graphs ----------------*/
 
-var cnt = 0;
-var data = false
-var j=0
-var k=0
+var RESP =[0.3, 0.3, 0.8, 1.3, 1.3, 1.3, 1.5, 1.5, 2, 2, 1.5, 1.5, 0.5, 0, 0, 0.3, 0.8, 1, 1.3, 1.3, 1.5, 1.5, 2, 2, 1.5, 1.5, 0.5, 0.5]
+var TEMP =[0.5, 0.4, 0.4, 0.3, 0.5, 0.4, 0.4, 0.3, 0.4, 0.4, 0.3, 0.3, 0.5, 0, 0, 0.3, 0.8, 0.5, 0.4, 0.4, 0.3, 1.5, 2, 0.5, 0.4, 0.4, 0.3, 0.5]
 
-var interval = setInterval(function() {
+
+// var data = false
+// var j=0
+// var k=0
+
+var ECG_VAL =[0.5, -0.25, 2.5, -2, 0.5, 1, -0.5, 0.5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.5, -0.25, 2.5, -2, 0.5, 1, -0.5, 0.5, 0.5]
+
+
+async function ECG_Dummy_Run(data, j, k) {
+
+  if (!ecg_data){
+    return;
+  }
   
   if(data){
-    var y1 = ECG_VAL1[j]*10
-    var y2 = ECG_VAL2[j]*5
+    var y1 = ECG_VAL[j]*10
     var y3 = Math.round(Math.random()*10) + 1
     var y4 = Math.round(RESP[j]*10)
+    var y5 = Math.round(RESP[j]*10)
     j=j+1
   }
   else{
     var y1 = 0
-    var y2 = 0
     var y3 = 0
     var y4 = 0
+    var y5 = 0
     k=k+1
   }
 
-  
-  
+  /* Delete from behind, add in front  */
+
   newArray1 = newArray1.concat(y1)
   newArray1.splice(0, 1)
-  newArray2 = newArray2.concat(y2)
-  newArray2.splice(0, 1)
   newArray3 = newArray3.concat(y3)
   newArray3.splice(0, 1)
   newArray4 = newArray4.concat(y4)
   newArray4.splice(0, 1)
+  newArray5 = newArray5.concat(y5)
+  newArray5.splice(0, 1)
 
   var data_update1 = {
     y: [newArray1]
-  };
-  var data_update2 = {
-    y: [newArray2]
   };
   var data_update3 = {
     y: [newArray3]
@@ -97,14 +109,17 @@ var interval = setInterval(function() {
   var data_update4 = {
     y: [newArray4]
   };
+  var data_update5 = {
+    y: [newArray5]
+  };
 
   
-  Plotly.update('sys-heart-graph', data_update1)
-  Plotly.update('dia-heart-graph', data_update2)
+  Plotly.update('ecg-graph', data_update1)
   Plotly.update('spo2-graph', data_update3)
   Plotly.update('resp-graph', data_update4)
+  Plotly.update('temp-graph', data_update5)
   
-  if(j >= ECG_VAL1.length){
+  if(j >= ECG_VAL.length){
     data=false; 
     j=0
   }
@@ -112,8 +127,14 @@ var interval = setInterval(function() {
     data=true; 
     k=0
   }
+  //console.log(j);
+  await sleep(5);// change to '5' for demo and '5000' during development of css 
 
-  
-  
-  if(cnt === 500) clearInterval(interval);
-}, 5);  // change to '5' for demo and '5000' during development of css
+  ECG_Dummy_Run(data, j, k);
+
+}  
+
+function ECG_Dummy(){
+  ecg_data = true;
+  ECG_Dummy_Run(false, 0, 0);
+}
