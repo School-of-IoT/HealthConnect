@@ -282,6 +282,21 @@ button.s-btn-func-cnnct {
     background: #27b332;
     border-color: #27b332;
     width: 150%;
+    margin: 0px 0px 0px 31px;
+    border-radius: 10px;
+
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 18px;
+    padding: 5px 20px;
+    align-items: center;
+    align-content: center;
+    align-items: center;
+    align-content: center;
+    padding: 5px 9px;
+    color: #fff;
+    cursor: pointer;
 }
 
 .dev-search {

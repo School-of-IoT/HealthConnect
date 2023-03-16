@@ -31,6 +31,13 @@ let formData = {
 
 
 function server_Connection(){
+    if (server_line){
+        client.disconnect();
+        $('button.s-btn-func-cnnct').css("background-color", '#27b332');
+        $('button.s-btn-func-cnnct').css("border-color", '#27b332');
+        $('button.s-btn-func-cnnct').html("Connect");
+        console.log("Disconnected");
+    }
     host = mqttserver;
     port = 8884;
     let act = "Connecting to: " + host + ' on port: ' + port;
@@ -45,6 +52,9 @@ function server_Connection(){
 
     function onConnect() {
         //Display ONLINE signal on frame
+        $('button.s-btn-func-cnnct').css("background-color", '#cb0000');
+        $('button.s-btn-func-cnnct').css("border-color", '#cb0000');
+        $('button.s-btn-func-cnnct').html("Disconnect");
         console.log("Connected");
     }
 
