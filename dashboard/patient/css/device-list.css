@@ -278,7 +278,7 @@ button.s-btn-func {
   cursor: pointer;
   border-radius: 10px;
 }
-s-btn-func-cnnct {
+button.s-btn-func-cnnct {
     background: #27b332;
     border-color: #27b332;
     width: 150%;

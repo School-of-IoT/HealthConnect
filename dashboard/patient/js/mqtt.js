@@ -159,6 +159,8 @@ function stopLIVE(dev_id) {
     
     topic = "data/patient/"+sessionStorage.getItem('user')+"/med/"+ID;
     client.unsubscribe(topic);
+    let act = "Unsubscribing to: " + topic;
+    console.log(act);
 
     if($(dev_on).hasClass(ID)){
         let val = document.getElementById(ID).children[3].innerHTML;
