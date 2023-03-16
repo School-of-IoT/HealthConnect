@@ -2,7 +2,7 @@ var mqttserver ="";
 var mqttuser ="";
 var mqttpass ="";
 var client = Object.create(null);
-
+var server_line = false;
 user = sessionStorage.getItem('user');
 token = sessionStorage.getItem('token');
 let formData = {
@@ -37,6 +37,7 @@ function server_Connection(){
         $('button.s-btn-func-cnnct').css("border-color", '#27b332');
         $('button.s-btn-func-cnnct').html("Connect");
         console.log("Disconnected");
+        server_line = false;
     }
     host = mqttserver;
     port = 8884;
@@ -56,6 +57,7 @@ function server_Connection(){
         $('button.s-btn-func-cnnct').css("border-color", '#cb0000');
         $('button.s-btn-func-cnnct').html("Disconnect");
         console.log("Connected");
+        server_line = true;
     }
 
     // Connect the client, if successful, call onConnect function
