@@ -249,7 +249,7 @@ input.s-inpt {
 
 .s-btn {
   width: 100%;
-  margin: 0px 43px;
+  margin: 0px 14px;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -278,10 +278,15 @@ button.s-btn-func {
   cursor: pointer;
   border-radius: 10px;
 }
+s-btn-func-cnnct {
+    background: #27b332;
+    border-color: #27b332;
+    width: 150%;
+}
 
 .dev-search {
   width: 100%;
-  margin: 0px 43px;
+  margin: 0px 15px;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
