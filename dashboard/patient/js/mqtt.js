@@ -39,34 +39,36 @@ function server_Connection(){
         console.log("Disconnected");
         server_line = false;
     }
-    host = mqttserver;
-    port = 8884;
-    let act = "Connecting to: " + host + ' on port: ' + port;
-    console.log(act);
+    else{
+        host = mqttserver;
+        port = 8884;
+        let act = "Connecting to: " + host + ' on port: ' + port;
+        console.log(act);
 
-    clientID = "clientID-"+Math.floor((Math.random() * 99999999) + 11111111);
+        clientID = "clientID-"+Math.floor((Math.random() * 99999999) + 11111111);
 
-    // Initialize new Paho client connection
-    client = new Paho.MQTT.Client(host, Number(port), clientID);
-    client.onConnectionLost = onConnectionLost;
-    client.onMessageArrived = onMessageArrived;
+        // Initialize new Paho client connection
+        client = new Paho.MQTT.Client(host, Number(port), clientID);
+        client.onConnectionLost = onConnectionLost;
+        client.onMessageArrived = onMessageArrived;
 
-    function onConnect() {
-        //Display ONLINE signal on frame
-        $('button.s-btn-func-cnnct').css("background-color", '#cb0000');
-        $('button.s-btn-func-cnnct').css("border-color", '#cb0000');
-        $('button.s-btn-func-cnnct').html("Disconnect");
-        console.log("Connected");
-        server_line = true;
+        function onConnect() {
+            //Display ONLINE signal on frame
+            $('button.s-btn-func-cnnct').css("background-color", '#cb0000');
+            $('button.s-btn-func-cnnct').css("border-color", '#cb0000');
+            $('button.s-btn-func-cnnct').html("Disconnect");
+            console.log("Connected");
+            server_line = true;
+        }
+
+        // Connect the client, if successful, call onConnect function
+        client.connect({ 
+            onSuccess: onConnect,
+            userName: mqttuser,
+            password: mqttpass,
+            useSSL: true
+        });
     }
-
-    // Connect the client, if successful, call onConnect function
-    client.connect({ 
-        onSuccess: onConnect,
-        userName: mqttuser,
-        password: mqttpass,
-        useSSL: true
-    });
 }
 
 function startLIVE(dev_id) {
