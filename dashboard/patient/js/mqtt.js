@@ -32,13 +32,17 @@ let formData = {
 
 function server_Connection(){
     if (server_line){
+        
+        
+        
+        server_line = false;
+        $('button.dev-table-btn-disconnect').click(); //unsubscribes from All the devices
+
         client.disconnect();
         $('button.s-btn-func-cnnct').css("background-color", '#27b332');
         $('button.s-btn-func-cnnct').css("border-color", '#27b332');
         $('button.s-btn-func-cnnct').html("Connect");
         console.log("Disconnected");
-        server_line = false;
-        $('button.dev-table-btn-disconnect').click(); //unsubscribes from All the devices
     }
     else{
         host = mqttserver;
