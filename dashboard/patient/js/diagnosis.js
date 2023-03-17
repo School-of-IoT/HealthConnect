@@ -69,12 +69,14 @@ async function TEMP_Dummy_Run(data, j, k) {
     return;
   }
 
+  let y =0;
+
   if(data){
-    let y = Math.round(TEMP_VAL[j]*10) //temp
+    y = Math.round(TEMP_VAL[j]*10) //temp
     j=j+1
   }
   else{
-    let y = 0 //temp
+    y = 0 //temp
     k=k+1
   }
 
@@ -107,13 +109,14 @@ async function SPO2_Dummy_Run(data, j, k) {
   if (!spo2_data){
     return;
   }
+  let y = 0;
 
   if(data){
-    let y = Math.round(SPO2_VAL[j]*10) //spo2
+    y = Math.round(SPO2_VAL[j]*10) //spo2
     j=j+1
   }
   else{
-    let y = 0 //spo2
+    y = 0 //spo2
     k=k+1
   }
 
@@ -145,19 +148,20 @@ async function ECG_Dummy_Run(data, j, k) {
   if (!ecg_data){
     return;
   }
+  let y = 0;
   
   if(data){
-    var y = ECG_VAL[j]*10
+    y = ECG_VAL[j]*10  //ecg
     j=j+1
   }
   else{
-    var y = 0
+    y = 0
     k=k+1
   }
 
   /* Delete from behind, add in front  */
 
-  ecg_arr = ecg_arr.concat(y1)
+  ecg_arr = ecg_arr.concat(y)
   ecg_arr.splice(0, 1)
 
   let ecg = {
