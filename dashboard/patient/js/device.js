@@ -54,7 +54,7 @@ function insert_node(up, ID, val, node){
 
   /* -----------------------  Diagnosis Activation SECTION  ----------------------- */
 
-  let values = val.split(',');
+  let values = val.split(', ');
             //console.log(values);
   for(i=0; i<values.length; i++){
     if(values[i] == 'dbp'){
