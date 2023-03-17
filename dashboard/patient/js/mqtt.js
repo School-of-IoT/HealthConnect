@@ -110,25 +110,26 @@ function startLIVE(dev_id) {
     let dev_on = '.device-online';
     if($(dev_on).hasClass(ID)){
         let val = document.getElementById(ID).children[3].innerHTML;
+        let dum = document.getElementById(ID).children[1].innerHTML == 'Dummy';
         let values = val.split(',');
         for(i=0; i<values.length; i++){
             if(values[i] == 'dbp'){
-                ECG_Dummy(); // if device containing above attr online, then play this
+                if (dum) ECG_Dummy(); // if device containing above attr online, then play this
             }
             if(values[i] == 'sbp'){
-                ECG_Dummy();
+                if (dum) ECG_Dummy();
             }
             if(values[i] == 'resp'){
-                SPO2_Dummy();
+                if (dum) SPO2_Dummy();
             }
             if(values[i] == 'spo2'){
-                SPO2_Dummy();
+                if (dum) SPO2_Dummy();
             }
             if(values[i] == 'temp'){
-                TEMP_Dummy();
+                if (dum) TEMP_Dummy();
             }
             if(values[i] == 'fio2'){
-                SPO2_Dummy();
+                if (dum) SPO2_Dummy();
             }
         }
     }    
