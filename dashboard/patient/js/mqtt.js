@@ -119,16 +119,16 @@ function startLIVE(dev_id) {
                 ECG_Dummy();
             }
             if(values[i] == 'resp'){
-                RESP_Dummy();
+                SPO2_Dummy();
             }
             if(values[i] == 'spo2'){
-                RESP_Dummy();
+                SPO2_Dummy();
             }
             if(values[i] == 'temp'){
                 TEMP_Dummy();
             }
             if(values[i] == 'fio2'){
-                RESP_Dummy();
+                SPO2_Dummy();
             }
         }
     }    
@@ -189,20 +189,20 @@ function stopLIVE(dev_id) {
             if(values[i] == 'dbp'){
                 ecg_data = false;
             }
-            if(values[i] == 'sbp'){
+            else if(values[i] == 'sbp'){
                 ecg_data = false;
             }
-            if(values[i] == 'resp'){
-                //RESP_Dummy();
+            else if(values[i] == 'resp'){
+                spo2_data = false;
             }
-            if(values[i] == 'spo2'){
-                //RESP_Dummy();
+            else if(values[i] == 'spo2'){
+                spo2_data = false;
             }
-            if(values[i] == 'temp'){
-                //TEMP_Dummy();
+            else if(values[i] == 'temp'){
+                temp_data = false;
             }
-            if(values[i] == 'fio2'){
-                //RESP_Dummy();
+            else if(values[i] == 'fio2'){
+                spo2_data = false;
             }
         }
     }
