@@ -110,7 +110,7 @@ function startLIVE(dev_id) {
     let dev_on = '.device-online';
     if($(dev_on).hasClass(ID)){
         let val = document.getElementById(ID).children[3].innerHTML;
-        let dum = document.getElementById(ID).children[1].innerHTML == 'Test Sample';
+        let dum = document.getElementById(ID).children[1].innerHTML == 'Dummy';
         let values = val.split(',');
         for(i=0; i<values.length; i++){
             if(values[i] == 'dbp'){
