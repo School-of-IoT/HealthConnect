@@ -198,7 +198,7 @@ function copyToClipboard(element) {
 
 function pop_alert(type, message) {
   let toast = document.querySelector(".toast");
-  let closeIcon = document.querySelector(".close");
+  let closeIcon = $('.toast .close');
   let progress = document.querySelector(".progress");
   
   let mode = $('.tmessage .text.text-1');
@@ -221,7 +221,7 @@ function pop_alert(type, message) {
   }, 5300);
 };
 
-closeIcon.addEventListener("click", () => {
+closeIcon.click(function(){
   toast.classList.remove("active");
 
   setTimeout(() => {
