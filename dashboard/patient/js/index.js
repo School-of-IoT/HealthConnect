@@ -192,3 +192,42 @@ function copyToClipboard(element) {
   });
 
  }
+
+
+ 
+
+function pop_alert(type, message) {
+  let toast = document.querySelector(".toast");
+  let closeIcon = document.querySelector(".close");
+  let progress = document.querySelector(".progress");
+  
+  let mode = document.querySelector(".tmessage.text.text-1");
+  let text = document.querySelector(".tmessage.text.text-2");
+  mode.html(type);
+  text.html(message);
+  
+
+  let timer1, timer2;
+
+  toast.classList.add("active");
+  progress.classList.add("active");
+
+  timer1 = setTimeout(() => {
+    toast.classList.remove("active");
+  }, 5000); //1s = 1000 milliseconds
+
+  timer2 = setTimeout(() => {
+    progress.classList.remove("active");
+  }, 5300);
+};
+
+closeIcon.addEventListener("click", () => {
+  toast.classList.remove("active");
+
+  setTimeout(() => {
+    progress.classList.remove("active");
+  }, 300);
+
+  clearTimeout(timer1);
+  clearTimeout(timer2);
+});

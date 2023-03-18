@@ -163,6 +163,7 @@ function create_node(){
     });
 
   } 
+  pop_alert("Success!", "New Device Created ⚡");
 }
 
 function delete_node(nd){
