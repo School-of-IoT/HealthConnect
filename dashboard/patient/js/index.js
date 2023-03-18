@@ -205,14 +205,16 @@ function pop_alert(type, message) {
   let text = $('.tmessage .text.text-2');
   mode.html(type);
   text.html(message);
+
+  let alrt = document.querySelector('.popalert');
   
   if (type == "Success!"){
-    $('.popalert').classList.remove("fa-triangle-exclamation");
-    $('.popalert').classList.add("fa-check");
+    alrt.classList.remove("fa-triangle-exclamation");
+    alrt.classList.add("fa-check");
   }
   else if (type == ": Dev Alert :"){
-    $('.popalert').classList.remove("fa-check");
-    $('.popalert').classList.add("fa-triangle-exclamation");
+    alrt.classList.remove("fa-check");
+    alrt.classList.add("fa-triangle-exclamation");
   }
 
   let timer1, timer2;
