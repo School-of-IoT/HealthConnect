@@ -95,3 +95,7 @@
   .toast.active ~ button {
     pointer-events: none;
   }
+
+  .popalert.fa-triangle-exclamation {
+    background-color: #ed2626;
+}

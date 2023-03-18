@@ -86,7 +86,7 @@ function startLIVE(dev_id) {
     
     // Print output for the user in the messages div
     let act = "Subscribing to: " + topic;
-    console.log(act);
+    //console.log(act);
 
     // Subscribe to the requested topic
     client.subscribe(topic);
@@ -184,7 +184,7 @@ function stopLIVE(dev_id) {
     client.unsubscribe(topic);
     let act = "Unsubscribing to: " + topic;
     //console.log(act);
-    pop_alert("Success!",act);
+    //pop_alert("Success!",act);
     if($(dev_on).hasClass(ID)){
         let val = document.getElementById(ID).children[3].innerHTML;
         let values = val.split(',');
