@@ -5,8 +5,12 @@
   padding: 0px;
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
+  
 }
 
+body{
+  overflow: hidden;
+}
 
 .pre_loader{
 	position: fixed;
@@ -1356,6 +1360,7 @@ nav .profile-details i{
   width: 100%;
   top: 10.5%;
   height: calc(100% - 90px);
+  overflow: overlay;
 }
 
 .dashboard {
