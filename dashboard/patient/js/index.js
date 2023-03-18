@@ -103,11 +103,12 @@ if (user !=""){
           sessionStorage.setItem('geo_loc',data.city);
           
         }).fail(function (data) {
-          console.log("api failed");
+          pop_alert(": Dev Alert :","Failed to GeoLocate");
         });
         
       }).fail(function (data) {
-        console.log("geo server failed");
+        pop_alert(": Dev Alert :","GeoLocate server down");
+        //console.log("geo server failed");
       });
 
       var map_link = "https://maps.google.com/maps?q=hospitals%20in%20"+sessionStorage.getItem('geo_loc')+"&t=&z=10&ie=UTF8&iwloc=&output=embed";
@@ -187,8 +188,8 @@ function copyToClipboard(element) {
     $('input.key-pass').val('');
     //console.log("Updated");
   }).fail(function (data) {
-    console.log("update failed");
-    
+    //console.log("update failed");
+    pop_alert(": Dev Alert :","Failed to Generate Key");
   });
 
  }
@@ -206,6 +207,14 @@ function pop_alert(type, message) {
   mode.html(type);
   text.html(message);
   
+  if (type == "Success!"){
+    $('.popalert').classList.remove("fa-triangle-exclamation");
+    $('.popalert').classList.add("fa-check");
+  }
+  else if (type == ": Dev Alert :"){
+    $('.popalert').classList.remove("fa-check");
+    $('.popalert').classList.add("fa-triangle-exclamation");
+  }
 
   let timer1, timer2;
 

@@ -25,7 +25,8 @@ let formData = {
         mqttuser = data.mqttUser;
         mqttpass = data.mqttPass;
       }).fail(function (data) {
-       console.log("Device Portal Check Failed")
+       //console.log("Device Portal Check Failed")
+       pop_alert(": Dev Alert :", "Device Portal Check Failed");
       });
 })(jQuery);
 
@@ -42,7 +43,8 @@ function server_Connection(){
         $('button.s-btn-func-cnnct').css("background-color", '#27b332');
         $('button.s-btn-func-cnnct').css("border-color", '#27b332');
         $('button.s-btn-func-cnnct').html("Connect");
-        console.log("Disconnected");
+        //console.log("Disconnected");
+        pop_alert("Success!","Disconnected from server");
     }
     else{
         host = mqttserver;
@@ -62,7 +64,8 @@ function server_Connection(){
             $('button.s-btn-func-cnnct').css("background-color", '#cb0000');
             $('button.s-btn-func-cnnct').css("border-color", '#cb0000');
             $('button.s-btn-func-cnnct').html("Disconnect");
-            console.log("Connected");
+            //console.log("Connected");
+            pop_alert("Success!","Connected to server");
             server_line = true;
         }
 
@@ -180,8 +183,8 @@ function stopLIVE(dev_id) {
     topic = "data/patient/"+sessionStorage.getItem('user')+"/med/"+ID;
     client.unsubscribe(topic);
     let act = "Unsubscribing to: " + topic;
-    console.log(act);
-
+    //console.log(act);
+    pop_alert("Success!",act);
     if($(dev_on).hasClass(ID)){
         let val = document.getElementById(ID).children[3].innerHTML;
         let values = val.split(',');

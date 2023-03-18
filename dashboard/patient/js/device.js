@@ -158,8 +158,8 @@ function create_node(){
         });
         
     }).fail(function (data) {
-      console.log("update failed");
-      
+      //console.log("update failed");
+      pop_alert(": Dev Alert :","Failed to GeoLocate");
     });
 
   } 
@@ -207,7 +207,8 @@ function delete_node(nd){
         });
     
   }).fail(function (data) {
-    console.log("update failed");
+    //console.log("update failed");
+    pop_alert(": Dev Alert :","Failed to delete node");
     
   });
 
