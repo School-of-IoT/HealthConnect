@@ -20,7 +20,7 @@
         if (data.message == "Token does not match. Try to Login Again."){
           window.location.href="../../login/"
         }
-        preLoaderHandler();
+        
         $('.username').text(data.patient[0].Name);
         $('.chills').text(data.patient[0].Chills);
         $('.dbp-text').text(data.patient[0].DBP);
