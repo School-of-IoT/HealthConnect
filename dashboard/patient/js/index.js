@@ -219,15 +219,16 @@ function pop_alert(type, message) {
   timer2 = setTimeout(() => {
     progress.classList.remove("active");
   }, 5300);
-};
+  
 
-closeIcon.click(function(){
-  toast.classList.remove("active");
+  closeIcon.click(function(){
+    toast.classList.remove("active");
 
-  setTimeout(() => {
-    progress.classList.remove("active");
-  }, 300);
+    setTimeout(() => {
+      progress.classList.remove("active");
+    }, 300);
 
-  clearTimeout(timer1);
-  clearTimeout(timer2);
-});
+    clearTimeout(timer1);
+    clearTimeout(timer2);
+  });
+}
