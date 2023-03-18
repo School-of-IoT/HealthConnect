@@ -201,8 +201,8 @@ function pop_alert(type, message) {
   let closeIcon = document.querySelector(".close");
   let progress = document.querySelector(".progress");
   
-  let mode = $('.tmessage text text-1');
-  let text = $('.tmessage text text-2');
+  let mode = $('.tmessage .text.text-1');
+  let text = $('.tmessage .text.text-2');
   mode.html(type);
   text.html(message);
   
