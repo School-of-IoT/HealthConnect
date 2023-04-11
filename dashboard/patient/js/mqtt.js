@@ -106,7 +106,7 @@ function startLIVE(dev_id) {
             let on_loc = bt_on+'.'+ID;
             $(on_loc).hide();
             let of_loc = bt_of+'.'+ID;
-            $(of_loc).show();
+            $(of_loc).show();   
         }
         
     // Start Diagnosis graph (based on button)
@@ -149,9 +149,11 @@ function onConnectionLost(responseObject) {
 // Called when a message arrives
 function onMessageArrived(message) {
     console.log(message.payloadString);
-
-    console.log(JSON.parse(message.payloadString).values[0].spo2) // spo2
     
+    // console.log(JSON.parse(message.payloadString).values[0].spo2) // spo2
+ 
+    // const spo2arr = JSON.parse(message.payloadString).values[0].spo2.split(',');
+
     // let values = message.payloadString.split(',');
     //         //console.log(values);
     // if(values[0]!=0){
