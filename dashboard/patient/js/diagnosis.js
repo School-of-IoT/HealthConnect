@@ -30,6 +30,9 @@ for(var i = 0; i < arrayLength_live; i++) {
   temp_arr_live[i] = 0
 }
 
+var SPO2_VAL ="";
+var FIO2_VAL ="";
+
 
 //Creating plot graphs with specifications
 Plotly.plot('ecg-graph', [{
@@ -188,22 +191,22 @@ function TEMP_Dummy(){
 /* ***********************************END OF DUMMY************************************** */
 
 
-/* LIVE */
+/* ******************************** LIVE ******************************** */
 
-async function SPO2_Run(data, j, k, val) {
+async function SPO2_Run(data, j, k) {
   if (!spo2_data){
     return;
   }
   let y = 0;
   if(data){
-    y = Math.round(val[j]*10) //spo2
+    y = Math.round(SPO2_VAL[j]*10) //spo2
     j=j+1
   }
   else{
     y = 0 //spo2
     k=k+1
   }
-  spo2_arr_live = spo2_arr_live.concat(y)
+  spo2_arr_live = spo2_arr.concat(y)
   spo2_arr_live.splice(0, 1)
   let spo2 = {
     y: [spo2_arr_live]
@@ -218,4 +221,10 @@ async function SPO2_Run(data, j, k, val) {
     k=0;
   }
   //console.log(j);
+  SPO2_Run(data, j, k);
+}
+
+function SPO2_LIVE(){
+  spo2_data = true;
+  SPO2_Run(false, 0, 0);
 }

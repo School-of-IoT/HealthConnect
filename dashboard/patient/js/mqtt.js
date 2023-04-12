@@ -122,17 +122,23 @@ function startLIVE(dev_id) {
             if(values[i] == 'sbp'){
                 if (dum) ECG_Dummy();
             }
-            if(values[i] == 'resp'){
+            if(values[i] == 'resp'){                                                                                                                                                                                                                                                                                                        
                 if (dum) SPO2_Dummy();
             }
             if(values[i] == 'spo2'){
                 if (dum) SPO2_Dummy();
+                else{
+                    SPO2_LIVE();
+                }
             }
             if(values[i] == 'temp'){
                 if (dum) TEMP_Dummy();
             }
             if(values[i] == 'fio2'){
                 if (dum) SPO2_Dummy();
+                else{
+                    SPO2_LIVE();
+                }
             }
         }
     }    
@@ -152,7 +158,8 @@ function onMessageArrived(message) {
     
     // console.log(JSON.parse(message.payloadString).values[0].spo2) // spo2
  
-    // const spo2arr = JSON.parse(message.payloadString).values[0].spo2.split(',');
+    SPO2_VAL = JSON.parse(message.payloadString).values[0].spo2.split(',');
+    FIO2_VAL = JSON.parse(message.payloadString).values[0].fio2.split(',');
 
     // let values = message.payloadString.split(',');
     //         //console.log(values);
