@@ -212,7 +212,7 @@ async function SPO2_Run(data, j, k) {
     y: [spo2_arr_live]
   };
   Plotly.update('spo2-graph', spo2);
-  if(j >= val.length){  
+  if(j >= SPO2_VAL.length){  
     data=false; 
     j=0;
   }
