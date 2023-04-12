@@ -221,7 +221,7 @@ async function SPO2_Run(data, j, k) {
     k=0;
   }
   //console.log(j);
-  SPO2_Run(data, j, k);
+  //SPO2_Run(data, j, k);
 }
 
 function SPO2_LIVE(){
