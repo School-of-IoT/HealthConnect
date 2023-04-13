@@ -240,6 +240,7 @@ async function SPO2_Run(data, j, k) {
   let spo2 = {
     y: [spo2_arr_live]
   };
+  console.log(spo2);
   Plotly.update('spo2-graph', spo2);
   if(j >= SPO2_VAL.length){  
     j=0;
