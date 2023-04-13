@@ -129,7 +129,9 @@ async function SPO2_Dummy_Run(data, j, k) {
   let spo2 = {
     y: [spo2_arr]
   };
+
   Plotly.update('spo2-graph', spo2);
+  
   if(j >= SPO2_VAL_DUMMY.length){
     data=false; 
     j=0;
@@ -163,14 +165,15 @@ async function ECG_Dummy_Run(data, j, k) {
     y: [ecg_arr]
   };
   Plotly.update('ecg-graph', ecg);  
-  if(j >= ECG_VAL_DUMMY.length){
+  if(j >= ECG_VAL_DUMMY.length){ 
     data=false; 
     j=0
   }
-  if(k >= 9){
+  if(k >= 9){ //fill data in array
     data=true; 
     k=0
   }
+  console.log(j);
   await sleep(5);// change to '5' for demo and '5000' during development of css 
   ECG_Dummy_Run(data, j, k);
 }  
