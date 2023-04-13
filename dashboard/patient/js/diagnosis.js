@@ -235,7 +235,7 @@ async function SPO2_Run(data, j, k) {
   y = Math.round(SPO2_VAL[j]/10) //spo2
   j=j+1;
 
-  spo2_arr_live = spo2_arr.concat(y)
+  spo2_arr_live = spo2_arr_live.concat(y)
   spo2_arr_live.splice(0, 1)
   let spo2 = {
     y: [spo2_arr_live]
