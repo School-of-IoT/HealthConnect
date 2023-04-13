@@ -202,7 +202,7 @@ async function SPO2_Run(data, j, k) {
   }
   let y = 0;
   if(data){
-    y = Math.round(SPO2_VAL[j]*10) //spo2
+    y = Math.round(SPO2_VAL[j]/10) //spo2
     j=j+1
   }
   else{
@@ -224,7 +224,7 @@ async function SPO2_Run(data, j, k) {
     k=0;
   }
   console.log(j);
-  await sleep(5);// change to '5' for demo and '5000' during development of css
+  await sleep(500);// change to '5' for demo and '5000' during development of css
   SPO2_Run(data, j, k);
 }
 
