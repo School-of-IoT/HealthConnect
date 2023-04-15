@@ -106,7 +106,7 @@ async function TEMP_Dummy_Run(data, j, k) {
     k=0;
   }
   //console.log(j);
-  await sleep(100);// change to '5' for demo and '5000' during development of css 
+  await sleep(50);// change to '5' for demo and '5000' during development of css 
   TEMP_Dummy_Run(data, j, k);
 }
 
@@ -141,7 +141,7 @@ async function SPO2_Dummy_Run(data, j, k) {
     k=0;
   }
   //console.log(j);
-  await sleep(100);// change to '5' for demo and '5000' during development of css 
+  await sleep(50);// change to '5' for demo and '5000' during development of css 
   SPO2_Dummy_Run(data, j, k);
 }
 
@@ -174,7 +174,7 @@ async function ECG_Dummy_Run(data, j, k) {
     k=0
   }
   console.log(j);
-  await sleep(100);// change to '5' for demo and '5000' during development of css 
+  await sleep(50);// change to '5' for demo and '5000' during development of css 
   ECG_Dummy_Run(data, j, k);
 }  
 
@@ -246,7 +246,7 @@ async function SPO2_Run(data, j, k) {
     j=0;
   }
   //console.log(j);
-  await sleep(200);// change to '5' for demo and '5000' during development of css
+  await sleep(100);// change to '5' for demo and '5000' during development of css
   SPO2_Run(data, j, k);
 }
 
