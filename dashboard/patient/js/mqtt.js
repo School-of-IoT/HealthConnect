@@ -118,9 +118,15 @@ function startLIVE(dev_id) {
         for(i=0; i<values.length; i++){
             if(values[i] == 'dbp'){
                 if (dum) ECG_Dummy(); // if device containing above attr online, then play this
+                else{
+                    SBP_LIVE();
+                }
             }
             if(values[i] == 'sbp'){
                 if (dum) ECG_Dummy();
+                else{
+                    SBP_LIVE();
+                }
             }
             if(values[i] == 'resp'){                                                                                                                                                                                                                                                                                                        
                 if (dum) SPO2_Dummy();

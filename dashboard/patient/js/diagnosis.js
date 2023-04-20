@@ -32,6 +32,7 @@ for(var i = 0; i < arrayLength_live; i++) {
 
 var SPO2_VAL ="";
 var FIO2_VAL ="";
+var ECG_VAL ="";
 
 
 //Creating plot graphs with specifications
@@ -253,4 +254,31 @@ async function SPO2_Run(data, j, k) {
 function SPO2_LIVE(){
   spo2_data = true;
   SPO2_Run(false, 0, 0);
+}
+
+async function ECG_Run(data, j, k) {
+  if (!ecg_data){
+    return;
+  }
+  y = Math.round(SBP_VAL[j]/10) //spo2
+  j=j+1;
+
+  ecg_arr_live = spo2_arr_live.concat(y)
+  ecg_arr_live.splice(0, 1)
+  let ecg = {
+    y: [ecg_arr_live]
+  };
+  console.log(ecg);
+  Plotly.update('ecg-graph', ecg);
+  if(j >= SBP_VAL.length){  
+    j=0;
+  }
+  //console.log(j);
+  await sleep(100);// change to '5' for demo and '5000' during development of css
+  ECG_Run(data, j, k);
+}
+
+function ECG_LIVE(){
+  ecg_data = true;
+  ECG_Run(false, 0, 0);
 }
