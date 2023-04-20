@@ -1,4 +1,4 @@
-var arrayLength = 120
+var arrayLength = 600
 var newArray1 = []
 var newArray3 = []
 var newArray4 = []
