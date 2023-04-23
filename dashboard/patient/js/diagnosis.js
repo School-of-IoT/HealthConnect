@@ -260,17 +260,17 @@ async function ECG_Run(data, j, k) {
   if (!ecg_data){
     return;
   }
-  y = Math.round(SBP_VAL[j]/10) //spo2
+  y = Math.round(ECG_VAL[j]/10) //ecg
   j=j+1;
 
-  ecg_arr_live = spo2_arr_live.concat(y)
+  ecg_arr_live = ecg_arr_live.concat(y)
   ecg_arr_live.splice(0, 1)
   let ecg = {
     y: [ecg_arr_live]
   };
   console.log(ecg);
   Plotly.update('ecg-graph', ecg);
-  if(j >= SBP_VAL.length){  
+  if(j >= ECG_VAL.length){  
     j=0;
   }
   //console.log(j);
