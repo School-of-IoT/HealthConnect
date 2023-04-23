@@ -159,10 +159,13 @@ function onConnectionLost(responseObject) {
 }
 
 // Called when a message arrives
+var test = "as";
 function onMessageArrived(message) {
     console.log(message.payloadString);
     
-    // console.log(JSON.parse(message.payloadString).values[0].spo2) // spo2
+    console.log(JSON.parse(message.payloadString).values[0]); //
+
+    as = JSON.parse(message.payloadString).values[0];
  
     // SPO2_VAL = JSON.parse(message.payloadString).values[0].spo2.split(',');
     // FIO2_VAL = JSON.parse(message.payloadString).values[0].fio2.split(',');
