@@ -119,13 +119,13 @@ function startLIVE(dev_id) {
             if(values[i] == 'dbp'){
                 if (dum) ECG_Dummy(); // if device containing above attr online, then play this
                 else{
-                    SBP_LIVE();
+                   ECG_LIVE();
                 }
             }
             if(values[i] == 'sbp'){
                 if (dum) ECG_Dummy();
                 else{
-                    SBP_LIVE();
+                    ECG_LIVE();
                 }
             }
             if(values[i] == 'resp'){                                                                                                                                                                                                                                                                                                        
