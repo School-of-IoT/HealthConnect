@@ -19,7 +19,7 @@ for(var i = 0; i < arrayLength; i++) {
   temp_arr[i] = 0
 }
 
-var arrayLength_live = 00
+var arrayLength_live = 200
 var ecg_arr_live = []
 var spo2_arr_live = []
 var temp_arr_live = []
