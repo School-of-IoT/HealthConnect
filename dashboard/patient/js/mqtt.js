@@ -116,13 +116,13 @@ function startLIVE(dev_id) {
         let dum = document.getElementById(ID).children[1].innerHTML == 'Dummy';
         let values = val.split(',');
         for(i=0; i<values.length; i++){
-            if(values[i] == 'dbp'){
+            if(values[i] == 'sbp'){
                 if (dum) ECG_Dummy(); // if device containing above attr online, then play this
                 else{
                    ECG_LIVE();
                 }
             }
-            if(values[i] == 'sbp'){
+            if(values[i] == 'dbp'){
                 if (dum) ECG_Dummy();
                 else{
                     ECG_LIVE();
@@ -159,13 +159,13 @@ function onConnectionLost(responseObject) {
 }
 
 // Called when a message arrives
-var test = "as";
+// var test = "as";
 function onMessageArrived(message) {
     //console.log(message.payloadString);
     
     //console.log(JSON.parse(message.payloadString).values[0]); //
 
-    test = JSON.parse(message.payloadString).values[0];
+    // test = JSON.parse(message.payloadString).values[0];
  
     // SPO2_VAL = JSON.parse(message.payloadString).values[0].spo2.split(',');
     // FIO2_VAL = JSON.parse(message.payloadString).values[0].fio2.split(',');

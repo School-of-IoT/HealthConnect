@@ -268,7 +268,7 @@ async function ECG_Run(data, j, k) {
   let ecg = {
     y: [ecg_arr_live]
   };
-  console.log(ecg);
+  console.log(y);
   Plotly.update('ecg-graph', ecg);
   if(j >= ECG_VAL.length){  
     j=0;
