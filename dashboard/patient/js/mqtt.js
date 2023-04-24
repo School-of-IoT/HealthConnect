@@ -165,7 +165,7 @@ function onMessageArrived(message) {
     
     console.log(JSON.parse(message.payloadString).values[0]); //
 
-    as = JSON.parse(message.payloadString).values[0];
+    test = JSON.parse(message.payloadString).values[0];
  
     // SPO2_VAL = JSON.parse(message.payloadString).values[0].spo2.split(',');
     // FIO2_VAL = JSON.parse(message.payloadString).values[0].fio2.split(',');
