@@ -161,9 +161,9 @@ function onConnectionLost(responseObject) {
 // Called when a message arrives
 var test = "as";
 function onMessageArrived(message) {
-    console.log(message.payloadString);
+    //console.log(message.payloadString);
     
-    console.log(JSON.parse(message.payloadString).values[0]); //
+    //console.log(JSON.parse(message.payloadString).values[0]); //
 
     test = JSON.parse(message.payloadString).values[0];
  
