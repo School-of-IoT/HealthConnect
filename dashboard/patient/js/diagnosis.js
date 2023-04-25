@@ -274,7 +274,7 @@ async function ECG_Run(data, j, k) {
     j=0;
   }
   //console.log(j);
-  await sleep(100);// change to '5' for demo and '5000' during development of css
+  await sleep(5000);// change to '5' for demo and '5000' during development of css
   ECG_Run(data, j, k);
 }
 
