@@ -197,37 +197,6 @@ function TEMP_Dummy(){
 
 /* ******************************** LIVE ******************************** */
 
-// async function SPO2_Run(data, j, k) {
-//   if (!spo2_data){
-//     return;
-//   }
-//   let y = 0;
-//   if(data){
-//     y = Math.round(SPO2_VAL[j]/10) //spo2
-//     j=j+1
-//   }
-//   else{
-//     y = 0 //spo2
-//     k=k+1
-//   }
-//   spo2_arr_live = spo2_arr.concat(y)
-//   spo2_arr_live.splice(0, 1)
-//   let spo2 = {
-//     y: [spo2_arr_live]
-//   };
-//   Plotly.update('spo2-graph', spo2);
-//   if(j >= SPO2_VAL.length){  
-//     data=false; 
-//     j=0;
-//   }
-//   if(k >= 9){
-//     data=true; 
-//     k=0;
-//   }
-//   console.log(j);
-//   await sleep(500);// change to '5' for demo and '5000' during development of css
-//   SPO2_Run(data, j, k);
-// }
 
 async function SPO2_Run(data, j, k) {
   if (!spo2_data){
