@@ -262,13 +262,24 @@ async function ECG_Run(data, j, k) {
   }
   y = Math.round(ECG_VAL[j]/10) //ecg
   j=j+1;
+// ----------------------- Filter Signal  ----------------------
+  let b0 = 45;
+	let b1 = 55;
+	let offset = 0;
+	let noiseDivider = 4;
 
+  for(let i=1; i<ecg_arr_live.length; i++)
+    {
+      ecg_arr_live[i] = offset + (ecg_arr_live[i]*b0 + ecg_arr_live[i-1]*b1);
+    }
+// -------------------------------------------------------------
   ecg_arr_live = ecg_arr_live.concat(y)
-  ecg_arr_live.splice(0, 1)
+  ecg_arr_live.splice(0, 1);
+  
   let ecg = {
     y: [ecg_arr_live]
   };
-  console.log(y);
+  //console.log(y);
   Plotly.update('ecg-graph', ecg);
   if(j >= ECG_VAL.length){  
     j=0;
