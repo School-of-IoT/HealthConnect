@@ -237,6 +237,7 @@ async function ECG_Run(data, j, k) {
   y = Math.round(ECG_VAL[j]/10) //ecg
   j=j+1;
 // ----------------------- Filter Signal  ----------------------
+  /*
   let b0 = 45;
 	let b1 = 55;
 	let offset = 0;
@@ -246,6 +247,7 @@ async function ECG_Run(data, j, k) {
     {
       ecg_arr_live[i] = offset + (ecg_arr_live[i]*b0 + ecg_arr_live[i-1]*b1);
     }
+  */
 // -------------------------------------------------------------
   ecg_arr_live = ecg_arr_live.concat(y)
   ecg_arr_live.splice(0, 1);
