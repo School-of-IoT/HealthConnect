@@ -139,6 +139,9 @@ function startLIVE(dev_id) {
             }
             if(values[i] == 'temp'){
                 if (dum) TEMP_Dummy();
+                else{
+                    TEMP_LIVE();
+                }
             }
             if(values[i] == 'fio2'){
                 if (dum) SPO2_Dummy();
@@ -159,42 +162,25 @@ function onConnectionLost(responseObject) {
 }
 
 // Called when a message arrives
-// var test = "as";
+
 function onMessageArrived(message) {
-    //console.log(message.payloadString);
     
-    //console.log(JSON.parse(message.payloadString).values[0]); //
+    let payload = JSON.parse(message.payloadString).values[0];
 
-    // test = JSON.parse(message.payloadString).values[0];
- 
-    // SPO2_VAL = JSON.parse(message.payloadString).values[0].spo2.split(',');
-    // FIO2_VAL = JSON.parse(message.payloadString).values[0].fio2.split(',');
-
-    ECG_VAL = JSON.parse(message.payloadString).values[0].sbp.split(',');
+    if (payload.sbp != "undefined"){
+        ECG_VAL = payload.sbp.split(',');
+    }
+    if (payload.spo2 != "undefined"){
+        SPO2_VAL = payload.spo2.split(',');
+    }
+    if (payload.fio2 != "undefined"){
+        FIO2_VAL = payload.fio2.split(',');
+    }
+    if (payload.temp != "undefined"){
+        TEMP_VAL = payload.temp.split(',');
+    }
     
-    // let values = message.payloadString.split(',');
-    //         //console.log(values);
-    // if(values[0]!=0){
-    //     $('.dbp-text').text(values[0]); 
-    // }
-    // if(values[1]!=0){
-    //     $('.sbp-text').text(values[1]);
-    // }
-    // if(values[2]!=0){
-    //     $('.hr-text').text(values[2]);
-    // }
-    // if(values[3]!=0){
-    //     $('.resp-text').text(values[3]);
-    // }
-    // if(values[4]!=0){
-    //     $('.spo2-text').text(values[4]);
-    // }
-    // if(values[5]!=0){
-    //     $('.temp-text').text(values[5]);
-    // }
-    // if(values[6]!=0){
-    //     $('.fio2-text').text(values[6]);
-    // }      
+    
 }
 
 // Called when the disconnection button is pressed

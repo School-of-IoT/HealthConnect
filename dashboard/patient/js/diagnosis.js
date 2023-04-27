@@ -33,6 +33,7 @@ for(var i = 0; i < arrayLength_live; i++) {
 var SPO2_VAL ="";
 var FIO2_VAL ="";
 var ECG_VAL ="";
+var TEMP_VAL = "";
 
 
 //Creating plot graphs with specifications
@@ -261,4 +262,32 @@ async function ECG_Run(data, j, k) {
 function ECG_LIVE(){
   ecg_data = true;
   ECG_Run(false, 0, 0);
+}
+
+async function TEMP_Run(data, j, k) {
+  if (!temp_data){
+    return;
+  }
+  y = Math.round(TEMP_VAL[j]/10) //ecg
+  j=j+1;
+
+  temp_arr_live = temp_arr_live.concat(y)
+  temp_arr_live.splice(0, 1);
+  
+  let temp = {
+    y: [temp_arr_live]
+  };
+  //console.log(y);
+  Plotly.update('temp-graph', temp);
+  if(j >= TEMP_VAL.length){  
+    j=0;
+  }
+  //console.log(j);
+  await sleep(1);// change to '5' for demo and '5000' during development of css
+  TEMP_Run(data, j, k);
+}
+
+function TEMP_LIVE(){
+  TEMP_data = true;
+  TEMP_Run(false, 0, 0);
 }
