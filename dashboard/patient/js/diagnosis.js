@@ -20,6 +20,7 @@ for(var i = 0; i < arrayLength; i++) {
 }
 
 var arrayLength_live = 200
+var arrayLength_live_temp = 50
 var ecg_arr_live = []
 var spo2_arr_live = []
 var temp_arr_live = []
@@ -27,8 +28,11 @@ var temp_arr_live = []
 for(var i = 0; i < arrayLength_live; i++) {
   ecg_arr_live[i] = 0
   spo2_arr_live[i] = 0
+}
+for(var i = 0; i < arrayLength_live_temp; i++) {
   temp_arr_live[i] = 0
 }
+
 
 var SPO2_VAL ="";
 var FIO2_VAL ="";
@@ -268,7 +272,7 @@ async function TEMP_Run(data, j, k) {
   if (!temp_data){
     return;
   }
-  y = Math.round(TEMP_VAL[j]/10) //ecg
+  y = Math.round(TEMP_VAL[j]) //temp
   j=j+1;
 
   temp_arr_live = temp_arr_live.concat(y)
@@ -283,7 +287,7 @@ async function TEMP_Run(data, j, k) {
     j=0;
   }
   //console.log(j);
-  await sleep(1);// change to '5' for demo and '5000' during development of css
+  await sleep(5000);
   TEMP_Run(data, j, k);
 }
 
