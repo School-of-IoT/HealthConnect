@@ -26,7 +26,7 @@ let formData = {
         mqttpass = data.mqttPass;
       }).fail(function (data) {
        //console.log("Device Portal Check Failed")
-       pop_alert(": Dev Alert :", "Device Portal Check Failed");
+       pop_alert("ℹ Dev Alert", "Device Portal Check Failed");
       });
 })(jQuery);
 
@@ -157,7 +157,11 @@ function startLIVE(dev_id) {
 // Called when the client loses its connection
 function onConnectionLost(responseObject) {
     if (responseObject.errorCode !== 0) {
-        console.log("Connection Lost: " + responseObject.errorMessage);
+        //console.log("Connection Lost: " + responseObject.errorMessage);
+        pop_alert("Connection Lost: ", responseObject.errorMessage);
+        ecg_data = false;
+        spo2_data = false;
+        temp_data = false;
     }
 }
 
