@@ -53,8 +53,8 @@ Plotly.plot('ecg-graph', [{
 {
   yaxis: {
     range: [
-      100,
-      500
+      1000,
+      5000
     ]
   }
 });
@@ -246,21 +246,8 @@ async function ECG_Run(data, j, k) {
   if (!ecg_data){
     return;
   }
-  y = Math.round(ECG_VAL[j]/10) //ecg
+  y = Math.round(ECG_VAL[j]) //ecg
   j=j+1;
-// ----------------------- Filter Signal  ----------------------
-  /*
-  let b0 = 45;
-	let b1 = 55;
-	let offset = 0;
-	let noiseDivider = 4;
-
-  for(let i=1; i<ecg_arr_live.length; i++)
-    {
-      ecg_arr_live[i] = offset + (ecg_arr_live[i]*b0 + ecg_arr_live[i-1]*b1);
-    }
-  */
-// -------------------------------------------------------------
   ecg_arr_live = ecg_arr_live.concat(y)
   ecg_arr_live.splice(0, 1);
   
