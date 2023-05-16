@@ -43,6 +43,7 @@ var TEMP_VAL = "";
 //Creating plot graphs with specifications
 Plotly.plot('ecg-graph', [{
   y: ecg_arr,
+
   mode: 'lines',
   line: {
     color: '#80CAF6',
@@ -60,7 +61,7 @@ Plotly.plot('spo2-graph', [{
 }]);
 
 Plotly.plot('resp-graph', [{
-  y: spo2_arr,
+ y: spo2_arr,
   mode: 'lines',
   line: {
     color: '#a4e864',
@@ -69,7 +70,7 @@ Plotly.plot('resp-graph', [{
 }]);
 
 Plotly.plot('temp-graph', [{
-  y: temp_arr,
+ y: temp_arr,
   mode: 'lines',
   line: {
     color: '#a4e864',
@@ -135,11 +136,14 @@ async function SPO2_Dummy_Run(data, j, k) {
   let spo2 = {
     y: [spo2_arr]
   };
+  var data_update5 = {
+    y: [newArray5]
+  };
 
   Plotly.update('spo2-graph', spo2);
   
-  if(j >= SPO2_VAL_DUMMY.length){
-    data=false; 
+if(j >= SPO2_VAL_DUMMY.length){
+  data=false; 
     j=0;
   }
   if(k >= 9){
@@ -179,7 +183,7 @@ async function ECG_Dummy_Run(data, j, k) {
     data=true; 
     k=0
   }
-  console.log(j);
+console.log(j);
   await sleep(50);// change to '5' for demo and '5000' during development of css 
   ECG_Dummy_Run(data, j, k);
 }  

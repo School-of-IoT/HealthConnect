@@ -1,8 +1,10 @@
 var mqttserver ="";
 var mqttuser ="";
 var mqttpass ="";
+
 var client = Object.create(null);
 var server_line = false;
+
 user = sessionStorage.getItem('user');
 token = sessionStorage.getItem('token');
 let formData = {
@@ -25,7 +27,8 @@ let formData = {
         mqttuser = data.mqttUser;
         mqttpass = data.mqttPass;
       }).fail(function (data) {
-       //console.log("Device Portal Check Failed")
+
+           //console.log("Device Portal Check Failed")
        pop_alert("ℹ Dev Alert", "Device Portal Check Failed");
       });
 })(jQuery);
@@ -157,7 +160,7 @@ function startLIVE(dev_id) {
 // Called when the client loses its connection
 function onConnectionLost(responseObject) {
     if (responseObject.errorCode !== 0) {
-        //console.log("Connection Lost: " + responseObject.errorMessage);
+       //console.log("Connection Lost: " + responseObject.errorMessage);
         pop_alert("Connection Lost: ", responseObject.errorMessage);
         ecg_data = false;
         spo2_data = false;
@@ -168,7 +171,7 @@ function onConnectionLost(responseObject) {
 // Called when a message arrives
 
 function onMessageArrived(message) {
-    
+   
     let payload = JSON.parse(message.payloadString).values[0];
 
     if (payload.sbp != "undefined"){
@@ -202,7 +205,7 @@ function stopLIVE(dev_id) {
         let val = document.getElementById(ID).children[3].innerHTML;
         let values = val.split(',');
                 //console.log(values);
-        for(i=0; i<values.length; i++){
+  for(i=0; i<values.length; i++){
             if(values[i] == 'dbp'){
                 ecg_data = false;
             }

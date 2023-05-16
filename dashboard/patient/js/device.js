@@ -54,7 +54,7 @@ function insert_node(up, ID, val, node){
 
   /* -----------------------  Diagnosis Activation SECTION  ----------------------- */
 
-  let values = val.split(', ');
+    let values = val.split(', ');
             //console.log(values);
   for(i=0; i<values.length; i++){
     if(values[i] == 'dbp'){
@@ -158,7 +158,8 @@ function create_node(){
         });
         
     }).fail(function (data) {
-      //console.log("update failed");
+
+        //console.log("update failed");
       pop_alert(": Dev Alert :","Failed to GeoLocate");
     });
 
@@ -207,6 +208,7 @@ function delete_node(nd){
         });
     
   }).fail(function (data) {
+
     //console.log("update failed");
     pop_alert(": Dev Alert :","Failed to delete node");
     

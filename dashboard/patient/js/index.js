@@ -32,6 +32,7 @@
             if (data.message == "Token does not match. Try to Login Again."){
               window.location.href="../../login/"
             }
+
             $('.username').text(data.patient[0].Name);
             $('.chills').text(data.patient[0].Chills);
             $('.dbp-text').text(data.patient[0].DBP);
@@ -102,7 +103,8 @@ if (user !=""){
           sessionStorage.setItem('geo_loc',data.city);
           
         }).fail(function (data) {
-          pop_alert(": Dev Alert :","Failed to GeoLocate");
+
+             pop_alert(": Dev Alert :","Failed to GeoLocate");
         });
         
       }).fail(function (data) {
@@ -187,6 +189,7 @@ function copyToClipboard(element) {
     $('input.key-pass').val('');
     //console.log("Updated");
   }).fail(function (data) {
+
     //console.log("update failed");
     pop_alert(": Dev Alert :","Failed to Generate Key");
   });
