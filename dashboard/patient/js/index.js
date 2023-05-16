@@ -32,7 +32,7 @@
             if (data.message == "Token does not match. Try to Login Again."){
               window.location.href="../../login/"
             }
-            preLoaderHandler();
+
             $('.username').text(data.patient[0].Name);
             $('.chills').text(data.patient[0].Chills);
             $('.dbp-text').text(data.patient[0].DBP);
@@ -103,11 +103,13 @@ if (user !=""){
           sessionStorage.setItem('geo_loc',data.city);
           
         }).fail(function (data) {
-          console.log("api failed");
+
+             pop_alert(": Dev Alert :","Failed to GeoLocate");
         });
         
       }).fail(function (data) {
-        console.log("geo server failed");
+        pop_alert(": Dev Alert :","GeoLocate server down");
+        //console.log("geo server failed");
       });
 
       var map_link = "https://maps.google.com/maps?q=hospitals%20in%20"+sessionStorage.getItem('geo_loc')+"&t=&z=10&ie=UTF8&iwloc=&output=embed";
@@ -187,8 +189,59 @@ function copyToClipboard(element) {
     $('input.key-pass').val('');
     //console.log("Updated");
   }).fail(function (data) {
-    console.log("update failed");
-    
+
+    //console.log("update failed");
+    pop_alert(": Dev Alert :","Failed to Generate Key");
   });
 
  }
+
+
+ 
+
+function pop_alert(type, message) {
+  let toast = document.querySelector(".toast");
+  let closeIcon = $('.toast .close');
+  let progress = document.querySelector(".progress");
+  
+  let mode = $('.tmessage .text.text-1');
+  let text = $('.tmessage .text.text-2');
+  mode.html(type);
+  text.html(message);
+
+  let alrt = document.querySelector('.popalert');
+  
+  if (type == "Success!"){
+    alrt.classList.remove("fa-triangle-exclamation");
+    alrt.classList.add("fa-check");
+  }
+  else if (type == ": Dev Alert :"){
+    alrt.classList.remove("fa-check");
+    alrt.classList.add("fa-triangle-exclamation");
+  }
+
+  let timer1, timer2;
+
+  toast.classList.add("active");
+  progress.classList.add("active");
+
+  timer1 = setTimeout(() => {
+    toast.classList.remove("active");
+  }, 5000); //1s = 1000 milliseconds
+
+  timer2 = setTimeout(() => {
+    progress.classList.remove("active");
+  }, 5300);
+  
+
+  closeIcon.click(function(){
+    toast.classList.remove("active");
+
+    setTimeout(() => {
+      progress.classList.remove("active");
+    }, 300);
+
+    clearTimeout(timer1);
+    clearTimeout(timer2);
+  });
+}

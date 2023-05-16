@@ -2,6 +2,9 @@ var mqttserver ="";
 var mqttuser ="";
 var mqttpass ="";
 
+var client = Object.create(null);
+var server_line = false;
+
 user = sessionStorage.getItem('user');
 token = sessionStorage.getItem('token');
 let formData = {
@@ -24,167 +27,202 @@ let formData = {
         mqttuser = data.mqttUser;
         mqttpass = data.mqttPass;
       }).fail(function (data) {
-       console.log("Device Portal Check Failed")
+
+           //console.log("Device Portal Check Failed")
+       pop_alert("ℹ Dev Alert", "Device Portal Check Failed");
       });
 })(jQuery);
 
-function startConnect(dev_id) {
-    host = mqttserver;
-    port = 8884;
-    let ID = "node-"+dev_id;
-    
-    let act = "Connecting to: " + host + ' on port: ' + port + ', with Node ID - ' + ID;
-    // Print output for the user in the messages div
-    console.log(act);
-    clientID = "clientID-"+dev_id;
-    // Initialize new Paho client connection
-    client = new Paho.MQTT.Client(host, Number(port), clientID);
-    window.localStorage.setItem(clientID, JSON.stringify(client));
-    
-    // Called when the client connects
-    function onConnect() {
-        // MQTT topic to subscribe 
-        topic = "data/patient/"+sessionStorage.getItem('user')+"/med/"+ID;
-        // Print output for the user in the messages div
-        let act = "Subscribing to: " + topic;
+
+function server_Connection(){
+    if (server_line){
+        
+        
+        
+        server_line = false;
+        $('button.dev-table-btn-disconnect').click(); //unsubscribes from All the devices
+
+        client.disconnect();
+        $('button.s-btn-func-cnnct').css("background-color", '#27b332');
+        $('button.s-btn-func-cnnct').css("border-color", '#27b332');
+        $('button.s-btn-func-cnnct').html("Connect");
+        //console.log("Disconnected");
+        pop_alert("Success!","Disconnected from server");
+    }
+    else{
+        host = mqttserver;
+        port = 8884;
+        let act = "Connecting to: " + host + ' on port: ' + port;
         console.log(act);
 
-        // Subscribe to the requested topic
-        client.subscribe(topic);
+        clientID = "clientID-"+Math.floor((Math.random() * 99999999) + 11111111);
 
+        // Initialize new Paho client connection
+        client = new Paho.MQTT.Client(host, Number(port), clientID);
+        client.onConnectionLost = onConnectionLost;
+        client.onMessageArrived = onMessageArrived;
+
+        function onConnect() {
+            //Display ONLINE signal on frame
+            $('button.s-btn-func-cnnct').css("background-color", '#cb0000');
+            $('button.s-btn-func-cnnct').css("border-color", '#cb0000');
+            $('button.s-btn-func-cnnct').html("Disconnect");
+            //console.log("Connected");
+            pop_alert("Success!","Connected to server");
+            server_line = true;
+        }
+
+        // Connect the client, if successful, call onConnect function
+        client.connect({ 
+            onSuccess: onConnect,
+            userName: mqttuser,
+            password: mqttpass,
+            useSSL: true
+        });
     }
-    
-    // Set callback handlers
-    client.onConnectionLost = onConnectionLost;
-    client.onMessageArrived = onMessageArrived;
+}
 
-    // Connect the client, if successful, call onConnect function
-    client.connect({ 
-        onSuccess: onConnect,
-        userName: mqttuser,
-        password: mqttpass,
-        useSSL: true
-    });
-   console.log("Connected");
-   
+function startLIVE(dev_id) {
+    
+    let ID = "node-"+dev_id;
+    topic = "data/patient/"+sessionStorage.getItem('user')+"/med/"+ID;
+    
+    // Print output for the user in the messages div
+    let act = "Subscribing to: " + topic;
+    //console.log(act);
+
+    // Subscribe to the requested topic
+    client.subscribe(topic);
+    
    // Change connection signal
     let loc = 'td.' + ID;
     let dvof = 'device-offline';
-   if($(loc).hasClass(dvof)){
-    $(loc).removeClass('device-offline');
-    $(loc).addClass('device-online');
-   }
-
-   // Change connection button
-   let bt_of= 'button.dev-table-btn-disconnect';
-   let bt_on= 'button.dev-table-btn-connect';
-    if($(bt_on).hasClass(ID)){
-        let on_loc = bt_on+'.'+ID;
-        $(on_loc).hide();
-        let of_loc = bt_of+'.'+ID;
-        $(of_loc).show();
+    if($(loc).hasClass(dvof)){
+        $(loc).removeClass('device-offline');
+        $(loc).addClass('device-online');
     }
 
-    
-   // Start Diagnosis graph (based on button)
-   let dev_on = '.device-online';
-   if($(dev_on).hasClass(ID)){
-    let val = document.getElementById(ID).children[3].innerHTML;
-    let values = val.split(',');
-    for(i=0; i<values.length; i++){
-        if(values[i] == 'dbp'){
-            ECG_Dummy(); // if device containing above attr online, then play this
+    // Change connection button
+    let bt_of= 'button.dev-table-btn-disconnect';
+    let bt_on= 'button.dev-table-btn-connect';
+        if($(bt_on).hasClass(ID)){
+            let on_loc = bt_on+'.'+ID;
+            $(on_loc).hide();
+            let of_loc = bt_of+'.'+ID;
+            $(of_loc).show();   
         }
-        if(values[i] == 'sbp'){
-            ECG_Dummy();
+        
+    // Start Diagnosis graph (based on button)
+    let dev_on = '.device-online';
+    if($(dev_on).hasClass(ID)){
+        let val = document.getElementById(ID).children[3].innerHTML;
+        let dum = document.getElementById(ID).children[1].innerHTML == 'Dummy';
+        let values = val.split(',');
+        for(i=0; i<values.length; i++){
+            if(values[i] == 'sbp'){
+                if (dum) ECG_Dummy(); // if device containing above attr online, then play this
+                else{
+                   ECG_LIVE();
+                }
+            }
+            if(values[i] == 'dbp'){
+                if (dum) ECG_Dummy();
+                else{
+                    ECG_LIVE();
+                }
+            }
+            if(values[i] == 'resp'){                                                                                                                                                                                                                                                                                                        
+                if (dum) SPO2_Dummy();
+            }
+            if(values[i] == 'spo2'){
+                if (dum) SPO2_Dummy();
+                else{
+                    SPO2_LIVE();
+                }
+            }
+            if(values[i] == 'temp'){
+                if (dum) TEMP_Dummy();
+                else{
+                    TEMP_LIVE();
+                }
+            }
+            if(values[i] == 'fio2'){
+                if (dum) SPO2_Dummy();
+                else{
+                    SPO2_LIVE();
+                }
+            }
         }
-        if(values[i] == 'resp'){
-            RESP_Dummy();
-        }
-        if(values[i] == 'spo2'){
-            RESP_Dummy();
-        }
-        if(values[i] == 'temp'){
-            TEMP_Dummy();
-        }
-        if(values[i] == 'fio2'){
-            RESP_Dummy();
-        }
-    }
-   }
-
-    
+    }    
 }
 
 
 // Called when the client loses its connection
 function onConnectionLost(responseObject) {
     if (responseObject.errorCode !== 0) {
-        console.log("Connection Lost: " + responseObject.errorMessage);
+       //console.log("Connection Lost: " + responseObject.errorMessage);
+        pop_alert("Connection Lost: ", responseObject.errorMessage);
+        ecg_data = false;
+        spo2_data = false;
+        temp_data = false;
     }
 }
 
 // Called when a message arrives
+
 function onMessageArrived(message) {
-    //console.log(message.payloadString);
-    let values = message.payloadString.split(',');
-            //console.log(values);
-    if(values[0]!=0){
-        $('.dbp-text').text(values[0]); 
+   
+    let payload = JSON.parse(message.payloadString).values[0];
+
+    if (payload.sbp != "undefined"){
+        ECG_VAL = payload.sbp.split(',');
     }
-    if(values[1]!=0){
-        $('.sbp-text').text(values[1]);
+    if (payload.spo2 != "undefined"){
+        SPO2_VAL = payload.spo2.split(',');
     }
-    if(values[2]!=0){
-        $('.hr-text').text(values[2]);
+    if (payload.fio2 != "undefined"){
+        FIO2_VAL = payload.fio2.split(',');
     }
-    if(values[3]!=0){
-        $('.resp-text').text(values[3]);
+    if (payload.temp != "undefined"){
+        TEMP_VAL = payload.temp.split(',');
     }
-    if(values[4]!=0){
-        $('.spo2-text').text(values[4]);
-    }
-    if(values[5]!=0){
-        $('.temp-text').text(values[5]);
-    }
-    if(values[6]!=0){
-        $('.fio2-text').text(values[6]);
-    }      
+    
+    
 }
 
 // Called when the disconnection button is pressed
-function startDisconnect(dev_id) {
-    let dev_on = '.device-online';
+function stopLIVE(dev_id) {
+   
     let ID = "node-"+dev_id;
-
-    clientID = 'clientID-' + dev_id;
-
-    let newObject = window.localStorage.getItem(clientID);
-    client = JSON.parse(newObject);
-    console.log(client);
-
+    let dev_on = '.device-online';
+    
+    topic = "data/patient/"+sessionStorage.getItem('user')+"/med/"+ID;
+    client.unsubscribe(topic);
+    let act = "Unsubscribing to: " + topic;
+    //console.log(act);
+    //pop_alert("Success!",act);
     if($(dev_on).hasClass(ID)){
         let val = document.getElementById(ID).children[3].innerHTML;
         let values = val.split(',');
-                console.log(values);
-        for(i=0; i<values.length; i++){
+                //console.log(values);
+  for(i=0; i<values.length; i++){
             if(values[i] == 'dbp'){
                 ecg_data = false;
             }
-            if(values[i] == 'sbp'){
+            else if(values[i] == 'sbp'){
                 ecg_data = false;
             }
-            if(values[i] == 'resp'){
-                //RESP_Dummy();
+            else if(values[i] == 'resp'){
+                spo2_data = false;
             }
-            if(values[i] == 'spo2'){
-                //RESP_Dummy();
+            else if(values[i] == 'spo2'){
+                spo2_data = false;
             }
-            if(values[i] == 'temp'){
-                //TEMP_Dummy();
+            else if(values[i] == 'temp'){
+                temp_data = false;
             }
-            if(values[i] == 'fio2'){
-                //RESP_Dummy();
+            else if(values[i] == 'fio2'){
+                spo2_data = false;
             }
         }
     }

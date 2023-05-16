@@ -56,8 +56,6 @@ function setCookie(uid,value,exp_days) {
             encode: true,
           }).done(function (data) {
 
-                console.log("stage 3");
-
                 //console.log(data.patient[0]._id);
                 sessionStorage.setItem('user',$("#User").val());
                 sessionStorage.setItem('token',data.token);

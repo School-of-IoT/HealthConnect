@@ -44,7 +44,7 @@ function insert_node(up, ID, val, node){
   x.id="node-"+ID;
   c=0;
   x.insertCell(c).innerHTML='<span class="dev-table-btn-del" onClick="delete_node('+ID+');">🧺</span>'
-  x.insertCell(c).innerHTML='<button class="dev-table-btn-connect '+x.id+'" onClick="startConnect('+ID+');">Connect</button>' + '<button class="dev-table-btn-disconnect '+x.id+'" onClick="startDisconnect('+ID+')"; style="display:none"; ">Disconnect</button>';
+  x.insertCell(c).innerHTML='<button class="dev-table-btn-connect '+x.id+'" onClick="startLIVE('+ID+');">Add</button>' + '<button class="dev-table-btn-disconnect '+x.id+'" onClick="stopLIVE('+ID+')"; style="display:none"; ">Reset</button>';
   status = 'device-offline '+x.id;
   x.insertCell(c).setAttribute('class', status);
   x.insertCell(c).innerHTML=val;
@@ -54,7 +54,7 @@ function insert_node(up, ID, val, node){
 
   /* -----------------------  Diagnosis Activation SECTION  ----------------------- */
 
-  let values = val.split(',');
+    let values = val.split(', ');
             //console.log(values);
   for(i=0; i<values.length; i++){
     if(values[i] == 'dbp'){
@@ -158,11 +158,13 @@ function create_node(){
         });
         
     }).fail(function (data) {
-      console.log("update failed");
-      
+
+        //console.log("update failed");
+      pop_alert(": Dev Alert :","Failed to GeoLocate");
     });
 
   } 
+  pop_alert("Success!", "New Device Created ⚡");
 }
 
 function delete_node(nd){
@@ -206,7 +208,9 @@ function delete_node(nd){
         });
     
   }).fail(function (data) {
-    console.log("update failed");
+
+    //console.log("update failed");
+    pop_alert(": Dev Alert :","Failed to delete node");
     
   });
 
