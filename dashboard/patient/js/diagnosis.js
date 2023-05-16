@@ -48,8 +48,16 @@ Plotly.plot('ecg-graph', [{
   line: {
     color: '#80CAF6',
     shape: 'spline'
+  },
+}],
+{
+  yaxis: {
+    range: [
+      100,
+      500
+    ]
   }
-}]);
+});
 
 Plotly.plot('spo2-graph', [{
   y: spo2_arr,
