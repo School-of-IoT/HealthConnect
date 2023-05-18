@@ -693,6 +693,10 @@
    .justify-column.hero.about {
      padding-bottom: 0px;
    }
+
+   .justify-column h2 {
+    color: #fff;
+}
    
    .subheading-wrapper {
      display: -webkit-box;
