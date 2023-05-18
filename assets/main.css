@@ -3579,3 +3579,15 @@
        /* width: 85px; */
        /* height: 293px; */
    }
+
+h3.blog-post-title {
+    color: black;
+}
+
+.services-grid.w-dyn-items h3 {
+    color: black;
+}
+
+.form-wrapper h2 {
+    color: black;
+}
