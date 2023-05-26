@@ -548,6 +548,7 @@
    }
    
    .nav-menu-wrapper {
+      margin-left: 29px;
      padding-top: 6px;
      padding-bottom: 24px;
      -webkit-box-align: center;
@@ -558,6 +559,7 @@
      grid-template-columns: 0.25fr 1fr;
      -ms-grid-rows: auto;
      grid-template-rows: auto;
+      
    }
    
    .dropdown-list {
