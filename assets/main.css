@@ -14,7 +14,7 @@
       ========================================================================== */
    .w-layout-grid {
      display: -ms-grid;
-     /* display: grid; */
+     display: grid; 
      grid-auto-columns: 1fr;
      -ms-grid-columns: 1fr 1fr;
      grid-template-columns: 1fr 1fr;
@@ -1534,7 +1534,7 @@
      /* margin-top: 38px; */
      /* padding-top: 38px; */
      /* border-top: 1px solid #7c82a1; */
-     padding: 0px 105px;
+     padding: 0px 37px;
    }
    
    .contact-offices-grid {
