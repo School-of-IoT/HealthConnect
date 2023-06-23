@@ -14,7 +14,7 @@
       ========================================================================== */
    .w-layout-grid {
      display: -ms-grid;
-     display: grid;
+     /* display: grid; */
      grid-auto-columns: 1fr;
      -ms-grid-columns: 1fr 1fr;
      grid-template-columns: 1fr 1fr;
@@ -226,7 +226,6 @@
      line-height: 20px;
      font-weight: 500;
      background-color: black;
-     padding: 0px -27px;
    }
    
    h1 {
@@ -1473,16 +1472,12 @@
    }
    
    .contact-information {
-     padding: 25px 48px;
+     padding: 43px 48px;
      background-color: #19253e;
      display: flex;
      flex-direction: row;
-     flex-wrap: wrap;
      justify-content: flex-end;
-     padding-top: 38px;
-     border-top: 1px solid #7c82a1;
-     margin-top: 38px;
-     align-items: center;
+     align-items: flex-start;
    }
    
    .contact-information.contact-page {
@@ -1497,8 +1492,8 @@
    }
    
    .contact-buttons-wrapper {
-     padding: 0px 31px;
      max-width: 314px;
+     padding: 0px 27px;
    }
    
    .icon-button {
@@ -1537,15 +1532,15 @@
    
    .contact-office-locations {
      /* margin-top: 38px; */
-     padding: 0px 31px;
      /* padding-top: 38px; */
      /* border-top: 1px solid #7c82a1; */
+     padding: 0px 105px;
    }
    
    .contact-offices-grid {
      /* grid-column-gap: 60px; */
      -ms-grid-rows: auto;
-     grid-template-rows: auto;
+     /* grid-template-rows: auto; */
    }
    
    .contact-office-location-title {
