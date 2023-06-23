@@ -621,7 +621,7 @@
    }
    
    .split-section-grid {
-     min-height: 820px;
+     min-height: 660px;
      -webkit-box-pack: justify;
      -webkit-justify-content: space-between;
      -ms-flex-pack: justify;
@@ -778,7 +778,7 @@
    .transition-bg-image {
      position: absolute;
      left: 43%;
-     top: 24%;
+     top: %;
      right: 0%;
      bottom: 0%;
      width: 56%;
@@ -796,16 +796,16 @@
    }
    
    .transition-bg-image.about-us {
-     background-image: url("https://assets.website-files.com/5e30f06b05f79621331ddc25/5e5607170aff9d7b52f2ff90_about-us-image-medica-template-webflow-elements.jpg");
+     background-image: url("https://user-images.githubusercontent.com/52236719/194998000-6d70b422-4115-4ea1-a1c4-90f933b8bd98.png");
      background-position: 50% 50%;
-     background-size: cover;
+     background-size: 200%;
      background-repeat: no-repeat;
    }
    
    .transition-bg-image.why-us {
-     background-image: url("https://assets.website-files.com/5e30f06b05f79621331ddc25/5e56072224830beeeb097ba5_why-us-image-medica-template-webflow-elements.jpg");
+     background-image: url("https://i0.wp.com/www.techiesms.com/wp-content/uploads/2022/11/ESP32-300x300-copy.png");
      background-position: 50% 50%;
-     background-size: cover;
+     background-size: contain;
      background-repeat: no-repeat;
    }
    
@@ -981,7 +981,7 @@
    }
    
    .section.section-contact-bar {
-     padding-top: 0px;
+     padding-top: 176px;
      padding-bottom: 60px;
      /*! background-color: black; */
    }
