@@ -3214,6 +3214,14 @@
       div#Header {
          height: 5% !important;
       }
+
+      .background-object-about {
+        display: none;
+      }
+      
+      .background-object-why-us {
+        display: none;
+      }
       
      #w-node-adf76295-6499-d943-66f9-d1bce0d3c982-0b1ddc26 {
        -webkit-box-ordinal-group: 10000;
