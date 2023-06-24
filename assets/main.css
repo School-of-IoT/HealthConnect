@@ -774,15 +774,15 @@
    }
    
    .transition-bg-image {
-     position: absolute;
-     left: 43%;
-     top: %;
-     right: 0%;
-     bottom: 0%;
-     width: 56%;
-     height: 100%;
-     margin-top: auto;
-     margin-bottom: auto;
+    position: absolute;
+    left: 20%;
+    top: 0%;
+    right: 0%;
+    bottom: 0%;
+    width: 100;
+    height: 100%;
+    margin-top: auto;
+    margin-bottom: auto;
    }
    
    .transition-bg-image.hero {
@@ -796,7 +796,7 @@
    .transition-bg-image.about-us {
      background-image: url("https://user-images.githubusercontent.com/52236719/194998000-6d70b422-4115-4ea1-a1c4-90f933b8bd98.png");
      background-position: 50% 50%;
-     background-size: 200%;
+     background-size: 150%;
      background-repeat: no-repeat;
    }
    
