@@ -495,7 +495,7 @@ iframe {
   justify-content: center;
   align-items: center;
   align-content: center;
-  margin-bottom: 10px;
+  margin-top: 10px;
 }
 
 .alert-validate:hover:before {
