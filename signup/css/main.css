@@ -200,7 +200,7 @@ iframe {
   flex-wrap: wrap;
   justify-content: center;
   padding: 15px;
-  background: #0a2558;
+  background: linear-gradient(#0a2558, black);
   flex-direction: column;
 }
 
@@ -516,7 +516,7 @@ padding-bottom: 25px!important;
   justify-content: center;
   align-items: center;
   align-content: center;
-  margin-bottom: 10px;
+  margin-top: 10px;
 }
 
 .data-validate:hover:before {
