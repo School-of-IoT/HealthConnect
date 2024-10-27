@@ -119,7 +119,7 @@ function rndNum(min, max) {
                 //   };
                 $.ajax({
                     type: "POST",
-                    url: "https://healthconnect-server.herokuapp.com/patient/signup",
+                    url: "https://healthconnect-server.onrender.com/patient/signup",
                     crossDomain: true,
                     contentType: 'application/json; charset=utf-8',
                     data: JSON.stringify(formData),
