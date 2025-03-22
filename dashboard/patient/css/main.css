@@ -5,8 +5,12 @@
   padding: 0px;
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
+  
 }
 
+body{
+  overflow: hidden;
+}
 
 .pre_loader{
 	position: fixed;
@@ -16,6 +20,13 @@
 	z-index: 999;
 }
 
+.pre_loader{
+	position: fixed;
+	width: 100%;
+	height: 100vh;
+	background: #ffffff url('https://flevix.com/wp-content/uploads/2020/01/Lazy-Loader-1.gif') no-repeat center/30%;
+	z-index: 999;
+}
 .sidebar{
   position: fixed;
   height: 100%;
@@ -1356,6 +1367,7 @@ nav .profile-details i{
   width: 100%;
   top: 10.5%;
   height: calc(100% - 90px);
+  overflow: overlay;
 }
 
 .dashboard {
@@ -1889,4 +1901,7 @@ button.treat-table-btn {
 
 #ECG-data-info {
   width: 100%;
+}
+
+.diag{
 }

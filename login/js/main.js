@@ -55,11 +55,13 @@ function setCookie(uid,value,exp_days) {
             dataType: "json",
             encode: true,
           }).done(function (data) {
-            //console.log(data.patient[0]._id);
-            sessionStorage.setItem('user',$("#User").val());
-            sessionStorage.setItem('token',data.token);
-            //setCookie("uid", data.patient[0]._id, 1);
-            location.href = "../dashboard/patient/"
+
+                //console.log(data.patient[0]._id);
+                sessionStorage.setItem('user',$("#User").val());
+                sessionStorage.setItem('token',data.token);
+                //setCookie("uid", data.patient[0]._id, 1);
+                location.href = "../dashboard/patient/";
+
           }).fail(function (data) {
             for(let i=0; i<input.length; i++) {
                 showValidate(input[i]);

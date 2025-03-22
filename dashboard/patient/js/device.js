@@ -44,13 +44,45 @@ function insert_node(up, ID, val, node){
   x.id="node-"+ID;
   c=0;
   x.insertCell(c).innerHTML='<span class="dev-table-btn-del" onClick="delete_node('+ID+');">🧺</span>'
-  x.insertCell(c).innerHTML='<button class="dev-table-btn-connect" onClick="startConnect('+ID+');">Connect</button>';
+  x.insertCell(c).innerHTML='<button class="dev-table-btn-connect '+x.id+'" onClick="startLIVE('+ID+');">Add</button>' + '<button class="dev-table-btn-disconnect '+x.id+'" onClick="stopLIVE('+ID+')"; style="display:none"; ">Reset</button>';
   status = 'device-offline '+x.id;
   x.insertCell(c).setAttribute('class', status);
   x.insertCell(c).innerHTML=val;
   x.insertCell(c).innerHTML=ID;
   x.insertCell(c).innerHTML=node;
   x.insertCell(c).innerHTML=up;  
+
+  /* -----------------------  Diagnosis Activation SECTION  ----------------------- */
+
+    let values = val.split(', ');
+            //console.log(values);
+  for(i=0; i<values.length; i++){
+    if(values[i] == 'dbp'){
+        $('.dbp-g').show();
+        $('.diag').hide();
+    }
+    if(values[i] == 'sbp'){
+        $('.sbp-g').show();
+        $('.diag').hide();
+    }
+    if(values[i] == 'resp'){
+        $('.resp-g').show();
+        $('.diag').hide();
+    }
+    if(values[i] == 'spo2'){
+        $('.spo2-g').show();
+        $('.diag').hide();
+    }
+    if(values[i] == 'temp'){
+        $('.temp-g').show();
+        $('.diag').hide();
+    }
+    if(values[i] == 'fio2'){
+        $('.fio2-g').show();
+        $('.diag').hide();
+    }
+  }  
+  /* ----------------------------------------------------------------------------- */   
 }
 
 
@@ -71,15 +103,12 @@ function create_node(){
   }
   
 
-  console.log(dev_t);
-  console.log(hw_t);
-  console.log(comps);
   let date = new Date();
-  let dev_id=date.getMonth()+""+date.getDate()+""+date.getHours()+""+date.getMilliseconds();
+  let dev_id=date.getFullYear()-2000+""+date.getMonth()+""+date.getDate()+""+date.getHours()+""+date.getMilliseconds();
 
-      let current_date = date.getFullYear()+"-"+(date.getMonth()+1)+"-"+ date.getDate();
-      let current_time = date.getHours()+":"+date.getMinutes();
-      let date_time = current_date+" "+current_time;
+  let current_date = date.getFullYear()+"-"+(date.getMonth()+1)+"-"+ date.getDate();
+  let current_time = date.getHours()+":"+date.getMinutes();
+  let date_time = current_date+" "+current_time;
 
   let dev_tkn = $('.key-setting .key-value').text();
 
@@ -129,16 +158,16 @@ function create_node(){
         });
         
     }).fail(function (data) {
-      console.log("update failed");
-      
+        //console.log("update failed");
+      pop_alert(": Dev Alert :","Failed to GeoLocate");
     });
 
   } 
+  pop_alert("Success!", "New Device Created ⚡");
 }
 
 function delete_node(nd){
-  let ID = "node-"+nd;
-
+  let UID = "node-"+nd;
   let dev_tkn = $('.key-setting .key-value').text();
 
   if(dev_tkn == ''){
@@ -146,7 +175,7 @@ function delete_node(nd){
   }
   else{
 
-    let url = "https://healthconnect-server.onrender.com/node/delete?user="+sessionStorage.getItem('user')+"&token="+dev_tkn+"&node="+ID;
+ let url = "https://healthconnect-server.onrender.com/node/delete?user="+sessionStorage.getItem('user')+"&token="+dev_tkn+"&node="+UID;
   
   $.ajax({
     type: "DELETE",
@@ -159,7 +188,8 @@ function delete_node(nd){
     },
     processData: false,
   }).done(function (data) {
-    let row = "#"+ID;
+    
+ let row = "#"+UID;
     $(row).remove(); 
 
     $("#dev-table-body").each(function()
@@ -177,7 +207,10 @@ function delete_node(nd){
         });
     
   }).fail(function (data) {
-    console.log("update failed");
+
+    
+  //console.log("update failed");
+  pop_alert(": Dev Alert :","Failed to delete node");
     
   });
 

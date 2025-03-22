@@ -249,7 +249,7 @@ input.s-inpt {
 
 .s-btn {
   width: 100%;
-  margin: 0px 43px;
+  margin: 0px 14px;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -278,10 +278,30 @@ button.s-btn-func {
   cursor: pointer;
   border-radius: 10px;
 }
+button.s-btn-func-cnnct {
+    background: #27b332;
+    border-color: #27b332;
+    width: 150%;
+    margin: 0px 0px 0px 31px;
+    border-radius: 10px;
+
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 18px;
+    padding: 5px 20px;
+    align-items: center;
+    align-content: center;
+    align-items: center;
+    align-content: center;
+    padding: 5px 9px;
+    color: #fff;
+    cursor: pointer;
+}
 
 .dev-search {
   width: 100%;
-  margin: 0px 43px;
+  margin: 0px 15px;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -296,7 +316,15 @@ button.dev-table-btn-connect {
   color: #fff;
   cursor: pointer;
 }
-
+button.dev-table-btn-disconnect {
+  align-items: center;
+  align-content: center;
+  padding: 5px 9px;
+  background: #cb0000;
+  border-color: #cb0000;
+  color: #fff;
+  cursor: pointer;
+}
 span.dev-table-btn-del{
   font-size: larger;
   cursor: pointer;

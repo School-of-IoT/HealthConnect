@@ -179,7 +179,7 @@ iframe {
   justify-content: center;
   align-items: center;
   /* padding: 15px; */
-  background: #0a2558;
+  background: linear-gradient(#0a2558, black);
   flex-direction: column;
 }
 
@@ -227,7 +227,7 @@ iframe {
   width: 100%;
   position: relative;
   border-bottom: 2px solid #adadad;
-  margin-bottom: 37px;
+  margin-top: 37px;
 }
 
 .input100 {
@@ -495,7 +495,7 @@ iframe {
   justify-content: center;
   align-items: center;
   align-content: center;
-  margin-bottom: 10px;
+  margin-top: 10px;
 }
 
 .alert-validate:hover:before {

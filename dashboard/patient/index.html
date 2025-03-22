@@ -20,8 +20,10 @@
   <link rel="icon" type="image/png" sizes="16x16" href="../../assets/favicon/favicon-16x16.png">
   <link rel="manifest" href="../../assets/favicon/site.webmanifest">
 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/device-list.css">
+  <link rel="stylesheet" href="css/popup.css">
   <link rel="stylesheet" href="https://uicdn.toast.com/calendar/latest/toastui-calendar.min.css" />
   <!-- Boxicons CDN Link -->
   <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
@@ -38,88 +40,104 @@
 
   </div>
 
-  <div class="node-dev pop-up" style="display: none!important;">
-
-   <div class="key-setting box" style="">
-    <div class="close">
-      <span class="dev-head">HealthConnect Devices</span>
-      <span class="close-icon" onclick="close_key()">✖</span>  
-    </div>
-    <div class="box-content">
-      <h2>Secret Key</h2>
-      <div class="value">
-        <code class="key-value">( Refresh Page )</code>
-        <span class="copy" onclick="copyToClipboard('.key-value')">📋</span>
+  <div class="toast">
+  
+    <div class="toast-content">
+      <i class="popalert fas fa-solid fa-check check"></i>
+  
+      <div class="tmessage">
+        <span class="text text-1">Success</span>
+        <span class="text text-2">Your changes has been saved</span>
       </div>
-
-     
-      <div class="submit-key">
-          <input placeholder="Password" class="key-pass" type="password">
-          <button class="new_key" onclick="gen_newkey()">Generate New Key</button>
-          <span> Please reset your secret key regularly</span>
-      </div>
-      
     </div>
-
- </div>
-
- <div class="dev-create box" style="">
-    
-  <div class="close">
-    <span class="dev-head">HealthConnect Devices</span><span class="close-icon" onclick="close_key()">✖</span>
+    <i class="fa-solid fa-xmark close"></i>
+  
+    <div class="progress"></div>
   </div>
 
-  <div class="box-content">
-    <div class="device-drop">
-      <div class="device-type">
-        <h2>Device Type</h2>
-                <label for="lang"></label>
-                  <select required="" type="text" name="dev-category" class="field-style field-split align-left" placeholder="Dev Category" id="dev-category" style="font-size: 15px;">
-                    <option value="" disabled="" selected="">Category</option>
-                    <option value="Central">Central</option>
-                    <option value="Temperature">Temperature</option>
-                    <option value="HeartBeat">HeartBeat</option><option value="Pulse">Pulse</option>
-                    <option value="Respiration">Respiration</option>
-                  </select>
+  <div class="node-dev pop-up" style="display: none!important;">
+    
+    <div class="key-setting box" style="">
+      <div class="close">
+        <span class="dev-head">HealthConnect Devices</span>
+        <span class="close-icon" onclick="close_key()">✖</span>  
       </div>
-      <div class="hardware">
-          <h2>Hardware</h2>
-                <label for="lang"></label>
-                  <select required="" type="text" name="hw-category" class="field-style field-split align-left" placeholder="Hardware Category" id="hw-category" style="font-size: 15px;">
-                    <option value="" disabled="" selected="">Category</option>
-                    <option value="ESP32">ESP32 Dev Board</option>
-                    <option value="ESP8266">ESP8266 NodeMCU</option>
-                    <option value="android">Android App</option>
-                    <option value="cli">Terminal</option>
-                  </select>
-      </div>
-      </div>
-    <div class="device-checkb">
-      <h2>Medical Components</h2>
-        <div class="med-comp">
-        <div class="med-comp-c">
-          <label>All <input type="checkbox" value="all" name="comp" onclick="disable_rest()"></label>
-          <label>Temperature <input type="checkbox" value="temp" name="comp"></label>
-          <label>Systolic Blood Pressure <input type="checkbox" value="sbp" name="comp"></label>
+      <div class="box-content">
+        <h2>Secret Key</h2>
+        <div class="value">
+          <code class="key-value">( Refresh Page )</code>
+          <span class="copy" onclick="copyToClipboard('.key-value')">📋</span>
         </div>
-        <div class="med-comp-c">
-          <label>Diabolic Blood Pressure <input type="checkbox" value="dbp" name="comp"></label>
-          <label>Oxygen Saturation <input type="checkbox" value="spo2" name="comp"></label>
-          <label>Inspired Oxygen <input type="checkbox" value="fio2" name="comp"></label>
+
+      
+        <div class="submit-key">
+            <input placeholder="Password" class="key-pass" type="password">
+            <button class="new_key" onclick="gen_newkey()">Generate New Key</button>
+            <span> Please reset your secret key regularly</span>
         </div>
+        
       </div>
+
     </div>
-  <div class="submit-key">
-    <button class="new_node" onclick="create_node()">Create New Device</button>
-  
-  <span>Click <a href="#">here</a> for Documentation on <b>How to Send Data</b></span></div>
 
-</div>
-  
-</div>
+    <div class="dev-create box" style="">
+          
+      <div class="close">
+        <span class="dev-head">HealthConnect Devices</span><span class="close-icon" onclick="close_key()">✖</span>
+      </div>
 
-</div>
-   
+        <div class="box-content">
+          <div class="device-drop">
+            <div class="device-type">
+              <h2>Device Type</h2>
+                      <label for="lang"></label>
+                        <select required="" type="text" name="dev-category" class="field-style field-split align-left" placeholder="Dev Category" id="dev-category" style="font-size: 15px;">
+                          <option value="" disabled="" selected="">Category</option>
+                          <option value="Central">Central</option>
+                          <option value="Temperature">Temperature</option>
+                          <option value="HeartBeat">HeartBeat</option>
+                          <option value="Respiration">Respiration</option>
+                          <option value="Dummy">Dummy</option>
+                        </select>
+            </div>
+            <div class="hardware">
+                <h2>Hardware</h2>
+                      <label for="lang"></label>
+                        <select required="" type="text" name="hw-category" class="field-style field-split align-left" placeholder="Hardware Category" id="hw-category" style="font-size: 15px;">
+                          <option value="" disabled="" selected="">Category</option>
+                          <option value="ESP32">ESP32 Dev Board</option>
+                          <option value="ESP8266">ESP8266 NodeMCU</option>
+                          <option value="android">Android App</option>
+                          <option value="cli">Terminal</option>
+                          <option value="web_test">Test Sample</option>
+                        </select>
+            </div>
+            </div>
+          <div class="device-checkb">
+            <h2>Medical Components</h2>
+              <div class="med-comp">
+              <div class="med-comp-c">
+                <label>All <input type="checkbox" value="all" name="comp" onclick="disable_rest()"></label>
+                <label>Temperature <input type="checkbox" value="temp" name="comp"></label>
+                <label>Systolic Blood Pressure <input type="checkbox" value="sbp" name="comp"></label>
+              </div>
+              <div class="med-comp-c">
+                <label>Diabolic Blood Pressure <input type="checkbox" value="dbp" name="comp"></label>
+                <label>Oxygen Saturation <input type="checkbox" value="spo2" name="comp"></label>
+                <label>Inspired Oxygen <input type="checkbox" value="fio2" name="comp"></label>
+              </div>
+            </div>
+          </div>
+        <div class="submit-key">
+          <button class="new_node" onclick="create_node()">Create New Device</button>
+        
+        <span>Click <a href="https://school-of-iot.gitbook.io/healthconnect/devices/connect-and-send-data" target="_blank" >here</a> for Documentation on <b>How to Send Data</b></span></div>
+
+      </div>
+  
+    </div>
+
+  </div>
   <div class="container" id="blur">
     <div class="sidebar">
       <div class="logo-details">
@@ -157,10 +175,10 @@
             <span class="links_name">Symptoms ChatBot</span>
           
         </li>
-        <li class="log_out">
-		<i class="bx bx-log-out"></i>
-		<span class="links_name">Log out</span>
-        </li>
+        <!-- <li class="log_out">
+          <i class="bx bx-log-out"></i>
+          <span class="links_name">Log out</span>
+        </li> -->
       </ul>
     </div>
     <section class="home-section">
@@ -181,9 +199,10 @@
           <div class="section-dropdown"> 
  
                 <a class="sd-list" href="../account/">Account</a>
-                <a class="sd-list" href="../documentation/">Documentation</a>
+                <a class="sd-list" href="https://school-of-iot.gitbook.io/healthconnect" target="_blank" >Documentation</a>
                 <a class="sd-list" href="../premium/">Premium</a>
                 <a class="sd-list" href="../preference/">Preference</a>
+                <a class="sd-list" id="log_out">Log Out</a>
       
           </div>
 
@@ -207,7 +226,7 @@
           <div class="box">
             <div class="right-side">
               <div class="box-topic">Diastole BP</div>
-              <div class="number dbp"></div>
+              <div class="number dbp-text"></div>
               <div class="indicator">
                 <span class="text">Safe [60 - 80 mm Hg]</span>
               </div>
@@ -217,7 +236,7 @@
           <div class="box">
             <div class="right-side">
               <div class="box-topic">Systole BP</div>
-              <div class="number sbp"></div>
+              <div class="number sbp-text"></div>
               <div class="indicator">
                 <span class="text">Safe [90 - 120 mm Hg]</span>
               </div>
@@ -227,7 +246,7 @@
           <div class="box">
             <div class="right-side">
               <div class="box-topic">HeartRate</div>
-              <div class="number heartrate"></div>
+              <div class="number hr-text"></div>
               <div class="indicator">
                 <span class="text">Safe [60 to 100 beats]</span>
               </div>
@@ -237,7 +256,7 @@
           <div class="box">
             <div class="right-side">
               <div class="box-topic">Respiration Rate</div>
-              <div class="number respiration"></div>
+              <div class="number resp-text"></div>
               <div class="indicator">
                 <span class="text">Safe [12 to 16 breaths/min]</span>
               </div>
@@ -247,7 +266,7 @@
           <div class="box">
             <div class="right-side">
               <div class="box-topic">SpO2</div>
-              <div class="number spo2"></div>
+              <div class="number spo2-text"></div>
               <div class="indicator">
                 <span class="text">Range [95% or higher]</span>
               </div>
@@ -267,7 +286,7 @@
           <div class="box">
             <div class="right-side">
               <div class="box-topic">Temperature</div>
-              <div class="number temp"></div>
+              <div class="number temp-text"></div>
               <div class="indicator">
                 <span class="text">Range [97°F to 99°F]</span>
               </div>
@@ -308,7 +327,7 @@
           <div class="box">
             <div class="right-side">
               <div class="box-topic">FiO2 </div>
-              <div class="number fio2"></div>
+              <div class="number fio2-text"></div>
               <div class="indicator">
                 <span class="text">Range [50 to 100]</span>
               </div>
@@ -341,29 +360,38 @@
 
 	    
 	    <div class="diagnosis dashboard">
+        <div class="no-device diag">No devices are Active currently ⚠</div>
         <div class="diagnosis-boxes">
-          <div class="graphout box">
+          
+      <div class="graphout box sbp-g dbp-g" style="display:none;">
               <div class="ecg-heart">
                 <div id="ecg-graph" class="graph"></div>
               </div>
               <div id="ECG-data-info" class="graph-info">
-                <div id="sys-heart-info" class="graph-info"><span>Systolic BP</span><text class="dash-info-data sbp" style="font-size:85px;"></text></div>
-                <div id="dia-heart-info" class="graph-info"><span>Diabolic BP</span><text class="dash-info-data dbp" style="font-size:85px;"></text></div>
+ 
+                <div id="sys-heart-info" class="graph-info"><span>Systolic BP</span><text class="dash-info-data sbp-text" style="font-size:85px;"></text></div>
+                <div id="dia-heart-info" class="graph-info"><span>Diabolic BP</span><text class="dash-info-data dbp-text" style="font-size:85px;"></text></div>
               </div>
           </div>   
            
-          <div class="graphout box">
+          <div class="graphout box spo2-g" style="display:none;">
             <div class="spo2-graph">
               <div id="spo2-graph" class="graph"></div>
             </div>
-            <div id="spo2-info" class="graph-info"><span>SpO₂ Graph</span><text class="dash-info-data spo2"></text></div>
+            <div id="spo2-info" class="graph-info"><span>SpO₂ Graph</span><text class="dash-info-data spo2-text"></text></div>
           </div>   
-          <div class="graphout box">
+          <div class="graphout box resp-g" style="display:none;">
             <div class="resp-graph">
               <div id="resp-graph" class="graph"></div>
             </div>
-            <div id="resp-info" class="graph-info"><span>Respiration Graph</span><text class="dash-info-data respiration"></text></div>
-          </div>   
+            <div id="resp-info" class="graph-info"><span>Respiration Graph</span><text class="dash-info-data respiration-text"></text></div>
+          </div> 
+          <div class="graphout box temp-g" style="display:none;">
+            <div class="temp-graph">
+              <div id="temp-graph" class="graph"></div>
+            </div>
+            <div id="temp-info" class="graph-info"><span>Temperature Graph</span><text class="dash-info-data temp-text"></text></div>
+          </div>    
         </div>  
 	    </div>
 
@@ -393,6 +421,7 @@
             <div class="s-btn">
               <button class="s-btn-func" onclick="view_node_modal()">Add Device</button>
               <button class="s-btn-func" onclick="view_key_modal()">Secret Key</button>
+              <button class="s-btn-func-cnnct" onclick="server_Connection()">Connect</button>
             </div> 
           </div>
           <div class="dev-list box">
