@@ -1,10 +1,8 @@
 var mqttserver ="";
 var mqttuser ="";
 var mqttpass ="";
-
 var client = Object.create(null);
 var server_line = false;
-
 user = sessionStorage.getItem('user');
 token = sessionStorage.getItem('token');
 let formData = {
@@ -86,10 +84,9 @@ function startLIVE(dev_id) {
     
     let ID = "node-"+dev_id;
     topic = "data/patient/"+sessionStorage.getItem('user')+"/med/"+ID;
-    
     // Print output for the user in the messages div
     let act = "Subscribing to: " + topic;
-    //console.log(act);
+    console.log(act);
 
     // Subscribe to the requested topic
     client.subscribe(topic);
@@ -160,11 +157,11 @@ function startLIVE(dev_id) {
 // Called when the client loses its connection
 function onConnectionLost(responseObject) {
     if (responseObject.errorCode !== 0) {
-       //console.log("Connection Lost: " + responseObject.errorMessage);
-        pop_alert("Connection Lost: ", responseObject.errorMessage);
-        ecg_data = false;
-        spo2_data = false;
-        temp_data = false;
+    //console.log("Connection Lost: " + responseObject.errorMessage);
+      pop_alert("Connection Lost: ", responseObject.errorMessage);
+      ecg_data = false;
+      spo2_data = false;
+      temp_data = false;
     }
 }
 
@@ -186,7 +183,6 @@ function onMessageArrived(message) {
     if (payload.temp != "undefined"){
         TEMP_VAL = payload.temp.split(',');
     }
-    
     
 }
 

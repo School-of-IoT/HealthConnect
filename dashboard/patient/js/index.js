@@ -11,8 +11,7 @@
       sessionStorage.removeItem('token');
       location.href = "../../login/";
     });
-
-    if ( $('.username').text() == '')
+if ( $('.username').text() == '')
       
       {
         let formData = {

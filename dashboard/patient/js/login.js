@@ -21,7 +21,6 @@
           window.location.href="../../login/"
         }
 
-      
         $('.username').text(data.patient[0].Name);
         $('.chills').text(data.patient[0].Chills);
         $('.dbp-text').text(data.patient[0].DBP);
@@ -63,7 +62,7 @@
               $('.dev-list').show();
             }
         });
-        /* ----------------------------------------------------------------- */
+      /* ----------------------------------------------------------------- */
 
       }).fail(function (data) {
         //console.log("failed");

@@ -106,9 +106,9 @@ function create_node(){
   let date = new Date();
   let dev_id=date.getFullYear()-2000+""+date.getMonth()+""+date.getDate()+""+date.getHours()+""+date.getMilliseconds();
 
-      let current_date = date.getFullYear()+"-"+(date.getMonth()+1)+"-"+ date.getDate();
-      let current_time = date.getHours()+":"+date.getMinutes();
-      let date_time = current_date+" "+current_time;
+  let current_date = date.getFullYear()+"-"+(date.getMonth()+1)+"-"+ date.getDate();
+  let current_time = date.getHours()+":"+date.getMinutes();
+  let date_time = current_date+" "+current_time;
 
   let dev_tkn = $('.key-setting .key-value').text();
 
@@ -158,7 +158,6 @@ function create_node(){
         });
         
     }).fail(function (data) {
-
         //console.log("update failed");
       pop_alert(": Dev Alert :","Failed to GeoLocate");
     });
@@ -169,7 +168,6 @@ function create_node(){
 
 function delete_node(nd){
   let UID = "node-"+nd;
-
   let dev_tkn = $('.key-setting .key-value').text();
 
   if(dev_tkn == ''){
@@ -177,7 +175,7 @@ function delete_node(nd){
   }
   else{
 
-    let url = "https://healthconnect-server.onrender.com/node/delete?user="+sessionStorage.getItem('user')+"&token="+dev_tkn+"&node="+UID;
+ let url = "https://healthconnect-server.onrender.com/node/delete?user="+sessionStorage.getItem('user')+"&token="+dev_tkn+"&node="+UID;
   
   $.ajax({
     type: "DELETE",
@@ -190,7 +188,8 @@ function delete_node(nd){
     },
     processData: false,
   }).done(function (data) {
-    let row = "#"+UID;
+    
+ let row = "#"+UID;
     $(row).remove(); 
 
     $("#dev-table-body").each(function()
@@ -209,8 +208,9 @@ function delete_node(nd){
     
   }).fail(function (data) {
 
-    //console.log("update failed");
-    pop_alert(": Dev Alert :","Failed to delete node");
+    
+  //console.log("update failed");
+  pop_alert(": Dev Alert :","Failed to delete node");
     
   });
 

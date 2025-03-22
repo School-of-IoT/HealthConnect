@@ -316,7 +316,6 @@ button.dev-table-btn-connect {
   color: #fff;
   cursor: pointer;
 }
-
 button.dev-table-btn-disconnect {
   align-items: center;
   align-content: center;
@@ -326,7 +325,6 @@ button.dev-table-btn-disconnect {
   color: #fff;
   cursor: pointer;
 }
-
 span.dev-table-btn-del{
   font-size: larger;
   cursor: pointer;

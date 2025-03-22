@@ -43,7 +43,6 @@ var TEMP_VAL = "";
 //Creating plot graphs with specifications
 Plotly.plot('ecg-graph', [{
   y: ecg_arr,
-
   mode: 'lines',
   line: {
     color: '#80CAF6',
