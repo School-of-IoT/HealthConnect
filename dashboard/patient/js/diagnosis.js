@@ -48,8 +48,16 @@ Plotly.plot('ecg-graph', [{
   line: {
     color: '#80CAF6',
     shape: 'spline'
+  },
+}],
+{
+  yaxis: {
+    range: [
+      1000,
+      5000
+    ]
   }
-}]);
+});
 
 Plotly.plot('spo2-graph', [{
   y: spo2_arr,
@@ -79,11 +87,9 @@ Plotly.plot('temp-graph', [{
 }]);
 
 /* -------------- DATA Manipulation for Graphs ----------------*/
-
 var SPO2_VAL_DUMMY =[0.3, 0.3, 0.8, 1.3, 1.3, 1.3, 1.5, 1.5, 2, 2, 1.5, 1.5, 0.5, 0, 0, 0.3, 0.8, 1, 1.3, 1.3, 1.5, 1.5, 2, 2, 1.5, 1.5, 0.5, 0.5]
 var TEMP_VAL_DUMMY =[0.5, 0.4, 0.4, 0.3, 0.5, 0.4, 0.4, 0.3, 0.4, 0.4, 0.3, 0.3, 0.5, 0, 0, 0.3, 0.8, 0.5, 0.4, 0.4, 0.3, 1.5, 2, 0.5, 0.4, 0.4, 0.3, 0.5]
 var ECG_VAL_DUMMY =[0, 0, 0, 0, 0.5, -0.25, 2.5, -2, 0.5, 1, -0.5, 0.5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.5, -0.25, 2.5, -2, 0.5, 1, -0.5, 0.5, , 0, 0, 0, 0, 0, 0, 0, 0.5, 0.5, -0.25, 2.5, -2, 0.5, 1, -0.5, 0.5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.5, -0.25, 2.5, -2, 0.5, 1, -0.5, 0.5, 0.5, 0, 0, 0, 0]
-
 
 async function TEMP_Dummy_Run(data, j, k) {
   if (!temp_data){
@@ -238,21 +244,10 @@ async function ECG_Run(data, j, k) {
   if (!ecg_data){
     return;
   }
-  y = Math.round(ECG_VAL[j]/10) //ecg
+  
+  y = Math.round(ECG_VAL[j]) //ecg
   j=j+1;
-// ----------------------- Filter Signal  ----------------------
-  /*
-  let b0 = 45;
-	let b1 = 55;
-	let offset = 0;
-	let noiseDivider = 4;
-
-  for(let i=1; i<ecg_arr_live.length; i++)
-    {
-      ecg_arr_live[i] = offset + (ecg_arr_live[i]*b0 + ecg_arr_live[i-1]*b1);
-    }
-  */
-// -------------------------------------------------------------
+  
   ecg_arr_live = ecg_arr_live.concat(y)
   ecg_arr_live.splice(0, 1);
   

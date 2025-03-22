@@ -179,7 +179,7 @@ iframe {
   justify-content: center;
   align-items: center;
   /* padding: 15px; */
-  background: #0a2558;
+  background: linear-gradient(#0a2558, black);
   flex-direction: column;
 }
 
@@ -495,7 +495,7 @@ iframe {
   justify-content: center;
   align-items: center;
   align-content: center;
-  margin-bottom: 10px;
+  margin-top: 10px;
 }
 
 .alert-validate:hover:before {
