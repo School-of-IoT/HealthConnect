@@ -49,7 +49,7 @@ function setCookie(uid,value,exp_days) {
 
         $.ajax({
             type: "GET",
-            url: "https://healthconnect-server.onrender.com/login",
+            url: "https://healthconnect-server.onrender.com/api/v1/login",
             crossDomain: true,
             data: formData,
             dataType: "json",

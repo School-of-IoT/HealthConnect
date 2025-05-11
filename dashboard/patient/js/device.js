@@ -116,7 +116,7 @@ function create_node(){
     alert('Create a Secret key first');
   }
   else{
-    let url = "https://healthconnect-server.onrender.com/node/create?user="+sessionStorage.getItem('user')+"&token="+dev_tkn;
+    let url = "https://healthconnect-server.onrender.com/api/v1/node/create?user="+sessionStorage.getItem('user')+"&token="+dev_tkn;
     let formData = 
         {
           "nodeData":{
@@ -175,7 +175,7 @@ function delete_node(nd){
   }
   else{
 
- let url = "https://healthconnect-server.onrender.com/node/delete?user="+sessionStorage.getItem('user')+"&token="+dev_tkn+"&node="+UID;
+ let url = "https://healthconnect-server.onrender.com/api/v1/node/delete?user="+sessionStorage.getItem('user')+"&token="+dev_tkn+"&node="+UID;
   
   $.ajax({
     type: "DELETE",

@@ -15,7 +15,7 @@ let formData = {
     
     $.ajax({
         type: "GET",
-        url: "https://healthconnect-server.onrender.com/devtkn/portal",
+        url: "https://healthconnect-server.onrender.com/api/v1/devtkn/portal",
         data : formData,
         crossDomain: true,
         dataType: "json",
