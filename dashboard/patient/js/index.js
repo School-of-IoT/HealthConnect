@@ -171,7 +171,7 @@ function copyToClipboard(element) {
 
  function gen_newkey(){
   
-  let url = "https://healthconnect-server.onrender.com/api/v1/devtkn/create?user="+sessionStorage.getItem('user')+"&pass="+$('input.key-pass').val();
+  let url = "https://healthconnect-server.onrender.com/node/v1/devtkn/create?user="+sessionStorage.getItem('user')+"&pass="+$('input.key-pass').val();
   
   $.ajax({
     type: "GET",
