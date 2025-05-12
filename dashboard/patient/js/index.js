@@ -32,30 +32,30 @@ if ( $('.username').text() == '')
               window.location.href="../../login/"
             }
 
-            $('.username').text(data.patient[0].Name);
-            $('.chills').text(data.patient[0].Chills);
-            $('.hr-text').text(data.patient[0].HeartRate);            
-            $('.bloodg').text(data.patient[0].BGroup);         
-            $('.ambulation').text(data.patient[0].Ambulation);
-            $('.fever').text(data.patient[0].HistoryFever);
-            $('.bmi').text(data.patient[0].BMI);
-            $('.dbp-text').text(data.patient[0].latestHealthData.DBP);
-            $('.sbp-text').text(data.patient[0].latestHealthData.SBP);
-            $('.fio2-text').text(data.patient[0].latestHealthData.FiO2);
-            $('.resp-text').text(data.patient[0].latestHealthData.RR);
-            $('.spo2-text').text(data.patient[0].latestHealthData.SpO2);
-            $('.temp-text').text(data.patient[0].latestHealthData.Temp);
-            $('.key-setting .key-value').text(data.patient[0].devtoken);
+            $('.username').text(data.patient.Name);
+            $('.chills').text(data.patient.Chills);
+            $('.hr-text').text(data.patient.HeartRate);            
+            $('.bloodg').text(data.patient.BGroup);         
+            $('.ambulation').text(data.patient.Ambulation);
+            $('.fever').text(data.patient.HistoryFever);
+            $('.bmi').text(data.patient.BMI);
+            $('.dbp-text').text(data.patient.latestHealthData.DBP);
+            $('.sbp-text').text(data.patient.latestHealthData.SBP);
+            $('.fio2-text').text(data.patient.latestHealthData.FiO2);
+            $('.resp-text').text(data.patient.latestHealthData.RR);
+            $('.spo2-text').text(data.patient.latestHealthData.SpO2);
+            $('.temp-text').text(data.patient.latestHealthData.Temp);
+            $('.key-setting .key-value').text(data.patient.devtoken);
             
             preLoaderHandler();
             
             /* -----------------------  DEVICES SECTION  ----------------------- */
 
             if ($('.no-device').css("display") != "none"){
-              let len = data.patient[0].devices.length;
+              let len = data.patient.devices.length;
               //console.log(len);
               for(let i=0; i<len; i++){
-                insert_node(data.patient[0].devices[i].lastUp, data.patient[0].devices[i].node.slice(5), data.patient[0].devices[i].attribute, data.patient[0].devices[i].type);
+                insert_node(data.patient.devices[i].lastUp, data.patient.devices[i].node.slice(5), data.patient.devices[i].attribute, data.patient.devices[i].type);
               }
             }
             /* ----------------------------------------------------------------- */

@@ -56,10 +56,9 @@ function setCookie(uid,value,exp_days) {
             encode: true,
           }).done(function (data) {
 
-                //console.log(data.patient[0]._id);
                 sessionStorage.setItem('user',$("#User").val());
-                sessionStorage.setItem('token',data.token);
-                //setCookie("uid", data.patient[0]._id, 1);
+                sessionStorage.setItem('token',data.patient.token);
+                
                 location.href = "../dashboard/patient/";
 
           }).fail(function (data) {
