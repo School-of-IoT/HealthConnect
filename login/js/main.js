@@ -57,7 +57,7 @@ function setCookie(uid,value,exp_days) {
           }).done(function (data) {
 
                 sessionStorage.setItem('user',$("#User").val());
-                sessionStorage.setItem('token',data.patient.token);
+                sessionStorage.setItem('token',data.token);
                 
                 location.href = "../dashboard/patient/";
 
