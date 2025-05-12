@@ -21,7 +21,7 @@ if ( $('.username').text() == '')
 
         $.ajax({
           type: "GET",
-          url: "https://healthconnect-server.onrender.com/api/v2/lastdata",
+          url: "https://dev-medis-server.onrender.com/api/v2/lastdata",
           data : formData,
           crossDomain: true,
           dataType: "json",
