@@ -21,7 +21,7 @@ if ( $('.username').text() == '')
 
         $.ajax({
           type: "GET",
-          url: "https://healthconnect-server.onrender.com/data",
+          url: "https://healthconnect-server.onrender.com/api/v1/data",
           data : formData,
           crossDomain: true,
           dataType: "json",
@@ -87,7 +87,7 @@ if ( $('.username').text() == '')
 if (user !=""){
       $.ajax({
         type: "GET",
-        url: "https://healthconnect-server.onrender.com/geo_locate/"+user,
+        url: "https://healthconnect-server.onrender.com/api/v1/geo_locate/"+user,
         dataType: "json",
         encode: true,
       }).done(function (data) {
@@ -171,7 +171,7 @@ function copyToClipboard(element) {
 
  function gen_newkey(){
   
-  let url = "https://healthconnect-server.onrender.com/devtkn/create?user="+sessionStorage.getItem('user')+"&pass="+$('input.key-pass').val();
+  let url = "https://healthconnect-server.onrender.com/node/v1/devtkn/create?user="+sessionStorage.getItem('user')+"&pass="+$('input.key-pass').val();
   
   $.ajax({
     type: "GET",
