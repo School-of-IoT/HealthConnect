@@ -21,7 +21,7 @@ if ( $('.username').text() == '')
 
         $.ajax({
           type: "GET",
-          url: "https://healthconnect-server.onrender.com/api/v1/data",
+          url: "https://healthconnect-server.onrender.com/api/v2/lastdata",
           data : formData,
           crossDomain: true,
           dataType: "json",
@@ -34,17 +34,17 @@ if ( $('.username').text() == '')
 
             $('.username').text(data.patient[0].Name);
             $('.chills').text(data.patient[0].Chills);
-            $('.dbp-text').text(data.patient[0].DBP);
-            $('.sbp-text').text(data.patient[0].SBP);
-            $('.hr-text').text(data.patient[0].HeartRate);
-            $('.resp-text').text(data.patient[0].RR);
-            $('.spo2-text').text(data.patient[0].SpO2);
-            $('.bloodg').text(data.patient[0].BGroup);
-            $('.temp-text').text(data.patient[0].Temp);
+            $('.hr-text').text(data.patient[0].HeartRate);            
+            $('.bloodg').text(data.patient[0].BGroup);         
             $('.ambulation').text(data.patient[0].Ambulation);
             $('.fever').text(data.patient[0].HistoryFever);
             $('.bmi').text(data.patient[0].BMI);
-            $('.fio2-text').text(data.patient[0].FiO2);
+            $('.dbp-text').text(data.patient[0].latestHealthData.DBP);
+            $('.sbp-text').text(data.patient[0].latestHealthData.SBP);
+            $('.fio2-text').text(data.patient[0].latestHealthData.FiO2);
+            $('.resp-text').text(data.patient[0].latestHealthData.RR);
+            $('.spo2-text').text(data.patient[0].latestHealthData.SpO2);
+            $('.temp-text').text(data.patient[0].latestHealthData.Temp);
             $('.key-setting .key-value').text(data.patient[0].devtoken);
             
             preLoaderHandler();
