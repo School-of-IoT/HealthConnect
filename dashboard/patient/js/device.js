@@ -175,7 +175,7 @@ function delete_node(nd){
   }
   else{
 
- let url = "https://healthconnect-server.onrender.com/node/v1/node/delete?user="+sessionStorage.getItem('user')+"&token="+dev_tkn+"&node="+UID;
+  let url = "https://healthconnect-server.onrender.com/node/v1/node/delete?user="+sessionStorage.getItem('user')+"&token="+dev_tkn+"&node="+UID;
   
   $.ajax({
     type: "DELETE",
