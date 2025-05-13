@@ -10,7 +10,7 @@
 
     $.ajax({
         type: "GET",
-        url: "https://dev-medis-server.onrender.com/api/v2/lastdata",
+        url: "https://healthconnect-server.onrender.com/api/v2/lastdata",
         data : formData,
         crossDomain: true,
         dataType: "json",
