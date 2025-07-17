@@ -22,8 +22,7 @@
         }
 
         $('.username').text(data.patient.Name);
-        $('.chills').text(data.patient.Chills);
-        $('.hr-text').text(data.patient.HeartRate);            
+        $('.chills').text(data.patient.Chills);         
         $('.bloodg').text(data.patient.BGroup);         
         $('.ambulation').text(data.patient.Ambulation);
         $('.fever').text(data.patient.HistoryFever);
@@ -34,6 +33,7 @@
         $('.resp-text').text(data.patient.latestHealthData.RR);
         $('.spo2-text').text(data.patient.latestHealthData.SpO2);
         $('.temp-text').text(data.patient.latestHealthData.Temp);
+        $('.hr-text').text(data.patient.latestHealthData.HRV);
         $('.key-setting .key-value').text(data.patient.devtoken);
         
         preLoaderHandler();
